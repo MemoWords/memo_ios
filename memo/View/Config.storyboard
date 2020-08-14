@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qln-nB-K4Y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="bV9-ZB-F3B">
+            <objects>
+                <viewController id="Mgy-r5-gxn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2x3-93-OzK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="lWh-aU-lbc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="L3h-MP-Na1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pd7-D5-3DQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="70.982142857142847"/>
+        </scene>
+        <!--Configurações-->
+        <scene sceneID="AbJ-Xw-cJL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qln-nB-K4Y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Configurações" image="gear_selected" id="jVN-sw-Xcs">
+                        <color key="badgeColor" red="0.21176470589999999" green="0.39607843139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i8r-ht-d2F">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mgy-r5-gxn" kind="relationship" relationship="rootViewController" id="pMf-N3-Her"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z94-z2-i5P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="70.982142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gear_selected" width="26" height="23"/>
+    </resources>
+</document>
