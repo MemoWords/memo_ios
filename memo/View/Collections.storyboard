@@ -6,18 +6,49 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Coleções-->
         <scene sceneID="Vdv-rs-8jI">
             <objects>
-                <viewController id="IPO-wY-I7Q" sceneMemberID="viewController">
+                <viewController id="IPO-wY-I7Q" customClass="CollectionsViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ek2-SF-E5y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8hR-NO-U1d">
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="664.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vid-VT-icD" firstAttribute="trailing" secondItem="8hR-NO-U1d" secondAttribute="trailing" id="DF2-f0-xYg"/>
+                            <constraint firstItem="vid-VT-icD" firstAttribute="bottom" secondItem="8hR-NO-U1d" secondAttribute="bottom" id="TUn-Nf-CQb"/>
+                            <constraint firstItem="8hR-NO-U1d" firstAttribute="top" secondItem="vid-VT-icD" secondAttribute="top" id="ngU-Vl-ddw"/>
+                            <constraint firstItem="8hR-NO-U1d" firstAttribute="leading" secondItem="vid-VT-icD" secondAttribute="leading" id="yUc-Bi-1cY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vid-VT-icD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dRE-7x-n5B"/>
+                    <navigationItem key="navigationItem" title="Coleções" id="dRE-7x-n5B">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="CDp-ae-h9Q">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sCV-AX-6Bt">
+                                <rect key="frame" x="-23" y="-15" width="24" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                <color key="tintColor" red="0.21176470589999999" green="0.39607843139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" backgroundImage="plus" catalog="system"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="8hR-NO-U1d" id="qsP-aJ-R7z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9t-oB-woO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -30,9 +61,18 @@
                     <tabBarItem key="tabBarItem" title="Coleções" image="folder" catalog="system" id="Aij-Jr-LjI"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sy6-6H-qSI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Sy6-6H-qSI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                            <color key="textColor" red="0.17254901959999999" green="0.20000000000000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="34"/>
+                            <color key="textColor" red="0.17254901960784313" green="0.20000000000000001" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -46,5 +86,6 @@
     </scenes>
     <resources>
         <image name="folder" catalog="system" width="128" height="95"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>
