@@ -33,12 +33,12 @@ class ColecoesTableViewCell: UITableViewCell {
     
     // Prepare the cell for reuse at the table.
     override func prepareForReuse() {
-        <#code#>
+        
     }
     
     // Configure the data to apear at the cell.
     func configure() {
-        <#code#>
+        
     }
     
 }

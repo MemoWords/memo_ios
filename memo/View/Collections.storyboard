@@ -38,21 +38,46 @@
                     <navigationItem key="navigationItem" title="Coleções" id="dRE-7x-n5B">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="CDp-ae-h9Q">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sCV-AX-6Bt">
-                                <rect key="frame" x="-23" y="-15" width="24" height="22"/>
+                                <rect key="frame" x="370" y="11" width="24" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
                                 <color key="tintColor" red="0.21176470589999999" green="0.39607843139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" backgroundImage="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="AddCollectionTapped:" destination="IPO-wY-I7Q" eventType="touchUpInside" id="rpl-dm-xL6"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="8hR-NO-U1d" id="qsP-aJ-R7z"/>
+                        <segue destination="pTD-P2-FcR" kind="show" identifier="ReviewSegue" id="Hmf-GQ-K8W"/>
+                        <segue destination="DhI-G7-kOf" kind="presentation" identifier="AddCollectionSegue" id="KKz-fI-clU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R9t-oB-woO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="966.66666666666674" y="22.767857142857142"/>
+        </scene>
+        <!--AddCollection-->
+        <scene sceneID="nIz-0B-Fld">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddCollection" id="DhI-G7-kOf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sVD-pP-vRM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Trt-IW-e5m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660" y="-137"/>
+        </scene>
+        <!--ReviewViewController-->
+        <scene sceneID="qBK-Se-tCt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Review" referencedIdentifier="ReviewViewController" id="pTD-P2-FcR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Suf-td-5lL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kXy-nv-vNc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693" y="23"/>
         </scene>
         <!--Coleções-->
         <scene sceneID="IPt-2Z-XAU">

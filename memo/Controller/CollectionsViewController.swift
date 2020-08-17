@@ -24,6 +24,11 @@ class CollectionsViewController: UIViewController {
         
     }
     
+    // Add Collection button pressed.
+    @IBAction func AddCollectionTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "AddCollectionSegue", sender: self)
+    }
+    
 }
 
 // MARK: - Extensions
@@ -33,14 +38,22 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Number of rows.
-        return 2
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Cell with data.
         let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionsCell", for: indexPath) as! ColecoesTableViewCell
         
+        //remove the style of the selection.
+        cell.selectionStyle = .none
+        
         return cell
     }
     
+    // When a cell is selected.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "ReviewSegue", sender: self)
+        print("row: \(indexPath.row)")
+    }
 }
