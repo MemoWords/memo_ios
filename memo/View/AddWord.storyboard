@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xXA-La-KbP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Adicionar Palavra-->
+        <scene sceneID="1mN-K3-Jl4">
+            <objects>
+                <viewController id="LhK-ec-jWB" customClass="AddWordViewController" customModule="memo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qwc-pD-grN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tM7-8N-m08"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adicionar Palavra" largeTitleDisplayMode="never" id="X0U-as-GN7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdL-Lz-mfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308.6956521739132" y="-261.16071428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hQT-8v-f1F">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXA-La-KbP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QoY-Rj-gxq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LhK-ec-jWB" kind="relationship" relationship="rootViewController" id="fQN-gv-pmW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f4T-oH-xMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398.55072463768118" y="-261.16071428571428"/>
+        </scene>
+    </scenes>
+</document>

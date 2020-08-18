@@ -17,6 +17,8 @@
 		DE77DB0C24E7079400095D73 /* Collections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE77DB0B24E7079400095D73 /* Collections.storyboard */; };
 		DE77DB0E24E707A900095D73 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE77DB0D24E707A900095D73 /* Search.storyboard */; };
 		DE77DB1024E707B600095D73 /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE77DB0F24E707B600095D73 /* Config.storyboard */; };
+		DE913EFE24EC092800383CFC /* AddWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE913EFD24EC092800383CFC /* AddWord.storyboard */; };
+		DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913EFF24EC095200383CFC /* AddWordViewController.swift */; };
 		DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */; };
 		DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
@@ -65,6 +67,8 @@
 		DE77DB0B24E7079400095D73 /* Collections.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Collections.storyboard; sourceTree = "<group>"; };
 		DE77DB0D24E707A900095D73 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		DE77DB0F24E707B600095D73 /* Config.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Config.storyboard; sourceTree = "<group>"; };
+		DE913EFD24EC092800383CFC /* AddWord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddWord.storyboard; sourceTree = "<group>"; };
+		DE913EFF24EC095200383CFC /* AddWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
 		DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColecoesTableViewCell.swift; sourceTree = "<group>"; };
 		DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColecoesTableViewCell.xib; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 				DE77DB0F24E707B600095D73 /* Config.storyboard */,
 				DEF04A7B24EAFF5C003457F2 /* Review.storyboard */,
 				DEF04A7F24EB0CAE003457F2 /* AddCollection.storyboard */,
+				DE913EFD24EC092800383CFC /* AddWord.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */,
 				DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */,
 				DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */,
+				DE913EFF24EC095200383CFC /* AddWordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				DE77DB1024E707B600095D73 /* Config.storyboard in Resources */,
 				DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */,
 				DE77DB0A24E7068800095D73 /* TabBar.storyboard in Resources */,
+				DE913EFE24EC092800383CFC /* AddWord.storyboard in Resources */,
 				DEF04A7524EACA2C003457F2 /* SF-Pro-Text-Medium.otf in Resources */,
 				DEF04A8024EB0CAE003457F2 /* AddCollection.storyboard in Resources */,
 				DEF04A7224EACA2C003457F2 /* SF-Pro.ttf in Resources */,
@@ -370,6 +377,7 @@
 			files = (
 				DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
+				DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */,
 				DEF04A8224EB0CC0003457F2 /* AddCollectionViewController.swift in Sources */,
 				DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */,
 				DE77DAD924E6FE4D00095D73 /* SceneDelegate.swift in Sources */,

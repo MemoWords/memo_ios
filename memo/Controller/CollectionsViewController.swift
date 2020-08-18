@@ -24,11 +24,6 @@ class CollectionsViewController: UIViewController {
         
     }
     
-    // Add Collection button pressed.
-    @IBAction func AddCollectionTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "AddCollectionSegue", sender: self)
-    }
-    
 }
 
 // MARK: - Extensions
