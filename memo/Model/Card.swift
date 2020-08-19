@@ -15,9 +15,9 @@ class Card: Codable {
     var lastDaysIncremented: Int
     
      //Initializer
-    init(content: String, nextStudyDay: String) {
+    init(content: String) {
         self.content = content
-        self.nextStudyDay = nextStudyDay
+        self.nextStudyDay = Helper.today()
         self.lastDaysIncremented = 1
     }
 }

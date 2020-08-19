@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CardStruct: Codable {
+class Collection: Codable {
     // Properties
     var name: String
     var cards: [Card]

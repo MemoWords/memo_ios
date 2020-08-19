@@ -33,12 +33,24 @@ class ColecoesTableViewCell: UITableViewCell {
     
     // Prepare the cell for reuse at the table.
     override func prepareForReuse() {
-        
+        labelTitle.text = nil
+        labelTotal.text = nil
+        labelStudy.text = nil
     }
     
     // Configure the data to apear at the cell.
-    func configure() {
+    func configure(collection: Collection) {
+        var study: Int = 0
         
+        for card in collection.cards {
+            if Helper.isToday(dateString: card.nextStudyDay) {
+                study = study + 1
+            }
+        }
+        
+        self.labelTitle.text = collection.name
+        self.labelTotal.text = String("Total: \(collection.cards.count)")
+        self.labelStudy.text = String("Estudar: \(study)")
     }
     
 }

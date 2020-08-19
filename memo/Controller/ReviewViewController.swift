@@ -18,6 +18,12 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var buttonShow: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelPronunciation: UILabel!
+    @IBOutlet weak var separator: UIView!
+    // Variables
+    var index: Int?
+    let repository = CollectionRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +53,9 @@ class ReviewViewController: UIViewController {
         // -------- Image Style ---------
         // Radius.
         imageView.layer.cornerRadius = imageView.frame.height / 2
+        
+        // Sets the title with the collection name.
+        self.title = self.repository.collections[self.index!].name
         
         // Datasource and delegate.
         tableView.dataSource = self
