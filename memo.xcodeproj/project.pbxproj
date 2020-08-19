@@ -22,6 +22,9 @@
 		DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */; };
 		DE913F0424EC4F5800383CFC /* DefinitionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */; };
 		DE913F0624EC554C00383CFC /* SF-Pro-Text-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE913F0524EC554C00383CFC /* SF-Pro-Text-MediumItalic.otf */; };
+		DE913F0824ED5EE700383CFC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0724ED5EE700383CFC /* Card.swift */; };
+		DE913F0B24ED5FF300383CFC /* Classification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0A24ED5FF300383CFC /* Classification.swift */; };
+		DE913F0E24ED61B400383CFC /* CardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0D24ED61B400383CFC /* CardStruct.swift */; };
 		DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */; };
 		DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
@@ -75,6 +78,9 @@
 		DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewCell.swift; sourceTree = "<group>"; };
 		DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefinitionTableViewCell.xib; sourceTree = "<group>"; };
 		DE913F0524EC554C00383CFC /* SF-Pro-Text-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-MediumItalic.otf"; sourceTree = "<group>"; };
+		DE913F0724ED5EE700383CFC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		DE913F0A24ED5FF300383CFC /* Classification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classification.swift; sourceTree = "<group>"; };
+		DE913F0D24ED61B400383CFC /* CardStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStruct.swift; sourceTree = "<group>"; };
 		DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColecoesTableViewCell.swift; sourceTree = "<group>"; };
 		DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColecoesTableViewCell.xib; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				DEF04A6D24EAC9F1003457F2 /* Fonts */,
+				DE913F0C24ED604A00383CFC /* Helpers */,
+				DE913F0924ED5F8000383CFC /* Algorithm */,
 				DE77DB0824E7065D00095D73 /* Model */,
 				DEF04A7A24EAFABD003457F2 /* Repository */,
 				DE77DB0724E7065400095D73 /* Controller */,
@@ -199,8 +207,25 @@
 		DE77DB0824E7065D00095D73 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE913F0724ED5EE700383CFC /* Card.swift */,
+				DE913F0D24ED61B400383CFC /* CardStruct.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DE913F0924ED5F8000383CFC /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				DE913F0A24ED5FF300383CFC /* Classification.swift */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		DE913F0C24ED604A00383CFC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		DEF04A6524EAB6C3003457F2 /* Xibs */ = {
@@ -387,13 +412,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */,
+				DE913F0824ED5EE700383CFC /* Card.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
 				DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */,
 				DEF04A8224EB0CC0003457F2 /* AddCollectionViewController.swift in Sources */,
 				DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */,
 				DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */,
 				DE77DAD924E6FE4D00095D73 /* SceneDelegate.swift in Sources */,
+				DE913F0E24ED61B400383CFC /* CardStruct.swift in Sources */,
 				DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */,
+				DE913F0B24ED5FF300383CFC /* Classification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
