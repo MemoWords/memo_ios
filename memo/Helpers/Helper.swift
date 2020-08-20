@@ -34,4 +34,19 @@ class Helper {
         
         return false
     }
+    
+    // Script para incrementar uma data.
+    static func incrementDate(data: String, val: Int ) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+
+        var dataToChange = dateFormatter.date(from: data)
+        
+        dataToChange!.addTimeInterval(TimeInterval(val * 86400))
+
+        let dataToReturn = dateFormatter.string(from: dataToChange!)
+
+        return dataToReturn
+
+    }
 }

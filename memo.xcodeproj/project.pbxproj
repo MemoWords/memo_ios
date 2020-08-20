@@ -28,6 +28,9 @@
 		DE913F1024ED69EB00383CFC /* CollectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0F24ED69EB00383CFC /* CollectionRepository.swift */; };
 		DE913F1224ED9E2800383CFC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1124ED9E2800383CFC /* Helper.swift */; };
 		DE913F1524EDABE000383CFC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1424EDABE000383CFC /* Protocols.swift */; };
+		DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1624EEA6A500383CFC /* AnswerRepository.swift */; };
+		DE913F1924EEA71300383CFC /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1824EEA71300383CFC /* Definition.swift */; };
+		DE913F1B24EEA72400383CFC /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1A24EEA72400383CFC /* Answer.swift */; };
 		DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */; };
 		DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
@@ -87,6 +90,9 @@
 		DE913F0F24ED69EB00383CFC /* CollectionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRepository.swift; sourceTree = "<group>"; };
 		DE913F1124ED9E2800383CFC /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		DE913F1424EDABE000383CFC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		DE913F1624EEA6A500383CFC /* AnswerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRepository.swift; sourceTree = "<group>"; };
+		DE913F1824EEA71300383CFC /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
+		DE913F1A24EEA72400383CFC /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColecoesTableViewCell.swift; sourceTree = "<group>"; };
 		DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColecoesTableViewCell.xib; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +221,8 @@
 			children = (
 				DE913F0724ED5EE700383CFC /* Card.swift */,
 				DE913F0D24ED61B400383CFC /* Collection.swift */,
+				DE913F1824EEA71300383CFC /* Definition.swift */,
+				DE913F1A24EEA72400383CFC /* Answer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				DE913F0F24ED69EB00383CFC /* CollectionRepository.swift */,
+				DE913F1624EEA6A500383CFC /* AnswerRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -424,7 +433,10 @@
 				DE913F1024ED69EB00383CFC /* CollectionRepository.swift in Sources */,
 				DE913F0824ED5EE700383CFC /* Card.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
+				DE913F1924EEA71300383CFC /* Definition.swift in Sources */,
 				DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */,
+				DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */,
+				DE913F1B24EEA72400383CFC /* Answer.swift in Sources */,
 				DEF04A8224EB0CC0003457F2 /* AddCollectionViewController.swift in Sources */,
 				DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */,
 				DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */,

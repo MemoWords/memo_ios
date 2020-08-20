@@ -24,16 +24,12 @@ class CollectionsViewController: UIViewController {
         // Register the xib file as a reusable cell of the table view.
         tableView.register(UINib.init(nibName: "ColecoesTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionsCell")
         
-        /*-----Fill Some--------
+        //-----Fill Some--------
         repository.clear()
         
         let coll1 = Collection(
             name: "Substantivos",
-            cards: [
-                Card(content: "car"),
-                Card(content: "ball"),
-                Card(content: "game")
-            ]
+            cards: []
         )
         let coll2 = Collection(
             name: "Verbos",
@@ -61,7 +57,6 @@ class CollectionsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("voltei")
         repository.reload()
         tableView.reloadData()
     }
