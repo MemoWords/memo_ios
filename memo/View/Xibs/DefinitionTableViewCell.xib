@@ -37,7 +37,7 @@
                         <color key="textColor" red="0.17254901959999999" green="0.20000000000000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;we're going by car&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPH-H5-dSy">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;we're going by car&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPH-H5-dSy">
                         <rect key="frame" x="10" y="106" width="292" height="38"/>
                         <fontDescription key="fontDescription" name="SFProText-MediumItalic" family="SF Pro Text" pointSize="16"/>
                         <color key="textColor" red="0.70980392160000005" green="0.71372549019999998" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,6 +59,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="labelDefinition" destination="cHP-Z1-Mvu" id="YjJ-L9-f8D"/>
+                <outlet property="labelExample" destination="wPH-H5-dSy" id="vRj-3E-a22"/>
+                <outlet property="labelType" destination="Zfo-fI-4ap" id="lic-8G-3uY"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="171.42857142857142"/>
         </tableViewCell>
     </objects>

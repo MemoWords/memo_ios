@@ -8,14 +8,14 @@
 
 import Foundation
 
-class Answer {
-    var status_code: Int
+class Answer: Codable {
+    //var status_code: Int
     var word: String
-    var pronunciation: String
+    var pronunciation: String?
     var definitions: [Definition]
     
-    init(status_code: Int, word: String, pronunciation: String, definitions: [Definition]) {
-        self.status_code   = status_code
+    init(word: String, pronunciation: String, definitions: [Definition]) {
+        //self.status_code   = status_code
         self.word          = word
         self.pronunciation = pronunciation
         self.definitions   = definitions

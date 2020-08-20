@@ -54,6 +54,14 @@ class CollectionsViewController: UIViewController {
         repository.create(collection: coll3)
         //-----End--------------*/
         
+        /* test API
+        
+        AnswerRepository.search(word: "car", completion: { (answer) in
+            DispatchQueue.main.async {
+                print(answer.definitions[0].definition)
+            }
+        })
+        //-----*/
     }
     
     override func viewWillAppear(_ animated: Bool) {

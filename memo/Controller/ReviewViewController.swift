@@ -29,6 +29,7 @@ class ReviewViewController: UIViewController {
     // Variables
     var index: Int?
     let repository = CollectionRepository()
+    var definitions = [Definition]()
     var count = 0
     var numOfCardsToStudy = 0
     
@@ -75,15 +76,8 @@ class ReviewViewController: UIViewController {
         self.show()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print("Apareci!")
-        repository.reload()
-        self.numOfCardsToStudy = self.getNumOfCardsToStudy()
-        self.count = 0
-        self.show()
-    }
-    
     @IBAction func showButtonTapped(_ sender: Any) {
+        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         self.showButtonShowAnswer(value: false)
     }
     
@@ -146,12 +140,30 @@ class ReviewViewController: UIViewController {
                 if(!message.isHidden) {
                     self.showMessage(value: false)
                 }
-                labelTitle.text = repository.collections[self.index!].cards[self.count].content
+                let title = repository.collections[self.index!].cards[self.count].content
+                labelTitle.text = title
+                self.labelPronunciation.text = "/.../"
+                self.setAnswerData(word: title)
             } else {
                 self.count = self.count + 1
                 self.show()
             }
         }
+    }
+    
+    func setAnswerData(word: String) {
+        AnswerRepository.search(
+        word: word,
+        completion: { (answer) in
+            DispatchQueue.main.async {
+                if let pronunciation = answer.pronunciation {
+                    self.labelPronunciation.text = "/\(pronunciation)/"
+                }
+                
+                self.definitions = answer.definitions
+                self.tableView.reloadData()
+            }
+        })
     }
     
     func showMessage(value: Bool) {
@@ -200,11 +212,13 @@ class ReviewViewController: UIViewController {
 // MARK: - Extensions
 extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.definitions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefinitionCell", for: indexPath) as! DefinitionTableViewCell
+        
+        cell.configure(definition: self.definitions[indexPath.row])
         
         return cell
     }
