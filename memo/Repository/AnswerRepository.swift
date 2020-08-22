@@ -11,15 +11,17 @@ import Foundation
 class AnswerRepository {
     static func search(word: String, completion: @escaping (Answer) -> Void) {
         // Create URL
-        let url = URL(string: "https://owlbot.info/api/v4/dictionary/\(word)")!
+        guard let url = URL(string: "https://owlbot.info/api/v4/dictionary/\(word)") else {
+            return
+        }
         // Token
-        let token = "759e405ad8b00ef1b057fb5e0ba3384b1437e4f4"
+        let token = UserDefaults.standard.value(forKey: "Token")
         // Create URLRequest
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
             "Content-Type": "application/json",
-            "Authorization": "Token \(token)"
+            "Authorization": "Token \(token!)"
         ]
         //request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
         // Create Session

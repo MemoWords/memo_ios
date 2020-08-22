@@ -11,18 +11,19 @@ import Foundation
 class CollectionRepository {
     // Variables
     var collections = [Collection]()
-    let home: URL // Directory home
-    let fileUrl: URL // Url to the file.
+    let fileUrl = URL(fileURLWithPath: NSHomeDirectory()+"/Documents/cards.json")
     
     // Initializer
     init() {
-        home = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        fileUrl = home.appendingPathComponent("cards.json")
-        
         // It creates the file if the same doesn`t exist.
         if (!FileManager.default.fileExists(atPath: fileUrl.path)) {
             do {
-                let jsonData = try JSONEncoder().encode([Collection]())
+                let jsonData = try JSONEncoder().encode([
+                    Collection(
+                        name: "Default",
+                        cards: [Card]()
+                    )
+                ])
                 try jsonData.write(to: fileUrl)
             } catch {
                 print("Impossível escrever no arquivo.")
@@ -64,6 +65,19 @@ class CollectionRepository {
         catch {
             print(error.localizedDescription)
         }
+    }
+    
+    // Search for a word.
+    func searchWord(word: String) -> Bool {
+        var result = false
+        for collection in self.collections {
+            for card in collection.cards {
+                if card.content == word {
+                    result = true
+                }
+            }
+        }
+        return result
     }
     
 }

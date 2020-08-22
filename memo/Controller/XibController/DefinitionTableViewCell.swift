@@ -23,7 +23,7 @@ class DefinitionTableViewCell: UITableViewCell {
         self.labelType.text = definition.type
         self.labelDefinition.text = definition.definition
         if let example = definition.example {
-            self.labelExample.text = example
+            self.labelExample.text = "\"\(example)\""
         } else {
             self.labelExample.text = ""
         }

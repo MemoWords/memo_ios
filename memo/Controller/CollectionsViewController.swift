@@ -11,12 +11,14 @@ import UIKit
 class CollectionsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
     let repository = CollectionRepository()
     var id: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tabBarController?.overrideUserInterfaceStyle = .light
+        //FileManager.default.printContent(from: NSHomeDirectory(), recursivelly: true)
         // Set this class as data source and delegate of the table view.
         tableView.dataSource = self
         tableView.delegate   = self
@@ -28,7 +30,7 @@ class CollectionsViewController: UIViewController {
         repository.clear()
         
         let coll1 = Collection(
-            name: "Substantivos",
+            name: "Default",
             cards: []
         )
         let coll2 = Collection(
@@ -66,7 +68,8 @@ class CollectionsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         repository.reload()
-        tableView.reloadData()
+        self.tableView.reloadData()
+        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
     }
     
 }

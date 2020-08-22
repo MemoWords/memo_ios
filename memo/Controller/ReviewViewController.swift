@@ -33,6 +33,14 @@ class ReviewViewController: UIViewController {
     var count = 0
     var numOfCardsToStudy = 0
     
+    var buttonsIsActive: Bool? {
+        didSet {
+            self.buttonEasy.isEnabled = self.buttonsIsActive!
+            self.buttonHard.isEnabled = self.buttonsIsActive!
+            self.buttonWrong.isEnabled = self.buttonsIsActive!
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -125,8 +133,11 @@ class ReviewViewController: UIViewController {
     
     func show() {
         // Set all the data to screen.
+        self.buttonsIsActive = false
         labelTotal.text = String("Total: \(repository.collections[self.index!].cards.count)")
         labelStudy.text = String("Estudar: \(self.numOfCardsToStudy)")
+        self.labelPronunciation.text = "/.../"
+        self.labelTitle.text = "..."
         
         if(self.count >= repository.collections[self.index!].cards.count) {
             if(numOfCardsToStudy == 0) {
@@ -141,8 +152,7 @@ class ReviewViewController: UIViewController {
                     self.showMessage(value: false)
                 }
                 let title = repository.collections[self.index!].cards[self.count].content
-                labelTitle.text = title
-                self.labelPronunciation.text = "/.../"
+                
                 self.setAnswerData(word: title)
             } else {
                 self.count = self.count + 1
@@ -156,10 +166,13 @@ class ReviewViewController: UIViewController {
         word: word,
         completion: { (answer) in
             DispatchQueue.main.async {
+                self.labelTitle.text = word
                 if let pronunciation = answer.pronunciation {
                     self.labelPronunciation.text = "/\(pronunciation)/"
+                } else {
+                    self.labelPronunciation.text = "/.../"
                 }
-                
+                self.buttonsIsActive = true
                 self.definitions = answer.definitions
                 self.tableView.reloadData()
             }
