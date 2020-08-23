@@ -44,7 +44,7 @@ class ColecoesTableViewCell: UITableViewCell {
         
         for card in collection.cards {
             if Helper.isToday(dateString: card.nextStudyDay) {
-                study = study + 1
+                study += 1
             }
         }
         

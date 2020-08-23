@@ -13,33 +13,30 @@ class Classification {
     static func classificate(val: Int, lastDayIncremented: Int) -> [Int] {
         var values = [0, 0]
 
-        switch (val) {
-            case 1:
-                values[0] = 1
-                if (lastDayIncremented > 1) {
-                    if (lastDayIncremented % 2) == 0 {
-                        values[1] = lastDayIncremented / 2
-                    } else {
-                        values[1] = (lastDayIncremented + 1) / 2
-                    }
+        switch val {
+        case 1:
+            values[0] = 1
+            if lastDayIncremented > 1 {
+                if (lastDayIncremented % 2) == 0 {
+                    values[1] = lastDayIncremented / 2
                 } else {
-                    values[1] = values[0]
+                    values[1] = (lastDayIncremented + 1) / 2
                 }
-                
-                return values
-
-            case 2:
-                values[0] = lastDayIncremented * 2
+            } else {
                 values[1] = values[0]
+            }
+    
+            return values
+        case 2:
+            values[0] = lastDayIncremented * 2
+            values[1] = values[0]
 
-                return values
+            return values
+        default:
+            values[0] = 0
+            values[1] = 0
 
-            default:
-                values[0] = 0
-                values[1] = 0
-
-                return values
-                
+            return values
         }
     }
 }

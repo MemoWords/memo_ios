@@ -16,7 +16,7 @@ class CollectionRepository {
     // Initializer
     init() {
         // It creates the file if the same doesn`t exist.
-        if (!FileManager.default.fileExists(atPath: fileUrl.path)) {
+        if !FileManager.default.fileExists(atPath: fileUrl.path) {
             do {
                 let jsonData = try JSONEncoder().encode([
                     Collection(
@@ -50,8 +50,7 @@ class CollectionRepository {
         do {
             let data = try JSONEncoder().encode(self.collections)
             try data.write(to: fileUrl)
-        }
-        catch {
+        } catch {
             print(error.localizedDescription)
         }
     }
@@ -61,8 +60,7 @@ class CollectionRepository {
         do {
             let data = try Data(contentsOf: fileUrl)
             self.collections = try JSONDecoder().decode([Collection].self, from: data)
-        }
-        catch {
+        } catch {
             print(error.localizedDescription)
         }
     }
@@ -71,10 +69,8 @@ class CollectionRepository {
     func searchWord(word: String) -> Bool {
         var result = false
         for collection in self.collections {
-            for card in collection.cards {
-                if card.content == word {
-                    result = true
-                }
+            for card in collection.cards where card.content == word {
+                result = true
             }
         }
         return result
@@ -91,7 +87,7 @@ class CollectionRepository {
                 let nextStudyDay = dateFormatter.date(from: card.nextStudyDay)
                 let now = dateFormatter.date(from: Helper.today())
 
-                if nextStudyDay!.compare(now!) == .orderedAscending  {
+                if nextStudyDay!.compare(now!) == .orderedAscending {
                     card.nextStudyDay = dateFormatter.string(from: now!)
                 }
             }

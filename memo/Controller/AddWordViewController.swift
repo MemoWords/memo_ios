@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol SaveWordDelegate {
-    func save(collectionId: Int?, collectionName: String?, word: String) -> Void
-}
-
 class AddWordViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -19,7 +15,7 @@ class AddWordViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let repository = CollectionRepository()
-    var addWordDelegate: SaveWordDelegate?
+    weak var addWordDelegate: SaveWordDelegate?
     var wordToSave: String?
     
     override func viewDidLoad() {

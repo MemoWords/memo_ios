@@ -8,6 +8,8 @@
 
 import Foundation
 
+// swiftlint:disable identifier_name
+
 class Definition: Codable {
     var type: String
     var definition: String

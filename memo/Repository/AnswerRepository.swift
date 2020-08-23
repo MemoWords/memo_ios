@@ -27,7 +27,7 @@ class AnswerRepository {
         // Create Session
         let session = URLSession(configuration: .default)
         
-        let getRankingTask = session.dataTask(with: request) { (data, response, error) in
+        let getAnswerTask = session.dataTask(with: request) { (data, _, _) in
             if let data = data {
                 if let answer = try? JSONDecoder().decode(Answer.self, from: data) {
                     completion(answer)
@@ -38,6 +38,6 @@ class AnswerRepository {
             }
         }
         // Execute the task.
-        getRankingTask.resume()
+        getAnswerTask.resume()
     }
 }

@@ -32,7 +32,7 @@ extension FileManager {
             case "plist":
                 let url = URL(fileURLWithPath: path)
                 if let data  = try? Data(contentsOf: url),
-                   let plist = try? PropertyListSerialization.propertyList(from: data,options: .mutableContainers, format: nil) as? [String : Any] {
+                   let plist = try? PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? [String: Any] {
                     print("Content: \(plist.description)")
                 }
             default:

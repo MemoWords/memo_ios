@@ -7,4 +7,6 @@
 //
 
 import Foundation
-
+protocol SaveWordDelegate: class {
+    func save(collectionId: Int?, collectionName: String?, word: String)
+}

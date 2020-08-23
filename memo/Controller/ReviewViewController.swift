@@ -91,7 +91,7 @@ class ReviewViewController: UIViewController {
     
     func showButtonShowAnswer(value: Bool) {
         // Remove
-        if(value) {
+        if value {
             buttonEasy.layer.backgroundColor = UIColor(red: 54/255, green: 101/255, blue: 227/255, alpha: 1.0).cgColor
             buttonEasy.setTitleColor(UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1.0), for: .normal)
         } else {
@@ -108,25 +108,25 @@ class ReviewViewController: UIViewController {
     @IBAction func wrongButtonTapped(_ sender: Any) {
         // Wrong
         self.update(val: 0)
-        self.count = self.count + 1
+        self.count += 1
         self.showButtonShowAnswer(value: true)
         self.show()
     }
     
     @IBAction func hardButtonTapped(_ sender: Any) {
         // Hard
-        self.numOfCardsToStudy = self.numOfCardsToStudy - 1
+        self.numOfCardsToStudy -= 1
         self.update(val: 1)
-        self.count = self.count + 1
+        self.count += 1
         self.showButtonShowAnswer(value: true)
         self.show()
     }
     
     @IBAction func easyButtonTapped(_ sender: Any) {
         // Easy
-        self.numOfCardsToStudy = self.numOfCardsToStudy - 1
+        self.numOfCardsToStudy -= 1
         self.update(val: 2)
-        self.count = self.count + 1
+        self.count += 1
         self.showButtonShowAnswer(value: true)
         self.show()
     }
@@ -139,8 +139,8 @@ class ReviewViewController: UIViewController {
         self.labelPronunciation.text = "/.../"
         self.labelTitle.text = "..."
         
-        if(self.count >= repository.collections[self.index!].cards.count) {
-            if(numOfCardsToStudy == 0) {
+        if self.count >= repository.collections[self.index!].cards.count {
+            if numOfCardsToStudy == 0 {
                 self.showMessage(value: true)
             } else {
                 self.count = 0
@@ -148,14 +148,14 @@ class ReviewViewController: UIViewController {
             }
         } else {
             if Helper.isToday(dateString: repository.collections[self.index!].cards[self.count].nextStudyDay) {
-                if(!message.isHidden) {
+                if !message.isHidden {
                     self.showMessage(value: false)
                 }
                 let title = repository.collections[self.index!].cards[self.count].content
                 
                 self.setAnswerData(word: title)
             } else {
-                self.count = self.count + 1
+                self.count += 1
                 self.show()
             }
         }
@@ -195,7 +195,7 @@ class ReviewViewController: UIViewController {
         var num = 0
         for card in repository.collections[self.index!].cards {
             if Helper.isToday(dateString: card.nextStudyDay) {
-                num = num + 1
+                num += 1
             }
         }
         return num
@@ -208,7 +208,7 @@ class ReviewViewController: UIViewController {
             lastDayIncremented: repository.collections[self.index!].cards[self.count].lastDaysIncremented
         )
 
-        if (days[0] != 0) { // veririca se há valores a serem atualizados
+        if days[0] != 0 { // veririca se há valores a serem atualizados
             // Atualiza os valores no card.
             repository.collections[self.index!].cards[self.count].nextStudyDay = Helper.incrementDate(
                 data: repository.collections[self.index!].cards[self.count].nextStudyDay,

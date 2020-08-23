@@ -10,7 +10,6 @@ import UIKit
 
 class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDelegate {
     
-
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var card: UIView!
     @IBOutlet weak var saveButton: UIButton!
@@ -113,13 +112,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "AddWord", bundle: nil)
-//        let addWord = storyboard.instantiateViewController(withIdentifier: "AddWordViewController") as! AddWordViewController
-//        addWord.addWordDelegate = self
-//        //let navBar = UINavigationController(rootViewController: addWord)
-//        // Shows up the Selection Screen.
-//        self.navigationController?.pushViewController(addWord, animated: true)
-//        //self.navigationController?.present(addWord, animated: true, completion: nil)
         self.performSegue(withIdentifier: "addWordSegue", sender: self)
     }
     
@@ -148,7 +140,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
         self.saveButton.isEnabled = false
     }
 }
-
 
 // MARK: - Extensions.
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {

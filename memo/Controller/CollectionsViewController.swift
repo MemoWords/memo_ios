@@ -90,8 +90,8 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is ReviewViewController {
-            let vc = segue.destination as? ReviewViewController
-            vc?.index = self.id
+            let vcon = segue.destination as? ReviewViewController
+            vcon?.index = self.id
         }
     }
     
