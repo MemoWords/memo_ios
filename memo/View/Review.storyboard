@@ -191,9 +191,6 @@
                                 <rect key="frame" x="370" y="11" width="24" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="plus" catalog="system"/>
-                                <connections>
-                                    <segue destination="27j-ge-SPz" kind="presentation" id="trd-Vv-qlH"/>
-                                </connections>
                             </button>
                             <color key="tintColor" red="0.21176470589999999" green="0.39607843139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
@@ -218,14 +215,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dQ-ij-sic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
-        </scene>
-        <!--AddWord-->
-        <scene sceneID="Q9c-qE-zhO">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddWord" id="27j-ge-SPz" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="upM-yP-kTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1683" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qdO-Co-fXR">

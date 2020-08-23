@@ -1,45 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xXA-La-KbP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ElN-C6-S3Q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Adicionar Palavra-->
         <scene sceneID="1mN-K3-Jl4">
             <objects>
-                <viewController id="LhK-ec-jWB" customClass="AddWordViewController" customModule="memo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddWordViewController" id="LhK-ec-jWB" customClass="AddWordViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qwc-pD-grN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Criar uma nova Coleção:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfZ-od-AC9">
+                                <rect key="frame" x="20" y="108" width="374" height="21"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.20000000000000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione uma Coleção:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiV-Vh-SOM">
+                                <rect key="frame" x="20" y="360" width="374" height="21"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.20000000000000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8e-c6-XSv">
+                                <rect key="frame" x="193" y="294" width="28" height="21"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.20000000000000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vjM-OX-7fZ">
+                                <rect key="frame" x="20" y="139" width="374" height="45"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.21176470589999999" green="0.39607843139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ZAN-cc-ZZC"/>
+                                </constraints>
+                                <color key="textColor" red="0.17254901959999999" green="0.20000000000000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0PH-oI-IBn">
+                                <rect key="frame" x="20" y="199" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.39607843139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bM4-Zv-1gV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
+                                <state key="normal" title="ADICIONAR">
+                                    <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="LhK-ec-jWB" eventType="touchUpInside" id="3wc-ls-Rfb"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6j3-rE-3Wv">
+                                <rect key="frame" x="20" y="401" width="374" height="461"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="AfZ-od-AC9" firstAttribute="leading" secondItem="tM7-8N-m08" secondAttribute="leading" constant="20" id="8oE-jU-wqN"/>
+                            <constraint firstItem="tM7-8N-m08" firstAttribute="trailing" secondItem="RiV-Vh-SOM" secondAttribute="trailing" constant="20" id="Arz-N8-HyU"/>
+                            <constraint firstItem="vjM-OX-7fZ" firstAttribute="top" secondItem="AfZ-od-AC9" secondAttribute="bottom" constant="10" id="EsZ-CP-xbf"/>
+                            <constraint firstItem="RiV-Vh-SOM" firstAttribute="top" secondItem="w8e-c6-XSv" secondAttribute="bottom" constant="45" id="Hmm-lw-3Py"/>
+                            <constraint firstItem="6j3-rE-3Wv" firstAttribute="leading" secondItem="tM7-8N-m08" secondAttribute="leading" constant="20" id="X3L-T2-pqS"/>
+                            <constraint firstItem="6j3-rE-3Wv" firstAttribute="top" secondItem="RiV-Vh-SOM" secondAttribute="bottom" constant="20" id="Xxl-5f-58c"/>
+                            <constraint firstItem="tM7-8N-m08" firstAttribute="trailing" secondItem="AfZ-od-AC9" secondAttribute="trailing" constant="20" id="cOF-dF-rGr"/>
+                            <constraint firstItem="w8e-c6-XSv" firstAttribute="top" secondItem="0PH-oI-IBn" secondAttribute="bottom" constant="45" id="dmr-gh-uba"/>
+                            <constraint firstItem="tM7-8N-m08" firstAttribute="trailing" secondItem="0PH-oI-IBn" secondAttribute="trailing" constant="20" id="e6e-0B-ev8"/>
+                            <constraint firstItem="0PH-oI-IBn" firstAttribute="top" secondItem="vjM-OX-7fZ" secondAttribute="bottom" constant="15" id="fZ3-gH-37t"/>
+                            <constraint firstItem="AfZ-od-AC9" firstAttribute="top" secondItem="tM7-8N-m08" secondAttribute="top" constant="20" id="le5-0Z-bIJ"/>
+                            <constraint firstItem="0PH-oI-IBn" firstAttribute="leading" secondItem="tM7-8N-m08" secondAttribute="leading" constant="20" id="qL2-TM-SkP"/>
+                            <constraint firstItem="RiV-Vh-SOM" firstAttribute="leading" secondItem="tM7-8N-m08" secondAttribute="leading" constant="20" id="sQK-wn-F81"/>
+                            <constraint firstItem="w8e-c6-XSv" firstAttribute="centerX" secondItem="Qwc-pD-grN" secondAttribute="centerX" id="sg9-mD-Tsk"/>
+                            <constraint firstItem="tM7-8N-m08" firstAttribute="trailing" secondItem="vjM-OX-7fZ" secondAttribute="trailing" constant="20" id="uf2-Hc-Szt"/>
+                            <constraint firstItem="tM7-8N-m08" firstAttribute="trailing" secondItem="6j3-rE-3Wv" secondAttribute="trailing" constant="20" id="wBh-HP-zHR"/>
+                            <constraint firstItem="vjM-OX-7fZ" firstAttribute="leading" secondItem="tM7-8N-m08" secondAttribute="leading" constant="20" id="xRz-Gs-hu8"/>
+                            <constraint firstItem="tM7-8N-m08" firstAttribute="bottom" secondItem="6j3-rE-3Wv" secondAttribute="bottom" id="zW0-7B-Wrg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tM7-8N-m08"/>
                     </view>
                     <navigationItem key="navigationItem" title="Adicionar Palavra" largeTitleDisplayMode="never" id="X0U-as-GN7"/>
+                    <connections>
+                        <outlet property="addButton" destination="0PH-oI-IBn" id="I4O-3d-ZMR"/>
+                        <outlet property="nameTextField" destination="vjM-OX-7fZ" id="nhC-ca-oua"/>
+                        <outlet property="tableView" destination="6j3-rE-3Wv" id="TQg-yJ-Aeo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdL-Lz-mfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308.6956521739132" y="-261.16071428571428"/>
+            <point key="canvasLocation" x="2471.0144927536235" y="-258.48214285714283"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="hQT-8v-f1F">
+        <scene sceneID="Hen-ay-wuR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xXA-La-KbP" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ElN-C6-S3Q" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QoY-Rj-gxq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="43P-Nv-uQG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.21176470589999999" green="0.39607843139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                            <color key="textColor" red="0.17254901959999999" green="0.20000000000000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LhK-ec-jWB" kind="relationship" relationship="rootViewController" id="fQN-gv-pmW"/>
+                        <segue destination="LhK-ec-jWB" kind="relationship" relationship="rootViewController" id="ZdA-rb-eQ1"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f4T-oH-xMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ex1-XD-d4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="398.55072463768118" y="-261.16071428571428"/>
+            <point key="canvasLocation" x="1560.8695652173915" y="-258.48214285714283"/>
         </scene>
     </scenes>
 </document>

@@ -80,4 +80,22 @@ class CollectionRepository {
         return result
     }
     
+    func updateCardsToStudy() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        for collection in self.collections {
+            for card in collection.cards {
+                //let nowString = dateFormatter.string(from: now)
+
+                let nextStudyDay = dateFormatter.date(from: card.nextStudyDay)
+                let now = dateFormatter.date(from: Helper.today())
+
+                if nextStudyDay!.compare(now!) == .orderedAscending  {
+                    card.nextStudyDay = dateFormatter.string(from: now!)
+                }
+            }
+        }
+        self.save()
+    }
 }

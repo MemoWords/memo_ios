@@ -26,50 +26,44 @@ class CollectionsViewController: UIViewController {
         // Register the xib file as a reusable cell of the table view.
         tableView.register(UINib.init(nibName: "ColecoesTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionsCell")
         
-        //-----Fill Some--------
-        repository.clear()
+//        //-----Fill Some--------
+//        repository.clear()
+//
+//        let coll1 = Collection(
+//            name: "Default",
+//            cards: []
+//        )
+//        let coll2 = Collection(
+//            name: "Verbos",
+//            cards: [
+//                Card(content: "love"),
+//                Card(content: "fall"),
+//                Card(content: "gain")
+//            ]
+//        )
+//        let coll3 = Collection(
+//            name: "Preposições",
+//            cards: [
+//                Card(content: "here"),
+//                Card(content: "there"),
+//                Card(content: "in"),
+//                Card(content: "out")
+//            ]
+//        )
+//
+//        repository.create(collection: coll1)
+//        repository.create(collection: coll2)
+//        repository.create(collection: coll3)
+//        //-----End--------------*/
         
-        let coll1 = Collection(
-            name: "Default",
-            cards: []
-        )
-        let coll2 = Collection(
-            name: "Verbos",
-            cards: [
-                Card(content: "love"),
-                Card(content: "fall"),
-                Card(content: "gain")
-            ]
-        )
-        let coll3 = Collection(
-            name: "Preposições",
-            cards: [
-                Card(content: "here"),
-                Card(content: "there"),
-                Card(content: "in"),
-                Card(content: "out")
-            ]
-        )
-        
-        repository.create(collection: coll1)
-        repository.create(collection: coll2)
-        repository.create(collection: coll3)
-        //-----End--------------*/
-        
-        /* test API
-        
-        AnswerRepository.search(word: "car", completion: { (answer) in
-            DispatchQueue.main.async {
-                print(answer.definitions[0].definition)
-            }
-        })
-        //-----*/
     }
     
     override func viewWillAppear(_ animated: Bool) {
         repository.reload()
+        repository.updateCardsToStudy()
         self.tableView.reloadData()
         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        FileManager.default.printContent(from: NSHomeDirectory(), recursivelly: true)
     }
     
 }

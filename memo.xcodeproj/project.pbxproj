@@ -33,6 +33,8 @@
 		DE913F1B24EEA72400383CFC /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1A24EEA72400383CFC /* Answer.swift */; };
 		DE913F1D24EEF3DA00383CFC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */; };
 		DE913F2024F1A15400383CFC /* FileManegerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1F24F1A15400383CFC /* FileManegerExtension.swift */; };
+		DE913F2324F1B25600383CFC /* AddWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */; };
+		DE913F2424F1B25600383CFC /* AddWordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE913F2224F1B25600383CFC /* AddWordTableViewCell.xib */; };
 		DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */; };
 		DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
@@ -97,6 +99,8 @@
 		DE913F1A24EEA72400383CFC /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DE913F1F24F1A15400383CFC /* FileManegerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManegerExtension.swift; sourceTree = "<group>"; };
+		DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordTableViewCell.swift; sourceTree = "<group>"; };
+		DE913F2224F1B25600383CFC /* AddWordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddWordTableViewCell.xib; sourceTree = "<group>"; };
 		DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColecoesTableViewCell.swift; sourceTree = "<group>"; };
 		DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColecoesTableViewCell.xib; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -200,11 +204,11 @@
 				DE77DAE124E6FE5000095D73 /* LaunchScreen.storyboard */,
 				DE77DB0924E7068800095D73 /* TabBar.storyboard */,
 				DE77DB0B24E7079400095D73 /* Collections.storyboard */,
-				DE77DB0D24E707A900095D73 /* Search.storyboard */,
-				DE77DB0F24E707B600095D73 /* Config.storyboard */,
-				DEF04A7B24EAFF5C003457F2 /* Review.storyboard */,
 				DEF04A7F24EB0CAE003457F2 /* AddCollection.storyboard */,
+				DEF04A7B24EAFF5C003457F2 /* Review.storyboard */,
+				DE77DB0D24E707A900095D73 /* Search.storyboard */,
 				DE913EFD24EC092800383CFC /* AddWord.storyboard */,
+				DE77DB0F24E707B600095D73 /* Config.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +267,7 @@
 			children = (
 				DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */,
 				DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */,
+				DE913F2224F1B25600383CFC /* AddWordTableViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			children = (
 				DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */,
 				DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */,
+				DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */,
 			);
 			path = XibController;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 				DE77DB1024E707B600095D73 /* Config.storyboard in Resources */,
 				DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */,
 				DE77DB0A24E7068800095D73 /* TabBar.storyboard in Resources */,
+				DE913F2424F1B25600383CFC /* AddWordTableViewCell.xib in Resources */,
 				DE913EFE24EC092800383CFC /* AddWord.storyboard in Resources */,
 				DE913F0424EC4F5800383CFC /* DefinitionTableViewCell.xib in Resources */,
 				DEF04A7524EACA2C003457F2 /* SF-Pro-Text-Medium.otf in Resources */,
@@ -448,6 +455,7 @@
 				DE913F0824ED5EE700383CFC /* Card.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
 				DE913F1924EEA71300383CFC /* Definition.swift in Sources */,
+				DE913F2324F1B25600383CFC /* AddWordTableViewCell.swift in Sources */,
 				DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */,
 				DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */,
 				DE913F1B24EEA72400383CFC /* Answer.swift in Sources */,

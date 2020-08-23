@@ -8,7 +8,8 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITextFieldDelegate {
+class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDelegate {
+    
 
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var card: UIView!
@@ -23,15 +24,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-         * Put a Search Image at the Search Text Fiel.
-        let imageView = UIImageView()
-        let image = UIImage(systemName: "magnifyingglass")
-        imageView.tintColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0)
-        imageView.image = image;
-        searchTextField.rightView = imageView
-        searchTextField.rightViewMode = .always
-         */
+        
+//        //Put a Search Image at the Search Text Fiel.
+//        let imageView = UIImageView()
+//        let image = UIImage(systemName: "magnifyingglass")
+//        imageView.tintColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0)
+//        imageView.image = image;
+//        searchTextField.rightView = imageView
+//        searchTextField.rightViewMode = .always
         
         // search field style.
         searchTextField.layer.cornerRadius = 10
@@ -72,6 +72,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.repository.reload()
         self.card.isHidden = true
         self.searchTextField.text = ""
         self.deactivateButtonSave()
@@ -101,6 +102,38 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is AddWordViewController {
+            let vc = segue.destination as? AddWordViewController
+            vc?.addWordDelegate = self
+            vc?.wordToSave = self.searchTextField.text
+        }
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+//        let storyboard = UIStoryboard(name: "AddWord", bundle: nil)
+//        let addWord = storyboard.instantiateViewController(withIdentifier: "AddWordViewController") as! AddWordViewController
+//        addWord.addWordDelegate = self
+//        //let navBar = UINavigationController(rootViewController: addWord)
+//        // Shows up the Selection Screen.
+//        self.navigationController?.pushViewController(addWord, animated: true)
+//        //self.navigationController?.present(addWord, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "addWordSegue", sender: self)
+    }
+    
+    func save(collectionId: Int?, collectionName: String?, word: String) {
+        let card = Card(content: word)
+        if let id = collectionId {
+            self.repository.collections[id].cards.append(card)
+            self.repository.save()
+        } else {
+            let collection = Collection(name: collectionName!, cards: [
+                card
+            ])
+            repository.create(collection: collection)
+        }
     }
     
     func acticateButtonSave() {
@@ -133,6 +166,5 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
     
 }

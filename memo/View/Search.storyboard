@@ -21,33 +21,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kgf-WU-I2w">
-                                <rect key="frame" x="20" y="150" width="374" height="50"/>
+                                <rect key="frame" x="20" y="150" width="374" height="45"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.21176470589999999" green="0.39607843139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" searchField="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="QEi-iM-2g5"/>
+                                    <constraint firstAttribute="height" constant="45" id="QEi-iM-2g5"/>
                                 </constraints>
                                 <color key="textColor" red="0.17254901959999999" green="0.20000000000000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="searchAction:" destination="8aJ-en-K3l" eventType="primaryActionTriggered" id="2jn-hy-fFQ"/>
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UK7-Z6-Wbn">
-                                <rect key="frame" x="20" y="219" width="374" height="504"/>
+                                <rect key="frame" x="20" y="214" width="374" height="509"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1W-bA-DEu">
-                                        <rect key="frame" x="167.5" y="15" width="39.5" height="33"/>
+                                        <rect key="frame" x="165.5" y="15" width="43" height="33"/>
                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="28"/>
                                         <color key="textColor" red="0.17254901959999999" green="0.20000000000000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/kär/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzZ-q4-rdo">
-                                        <rect key="frame" x="168.5" y="43" width="37" height="21"/>
+                                        <rect key="frame" x="168" y="43" width="38.5" height="21"/>
                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
                                         <color key="textColor" red="0.70980392160000005" green="0.71372549019999998" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                         </preferredSymbolConfiguration>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFE-Ie-sdJ">
-                                        <rect key="frame" x="10" y="190" width="354" height="304"/>
+                                        <rect key="frame" x="10" y="190" width="354" height="309"/>
                                         <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="sectionIndexBackgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableView>
@@ -104,6 +104,9 @@
                                 <state key="normal" title="SALVAR">
                                     <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="8aJ-en-K3l" eventType="touchUpInside" id="DdK-rh-AWl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -130,11 +133,22 @@
                         <outlet property="saveButton" destination="bSN-5f-xef" id="M79-T2-dyl"/>
                         <outlet property="searchTextField" destination="Kgf-WU-I2w" id="KTN-WQ-nkc"/>
                         <outlet property="tableView" destination="CFE-Ie-sdJ" id="gQI-vJ-aju"/>
+                        <segue destination="BiY-mA-xvb" kind="show" identifier="addWordSegue" id="JPE-bi-9Hn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcT-Sy-b6L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="997.10144927536237" y="50.892857142857139"/>
+        </scene>
+        <!--AddWordViewController-->
+        <scene sceneID="aQF-fP-See">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddWordViewController" storyboardName="AddWord" referencedIdentifier="AddWordViewController" id="BiY-mA-xvb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NDE-Qq-W3M"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLW-Dh-stH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630" y="51"/>
         </scene>
         <!--Pesquisar-->
         <scene sceneID="esO-Ab-ODe">
