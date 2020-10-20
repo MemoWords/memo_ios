@@ -2,33 +2,39 @@
 //  memoTests.swift
 //  memoTests
 //
-//  Created by Elias Ferreira on 14/08/20.
+//  Created by Elias Ferreira on 23/08/20.
 //  Copyright © 2020 Academy IFCE. All rights reserved.
 //
 
 import XCTest
+
 @testable import memo
 
-class MemoTests: XCTestCase {
+class HelperTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_helper_today_todaysDateWithNoTime() {
+        //When
+        let output = Helper.today()
+        
+        //Then
+        XCTAssertEqual(output, "23-08-2020")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_helper_isToday_toBeEqualToTrue() {
+        let input = "23-08-2020"
+        
+        let output = Helper.isToday(dateString: input)
+        
+        XCTAssertEqual(output, true)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_helper_incrementDate_toBeEqualToTomorroyDate() {
+        let input1 = "23-08-2020"
+        let input2 = 1
+        
+        let output = Helper.incrementDate(data: input1, val: input2)
+        
+        XCTAssertEqual(output, "24-08-2020")
     }
 
 }

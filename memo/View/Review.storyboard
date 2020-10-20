@@ -122,7 +122,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="114.5" height="45"/>
                                         <color key="backgroundColor" red="0.99215686274509807" green="0.36862745098039218" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="18"/>
-                                        <state key="normal" title="ERREI">
+                                        <state key="normal" title="NÃO SEI">
                                             <color key="titleColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -185,16 +185,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7c2-MQ-qhq"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="KNG-r4-DSQ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="8Q9-L5-X4X">
-                            <button key="customView" hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="itL-qm-Aqi">
-                                <rect key="frame" x="370" y="11" width="24" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="plus" catalog="system"/>
-                            </button>
-                            <color key="tintColor" red="0.21176470589999999" green="0.39607843139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="KNG-r4-DSQ"/>
                     <connections>
                         <outlet property="buttonEasy" destination="LO8-GN-U8b" id="GRx-GI-aFC"/>
                         <outlet property="buttonHard" destination="jV8-0I-pYH" id="AUe-eD-YUT"/>
@@ -246,6 +237,5 @@
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="photo" catalog="system" width="128" height="93"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>

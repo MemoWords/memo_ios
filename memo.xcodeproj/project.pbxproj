@@ -11,7 +11,6 @@
 		DE77DAD924E6FE4D00095D73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77DAD824E6FE4D00095D73 /* SceneDelegate.swift */; };
 		DE77DAE024E6FE5000095D73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE77DADF24E6FE5000095D73 /* Assets.xcassets */; };
 		DE77DAE324E6FE5000095D73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE77DAE124E6FE5000095D73 /* LaunchScreen.storyboard */; };
-		DE77DAEE24E6FE5000095D73 /* memoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77DAED24E6FE5000095D73 /* memoTests.swift */; };
 		DE77DAF924E6FE5000095D73 /* memoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77DAF824E6FE5000095D73 /* memoUITests.swift */; };
 		DE77DB0A24E7068800095D73 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE77DB0924E7068800095D73 /* TabBar.storyboard */; };
 		DE77DB0C24E7079400095D73 /* Collections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE77DB0B24E7079400095D73 /* Collections.storyboard */; };
@@ -36,6 +35,9 @@
 		DE913F2324F1B25600383CFC /* AddWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */; };
 		DE913F2424F1B25600383CFC /* AddWordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE913F2224F1B25600383CFC /* AddWordTableViewCell.xib */; };
 		DE913F2724F2E11500383CFC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DE913F2624F2E11500383CFC /* .swiftlint.yml */; };
+		DE913F4024F3086900383CFC /* memoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F3F24F3086900383CFC /* memoTests.swift */; };
+		DE913F4824F31D1200383CFC /* ClassificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4724F31D1200383CFC /* ClassificateTests.swift */; };
+		DE913F4A24F321EB00383CFC /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4924F321EB00383CFC /* CardTests.swift */; };
 		DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */; };
 		DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
@@ -51,14 +53,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DE77DAEA24E6FE5000095D73 /* PBXContainerItemProxy */ = {
+		DE77DAF524E6FE5000095D73 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE77DACB24E6FE4D00095D73 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DE77DAD224E6FE4D00095D73;
 			remoteInfo = memo;
 		};
-		DE77DAF524E6FE5000095D73 /* PBXContainerItemProxy */ = {
+		DE913F4224F3086900383CFC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE77DACB24E6FE4D00095D73 /* Project object */;
 			proxyType = 1;
@@ -74,9 +76,6 @@
 		DE77DADF24E6FE5000095D73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE77DAE224E6FE5000095D73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE77DAE424E6FE5000095D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE77DAE924E6FE5000095D73 /* memoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = memoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE77DAED24E6FE5000095D73 /* memoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memoTests.swift; sourceTree = "<group>"; };
-		DE77DAEF24E6FE5000095D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE77DAF424E6FE5000095D73 /* memoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = memoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE77DAF824E6FE5000095D73 /* memoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memoUITests.swift; sourceTree = "<group>"; };
 		DE77DAFA24E6FE5000095D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +102,11 @@
 		DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordTableViewCell.swift; sourceTree = "<group>"; };
 		DE913F2224F1B25600383CFC /* AddWordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddWordTableViewCell.xib; sourceTree = "<group>"; };
 		DE913F2624F2E11500383CFC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		DE913F3D24F3086900383CFC /* memoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = memoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE913F3F24F3086900383CFC /* memoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memoTests.swift; sourceTree = "<group>"; };
+		DE913F4124F3086900383CFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE913F4724F31D1200383CFC /* ClassificateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificateTests.swift; sourceTree = "<group>"; };
+		DE913F4924F321EB00383CFC /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColecoesTableViewCell.swift; sourceTree = "<group>"; };
 		DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColecoesTableViewCell.xib; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -125,14 +129,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE77DAE624E6FE5000095D73 /* Frameworks */ = {
+		DE77DAF124E6FE5000095D73 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE77DAF124E6FE5000095D73 /* Frameworks */ = {
+		DE913F3A24F3086900383CFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -145,10 +149,10 @@
 		DE77DACA24E6FE4D00095D73 = {
 			isa = PBXGroup;
 			children = (
-				DE913F2624F2E11500383CFC /* .swiftlint.yml */,
 				DE77DAD524E6FE4D00095D73 /* memo */,
-				DE77DAEC24E6FE5000095D73 /* memoTests */,
+				DE913F2624F2E11500383CFC /* .swiftlint.yml */,
 				DE77DAF724E6FE5000095D73 /* memoUITests */,
+				DE913F3E24F3086900383CFC /* memoTests */,
 				DE77DAD424E6FE4D00095D73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -157,8 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				DE77DAD324E6FE4D00095D73 /* memo.app */,
-				DE77DAE924E6FE5000095D73 /* memoTests.xctest */,
 				DE77DAF424E6FE5000095D73 /* memoUITests.xctest */,
+				DE913F3D24F3086900383CFC /* memoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,15 +183,6 @@
 				DE77DAE424E6FE5000095D73 /* Info.plist */,
 			);
 			path = memo;
-			sourceTree = "<group>";
-		};
-		DE77DAEC24E6FE5000095D73 /* memoTests */ = {
-			isa = PBXGroup;
-			children = (
-				DE77DAED24E6FE5000095D73 /* memoTests.swift */,
-				DE77DAEF24E6FE5000095D73 /* Info.plist */,
-			);
-			path = memoTests;
 			sourceTree = "<group>";
 		};
 		DE77DAF724E6FE5000095D73 /* memoUITests */ = {
@@ -265,6 +260,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DE913F3E24F3086900383CFC /* memoTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE913F3F24F3086900383CFC /* memoTests.swift */,
+				DE913F4724F31D1200383CFC /* ClassificateTests.swift */,
+				DE913F4124F3086900383CFC /* Info.plist */,
+				DE913F4924F321EB00383CFC /* CardTests.swift */,
+			);
+			path = memoTests;
+			sourceTree = "<group>";
+		};
 		DEF04A6524EAB6C3003457F2 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,24 +334,6 @@
 			productReference = DE77DAD324E6FE4D00095D73 /* memo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DE77DAE824E6FE5000095D73 /* memoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE77DB0024E6FE5000095D73 /* Build configuration list for PBXNativeTarget "memoTests" */;
-			buildPhases = (
-				DE77DAE524E6FE5000095D73 /* Sources */,
-				DE77DAE624E6FE5000095D73 /* Frameworks */,
-				DE77DAE724E6FE5000095D73 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE77DAEB24E6FE5000095D73 /* PBXTargetDependency */,
-			);
-			name = memoTests;
-			productName = memoTests;
-			productReference = DE77DAE924E6FE5000095D73 /* memoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		DE77DAF324E6FE5000095D73 /* memoUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE77DB0324E6FE5000095D73 /* Build configuration list for PBXNativeTarget "memoUITests" */;
@@ -364,6 +352,24 @@
 			productReference = DE77DAF424E6FE5000095D73 /* memoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		DE913F3C24F3086900383CFC /* memoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE913F4424F3086900383CFC /* Build configuration list for PBXNativeTarget "memoTests" */;
+			buildPhases = (
+				DE913F3924F3086900383CFC /* Sources */,
+				DE913F3A24F3086900383CFC /* Frameworks */,
+				DE913F3B24F3086900383CFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE913F4324F3086900383CFC /* PBXTargetDependency */,
+			);
+			name = memoTests;
+			productName = memoTests;
+			productReference = DE913F3D24F3086900383CFC /* memoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -377,17 +383,17 @@
 					DE77DAD224E6FE4D00095D73 = {
 						CreatedOnToolsVersion = 11.6;
 					};
-					DE77DAE824E6FE5000095D73 = {
+					DE77DAF324E6FE5000095D73 = {
 						CreatedOnToolsVersion = 11.6;
 						TestTargetID = DE77DAD224E6FE4D00095D73;
 					};
-					DE77DAF324E6FE5000095D73 = {
+					DE913F3C24F3086900383CFC = {
 						CreatedOnToolsVersion = 11.6;
 						TestTargetID = DE77DAD224E6FE4D00095D73;
 					};
 				};
 			};
-			buildConfigurationList = DE77DACE24E6FE4D00095D73 /* Build configuration list for PBXProject "Memo" */;
+			buildConfigurationList = DE77DACE24E6FE4D00095D73 /* Build configuration list for PBXProject "memo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -401,8 +407,8 @@
 			projectRoot = "";
 			targets = (
 				DE77DAD224E6FE4D00095D73 /* memo */,
-				DE77DAE824E6FE5000095D73 /* memoTests */,
 				DE77DAF324E6FE5000095D73 /* memoUITests */,
+				DE913F3C24F3086900383CFC /* memoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -434,14 +440,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE77DAE724E6FE5000095D73 /* Resources */ = {
+		DE77DAF224E6FE5000095D73 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE77DAF224E6FE5000095D73 /* Resources */ = {
+		DE913F3B24F3086900383CFC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -498,14 +504,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE77DAE524E6FE5000095D73 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE77DAEE24E6FE5000095D73 /* memoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DE77DAF024E6FE5000095D73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -514,18 +512,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE913F3924F3086900383CFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE913F4A24F321EB00383CFC /* CardTests.swift in Sources */,
+				DE913F4824F31D1200383CFC /* ClassificateTests.swift in Sources */,
+				DE913F4024F3086900383CFC /* memoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DE77DAEB24E6FE5000095D73 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE77DAD224E6FE4D00095D73 /* memo */;
-			targetProxy = DE77DAEA24E6FE5000095D73 /* PBXContainerItemProxy */;
-		};
 		DE77DAF624E6FE5000095D73 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DE77DAD224E6FE4D00095D73 /* memo */;
 			targetProxy = DE77DAF524E6FE5000095D73 /* PBXContainerItemProxy */;
+		};
+		DE913F4324F3086900383CFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE77DAD224E6FE4D00095D73 /* memo */;
+			targetProxy = DE913F4224F3086900383CFC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -691,50 +699,6 @@
 			};
 			name = Release;
 		};
-		DE77DB0124E6FE5000095D73 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VV557L4WY2;
-				INFOPLIST_FILE = memoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.academyifce.memoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/memo.app/memo";
-			};
-			name = Debug;
-		};
-		DE77DB0224E6FE5000095D73 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VV557L4WY2;
-				INFOPLIST_FILE = memoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.academyifce.memoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/memo.app/memo";
-			};
-			name = Release;
-		};
 		DE77DB0424E6FE5000095D73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -775,10 +739,50 @@
 			};
 			name = Release;
 		};
+		DE913F4524F3086900383CFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VV557L4WY2;
+				INFOPLIST_FILE = memoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.academyifce.memoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/memo.app/memo";
+			};
+			name = Debug;
+		};
+		DE913F4624F3086900383CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VV557L4WY2;
+				INFOPLIST_FILE = memoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.academyifce.memoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/memo.app/memo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DE77DACE24E6FE4D00095D73 /* Build configuration list for PBXProject "Memo" */ = {
+		DE77DACE24E6FE4D00095D73 /* Build configuration list for PBXProject "memo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DE77DAFB24E6FE5000095D73 /* Debug */,
@@ -796,20 +800,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DE77DB0024E6FE5000095D73 /* Build configuration list for PBXNativeTarget "memoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE77DB0124E6FE5000095D73 /* Debug */,
-				DE77DB0224E6FE5000095D73 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DE77DB0324E6FE5000095D73 /* Build configuration list for PBXNativeTarget "memoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DE77DB0424E6FE5000095D73 /* Debug */,
 				DE77DB0524E6FE5000095D73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE913F4424F3086900383CFC /* Build configuration list for PBXNativeTarget "memoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE913F4524F3086900383CFC /* Debug */,
+				DE913F4624F3086900383CFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
