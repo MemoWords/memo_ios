@@ -90,17 +90,7 @@ class ReviewViewController: UIViewController {
     }
     
     func showButtonShowAnswer(value: Bool) {
-        // Remove
-        if value {
-            buttonEasy.layer.backgroundColor = UIColor(red: 54/255, green: 101/255, blue: 227/255, alpha: 1.0).cgColor
-            buttonEasy.setTitleColor(UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1.0), for: .normal)
-        } else {
-            buttonEasy.layer.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 245/255, alpha: 1.0).cgColor
-            buttonEasy.setTitleColor(UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0), for: .disabled)
-        }
-        buttonEasy.isEnabled = value
         buttonShow.isHidden = !value
-        // Add
         imageView.isHidden = value
         tableView.isHidden = value
     }
