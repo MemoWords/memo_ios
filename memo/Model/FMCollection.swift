@@ -8,13 +8,13 @@
 
 import Foundation
 
-class Collection: Codable {
+class FMCollection: Codable {
     // Properties
     var name: String
-    var cards: [Card]
+    var cards: [FMCard]
     
     //Initializer
-    init(name: String, cards: [Card]) {
+    init(name: String, cards: [FMCard]) {
         self.name = name
         self.cards = cards
     }

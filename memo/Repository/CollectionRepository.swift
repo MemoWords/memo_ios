@@ -10,7 +10,7 @@ import Foundation
 
 class CollectionRepository {
     // Variables
-    var collections = [Collection]()
+    var collections = [FMCollection]()
     let fileUrl = URL(fileURLWithPath: NSHomeDirectory()+"/Documents/cards.json")
     
     // Initializer
@@ -19,9 +19,9 @@ class CollectionRepository {
         if !FileManager.default.fileExists(atPath: fileUrl.path) {
             do {
                 let jsonData = try JSONEncoder().encode([
-                    Collection(
+                    FMCollection(
                         name: "Default",
-                        cards: [Card]()
+                        cards: [FMCard]()
                     )
                 ])
                 try jsonData.write(to: fileUrl)
@@ -35,12 +35,12 @@ class CollectionRepository {
     
     // Temporaly function to clear the file.
     func clear() {
-        self.collections = [Collection]()
+        self.collections = [FMCollection]()
         self.save()
     }
 
     // Function to create a new collection.
-    func create(collection: Collection) {
+    func create(collection: FMCollection) {
         self.collections.append(collection)
         self.save()
     }
@@ -59,7 +59,7 @@ class CollectionRepository {
     func reload() {
         do {
             let data = try Data(contentsOf: fileUrl)
-            self.collections = try JSONDecoder().decode([Collection].self, from: data)
+            self.collections = try JSONDecoder().decode([FMCollection].self, from: data)
         } catch {
             print(error.localizedDescription)
         }
@@ -85,7 +85,7 @@ class CollectionRepository {
                 //let nowString = dateFormatter.string(from: now)
 
                 let nextStudyDay = dateFormatter.date(from: card.nextStudyDay)
-                let now = dateFormatter.date(from: Helper.today())
+                let now = dateFormatter.date(from: DateHelper.today())
 
                 if nextStudyDay!.compare(now!) == .orderedAscending {
                     card.nextStudyDay = dateFormatter.string(from: now!)

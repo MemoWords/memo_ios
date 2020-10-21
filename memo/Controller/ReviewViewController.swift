@@ -27,8 +27,9 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var message: UIStackView!
     
     // Variables
+    let cardRepository = CDCardRepository()
+    var cards = [Card]()
     var index: Int?
-    let repository = CollectionRepository()
     var definitions = [Definition]()
     var count = 0
     var numOfCardsToStudy = 0
@@ -71,7 +72,7 @@ class ReviewViewController: UIViewController {
         imageView.layer.cornerRadius = imageView.frame.height / 2
         
         // Sets the title with the collection name.
-        self.title = self.repository.collections[self.index!].name
+        self.title = "Default"
         
         // Datasource and delegate.
         tableView.dataSource = self
@@ -79,7 +80,7 @@ class ReviewViewController: UIViewController {
         
         // Register the xib as a cell.
         tableView.register(UINib.init(nibName: "DefinitionTableViewCell", bundle: nil), forCellReuseIdentifier: "DefinitionCell")
-        
+        self.cards = cardRepository.fetchCards()
         self.numOfCardsToStudy = self.getNumOfCardsToStudy()
         self.show()
     }
@@ -97,7 +98,7 @@ class ReviewViewController: UIViewController {
     
     @IBAction func wrongButtonTapped(_ sender: Any) {
         // Wrong
-        self.update(val: 0)
+        //self.update(val: 0)
         self.count += 1
         self.showButtonShowAnswer(value: true)
         self.show()
@@ -106,7 +107,7 @@ class ReviewViewController: UIViewController {
     @IBAction func hardButtonTapped(_ sender: Any) {
         // Hard
         self.numOfCardsToStudy -= 1
-        self.update(val: 1)
+        //self.update(val: 1)
         self.count += 1
         self.showButtonShowAnswer(value: true)
         self.show()
@@ -115,7 +116,7 @@ class ReviewViewController: UIViewController {
     @IBAction func easyButtonTapped(_ sender: Any) {
         // Easy
         self.numOfCardsToStudy -= 1
-        self.update(val: 2)
+        //self.update(val: 2)
         self.count += 1
         self.showButtonShowAnswer(value: true)
         self.show()
@@ -124,12 +125,12 @@ class ReviewViewController: UIViewController {
     func show() {
         // Set all the data to screen.
         self.buttonsIsActive = false
-        labelTotal.text = String("Total: \(repository.collections[self.index!].cards.count)")
+        labelTotal.text = String("Total: \(self.cards.count)")
         labelStudy.text = String("Estudar: \(self.numOfCardsToStudy)")
         self.labelPronunciation.text = "/.../"
         self.labelTitle.text = "..."
         
-        if self.count >= repository.collections[self.index!].cards.count {
+        if self.count >= self.cards.count {
             if numOfCardsToStudy == 0 {
                 self.showMessage(value: true)
             } else {
@@ -137,11 +138,11 @@ class ReviewViewController: UIViewController {
                 self.show()
             }
         } else {
-            if Helper.isToday(dateString: repository.collections[self.index!].cards[self.count].nextStudyDay) {
+            if DateHelper.isToday(dateString: self.cards[self.count].nextStudyDay!) {
                 if !message.isHidden {
                     self.showMessage(value: false)
                 }
-                let title = repository.collections[self.index!].cards[self.count].content
+                let title = self.cards[self.count].content!
                 
                 self.setAnswerData(word: title)
             } else {
@@ -183,8 +184,8 @@ class ReviewViewController: UIViewController {
     
     func getNumOfCardsToStudy() -> Int {
         var num = 0
-        for card in repository.collections[self.index!].cards {
-            if Helper.isToday(dateString: card.nextStudyDay) {
+        for card in self.cards {
+            if DateHelper.isToday(dateString: card.nextStudyDay!) {
                 num += 1
             }
         }
@@ -193,21 +194,21 @@ class ReviewViewController: UIViewController {
     
     func update(val: Int) {
         
-        let days = Classification.classificate(
-            val: val,
-            lastDayIncremented: repository.collections[self.index!].cards[self.count].lastDaysIncremented
-        )
-
-        if days[0] != 0 { // veririca se há valores a serem atualizados
-            // Atualiza os valores no card.
-            repository.collections[self.index!].cards[self.count].nextStudyDay = Helper.incrementDate(
-                data: repository.collections[self.index!].cards[self.count].nextStudyDay,
-                val: days[0]
-            )
-            repository.collections[self.index!].cards[self.count].lastDaysIncremented = days[1]
-        }
-        // Solicita o salvamento da lista de cards no arquivo.
-        repository.save()
+//        let days = Classification.classificate(
+//            val: val,
+//            lastDayIncremented: self.cards[self.count].lastDaysIncremented!
+//        )
+//
+//        if days[0] != 0 { // veririca se há valores a serem atualizados
+//            // Atualiza os valores no card.
+//            repository.collections[self.index!].cards[self.count].nextStudyDay = Helper.incrementDate(
+//                data: repository.collections[self.index!].cards[self.count].nextStudyDay,
+//                val: days[0]
+//            )
+//            repository.collections[self.index!].cards[self.count].lastDaysIncremented = days[1]
+//        }
+//        // Solicita o salvamento da lista de cards no arquivo.
+//        repository.save()
     }
     
 }

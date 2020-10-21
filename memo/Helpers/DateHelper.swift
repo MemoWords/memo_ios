@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Helper {
+class DateHelper {
     // Return the actual date formated.
     static func today() -> String {
         let now = Date()

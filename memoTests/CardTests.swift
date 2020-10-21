@@ -12,7 +12,7 @@ import XCTest
 
 class CardTests: XCTestCase {
     func test_card_init_returnsACardWhitDefaultValues() {
-        let sut = Card(content: "test")
+        let sut = FMCard(content: "test")
         
         let output1 = sut.content
         let output2 = sut.nextStudyDay

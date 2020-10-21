@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Card: Codable {
+class FMCard: Codable {
     // Properties
     var content: String
     var nextStudyDay: String
@@ -17,7 +17,7 @@ class Card: Codable {
      //Initializer
     init(content: String) {
         self.content = content
-        self.nextStudyDay = Helper.today()
+        self.nextStudyDay = DateHelper.today()
         self.lastDaysIncremented = 1
     }
 }

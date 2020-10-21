@@ -19,7 +19,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
     @IBOutlet weak var labelPronunciation: UILabel!
     
     var definitions = [Definition]()
-    let repository = CollectionRepository()
+    let cardRepository = CDCardRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,14 +71,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.repository.reload()
         self.card.isHidden = true
         self.searchTextField.text = ""
-        self.deactivateButtonSave()
     }
     
     @IBAction func searchAction(_ sender: Any) {
-        
         AnswerRepository.search(
         word: self.searchTextField.text!,
         completion: { (answer) in
@@ -94,11 +91,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
                 self.definitions = answer.definitions
                 self.tableView.reloadData()
                 
-                if self.repository.searchWord(word: answer.word) {
-                    self.deactivateButtonSave()
-                } else {
-                    self.acticateButtonSave()
-                }
+                // verificar se o card ja existe.
             }
         })
     }
@@ -116,15 +109,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
     }
     
     func save(collectionId: Int?, collectionName: String?, word: String) {
-        let card = Card(content: word)
-        if let id = collectionId {
-            self.repository.collections[id].cards.append(card)
-            self.repository.save()
+        
+        if let _ = collectionId {
+            self.cardRepository.create(content: word)
         } else {
-            let collection = Collection(name: collectionName!, cards: [
-                card
-            ])
-            repository.create(collection: collection)
+//            let collection = FMCollection(name: collectionName!, cards: [
+//                card
+//            ])
+//            repository.create(collection: collection)
         }
     }
     
