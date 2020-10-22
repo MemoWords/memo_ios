@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE617B30253F60F4009FEE40 /* CDCardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B2F253F60F4009FEE40 /* CDCardRepository.swift */; };
+		DE617B30253F60F4009FEE40 /* CardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B2F253F60F4009FEE40 /* CardRepository.swift */; };
 		DE617B36253F668C009FEE40 /* memo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE617B34253F668C009FEE40 /* memo.xcdatamodeld */; };
 		DE617B8125406210009FEE40 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B7D25406210009FEE40 /* Card+CoreDataClass.swift */; };
-		DE617B8225406210009FEE40 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B7E25406210009FEE40 /* Card+CoreDataProperties.swift */; };
 		DE617B8325406210009FEE40 /* Collection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B7F25406210009FEE40 /* Collection+CoreDataClass.swift */; };
-		DE617B8425406210009FEE40 /* Collection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B8025406210009FEE40 /* Collection+CoreDataProperties.swift */; };
-		DE617B8F254065FA009FEE40 /* CDCollectionRepositry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B8E254065FA009FEE40 /* CDCollectionRepositry.swift */; };
+		DE617B8F254065FA009FEE40 /* CollectionRepositry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B8E254065FA009FEE40 /* CollectionRepositry.swift */; };
 		DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77DAD624E6FE4D00095D73 /* AppDelegate.swift */; };
 		DE77DAD924E6FE4D00095D73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77DAD824E6FE4D00095D73 /* SceneDelegate.swift */; };
 		DE77DAE024E6FE5000095D73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE77DADF24E6FE5000095D73 /* Assets.xcassets */; };
@@ -28,9 +26,7 @@
 		DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */; };
 		DE913F0424EC4F5800383CFC /* DefinitionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */; };
 		DE913F0624EC554C00383CFC /* SF-Pro-Text-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE913F0524EC554C00383CFC /* SF-Pro-Text-MediumItalic.otf */; };
-		DE913F0824ED5EE700383CFC /* FMCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0724ED5EE700383CFC /* FMCard.swift */; };
 		DE913F0B24ED5FF300383CFC /* Classification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0A24ED5FF300383CFC /* Classification.swift */; };
-		DE913F0E24ED61B400383CFC /* FMCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0D24ED61B400383CFC /* FMCollection.swift */; };
 		DE913F1224ED9E2800383CFC /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1124ED9E2800383CFC /* DateHelper.swift */; };
 		DE913F1524EDABE000383CFC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1424EDABE000383CFC /* Protocols.swift */; };
 		DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1624EEA6A500383CFC /* AnswerRepository.swift */; };
@@ -76,13 +72,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DE617B2F253F60F4009FEE40 /* CDCardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCardRepository.swift; sourceTree = "<group>"; };
+		DE617B2F253F60F4009FEE40 /* CardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRepository.swift; sourceTree = "<group>"; };
 		DE617B35253F668C009FEE40 /* memo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = memo.xcdatamodel; sourceTree = "<group>"; };
 		DE617B7D25406210009FEE40 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
-		DE617B7E25406210009FEE40 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DE617B7F25406210009FEE40 /* Collection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataClass.swift"; sourceTree = "<group>"; };
-		DE617B8025406210009FEE40 /* Collection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DE617B8E254065FA009FEE40 /* CDCollectionRepositry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCollectionRepositry.swift; sourceTree = "<group>"; };
+		DE617B8E254065FA009FEE40 /* CollectionRepositry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRepositry.swift; sourceTree = "<group>"; };
 		DE77DAD324E6FE4D00095D73 /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE77DAD624E6FE4D00095D73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE77DAD824E6FE4D00095D73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,9 +95,7 @@
 		DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewCell.swift; sourceTree = "<group>"; };
 		DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefinitionTableViewCell.xib; sourceTree = "<group>"; };
 		DE913F0524EC554C00383CFC /* SF-Pro-Text-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-MediumItalic.otf"; sourceTree = "<group>"; };
-		DE913F0724ED5EE700383CFC /* FMCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMCard.swift; sourceTree = "<group>"; };
 		DE913F0A24ED5FF300383CFC /* Classification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classification.swift; sourceTree = "<group>"; };
-		DE913F0D24ED61B400383CFC /* FMCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMCollection.swift; sourceTree = "<group>"; };
 		DE913F1124ED9E2800383CFC /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		DE913F1424EDABE000383CFC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DE913F1624EEA6A500383CFC /* AnswerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRepository.swift; sourceTree = "<group>"; };
@@ -250,11 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				DE617B7D25406210009FEE40 /* Card+CoreDataClass.swift */,
-				DE617B7E25406210009FEE40 /* Card+CoreDataProperties.swift */,
 				DE617B7F25406210009FEE40 /* Collection+CoreDataClass.swift */,
-				DE617B8025406210009FEE40 /* Collection+CoreDataProperties.swift */,
-				DE913F0724ED5EE700383CFC /* FMCard.swift */,
-				DE913F0D24ED61B400383CFC /* FMCollection.swift */,
 				DE913F1824EEA71300383CFC /* Definition.swift */,
 				DE913F1A24EEA72400383CFC /* Answer.swift */,
 			);
@@ -333,8 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				DE913F1624EEA6A500383CFC /* AnswerRepository.swift */,
-				DE617B8E254065FA009FEE40 /* CDCollectionRepositry.swift */,
-				DE617B2F253F60F4009FEE40 /* CDCardRepository.swift */,
+				DE617B8E254065FA009FEE40 /* CollectionRepositry.swift */,
+				DE617B2F253F60F4009FEE40 /* CardRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -508,8 +496,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */,
-				DE617B8425406210009FEE40 /* Collection+CoreDataProperties.swift in Sources */,
-				DE913F0824ED5EE700383CFC /* FMCard.swift in Sources */,
 				DE617B8125406210009FEE40 /* Card+CoreDataClass.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
 				DE913F1924EEA71300383CFC /* Definition.swift in Sources */,
@@ -523,15 +509,13 @@
 				DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */,
 				DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */,
 				DE77DAD924E6FE4D00095D73 /* SceneDelegate.swift in Sources */,
-				DE617B30253F60F4009FEE40 /* CDCardRepository.swift in Sources */,
+				DE617B30253F60F4009FEE40 /* CardRepository.swift in Sources */,
 				DE913F1D24EEF3DA00383CFC /* SearchViewController.swift in Sources */,
 				DE913F1524EDABE000383CFC /* Protocols.swift in Sources */,
-				DE913F0E24ED61B400383CFC /* FMCollection.swift in Sources */,
 				DE913F1224ED9E2800383CFC /* DateHelper.swift in Sources */,
 				DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */,
-				DE617B8225406210009FEE40 /* Card+CoreDataProperties.swift in Sources */,
 				DE913F0B24ED5FF300383CFC /* Classification.swift in Sources */,
-				DE617B8F254065FA009FEE40 /* CDCollectionRepositry.swift in Sources */,
+				DE617B8F254065FA009FEE40 /* CollectionRepositry.swift in Sources */,
 				DE617B36253F668C009FEE40 /* memo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

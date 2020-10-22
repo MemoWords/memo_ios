@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CDCollectionRepository {
+class CollectionRepository {
     let context: NSManagedObjectContext
     var collections: [Collection]?
     
@@ -24,6 +24,7 @@ class CDCollectionRepository {
         }
     }
     
+    // Function to create a collection.
     func create(name: String) -> Collection {
         let collection = Collection(context: self.context)
         collection.name = name
@@ -31,6 +32,7 @@ class CDCollectionRepository {
         return collection
     }
     
+    // Functin to tetch all collectins.
     func fetchAll() -> [Collection] {
         self.collections = try! context.fetch(Collection.fetchRequest())
         return self.collections!

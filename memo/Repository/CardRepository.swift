@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-class CDCardRepository {
+class CardRepository {
     let context: NSManagedObjectContext
-    let collectionRepository = CDCollectionRepository()
+    let collectionRepository = CollectionRepository()
     var cards: [Card]?
     
     init() {
@@ -44,7 +44,7 @@ class CDCardRepository {
         self.save()
     }
     
-    // Function to fetch cards.
+    // Function to fetch all cards.
     func fetchCards() -> [Card] {
         do {
             self.cards = try self.context.fetch(Card.fetchRequest())
@@ -69,6 +69,7 @@ class CDCardRepository {
 //        return self.cards
 //    }
     
+    // function to verify if a card exists.
     func exists(word: String) -> Bool {
         do {
             let request = Card.fetchRequest() as NSFetchRequest<Card>
@@ -86,6 +87,7 @@ class CDCardRepository {
         }
     }
     
+    // function to update all cards.
     func updateCardsToStudy() {
         let cards = self.fetchCards()
         
@@ -106,6 +108,7 @@ class CDCardRepository {
         self.save()
     }
     
+    // function to save the context.
     func save() {
         do {
             try self.context.save()
@@ -113,7 +116,5 @@ class CDCardRepository {
             print(error)
         }
     }
-    
-// TODO: Function to update a card.
 
 }

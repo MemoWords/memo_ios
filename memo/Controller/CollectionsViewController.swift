@@ -13,7 +13,7 @@ class CollectionsViewController: UIViewController {
     // Table View
     @IBOutlet weak var tableView: UITableView!
     // Properties
-    let collectionRepository = CDCollectionRepository()
+    let collectionRepository = CollectionRepository()
     var id: Int?
     var collections = [Collection]() {
         didSet {
@@ -40,11 +40,23 @@ class CollectionsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+    
         //repository.reload()
         //repository.updateCardsToStudy()
         self.collections = collectionRepository.fetchAll()
         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        self.printAll()
+    }
+    
+    // Temporaly function to see all the data.
+    func printAll() {
+        for collection in collections {
+            let cards = collection.cards?.allObjects as? [Card]
+            print("* ", collection.name!)
+            for card in cards! {
+                print(" - \(card.content!) | \(card.nextStudyDay!) | \(card.lastDaysIncremented)")
+            }
+        }
     }
     
 }

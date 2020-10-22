@@ -14,7 +14,7 @@ class AddWordViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    let repository = CDCollectionRepository()
+    let repository = CollectionRepository()
     var collections = [Collection]() {
         didSet {
             self.tableView.reloadData()
@@ -67,14 +67,18 @@ extension AddWordViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionNameCell", for: indexPath) as! AddWordTableViewCell
         cell.selectionStyle = .none
-        cell.configure(name:self.collections[indexPath.row].name!)
+        cell.configure(name: self.collections[indexPath.row].name!)
         
         return cell
     }
     
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        addWordDelegate?.save(collection: self.collections[indexPath.row], collectionName: self.collections[indexPath.row].name!, word: self.wordToSave!)
+        addWordDelegate?.save(
+            collection: self.collections[indexPath.row],
+            collectionName: self.collections[indexPath.row].name!,
+            word: self.wordToSave!
+        )
         self.navigationController?.popToRootViewController(animated: true)
     }
 }

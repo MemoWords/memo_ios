@@ -27,8 +27,8 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var message: UIStackView!
     
     // Variables
-    let cardRepository = CDCardRepository()
-    let collectionRepository = CDCollectionRepository()
+    let cardRepository = CardRepository()
+    let collectionRepository = CollectionRepository()
     var cards = [Card]()
     var collection: Collection?
     var definitions = [Definition]()
@@ -100,7 +100,7 @@ class ReviewViewController: UIViewController {
     
     @IBAction func wrongButtonTapped(_ sender: Any) {
         // Wrong
-        //self.update(val: 0)
+        self.update(val: 0)
         self.count += 1
         self.showButtonShowAnswer(value: true)
         self.show()
@@ -109,7 +109,7 @@ class ReviewViewController: UIViewController {
     @IBAction func hardButtonTapped(_ sender: Any) {
         // Hard
         self.numOfCardsToStudy -= 1
-        //self.update(val: 1)
+        self.update(val: 1)
         self.count += 1
         self.showButtonShowAnswer(value: true)
         self.show()
@@ -118,7 +118,7 @@ class ReviewViewController: UIViewController {
     @IBAction func easyButtonTapped(_ sender: Any) {
         // Easy
         self.numOfCardsToStudy -= 1
-        //self.update(val: 2)
+        self.update(val: 2)
         self.count += 1
         self.showButtonShowAnswer(value: true)
         self.show()
@@ -196,21 +196,26 @@ class ReviewViewController: UIViewController {
     
     func update(val: Int) {
         
-//        let days = Classification.classificate(
-//            val: val,
-//            lastDayIncremented: self.cards[self.count].lastDaysIncremented!
-//        )
-//
-//        if days[0] != 0 { // veririca se há valores a serem atualizados
-//            // Atualiza os valores no card.
-//            repository.collections[self.index!].cards[self.count].nextStudyDay = Helper.incrementDate(
-//                data: repository.collections[self.index!].cards[self.count].nextStudyDay,
-//                val: days[0]
-//            )
-//            repository.collections[self.index!].cards[self.count].lastDaysIncremented = days[1]
-//        }
-//        // Solicita o salvamento da lista de cards no arquivo.
-//        repository.save()
+        let days = Classification.classificate(val: val, lastDayIncremented: Int(self.cards[self.count].lastDaysIncremented))
+
+        if days[0] != 0 { // veririca se há valores a serem atualizados
+            // Atualiza os valores no card.
+            self.cards[self.count].nextStudyDay = DateHelper.incrementDate(
+                data: self.cards[self.count].nextStudyDay!,
+                val: days[0]
+            )
+            self.cards[self.count].lastDaysIncremented = Int64(days[1])
+        }
+        // Solicita o salvamento da lista de cards no arquivo.
+        self.cardRepository.save()
+        self.printAll()
+    }
+    
+    // Temporaly function to see all the data.
+    func printAll() {
+        for card in self.cards {
+            print(" - \(card.content!) | \(card.nextStudyDay!) | \(card.lastDaysIncremented)")
+        }
     }
     
 }

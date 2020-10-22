@@ -19,7 +19,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
     @IBOutlet weak var labelPronunciation: UILabel!
     
     var definitions = [Definition]()
-    let cardRepository = CDCardRepository()
+    let cardRepository = CardRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
