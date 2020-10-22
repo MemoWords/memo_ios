@@ -8,5 +8,5 @@
 
 import Foundation
 protocol SaveWordDelegate: class {
-    func save(collectionId: Int?, collectionName: String?, word: String)
+    func save(collection: Collection?, collectionName: String?, word: String)
 }

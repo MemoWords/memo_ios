@@ -27,8 +27,10 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var message: UIStackView!
     
     // Variables
-    var index: Int?
-    let repository = CollectionRepository()
+    let cardRepository = CardRepository()
+    let collectionRepository = CollectionRepository()
+    var cards = [Card]()
+    var collection: Collection?
     var definitions = [Definition]()
     var count = 0
     var numOfCardsToStudy = 0
@@ -43,43 +45,44 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // -------- Buttons Style -------
-        // Radius.
         let radius = CGFloat.init(8)
         buttonWrong.layer.cornerRadius = radius
         buttonHard.layer.cornerRadius = radius
         buttonEasy.layer.cornerRadius = radius
-        // Border.
         buttonHard.layer.borderWidth = 1.5
         buttonHard.layer.borderColor = UIColor(red: 54/255, green: 101/255, blue: 227/255, alpha: 1.0).cgColor
-        
         // -------- Card Style ----------
-        // Radius.
         card.layer.cornerRadius = 8
-        // Border.
         card.layer.borderWidth = 0.5
         card.layer.borderColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0).cgColor
-        // Shadow.
         card.layer.shadowColor = UIColor.black.cgColor
         card.layer.shadowOpacity = 0.1
         card.layer.shadowRadius = 6
         card.layer.shadowOffset = .init(width: 0, height: 3)
-        
         // -------- Image Style ---------
-        // Radius.
         imageView.layer.cornerRadius = imageView.frame.height / 2
         
         // Sets the title with the collection name.
-        self.title = self.repository.collections[self.index!].name
+        self.title = self.collection?.name
         
         // Datasource and delegate.
         tableView.dataSource = self
         tableView.delegate   = self
         
         // Register the xib as a cell.
-        tableView.register(UINib.init(nibName: "DefinitionTableViewCell", bundle: nil), forCellReuseIdentifier: "DefinitionCell")
+        tableView.register(
+            UINib.init(
+                nibName: "DefinitionTableViewCell",
+                bundle: nil
+            ),
+            forCellReuseIdentifier: "DefinitionCell"
+        )
         
+        // self.cards = (self.collection?.cards as? [Card])!
+        if let cards = self.collection?.cards {
+            self.cards = cards.allObjects as! [Card]
+        }
         self.numOfCardsToStudy = self.getNumOfCardsToStudy()
         self.show()
     }
@@ -124,12 +127,12 @@ class ReviewViewController: UIViewController {
     func show() {
         // Set all the data to screen.
         self.buttonsIsActive = false
-        labelTotal.text = String("Total: \(repository.collections[self.index!].cards.count)")
+        labelTotal.text = String("Total: \(self.cards.count)")
         labelStudy.text = String("Estudar: \(self.numOfCardsToStudy)")
         self.labelPronunciation.text = "/.../"
         self.labelTitle.text = "..."
         
-        if self.count >= repository.collections[self.index!].cards.count {
+        if self.count >= self.cards.count {
             if numOfCardsToStudy == 0 {
                 self.showMessage(value: true)
             } else {
@@ -137,11 +140,11 @@ class ReviewViewController: UIViewController {
                 self.show()
             }
         } else {
-            if Helper.isToday(dateString: repository.collections[self.index!].cards[self.count].nextStudyDay) {
+            if DateHelper.isToday(dateString: self.cards[self.count].nextStudyDay!) {
                 if !message.isHidden {
                     self.showMessage(value: false)
                 }
-                let title = repository.collections[self.index!].cards[self.count].content
+                let title = self.cards[self.count].content!
                 
                 self.setAnswerData(word: title)
             } else {
@@ -183,8 +186,8 @@ class ReviewViewController: UIViewController {
     
     func getNumOfCardsToStudy() -> Int {
         var num = 0
-        for card in repository.collections[self.index!].cards {
-            if Helper.isToday(dateString: card.nextStudyDay) {
+        for card in self.cards {
+            if DateHelper.isToday(dateString: card.nextStudyDay!) {
                 num += 1
             }
         }
@@ -193,21 +196,26 @@ class ReviewViewController: UIViewController {
     
     func update(val: Int) {
         
-        let days = Classification.classificate(
-            val: val,
-            lastDayIncremented: repository.collections[self.index!].cards[self.count].lastDaysIncremented
-        )
+        let days = Classification.classificate(val: val, lastDayIncremented: Int(self.cards[self.count].lastDaysIncremented))
 
         if days[0] != 0 { // veririca se há valores a serem atualizados
             // Atualiza os valores no card.
-            repository.collections[self.index!].cards[self.count].nextStudyDay = Helper.incrementDate(
-                data: repository.collections[self.index!].cards[self.count].nextStudyDay,
+            self.cards[self.count].nextStudyDay = DateHelper.incrementDate(
+                data: self.cards[self.count].nextStudyDay!,
                 val: days[0]
             )
-            repository.collections[self.index!].cards[self.count].lastDaysIncremented = days[1]
+            self.cards[self.count].lastDaysIncremented = Int64(days[1])
         }
         // Solicita o salvamento da lista de cards no arquivo.
-        repository.save()
+        self.cardRepository.save()
+        self.printAll()
+    }
+    
+    // Temporaly function to see all the data.
+    func printAll() {
+        for card in self.cards {
+            print(" - \(card.content!) | \(card.nextStudyDay!) | \(card.lastDaysIncremented)")
+        }
     }
     
 }

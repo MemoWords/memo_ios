@@ -19,7 +19,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
     @IBOutlet weak var labelPronunciation: UILabel!
     
     var definitions = [Definition]()
-    let repository = CollectionRepository()
+    let cardRepository = CardRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,14 +71,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.repository.reload()
         self.card.isHidden = true
         self.searchTextField.text = ""
-        self.deactivateButtonSave()
     }
     
     @IBAction func searchAction(_ sender: Any) {
-        
         AnswerRepository.search(
         word: self.searchTextField.text!,
         completion: { (answer) in
@@ -94,7 +91,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
                 self.definitions = answer.definitions
                 self.tableView.reloadData()
                 
-                if self.repository.searchWord(word: answer.word) {
+                // verificar se o card ja existe.
+                if self.cardRepository.exists(word: answer.word) {
                     self.deactivateButtonSave()
                 } else {
                     self.acticateButtonSave()
@@ -115,16 +113,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
         self.performSegue(withIdentifier: "addWordSegue", sender: self)
     }
     
-    func save(collectionId: Int?, collectionName: String?, word: String) {
-        let card = Card(content: word)
-        if let id = collectionId {
-            self.repository.collections[id].cards.append(card)
-            self.repository.save()
+    func save(collection: Collection?, collectionName: String?, word: String) {
+        if let col = collection {
+            self.cardRepository.create(collection: col, content: word)
         } else {
-            let collection = Collection(name: collectionName!, cards: [
-                card
-            ])
-            repository.create(collection: collection)
+            self.cardRepository.create(collectionName: collectionName!, content: word)
         }
     }
     

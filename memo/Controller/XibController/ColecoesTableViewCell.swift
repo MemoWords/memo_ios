@@ -42,14 +42,14 @@ class ColecoesTableViewCell: UITableViewCell {
     func configure(collection: Collection) {
         var study: Int = 0
         
-        for card in collection.cards {
-            if Helper.isToday(dateString: card.nextStudyDay) {
+        for card in collection.cards! {
+            if DateHelper.isToday(dateString: (card as! Card).nextStudyDay!) {
                 study += 1
             }
         }
         
         self.labelTitle.text = collection.name
-        self.labelTotal.text = String("Total: \(collection.cards.count)")
+        self.labelTotal.text = String("Total: \(collection.cards!.count)")
         self.labelStudy.text = String("Estudar: \(study)")
     }
     

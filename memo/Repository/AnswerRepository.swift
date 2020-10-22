@@ -23,7 +23,6 @@ class AnswerRepository {
             "Content-Type": "application/json",
             "Authorization": "Token \(token!)"
         ]
-        //request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
         // Create Session
         let session = URLSession(configuration: .default)
         

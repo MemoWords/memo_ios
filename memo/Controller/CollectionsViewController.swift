@@ -10,80 +10,75 @@ import UIKit
 
 class CollectionsViewController: UIViewController {
     
+    // Table View
     @IBOutlet weak var tableView: UITableView!
-    
-    let repository = CollectionRepository()
+    // Properties
+    let collectionRepository = CollectionRepository()
     var id: Int?
+    var collections = [Collection]() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+    
+// MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.overrideUserInterfaceStyle = .light
-        //FileManager.default.printContent(from: NSHomeDirectory(), recursivelly: true)
         // Set this class as data source and delegate of the table view.
         tableView.dataSource = self
         tableView.delegate   = self
-        
         // Register the xib file as a reusable cell of the table view.
-        tableView.register(UINib.init(nibName: "ColecoesTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionsCell")
-        
-//        //-----Fill Some--------
-//        repository.clear()
-//
-//        let coll1 = Collection(
-//            name: "Default",
-//            cards: []
-//        )
-//        let coll2 = Collection(
-//            name: "Verbos",
-//            cards: [
-//                Card(content: "love"),
-//                Card(content: "fall"),
-//                Card(content: "gain")
-//            ]
-//        )
-//        let coll3 = Collection(
-//            name: "Preposições",
-//            cards: [
-//                Card(content: "here"),
-//                Card(content: "there"),
-//                Card(content: "in"),
-//                Card(content: "out")
-//            ]
-//        )
-//
-//        repository.create(collection: coll1)
-//        repository.create(collection: coll2)
-//        repository.create(collection: coll3)
-//        //-----End--------------*/
-        
+        tableView.register(
+            UINib.init(
+                nibName: "ColecoesTableViewCell",
+                bundle: nil
+            ),
+            forCellReuseIdentifier: "CollectionsCell"
+        )
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        repository.reload()
-        repository.updateCardsToStudy()
-        self.tableView.reloadData()
+    
+        //repository.reload()
+        //repository.updateCardsToStudy()
+        self.collections = collectionRepository.fetchAll()
         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-        FileManager.default.printContent(from: NSHomeDirectory(), recursivelly: true)
+        self.printAll()
+    }
+    
+    // Temporaly function to see all the data.
+    func printAll() {
+        for collection in collections {
+            let cards = collection.cards?.allObjects as? [Card]
+            print("* ", collection.name!)
+            for card in cards! {
+                print(" - \(card.content!) | \(card.nextStudyDay!) | \(card.lastDaysIncremented)")
+            }
+        }
     }
     
 }
 
-// MARK: - Extensions
+// MARK: - Extension
 
 // Table view population.
 extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Number of rows.
-        repository.collections.count
+        self.collections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Cell with data.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionsCell", for: indexPath) as! ColecoesTableViewCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "CollectionsCell",
+            for: indexPath
+        ) as! ColecoesTableViewCell
         
         cell.selectionStyle = .none
-        cell.configure(collection: repository.collections[indexPath.row])
+        cell.configure(collection: self.collections[indexPath.row])
         
         return cell
     }
@@ -91,7 +86,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is ReviewViewController {
             let vcon = segue.destination as? ReviewViewController
-            vcon?.index = self.id
+            vcon?.collection = self.collections[self.id!]
         }
     }
     
@@ -99,7 +94,6 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.id = indexPath.row
         self.performSegue(withIdentifier: "ReviewSegue", sender: self)
-        print("row: \(indexPath.row)")
     }
     
 }
