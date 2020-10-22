@@ -10,8 +10,9 @@ import UIKit
 
 class CollectionsViewController: UIViewController {
     
+    // Table View
     @IBOutlet weak var tableView: UITableView!
-    
+    // Properties
     let collectionRepository = CDCollectionRepository()
     var id: Int?
     var collections = [Collection]() {
@@ -25,17 +26,21 @@ class CollectionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.overrideUserInterfaceStyle = .light
-        //FileManager.default.printContent(from: NSHomeDirectory(), recursivelly: true)
         // Set this class as data source and delegate of the table view.
         tableView.dataSource = self
         tableView.delegate   = self
-        
         // Register the xib file as a reusable cell of the table view.
-        tableView.register(UINib.init(nibName: "ColecoesTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionsCell")
-        
+        tableView.register(
+            UINib.init(
+                nibName: "ColecoesTableViewCell",
+                bundle: nil
+            ),
+            forCellReuseIdentifier: "CollectionsCell"
+        )
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         //repository.reload()
         //repository.updateCardsToStudy()
         self.collections = collectionRepository.fetchAll()
@@ -44,19 +49,21 @@ class CollectionsViewController: UIViewController {
     
 }
 
-// MARK: - Extensions
+// MARK: - Extension
 
 // Table view population.
 extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // Number of rows.
         self.collections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Cell with data.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionsCell", for: indexPath) as! ColecoesTableViewCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "CollectionsCell",
+            for: indexPath
+        ) as! ColecoesTableViewCell
         
         cell.selectionStyle = .none
         cell.configure(collection: self.collections[indexPath.row])
@@ -67,7 +74,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is ReviewViewController {
             let vcon = segue.destination as? ReviewViewController
-            vcon?.index = self.id
+            vcon?.collection = self.collections[self.id!]
         }
     }
     

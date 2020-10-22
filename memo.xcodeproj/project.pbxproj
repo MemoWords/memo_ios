@@ -31,7 +31,6 @@
 		DE913F0824ED5EE700383CFC /* FMCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0724ED5EE700383CFC /* FMCard.swift */; };
 		DE913F0B24ED5FF300383CFC /* Classification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0A24ED5FF300383CFC /* Classification.swift */; };
 		DE913F0E24ED61B400383CFC /* FMCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0D24ED61B400383CFC /* FMCollection.swift */; };
-		DE913F1024ED69EB00383CFC /* CollectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0F24ED69EB00383CFC /* CollectionRepository.swift */; };
 		DE913F1224ED9E2800383CFC /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1124ED9E2800383CFC /* DateHelper.swift */; };
 		DE913F1524EDABE000383CFC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1424EDABE000383CFC /* Protocols.swift */; };
 		DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1624EEA6A500383CFC /* AnswerRepository.swift */; };
@@ -105,7 +104,6 @@
 		DE913F0724ED5EE700383CFC /* FMCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMCard.swift; sourceTree = "<group>"; };
 		DE913F0A24ED5FF300383CFC /* Classification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classification.swift; sourceTree = "<group>"; };
 		DE913F0D24ED61B400383CFC /* FMCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMCollection.swift; sourceTree = "<group>"; };
-		DE913F0F24ED69EB00383CFC /* CollectionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRepository.swift; sourceTree = "<group>"; };
 		DE913F1124ED9E2800383CFC /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		DE913F1424EDABE000383CFC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DE913F1624EEA6A500383CFC /* AnswerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRepository.swift; sourceTree = "<group>"; };
@@ -192,9 +190,9 @@
 		DE77DAD524E6FE4D00095D73 /* memo */ = {
 			isa = PBXGroup;
 			children = (
-				DE617B932540BA96009FEE40 /* Protocols */,
-				DE913F1E24F1A13100383CFC /* Extensions */,
 				DEF04A6D24EAC9F1003457F2 /* Fonts */,
+				DE913F1E24F1A13100383CFC /* Extensions */,
+				DE617B932540BA96009FEE40 /* Protocols */,
 				DE913F0C24ED604A00383CFC /* Helpers */,
 				DE913F0924ED5F8000383CFC /* Algorithm */,
 				DE77DB0824E7065D00095D73 /* Model */,
@@ -240,8 +238,8 @@
 			children = (
 				DEF04A6A24EAB7C9003457F2 /* XibController */,
 				DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */,
-				DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */,
 				DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */,
+				DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */,
 				DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */,
 				DE913EFF24EC095200383CFC /* AddWordViewController.swift */,
 			);
@@ -335,9 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				DE913F1624EEA6A500383CFC /* AnswerRepository.swift */,
-				DE913F0F24ED69EB00383CFC /* CollectionRepository.swift */,
-				DE617B2F253F60F4009FEE40 /* CDCardRepository.swift */,
 				DE617B8E254065FA009FEE40 /* CDCollectionRepositry.swift */,
+				DE617B2F253F60F4009FEE40 /* CDCardRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -512,7 +509,6 @@
 			files = (
 				DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */,
 				DE617B8425406210009FEE40 /* Collection+CoreDataProperties.swift in Sources */,
-				DE913F1024ED69EB00383CFC /* CollectionRepository.swift in Sources */,
 				DE913F0824ED5EE700383CFC /* FMCard.swift in Sources */,
 				DE617B8125406210009FEE40 /* Card+CoreDataClass.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,

@@ -11,22 +11,29 @@ import CoreData
 
 class CDCollectionRepository {
     let context: NSManagedObjectContext
-    var collection: [Collection]?
+    var collections: [Collection]?
     
     init() {
         self.context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        self.collection = try! context.fetch(Collection.fetchRequest())
+        self.collections = try! context.fetch(Collection.fetchRequest())
         
-        if self.collection?.count == 0 {
+        if self.collections?.count == 0 {
             let collection = Collection(context: self.context)
-            collection.name = "default"
-            
+            collection.name = "Default"
             try! self.context.save()
         }
     }
     
-    func fetchAll() -> [Collection] {
-        self.collection = try! context.fetch(Collection.fetchRequest())
-        return self.collection!
+    func create(name: String) -> Collection {
+        let collection = Collection(context: self.context)
+        collection.name = name
+        try! self.context.save()
+        return collection
     }
+    
+    func fetchAll() -> [Collection] {
+        self.collections = try! context.fetch(Collection.fetchRequest())
+        return self.collections!
+    }
+
 }

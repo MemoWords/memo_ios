@@ -92,6 +92,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
                 self.tableView.reloadData()
                 
                 // verificar se o card ja existe.
+                if self.cardRepository.exists(word: answer.word) {
+                    self.deactivateButtonSave()
+                } else {
+                    self.acticateButtonSave()
+                }
             }
         })
     }
@@ -108,15 +113,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
         self.performSegue(withIdentifier: "addWordSegue", sender: self)
     }
     
-    func save(collectionId: Int?, collectionName: String?, word: String) {
-        
-        if let _ = collectionId {
-            self.cardRepository.create(content: word)
+    func save(collection: Collection?, collectionName: String?, word: String) {
+        if let col = collection {
+            self.cardRepository.create(collection: col, content: word)
         } else {
-//            let collection = FMCollection(name: collectionName!, cards: [
-//                card
-//            ])
-//            repository.create(collection: collection)
+            self.cardRepository.create(collectionName: collectionName!, content: word)
         }
     }
     

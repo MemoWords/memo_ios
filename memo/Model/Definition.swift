@@ -22,6 +22,6 @@ class Definition: Codable {
         self.definition = definition
         self.example    = example
         self.image_url  = image_url
-        self.emoji = emoji
+        self.emoji      = emoji
     }
 }

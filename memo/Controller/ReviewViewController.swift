@@ -28,8 +28,9 @@ class ReviewViewController: UIViewController {
     
     // Variables
     let cardRepository = CDCardRepository()
+    let collectionRepository = CDCollectionRepository()
     var cards = [Card]()
-    var index: Int?
+    var collection: Collection?
     var definitions = [Definition]()
     var count = 0
     var numOfCardsToStudy = 0
@@ -44,43 +45,44 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // -------- Buttons Style -------
-        // Radius.
         let radius = CGFloat.init(8)
         buttonWrong.layer.cornerRadius = radius
         buttonHard.layer.cornerRadius = radius
         buttonEasy.layer.cornerRadius = radius
-        // Border.
         buttonHard.layer.borderWidth = 1.5
         buttonHard.layer.borderColor = UIColor(red: 54/255, green: 101/255, blue: 227/255, alpha: 1.0).cgColor
-        
         // -------- Card Style ----------
-        // Radius.
         card.layer.cornerRadius = 8
-        // Border.
         card.layer.borderWidth = 0.5
         card.layer.borderColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0).cgColor
-        // Shadow.
         card.layer.shadowColor = UIColor.black.cgColor
         card.layer.shadowOpacity = 0.1
         card.layer.shadowRadius = 6
         card.layer.shadowOffset = .init(width: 0, height: 3)
-        
         // -------- Image Style ---------
-        // Radius.
         imageView.layer.cornerRadius = imageView.frame.height / 2
         
         // Sets the title with the collection name.
-        self.title = "Default"
+        self.title = self.collection?.name
         
         // Datasource and delegate.
         tableView.dataSource = self
         tableView.delegate   = self
         
         // Register the xib as a cell.
-        tableView.register(UINib.init(nibName: "DefinitionTableViewCell", bundle: nil), forCellReuseIdentifier: "DefinitionCell")
-        self.cards = cardRepository.fetchCards()
+        tableView.register(
+            UINib.init(
+                nibName: "DefinitionTableViewCell",
+                bundle: nil
+            ),
+            forCellReuseIdentifier: "DefinitionCell"
+        )
+        
+        // self.cards = (self.collection?.cards as? [Card])!
+        if let cards = self.collection?.cards {
+            self.cards = cards.allObjects as! [Card]
+        }
         self.numOfCardsToStudy = self.getNumOfCardsToStudy()
         self.show()
     }
