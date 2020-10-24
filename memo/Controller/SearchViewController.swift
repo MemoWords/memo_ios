@@ -20,6 +20,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
     
     var definitions = [Definition]()
     let cardRepository = CardRepository()
+    var wordToSave: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +89,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
                     self.labelPronunciation.text = "/.../"
                 }
                 self.labelTitle.text = answer.word
+                self.wordToSave = answer.word
                 self.definitions = answer.definitions
                 self.tableView.reloadData()
                 
@@ -105,7 +107,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
         if segue.destination is AddWordViewController {
             let vc = segue.destination as? AddWordViewController
             vc?.addWordDelegate = self
-            vc?.wordToSave = self.searchTextField.text
+            vc?.wordToSave = self.wordToSave!
         }
     }
     
