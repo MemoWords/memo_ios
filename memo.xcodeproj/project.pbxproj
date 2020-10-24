@@ -39,6 +39,7 @@
 		DE913F4024F3086900383CFC /* memoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F3F24F3086900383CFC /* memoTests.swift */; };
 		DE913F4824F31D1200383CFC /* ClassificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4724F31D1200383CFC /* ClassificateTests.swift */; };
 		DE913F4A24F321EB00383CFC /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4924F321EB00383CFC /* CardTests.swift */; };
+		DEC831C32544987500229AFF /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC831C22544987500229AFF /* Color+Extension.swift */; };
 		DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */; };
 		DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
@@ -109,6 +110,7 @@
 		DE913F4124F3086900383CFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE913F4724F31D1200383CFC /* ClassificateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificateTests.swift; sourceTree = "<group>"; };
 		DE913F4924F321EB00383CFC /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		DEC831C22544987500229AFF /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColecoesTableViewCell.swift; sourceTree = "<group>"; };
 		DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColecoesTableViewCell.xib; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				DEF04A6D24EAC9F1003457F2 /* Fonts */,
-				DE913F1E24F1A13100383CFC /* Extensions */,
+				DEC831C12544985200229AFF /* Extensions */,
 				DE617B932540BA96009FEE40 /* Protocols */,
 				DE913F0C24ED604A00383CFC /* Helpers */,
 				DE913F0924ED5F8000383CFC /* Algorithm */,
@@ -256,13 +258,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		DE913F1E24F1A13100383CFC /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		DE913F3E24F3086900383CFC /* memoTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +267,14 @@
 				DE913F4924F321EB00383CFC /* CardTests.swift */,
 			);
 			path = memoTests;
+			sourceTree = "<group>";
+		};
+		DEC831C12544985200229AFF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DEC831C22544987500229AFF /* Color+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DEE2C7AC2544720F0005992E /* Storyboards */ = {
@@ -509,6 +512,7 @@
 				DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */,
 				DE913F1B24EEA72400383CFC /* Answer.swift in Sources */,
 				DE617B8325406210009FEE40 /* Collection+CoreDataClass.swift in Sources */,
+				DEC831C32544987500229AFF /* Color+Extension.swift in Sources */,
 				DEF04A8224EB0CC0003457F2 /* AddCollectionViewController.swift in Sources */,
 				DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */,
 				DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */,
