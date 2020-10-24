@@ -8,33 +8,40 @@ import Foundation
  * se a classificação for 2, ele faz vc revisar daqui ao dobro de dias
    da última espera.
  */
+
+struct AlgorithmData {
+    var days: Int = 0
+    var lastIncrement: Int = 0
+}
+
 class Classification {
 
-    static func classificate(val: Int, lastDayIncremented: Int) -> [Int] {
-        var values = [0, 0]
-
+    static func classificate(val: Int, lastDayIncremented: Int) -> AlgorithmData {
+        var values = AlgorithmData()
+        
         switch val {
         case 1:
-            values[0] = 1
+            values.days = 1
+            
             if lastDayIncremented > 1 {
                 if (lastDayIncremented % 2) == 0 {
-                    values[1] = lastDayIncremented / 2
+                    values.lastIncrement = lastDayIncremented / 2
                 } else {
-                    values[1] = (lastDayIncremented + 1) / 2
+                    values.lastIncrement = (lastDayIncremented + 1) / 2
                 }
             } else {
-                values[1] = values[0]
+                values.lastIncrement = values.days
             }
     
             return values
         case 2:
-            values[0] = lastDayIncremented * 2
-            values[1] = values[0]
+            values.days = lastDayIncremented * 2
+            values.lastIncrement = values.days
 
             return values
         default:
-            values[0] = 0
-            values[1] = 0
+            values.days = 0
+            values.lastIncrement = 0
 
             return values
         }

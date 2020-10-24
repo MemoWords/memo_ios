@@ -196,15 +196,15 @@ class ReviewViewController: UIViewController {
     
     func update(val: Int) {
         
-        let days = Classification.classificate(val: val, lastDayIncremented: Int(self.cards[self.count].lastDaysIncremented))
+        let algorithmData = Classification.classificate(val: val, lastDayIncremented: Int(self.cards[self.count].lastDaysIncremented))
 
-        if days[0] != 0 { // veririca se há valores a serem atualizados
+        if algorithmData.days != 0 { // veririca se há valores a serem atualizados
             // Atualiza os valores no card.
             self.cards[self.count].nextStudyDay = DateHelper.incrementDate(
                 data: self.cards[self.count].nextStudyDay!,
-                val: days[0]
+                val: algorithmData.days
             )
-            self.cards[self.count].lastDaysIncremented = Int64(days[1])
+            self.cards[self.count].lastDaysIncremented = Int64(algorithmData.lastIncrement)
         }
         // Solicita o salvamento da lista de cards no arquivo.
         self.cardRepository.save()
