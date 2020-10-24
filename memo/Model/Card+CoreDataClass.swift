@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 public class Card: NSManagedObject {
-    
+    // Fetch function.
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Card> {
         return NSFetchRequest<Card>(entityName: "Card")
     }

@@ -8,16 +8,9 @@
 
 import Foundation
 
-class Answer: Codable {
-    //var status_code: Int
+// Struct to save the answer of a request to the API.
+struct Answer: Codable {
     var word: String
     var pronunciation: String?
     var definitions: [Definition]
-    
-    init(word: String, pronunciation: String, definitions: [Definition]) {
-        //self.status_code   = status_code
-        self.word          = word
-        self.pronunciation = pronunciation
-        self.definitions   = definitions
-    }
 }

@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDelegate {
+class SearchViewController: UIViewController {
+    
+    // MARK: - Properties.
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var card: UIView!
@@ -21,6 +23,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
     var definitions = [Definition]()
     let cardRepository = CardRepository()
     var wordToSave: String?
+    
+    // MARK: - Lifecycle.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,20 +42,16 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
         searchTextField.layer.borderWidth = 1
         searchTextField.layer.borderColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0).cgColor
         searchTextField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black.withAlphaComponent(0.30)])
-        // -------- Card Style ----------
-        // Radius.
+        // Card Style
         card.layer.cornerRadius = 8
-        // Border.
         card.layer.borderWidth = 0.5
         card.layer.borderColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0).cgColor
-        // Shadow.
         card.layer.shadowColor = UIColor.black.cgColor
         card.layer.shadowOpacity = 0.1
         card.layer.shadowRadius = 6
         card.layer.shadowOffset = .init(width: 0, height: 3)
-        // -------- Card Style ----------
+        
         saveButton.layer.cornerRadius = 10
-        // -------- Image Style ---------
         imageView.layer.cornerRadius = imageView.frame.height / 2
         
         // Datasource and delegate.
@@ -61,20 +61,21 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
         // Register the xib as a cell.
         tableView.register(UINib.init(nibName: "DefinitionTableViewCell", bundle: nil), forCellReuseIdentifier: "DefinitionCell")
         
-        searchTextField.delegate = self
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.card.isHidden = true
         self.searchTextField.text = ""
     }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    // MARK: - Actions.
     
     @IBAction func searchAction(_ sender: Any) {
         AnswerRepository.search(
@@ -103,23 +104,17 @@ class SearchViewController: UIViewController, UITextFieldDelegate, SaveWordDeleg
         })
     }
     
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "addWordSegue", sender: self)
+    }
+    
+    // MARK: - Functions.
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is AddWordViewController {
             let vc = segue.destination as? AddWordViewController
             vc?.addWordDelegate = self
             vc?.wordToSave = self.wordToSave!
-        }
-    }
-    
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "addWordSegue", sender: self)
-    }
-    
-    func save(collection: Collection?, collectionName: String?, word: String) {
-        if let col = collection {
-            self.cardRepository.create(collection: col, content: word)
-        } else {
-            self.cardRepository.create(collectionName: collectionName!, content: word)
         }
     }
     
@@ -152,5 +147,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
+}
+
+extension SearchViewController: SaveWordDelegate {
+    func save(collection: Collection?, collectionName: String?, word: String) {
+        if let col = collection {
+            self.cardRepository.create(collection: col, content: word)
+        } else {
+            self.cardRepository.create(collectionName: collectionName!, content: word)
+        }
+    }
 }

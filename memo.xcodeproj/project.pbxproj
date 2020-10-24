@@ -33,7 +33,6 @@
 		DE913F1924EEA71300383CFC /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1824EEA71300383CFC /* Definition.swift */; };
 		DE913F1B24EEA72400383CFC /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1A24EEA72400383CFC /* Answer.swift */; };
 		DE913F1D24EEF3DA00383CFC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */; };
-		DE913F2024F1A15400383CFC /* FileManegerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1F24F1A15400383CFC /* FileManegerExtension.swift */; };
 		DE913F2324F1B25600383CFC /* AddWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */; };
 		DE913F2424F1B25600383CFC /* AddWordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE913F2224F1B25600383CFC /* AddWordTableViewCell.xib */; };
 		DE913F2724F2E11500383CFC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DE913F2624F2E11500383CFC /* .swiftlint.yml */; };
@@ -102,7 +101,6 @@
 		DE913F1824EEA71300383CFC /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		DE913F1A24EEA72400383CFC /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		DE913F1F24F1A15400383CFC /* FileManegerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManegerExtension.swift; sourceTree = "<group>"; };
 		DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordTableViewCell.swift; sourceTree = "<group>"; };
 		DE913F2224F1B25600383CFC /* AddWordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddWordTableViewCell.xib; sourceTree = "<group>"; };
 		DE913F2624F2E11500383CFC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -213,14 +211,7 @@
 			children = (
 				DE77DADF24E6FE5000095D73 /* Assets.xcassets */,
 				DEF04A6524EAB6C3003457F2 /* Xibs */,
-				DE77DAE124E6FE5000095D73 /* LaunchScreen.storyboard */,
-				DE77DB0924E7068800095D73 /* TabBar.storyboard */,
-				DE77DB0B24E7079400095D73 /* Collections.storyboard */,
-				DEF04A7F24EB0CAE003457F2 /* AddCollection.storyboard */,
-				DEF04A7B24EAFF5C003457F2 /* Review.storyboard */,
-				DE77DB0D24E707A900095D73 /* Search.storyboard */,
-				DE913EFD24EC092800383CFC /* AddWord.storyboard */,
-				DE77DB0F24E707B600095D73 /* Config.storyboard */,
+				DEE2C7AC2544720F0005992E /* Storyboards */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,8 +223,8 @@
 				DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */,
 				DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */,
 				DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */,
-				DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */,
 				DE913EFF24EC095200383CFC /* AddWordViewController.swift */,
+				DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,7 +259,6 @@
 		DE913F1E24F1A13100383CFC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DE913F1F24F1A15400383CFC /* FileManegerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +272,21 @@
 				DE913F4924F321EB00383CFC /* CardTests.swift */,
 			);
 			path = memoTests;
+			sourceTree = "<group>";
+		};
+		DEE2C7AC2544720F0005992E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DE77DAE124E6FE5000095D73 /* LaunchScreen.storyboard */,
+				DE77DB0924E7068800095D73 /* TabBar.storyboard */,
+				DE77DB0B24E7079400095D73 /* Collections.storyboard */,
+				DEF04A7F24EB0CAE003457F2 /* AddCollection.storyboard */,
+				DEF04A7B24EAFF5C003457F2 /* Review.storyboard */,
+				DE77DB0D24E707A900095D73 /* Search.storyboard */,
+				DE913EFD24EC092800383CFC /* AddWord.storyboard */,
+				DE77DB0F24E707B600095D73 /* Config.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		DEF04A6524EAB6C3003457F2 /* Xibs */ = {
@@ -504,7 +509,6 @@
 				DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */,
 				DE913F1B24EEA72400383CFC /* Answer.swift in Sources */,
 				DE617B8325406210009FEE40 /* Collection+CoreDataClass.swift in Sources */,
-				DE913F2024F1A15400383CFC /* FileManegerExtension.swift in Sources */,
 				DEF04A8224EB0CC0003457F2 /* AddCollectionViewController.swift in Sources */,
 				DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */,
 				DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */,

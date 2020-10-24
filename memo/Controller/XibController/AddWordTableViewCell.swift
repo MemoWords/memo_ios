@@ -10,15 +10,17 @@ import UIKit
 
 class AddWordTableViewCell: UITableViewCell {
 
+    // Intens on screen.
     @IBOutlet weak var card: UIView!
     @IBOutlet weak var labelTitle: UILabel!
     
+    // Runs when the view is loaded.
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.card.layer.cornerRadius = 20
     }
     
+    // Configure the data to apear at the cell.
     func configure(name: String) {
         self.labelTitle.text = name
     }

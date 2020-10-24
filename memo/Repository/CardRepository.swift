@@ -10,15 +10,20 @@ import UIKit
 import CoreData
 
 class CardRepository {
+    
+    // Properties.
     let context: NSManagedObjectContext
     let collectionRepository = CollectionRepository()
     var cards: [Card]?
     
+    // Initializer.
     init() {
         self.context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     }
     
-    // Function to create a card.
+// MARK: - FUNCS.
+    
+    // Function to create a card with an existing collection.
     func create(collection: Collection, content: String) {
         let card = Card(context: self.context)
         card.collection = collection
@@ -54,20 +59,6 @@ class CardRepository {
         
         return self.cards!
     }
-    
-//    func getCardsWithCollection(name: String) -> [Card]? {
-//        do {
-//            let request = Card.fetchRequest() as NSFetchRequest<Card>
-//            let predicate = NSPredicate(format: "Card.collection == %@", name)
-//
-//            request.predicate = predicate
-//            self.cards = try context.fetch(request)
-//        } catch {
-//            print(error)
-//        }
-//
-//        return self.cards
-//    }
     
     // function to verify if a card exists.
     func exists(word: String) -> Bool {
