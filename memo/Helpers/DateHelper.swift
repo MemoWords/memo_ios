@@ -10,7 +10,7 @@ import Foundation
 
 class DateHelper {
     // Return the actual date formated.
-    static func today() -> String {
+    static var today: String {
         let now = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -21,12 +21,10 @@ class DateHelper {
     
     // Returns true if the fiven date is the actual date.
     static func isToday(dateString: String) -> Bool {
-        let now = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
-        let nowString = dateFormatter.string(from: now)
         let nextStudyDay = dateFormatter.date(from: dateString)
-        let nowSemHora = dateFormatter.date(from: nowString)
+        let nowSemHora = dateFormatter.date(from: DateHelper.today)
 
         if nextStudyDay!.compare(nowSemHora!) == .orderedSame {
             return true
@@ -39,14 +37,17 @@ class DateHelper {
     static func incrementDate(data: String, val: Int ) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
-
         var dataToChange = dateFormatter.date(from: data)
-        
         dataToChange!.addTimeInterval(TimeInterval(val * 86400))
-
         let dataToReturn = dateFormatter.string(from: dataToChange!)
 
         return dataToReturn
 
+    }
+    
+    static func dateFromString(date: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter.date(from: date)!
     }
 }

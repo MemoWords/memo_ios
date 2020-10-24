@@ -208,14 +208,6 @@ class ReviewViewController: UIViewController {
         }
         // Solicita o salvamento da lista de cards no arquivo.
         self.cardRepository.save()
-        self.printAll()
-    }
-    
-    // Temporaly function to see all the data.
-    func printAll() {
-        for card in self.cards {
-            print(" - \(card.content!) | \(card.nextStudyDay!) | \(card.lastDaysIncremented)")
-        }
     }
     
 }

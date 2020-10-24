@@ -50,6 +50,7 @@ class CollectionsViewController: UIViewController {
     
     // Temporaly function to see all the data.
     func printAll() {
+        print("*-----------------------------------------------------*")
         for collection in collections {
             let cards = collection.cards?.allObjects as? [Card]
             print("* ", collection.name!)
@@ -57,6 +58,7 @@ class CollectionsViewController: UIViewController {
                 print(" - \(card.content!) | \(card.nextStudyDay!) | \(card.lastDaysIncremented)")
             }
         }
+        print("*-----------------------------------------------------*")
     }
     
 }

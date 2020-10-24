@@ -24,7 +24,7 @@ class CardRepository {
         card.collection = collection
         
         card.content = content
-        card.nextStudyDay = DateHelper.today()
+        card.nextStudyDay = DateHelper.today
         card.lastDaysIncremented = 1
         
         self.save()
@@ -38,7 +38,7 @@ class CardRepository {
         card.collection = collection
         
         card.content = content
-        card.nextStudyDay = DateHelper.today()
+        card.nextStudyDay = DateHelper.today
         card.lastDaysIncremented = 1
         
         self.save()
@@ -91,17 +91,14 @@ class CardRepository {
     func updateCardsToStudy() {
         let cards = self.fetchCards()
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        
         for card in cards {
             //let nowString = dateFormatter.string(from: now)
 
-            let nextStudyDay = dateFormatter.date(from: card.nextStudyDay!)
-            let now = dateFormatter.date(from: DateHelper.today())
+            let nextStudyDay = DateHelper.dateFromString(date: card.nextStudyDay!)
+            let now = DateHelper.dateFromString(date: DateHelper.today)
 
-            if nextStudyDay!.compare(now!) == .orderedAscending {
-                card.nextStudyDay = dateFormatter.string(from: now!)
+            if nextStudyDay.compare(now) == .orderedAscending {
+                card.nextStudyDay = DateHelper.today
             }
         }
         
