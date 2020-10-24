@@ -10,6 +10,8 @@ import UIKit
 
 class AddWordViewController: UIViewController {
     
+    // MARK: - Properties.
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +24,8 @@ class AddWordViewController: UIViewController {
     }
     weak var addWordDelegate: SaveWordDelegate?
     var wordToSave: String?
+    
+    // MARK: - Lifecycle.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +47,8 @@ class AddWordViewController: UIViewController {
         tableView.register(UINib.init(nibName: "AddWordTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionNameCell")
         self.collections = repository.fetchAll()
     }
+    
+    // MARK: - Actions.
     
     @IBAction func calcelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

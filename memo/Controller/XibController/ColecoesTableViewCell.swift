@@ -20,11 +20,9 @@ class ColecoesTableViewCell: UITableViewCell {
     // Runs when the view is loaded.
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // rounded corners of the layer.
+        // Style.
         mainFrame.layer.cornerRadius = 20
         background.layer.cornerRadius = 20
-        // Shadow configs of the main frame.
         mainFrame.layer.shadowColor = UIColor.black.cgColor
         mainFrame.layer.shadowOpacity = 0.35
         mainFrame.layer.shadowRadius = 4

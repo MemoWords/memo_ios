@@ -10,6 +10,8 @@ import UIKit
 
 class ReviewViewController: UIViewController {
 
+    // MARK: - Properties.
+    
     // UI Elements
     @IBOutlet weak var buttonWrong: UIButton!
     @IBOutlet weak var buttonHard: UIButton!
@@ -25,7 +27,6 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var labelTotal: UILabel!
     @IBOutlet weak var separator: UIView!
     @IBOutlet weak var message: UIStackView!
-    
     // Variables
     let cardRepository = CardRepository()
     let collectionRepository = CollectionRepository()
@@ -43,16 +44,18 @@ class ReviewViewController: UIViewController {
         }
     }
     
+    // MARK: - Lifecycle.
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // -------- Buttons Style -------
+        // Buttons Style.
         let radius = CGFloat.init(8)
         buttonWrong.layer.cornerRadius = radius
         buttonHard.layer.cornerRadius = radius
         buttonEasy.layer.cornerRadius = radius
         buttonHard.layer.borderWidth = 1.5
         buttonHard.layer.borderColor = UIColor(red: 54/255, green: 101/255, blue: 227/255, alpha: 1.0).cgColor
-        // -------- Card Style ----------
+        // Card Style.
         card.layer.cornerRadius = 8
         card.layer.borderWidth = 0.5
         card.layer.borderColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0).cgColor
@@ -60,7 +63,7 @@ class ReviewViewController: UIViewController {
         card.layer.shadowOpacity = 0.1
         card.layer.shadowRadius = 6
         card.layer.shadowOffset = .init(width: 0, height: 3)
-        // -------- Image Style ---------
+        // Image Style.
         imageView.layer.cornerRadius = imageView.frame.height / 2
         
         // Sets the title with the collection name.
@@ -79,23 +82,18 @@ class ReviewViewController: UIViewController {
             forCellReuseIdentifier: "DefinitionCell"
         )
         
-        // self.cards = (self.collection?.cards as? [Card])!
         if let cards = self.collection?.cards {
             self.cards = cards.allObjects as! [Card]
         }
         self.numOfCardsToStudy = self.getNumOfCardsToStudy()
         self.show()
     }
+
+    // MARK: - Actions.
     
     @IBAction func showButtonTapped(_ sender: Any) {
         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         self.showButtonShowAnswer(value: false)
-    }
-    
-    func showButtonShowAnswer(value: Bool) {
-        buttonShow.isHidden = !value
-        imageView.isHidden = value
-        tableView.isHidden = value
     }
     
     @IBAction func wrongButtonTapped(_ sender: Any) {
@@ -122,6 +120,14 @@ class ReviewViewController: UIViewController {
         self.count += 1
         self.showButtonShowAnswer(value: true)
         self.show()
+    }
+    
+    // MARK: - Functions.
+    
+    func showButtonShowAnswer(value: Bool) {
+        buttonShow.isHidden = !value
+        imageView.isHidden = value
+        tableView.isHidden = value
     }
     
     func show() {
@@ -213,11 +219,13 @@ class ReviewViewController: UIViewController {
 }
 
 // MARK: - Extensions
+
 extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
+    // Number of cells.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.definitions.count
     }
-    
+    // Add the cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefinitionCell", for: indexPath) as! DefinitionTableViewCell
         

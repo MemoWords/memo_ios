@@ -10,9 +10,10 @@ import UIKit
 
 class CollectionsViewController: UIViewController {
     
-    // Table View
+    // MARK: - Properties.
+
     @IBOutlet weak var tableView: UITableView!
-    // Properties
+    
     let collectionRepository = CollectionRepository()
     var id: Int?
     var collections = [Collection]() {
@@ -21,7 +22,7 @@ class CollectionsViewController: UIViewController {
         }
     }
     
-// MARK: - Life Cycle
+    // MARK: - Lifecycle.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +41,21 @@ class CollectionsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-    
-        //repository.reload()
-        //repository.updateCardsToStudy()
         self.collections = collectionRepository.fetchAll()
         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-        self.printAll()
+        self.printAll() // Temporaly.
     }
     
-    // Temporaly function to see all the data.
-    func printAll() {
+    // MARK: - Funcs.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ReviewViewController {
+            let vcon = segue.destination as? ReviewViewController
+            vcon?.collection = self.collections[self.id!]
+        }
+    }
+    
+    func printAll() { // Temporaly function to see all the data.
         print("*-----------------------------------------------------*")
         for collection in collections {
             let cards = collection.cards?.allObjects as? [Card]
@@ -68,10 +74,12 @@ class CollectionsViewController: UIViewController {
 // Table view population.
 extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource {
     
+    // Sets the number of cells on tableview.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.collections.count
     }
     
+    // Add the cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Cell with data.
         let cell = tableView.dequeueReusableCell(
@@ -84,14 +92,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
         
         return cell
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is ReviewViewController {
-            let vcon = segue.destination as? ReviewViewController
-            vcon?.collection = self.collections[self.id!]
-        }
-    }
-    
+
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.id = indexPath.row

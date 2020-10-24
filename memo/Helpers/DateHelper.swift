@@ -8,7 +8,9 @@
 
 import Foundation
 
+// Class to manipulate dates to conform to the app.
 class DateHelper {
+    
     // Return the actual date formated.
     static var today: String {
         let now = Date()
@@ -19,13 +21,12 @@ class DateHelper {
         return nowString
     }
     
-    // Returns true if the fiven date is the actual date.
+    // Returns true if the given date is the actual date.
     static func isToday(dateString: String) -> Bool {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let nextStudyDay = dateFormatter.date(from: dateString)
         let nowSemHora = dateFormatter.date(from: DateHelper.today)
-
         if nextStudyDay!.compare(nowSemHora!) == .orderedSame {
             return true
         }
@@ -42,9 +43,9 @@ class DateHelper {
         let dataToReturn = dateFormatter.string(from: dataToChange!)
 
         return dataToReturn
-
     }
     
+    // Return a Date formatted from the string given.
     static func dateFromString(date: String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"

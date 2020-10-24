@@ -9,13 +9,14 @@ import Foundation
    da última espera.
  */
 
+// Struct to return da data from the classificarion algorithm.
 struct AlgorithmData {
     var days: Int = 0
     var lastIncrement: Int = 0
 }
 
 class Classification {
-
+    // function to classificate the values.
     static func classificate(val: Int, lastDayIncremented: Int) -> AlgorithmData {
         var values = AlgorithmData()
         
