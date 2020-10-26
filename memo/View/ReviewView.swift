@@ -11,6 +11,8 @@ import UIKit
 class ReviewView: UIView {
     
     // MARK: - UIELEMENTS
+    
+    // Labels
     lazy var labelStudy: UILabel = {
         let label = UILabel()
         label.text = "Estudar: 0"
@@ -25,9 +27,10 @@ class ReviewView: UIView {
         return label
     }()
     
+    // Buttons
     lazy var wrongButton: UIButton = {
         let button = UIButton()
-        button.setTitle("NÂO SEI", for: .normal)
+        button.setTitle("NÃO SEI", for: .normal)
        // button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 30)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoRed
@@ -57,6 +60,7 @@ class ReviewView: UIView {
         return button
     }()
     
+    // Stacks
     lazy var buttonsStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -66,7 +70,16 @@ class ReviewView: UIView {
         return stack
     }()
     
+    lazy var labelsStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.distribution = .equalSpacing
+        stack.backgroundColor = .clear
+        return stack
+    }()
+    
     // MARK: - INIT
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .memoWhite
@@ -81,9 +94,9 @@ class ReviewView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        wrongButton.layer.cornerRadius = 10
-        hardButton.layer.cornerRadius = 10
-        easyButton.layer.cornerRadius = 10
+        wrongButton.layer.cornerRadius = 8
+        hardButton.layer.cornerRadius = 8
+        easyButton.layer.cornerRadius = 8
     }
     
     func setUpViews() {
@@ -91,12 +104,14 @@ class ReviewView: UIView {
         buttonsStack.addArrangedSubview(hardButton)
         buttonsStack.addArrangedSubview(easyButton)
         
+        labelsStack.addArrangedSubview(labelStudy)
+        labelsStack.addArrangedSubview(labelTotal)
+        
         self.addSubviews(
-            labelStudy,
-            labelTotal,
+            labelsStack,
             buttonsStack
         )
-        self.setUpLabels()
-        self.setUpStack()
+        self.setUpLabelsStack()
+        self.setUpButtonsStack()
     }
 }
