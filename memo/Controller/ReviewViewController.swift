@@ -11,23 +11,8 @@ import UIKit
 class ReviewViewController: UIViewController {
 
     // MARK: - Properties.
+    let reviewView = ReviewView()
     
-    // UI Elements
-    @IBOutlet weak var buttonWrong: UIButton!
-    @IBOutlet weak var buttonHard: UIButton!
-    @IBOutlet weak var buttonEasy: UIButton!
-    @IBOutlet weak var buttonsStack: UIStackView!
-    @IBOutlet weak var card: UIView!
-    @IBOutlet weak var buttonShow: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelPronunciation: UILabel!
-    @IBOutlet weak var labelStudy: UILabel!
-    @IBOutlet weak var labelTotal: UILabel!
-    @IBOutlet weak var separator: UIView!
-    @IBOutlet weak var message: UIStackView!
-    // Variables
     let cardRepository = CardRepository()
     let collectionRepository = CollectionRepository()
     var cards = [Card]()
@@ -38,9 +23,9 @@ class ReviewViewController: UIViewController {
     
     var buttonsIsActive: Bool? {
         didSet {
-            self.buttonEasy.isEnabled = self.buttonsIsActive!
-            self.buttonHard.isEnabled = self.buttonsIsActive!
-            self.buttonWrong.isEnabled = self.buttonsIsActive!
+//            self.buttonEasy.isEnabled = self.buttonsIsActive!
+//            self.buttonHard.isEnabled = self.buttonsIsActive!
+//            self.buttonWrong.isEnabled = self.buttonsIsActive!
         }
     }
     
@@ -48,39 +33,20 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Buttons Style.
-        let radius = CGFloat.init(8)
-        buttonWrong.layer.cornerRadius = radius
-        buttonHard.layer.cornerRadius = radius
-        buttonEasy.layer.cornerRadius = radius
-        buttonHard.layer.borderWidth = 1.5
-        buttonHard.layer.borderColor = UIColor(red: 54/255, green: 101/255, blue: 227/255, alpha: 1.0).cgColor
-        // Card Style.
-        card.layer.cornerRadius = 8
-        card.layer.borderWidth = 0.5
-        card.layer.borderColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0).cgColor
-        card.layer.shadowColor = UIColor.black.cgColor
-        card.layer.shadowOpacity = 0.1
-        card.layer.shadowRadius = 6
-        card.layer.shadowOffset = .init(width: 0, height: 3)
-        // Image Style.
-        imageView.layer.cornerRadius = imageView.frame.height / 2
-        
-        // Sets the title with the collection name.
-        self.title = self.collection?.name
+        self.configNavBar()
         
         // Datasource and delegate.
-        tableView.dataSource = self
-        tableView.delegate   = self
-        
-        // Register the xib as a cell.
-        tableView.register(
-            UINib.init(
-                nibName: "DefinitionTableViewCell",
-                bundle: nil
-            ),
-            forCellReuseIdentifier: "DefinitionCell"
-        )
+//        tableView.dataSource = self
+//        tableView.delegate   = self
+//
+//        // Register the xib as a cell.
+//        tableView.register(
+//            UINib.init(
+//                nibName: "DefinitionTableViewCell",
+//                bundle: nil
+//            ),
+//            forCellReuseIdentifier: "DefinitionCell"
+//        )
         
         if let cards = self.collection?.cards {
             self.cards = cards.allObjects as! [Card]
@@ -88,11 +54,16 @@ class ReviewViewController: UIViewController {
         self.numOfCardsToStudy = self.getNumOfCardsToStudy()
         self.show()
     }
+    
+    override func loadView() {
+        super.loadView()
+        self.view = reviewView
+    }
 
     // MARK: - Actions.
     
     @IBAction func showButtonTapped(_ sender: Any) {
-        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        //self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         self.showButtonShowAnswer(value: false)
     }
     
@@ -123,20 +94,24 @@ class ReviewViewController: UIViewController {
     }
     
     // MARK: - Functions.
+    func configNavBar() {
+        self.title = self.collection?.name
+        self.navigationItem.largeTitleDisplayMode = .never
+    }
     
     func showButtonShowAnswer(value: Bool) {
-        buttonShow.isHidden = !value
-        imageView.isHidden = value
-        tableView.isHidden = value
+//        buttonShow.isHidden = !value
+//        imageView.isHidden = value
+//        tableView.isHidden = value
     }
     
     func show() {
         // Set all the data to screen.
         self.buttonsIsActive = false
-        labelTotal.text = String("Total: \(self.cards.count)")
-        labelStudy.text = String("Estudar: \(self.numOfCardsToStudy)")
-        self.labelPronunciation.text = "/.../"
-        self.labelTitle.text = "..."
+//        labelTotal.text = String("Total: \(self.cards.count)")
+//        labelStudy.text = String("Estudar: \(self.numOfCardsToStudy)")
+//        self.labelPronunciation.text = "/.../"
+//        self.labelTitle.text = "..."
         
         if self.count >= self.cards.count {
             if numOfCardsToStudy == 0 {
@@ -147,12 +122,12 @@ class ReviewViewController: UIViewController {
             }
         } else {
             if DateHelper.isToday(dateString: self.cards[self.count].nextStudyDay!) {
-                if !message.isHidden {
-                    self.showMessage(value: false)
-                }
-                let title = self.cards[self.count].content!
-                
-                self.setAnswerData(word: title)
+//                if !message.isHidden {
+//                    self.showMessage(value: false)
+//                }
+//                let title = self.cards[self.count].content!
+//
+//                self.setAnswerData(word: title)
             } else {
                 self.count += 1
                 self.show()
@@ -165,29 +140,29 @@ class ReviewViewController: UIViewController {
         word: word,
         completion: { (answer) in
             DispatchQueue.main.async {
-                self.labelTitle.text = word
-                if let pronunciation = answer.pronunciation {
-                    self.labelPronunciation.text = "/\(pronunciation)/"
-                } else {
-                    self.labelPronunciation.text = "/.../"
-                }
-                self.buttonsIsActive = true
-                self.definitions = answer.definitions
-                self.tableView.reloadData()
+//                self.labelTitle.text = word
+//                if let pronunciation = answer.pronunciation {
+//                    self.labelPronunciation.text = "/\(pronunciation)/"
+//                } else {
+//                    self.labelPronunciation.text = "/.../"
+//                }
+//                self.buttonsIsActive = true
+//                self.definitions = answer.definitions
+//                self.tableView.reloadData()
             }
         })
     }
     
     func showMessage(value: Bool) {
-        labelTitle.isHidden = value
-        labelPronunciation.isHidden = value
-        imageView.isHidden = value
-        tableView.isHidden = value
-        buttonShow.isHidden = value
-        separator.isHidden = value
-        buttonsStack.isHidden = value
-        // Show
-        message.isHidden = !value
+//        labelTitle.isHidden = value
+//        labelPronunciation.isHidden = value
+//        imageView.isHidden = value
+//        tableView.isHidden = value
+//        buttonShow.isHidden = value
+//        separator.isHidden = value
+//        buttonsStack.isHidden = value
+//        // Show
+//        message.isHidden = !value
     }
     
     func getNumOfCardsToStudy() -> Int {
