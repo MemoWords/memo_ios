@@ -16,6 +16,7 @@ class ReviewView: UIView {
     lazy var labelStudy: UILabel = {
         let label = UILabel()
         label.text = "Estudar: 0"
+        label.font = UIFont(name: "SF Pro Text Medium", size: 18)
         label.textColor = .memoBlack
         return label
     }()
@@ -23,6 +24,7 @@ class ReviewView: UIView {
     lazy var labelTotal: UILabel = {
         let label = UILabel()
         label.text = "Total: 0"
+        label.font = UIFont(name: "SF Pro Text Medium", size: 18)
         label.textColor = .memoBlack
         return label
     }()
@@ -31,7 +33,7 @@ class ReviewView: UIView {
     lazy var wrongButton: UIButton = {
         let button = UIButton()
         button.setTitle("NÃO SEI", for: .normal)
-       // button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 30)
+        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoRed
         //button.addTarget(self, action: #selector(signin), for: .touchUpInside)
@@ -41,7 +43,7 @@ class ReviewView: UIView {
     lazy var hardButton: UIButton = {
         let button = UIButton()
         button.setTitle("DIFÍCIL", for: .normal)
-       // button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 30)
+        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
         button.setTitleColor(.memoSecondBlue, for: .normal)
         button.backgroundColor = .memoWhite
         button.layer.borderWidth = 1.0
@@ -53,7 +55,7 @@ class ReviewView: UIView {
     lazy var easyButton: UIButton = {
         let button = UIButton()
         button.setTitle("FÁCIL", for: .normal)
-       // button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 30)
+        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoSecondBlue
         //button.addTarget(self, action: #selector(signin), for: .touchUpInside)
