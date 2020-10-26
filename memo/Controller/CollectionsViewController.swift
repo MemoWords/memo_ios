@@ -54,7 +54,8 @@ class CollectionsViewController: UIViewController {
     func configureNavBar() {
         self.navigationItem.title = TabBarItems.collections.title
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .automatic
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.tintColor = .memoSecondBlue
         self.navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.memoBlack
         ]
@@ -90,8 +91,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
 
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Review", bundle: nil)
-        let reviewViewController = storyBoard.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
+        let reviewViewController = ReviewViewController()
         reviewViewController.collection = self.collections[indexPath.row]
         self.navigationController?.pushViewController(reviewViewController, animated: true)
     }
