@@ -22,10 +22,20 @@ extension ReviewView {
     func setUpLabelsStack() {
         labelsStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelsStack.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 17),
-            labelsStack.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -17),
+            labelsStack.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+            labelsStack.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
             labelsStack.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
             labelsStack.heightAnchor.constraint(equalToConstant: 20)
+        ])
+    }
+    
+    func setUpCard() {
+        card.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            card.topAnchor.constraint(equalTo: labelsStack.bottomAnchor, constant: 10),
+            card.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 17),
+            card.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -17),
+            card.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -17)
         ])
     }
 }

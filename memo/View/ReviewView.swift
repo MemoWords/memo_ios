@@ -61,6 +61,14 @@ class ReviewView: UIView {
     }()
     
     // Stacks
+    lazy var labelsStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.distribution = .equalSpacing
+        stack.backgroundColor = .clear
+        return stack
+    }()
+    
     lazy var buttonsStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -70,13 +78,8 @@ class ReviewView: UIView {
         return stack
     }()
     
-    lazy var labelsStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.distribution = .equalSpacing
-        stack.backgroundColor = .clear
-        return stack
-    }()
+    // Card
+    let card = CardView()
     
     // MARK: - INIT
     
@@ -109,9 +112,11 @@ class ReviewView: UIView {
         
         self.addSubviews(
             labelsStack,
+            card,
             buttonsStack
         )
         self.setUpLabelsStack()
+        self.setUpCard()
         self.setUpButtonsStack()
     }
 }
