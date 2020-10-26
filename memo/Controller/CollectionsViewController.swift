@@ -12,13 +12,12 @@ class CollectionsViewController: UIViewController {
     
     // MARK: - Properties.
 
-    @IBOutlet weak var tableView: UITableView!
-    
+    let collectionsView = CollectionsView()
     let collectionRepository = CollectionRepository()
-    var id: Int?
+    
     var collections = [Collection]() {
         didSet {
-            self.tableView.reloadData()
+            collectionsView.tableView.reloadData()
         }
     }
     
@@ -26,12 +25,12 @@ class CollectionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.overrideUserInterfaceStyle = .light
-        // Set this class as data source and delegate of the table view.
-        tableView.dataSource = self
-        tableView.delegate   = self
-        // Register the xib file as a reusable cell of the table view.
-        tableView.register(
+        self.configureNavBar()
+        
+        collectionsView.tableView.dataSource = self
+        collectionsView.tableView.delegate   = self
+        
+        collectionsView.tableView.register(
             UINib.init(
                 nibName: "ColecoesTableViewCell",
                 bundle: nil
@@ -42,29 +41,26 @@ class CollectionsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.collections = collectionRepository.fetchAll()
-        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-        self.printAll() // Temporaly.
+        collectionsView.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+    }
+    
+    override func loadView() {
+        super.loadView()
+        self.view = collectionsView
     }
     
     // MARK: - Funcs.
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is ReviewViewController {
-            let vcon = segue.destination as? ReviewViewController
-            vcon?.collection = self.collections[self.id!]
-        }
-    }
-    
-    func printAll() { // Temporaly function to see all the data.
-        print("*-----------------------------------------------------*")
-        for collection in collections {
-            let cards = collection.cards?.allObjects as? [Card]
-            print("* ", collection.name!)
-            for card in cards! {
-                print(" - \(card.content!) | \(card.nextStudyDay!) | \(card.lastDaysIncremented)")
-            }
-        }
-        print("*-----------------------------------------------------*")
+    func configureNavBar() {
+        self.navigationItem.title = TabBarItems.collections.title
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .automatic
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.memoBlack
+        ]
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.memoBlack
+        ]
     }
     
 }
@@ -81,7 +77,6 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     
     // Add the cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Cell with data.
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "CollectionsCell",
             for: indexPath
@@ -95,8 +90,10 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
 
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.id = indexPath.row
-        self.performSegue(withIdentifier: "ReviewSegue", sender: self)
+        let storyBoard = UIStoryboard(name: "Review", bundle: nil)
+        let reviewViewController = storyBoard.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
+        reviewViewController.collection = self.collections[indexPath.row]
+        self.navigationController?.pushViewController(reviewViewController, animated: true)
     }
     
 }

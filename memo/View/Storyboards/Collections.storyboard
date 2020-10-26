@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1cm-RJ-It7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1cm-RJ-It7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +16,7 @@
         <!--Coleções-->
         <scene sceneID="Vdv-rs-8jI">
             <objects>
-                <viewController id="IPO-wY-I7Q" customClass="CollectionsViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IPO-wY-I7Q" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ek2-SF-E5y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,6 +27,7 @@
                                 <color key="sectionIndexBackgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="vid-VT-icD"/>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vid-VT-icD" firstAttribute="trailing" secondItem="8hR-NO-U1d" secondAttribute="trailing" id="DF2-f0-xYg"/>
@@ -33,7 +35,6 @@
                             <constraint firstItem="8hR-NO-U1d" firstAttribute="top" secondItem="vid-VT-icD" secondAttribute="top" id="ngU-Vl-ddw"/>
                             <constraint firstItem="8hR-NO-U1d" firstAttribute="leading" secondItem="vid-VT-icD" secondAttribute="leading" id="yUc-Bi-1cY"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="vid-VT-icD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Coleções" id="dRE-7x-n5B">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="CDp-ae-h9Q">
@@ -84,7 +85,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Sy6-6H-qSI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -107,7 +108,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folder" catalog="system" width="128" height="95"/>
+        <image name="folder" catalog="system" width="128" height="97"/>
         <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>

@@ -27,7 +27,7 @@
 		<string>SF-Pro-Text-Medium.otf</string>
 		<string>SF-Pro-Text-MediumItalic.otf</string>
 		<string>SF-Pro-Text-Regular.otf</string>
-		<string>SF-Pro.oft</string>
+		<string>SFPro.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
