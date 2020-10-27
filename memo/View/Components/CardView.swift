@@ -9,12 +9,57 @@
 import UIKit
 
 class CardView: UIView {
+    
     // MARK: - UIELEMENTS
+    
+    // Labels
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "car"
+        label.font = UIFont(name: "SF Pro Text Medium", size: 32)
         label.textColor = .memoBlack
         return label
+    }()
+    
+    lazy var pronunciationLabel: UILabel = {
+        let label = UILabel()
+        label.text = "/kär/"
+        label.font = UIFont(name: "SF Pro Text Medium", size: 21)
+        label.textColor = .memoDarkGray
+        return label
+    }()
+    
+    // Separator
+    lazy var separator: UIView = {
+        let view = UIView()
+        view.backgroundColor = .memoDarkGray
+        return view
+    }()
+    
+    // Image.
+    lazy var img: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "car"))
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    // TableView
+    let tableView = CardTableView(frame: .zero, style: .plain)
+    
+    // Button Show Answer.
+    lazy var showAnswerButton: UIButton = {
+        let mediumConfig = UIImage.SymbolConfiguration(pointSize: 16, weight: .bold, scale: .medium)
+        let image = UIImage(systemName: "chevron.down", withConfiguration: mediumConfig)
+        let button = UIButton()
+        button.setTitle("MOSTRAR RESPOSTA", for: .normal)
+        button.titleLabel?.font = UIFont(name: "SF Pro Text Bold", size: 16)
+        button.setTitleColor(.memoSecondBlue, for: .normal)
+        button.backgroundColor = .clear
+        button.setImage(image, for: .normal)
+        button.semanticContentAttribute = .forceRightToLeft
+        button.tintColor = .memoSecondBlue
+        //button.addTarget(self, action: #selector(signin), for: .touchUpInside)
+        return button
     }()
     
     // MARK: - INIT
@@ -39,25 +84,23 @@ class CardView: UIView {
         self.layer.shadowOpacity = 0.1
         self.layer.shadowRadius = 6
         self.layer.shadowOffset = .init(width: 0, height: 3)
+        img.layer.cornerRadius = img.frame.height / 2
     }
     
     func setUpViews() {
         self.addSubviews(
-            titleLabel
+            titleLabel,
+            pronunciationLabel,
+            separator,
+            img,
+            tableView,
+            showAnswerButton
         )
         
-        self.setUpLabels()
-    }
-}
-
-// MARK: - CONSTRAINTS
-
-extension CardView {
-    func setUpLabels() {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
-        ])
+        self.configureLabels()
+        self.configureSeparator()
+        self.configureImg()
+        self.configureTableView()
+        self.configureShowAnswerButton()
     }
 }

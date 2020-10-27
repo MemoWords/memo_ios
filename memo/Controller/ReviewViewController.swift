@@ -21,11 +21,11 @@ class ReviewViewController: UIViewController {
     var count = 0
     var numOfCardsToStudy = 0
     
-    var buttonsIsActive: Bool? {
+    var isContentHidden: Bool? {
         didSet {
-//            self.buttonEasy.isEnabled = self.buttonsIsActive!
-//            self.buttonHard.isEnabled = self.buttonsIsActive!
-//            self.buttonWrong.isEnabled = self.buttonsIsActive!
+            reviewView.card.img.isHidden = isContentHidden!
+            reviewView.card.tableView.isHidden = isContentHidden!
+            reviewView.card.showAnswerButton.isHidden = !isContentHidden!
         }
     }
     
@@ -36,22 +36,23 @@ class ReviewViewController: UIViewController {
         self.configNavBar()
         
         // Datasource and delegate.
-//        tableView.dataSource = self
-//        tableView.delegate   = self
-//
-//        // Register the xib as a cell.
-//        tableView.register(
-//            UINib.init(
-//                nibName: "DefinitionTableViewCell",
-//                bundle: nil
-//            ),
-//            forCellReuseIdentifier: "DefinitionCell"
-//        )
+        reviewView.card.tableView.dataSource = self
+        reviewView.card.tableView.delegate  = self
+
+        // Register the xib as a cell.
+        reviewView.card.tableView.register(
+            UINib.init(
+                nibName: "DefinitionTableViewCell",
+                bundle: nil
+            ),
+            forCellReuseIdentifier: "DefinitionCell"
+        )
         
         if let cards = self.collection?.cards {
             self.cards = cards.allObjects as! [Card]
         }
         self.numOfCardsToStudy = self.getNumOfCardsToStudy()
+        self.isContentHidden = false
         self.show()
     }
     
@@ -107,7 +108,7 @@ class ReviewViewController: UIViewController {
     
     func show() {
         // Set all the data to screen.
-        self.buttonsIsActive = false
+        //self.buttonsIsActive = false
 //        labelTotal.text = String("Total: \(self.cards.count)")
 //        labelStudy.text = String("Estudar: \(self.numOfCardsToStudy)")
 //        self.labelPronunciation.text = "/.../"
@@ -198,13 +199,13 @@ class ReviewViewController: UIViewController {
 extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
     // Number of cells.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.definitions.count
+        return 5
     }
     // Add the cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefinitionCell", for: indexPath) as! DefinitionTableViewCell
         
-        cell.configure(definition: self.definitions[indexPath.row])
+        //cell.configure(definition: self.definitions[indexPath.row])
         
         return cell
     }
