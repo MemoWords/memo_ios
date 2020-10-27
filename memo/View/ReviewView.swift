@@ -80,8 +80,9 @@ class ReviewView: UIView {
         return stack
     }()
     
-    // Card
+    // Cards
     let card = CardView()
+    let cardMessage = CardMessageView()
     
     // MARK: - INIT
     
@@ -105,6 +106,7 @@ class ReviewView: UIView {
     }
     
     func setUpViews() {
+        card.isHidden = true // temporaly
         buttonsStack.addArrangedSubview(wrongButton)
         buttonsStack.addArrangedSubview(hardButton)
         buttonsStack.addArrangedSubview(easyButton)
@@ -115,10 +117,12 @@ class ReviewView: UIView {
         self.addSubviews(
             labelsStack,
             card,
+            cardMessage,
             buttonsStack
         )
         self.setUpLabelsStack()
         self.setUpCard()
+        self.setUpCardMessage()
         self.setUpButtonsStack()
     }
 }

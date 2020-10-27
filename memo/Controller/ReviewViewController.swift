@@ -14,12 +14,17 @@ class ReviewViewController: UIViewController {
     let reviewView = ReviewView()
     
     let cardRepository = CardRepository()
-    let collectionRepository = CollectionRepository()
     var cards = [Card]()
     var collection: Collection?
-    var definitions = [Definition]()
+    
     var count = 0
     var numOfCardsToStudy = 0
+    
+    var definitions = [Definition]() {
+        didSet {
+            reviewView.card.tableView.reloadData()
+        }
+    }
     
     var isContentHidden: Bool? {
         didSet {
@@ -35,11 +40,9 @@ class ReviewViewController: UIViewController {
         super.viewDidLoad()
         self.configNavBar()
         
-        // Datasource and delegate.
         reviewView.card.tableView.dataSource = self
         reviewView.card.tableView.delegate  = self
 
-        // Register the xib as a cell.
         reviewView.card.tableView.register(
             UINib.init(
                 nibName: "DefinitionTableViewCell",
@@ -51,6 +54,7 @@ class ReviewViewController: UIViewController {
         if let cards = self.collection?.cards {
             self.cards = cards.allObjects as! [Card]
         }
+        
         self.numOfCardsToStudy = self.getNumOfCardsToStudy()
         self.isContentHidden = false
         self.show()
@@ -63,16 +67,14 @@ class ReviewViewController: UIViewController {
 
     // MARK: - Actions.
     
-    @IBAction func showButtonTapped(_ sender: Any) {
+    func showButtonTapped() {
         //self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-        self.showButtonShowAnswer(value: false)
     }
     
     @IBAction func wrongButtonTapped(_ sender: Any) {
         // Wrong
         self.update(val: 0)
         self.count += 1
-        self.showButtonShowAnswer(value: true)
         self.show()
     }
     
@@ -81,7 +83,7 @@ class ReviewViewController: UIViewController {
         self.numOfCardsToStudy -= 1
         self.update(val: 1)
         self.count += 1
-        self.showButtonShowAnswer(value: true)
+        //self.showButtonShowAnswer(value: true)
         self.show()
     }
     
@@ -90,7 +92,7 @@ class ReviewViewController: UIViewController {
         self.numOfCardsToStudy -= 1
         self.update(val: 2)
         self.count += 1
-        self.showButtonShowAnswer(value: true)
+        //self.showButtonShowAnswer(value: true)
         self.show()
     }
     
@@ -98,12 +100,6 @@ class ReviewViewController: UIViewController {
     func configNavBar() {
         self.title = self.collection?.name
         self.navigationItem.largeTitleDisplayMode = .never
-    }
-    
-    func showButtonShowAnswer(value: Bool) {
-//        buttonShow.isHidden = !value
-//        imageView.isHidden = value
-//        tableView.isHidden = value
     }
     
     func show() {
@@ -149,7 +145,6 @@ class ReviewViewController: UIViewController {
 //                }
 //                self.buttonsIsActive = true
 //                self.definitions = answer.definitions
-//                self.tableView.reloadData()
             }
         })
     }

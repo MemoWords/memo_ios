@@ -38,6 +38,7 @@
 		DE8E828325477F3B0067899B /* SFProTextMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827E25477F3B0067899B /* SFProTextMedium.otf */; };
 		DE8E829425478A610067899B /* CardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E829325478A610067899B /* CardTableView.swift */; };
 		DE8E829C2547991B0067899B /* CardView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E829B2547991B0067899B /* CardView+Extension.swift */; };
+		DE8E82A12547A1AB0067899B /* CardMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E82A02547A1AB0067899B /* CardMessageView.swift */; };
 		DE913EFE24EC092800383CFC /* AddWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE913EFD24EC092800383CFC /* AddWord.storyboard */; };
 		DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913EFF24EC095200383CFC /* AddWordViewController.swift */; };
 		DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */; };
@@ -118,6 +119,7 @@
 		DE8E827E25477F3B0067899B /* SFProTextMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextMedium.otf; sourceTree = "<group>"; };
 		DE8E829325478A610067899B /* CardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableView.swift; sourceTree = "<group>"; };
 		DE8E829B2547991B0067899B /* CardView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Extension.swift"; sourceTree = "<group>"; };
+		DE8E82A02547A1AB0067899B /* CardMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMessageView.swift; sourceTree = "<group>"; };
 		DE913EFD24EC092800383CFC /* AddWord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddWord.storyboard; sourceTree = "<group>"; };
 		DE913EFF24EC095200383CFC /* AddWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
 		DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewCell.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				DE4428DE2547025700A8657C /* CollectionsTableView.swift */,
 				DE8E829325478A610067899B /* CardTableView.swift */,
 				DE44291325476B6600A8657C /* CardView.swift */,
+				DE8E82A02547A1AB0067899B /* CardMessageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				DE4428F22547238200A8657C /* ConfigViewController.swift in Sources */,
 				DE4428DF2547025700A8657C /* CollectionsTableView.swift in Sources */,
 				DE4429052547470400A8657C /* ReviewView.swift in Sources */,
+				DE8E82A12547A1AB0067899B /* CardMessageView.swift in Sources */,
 				DE4428F72547410800A8657C /* TabBar+Title.swift in Sources */,
 				DE913F1224ED9E2800383CFC /* DateHelper.swift in Sources */,
 				DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */,
