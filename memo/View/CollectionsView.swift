@@ -12,14 +12,14 @@ class CollectionsView: UIView {
     
     // MARK: - PROPERTIES
     let tableView = CollectionsTableView(frame: .zero, style: .plain)
+    let bugView = UIView()
     
     // MARK: - INIT
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .memoWhite
-        self.addSubview(tableView)
+        self.addSubviews(bugView, tableView)
         self.setupTableView()
-        
     }
     
     required init?(coder: NSCoder) {

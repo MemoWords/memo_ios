@@ -36,7 +36,7 @@ class ReviewView: UIView {
         button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoRed
-        //button.addTarget(self, action: #selector(signin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(wrong), for: .touchUpInside)
         return button
     }()
     
@@ -48,7 +48,7 @@ class ReviewView: UIView {
         button.backgroundColor = .memoWhite
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.memoSecondBlue.cgColor
-        //button.addTarget(self, action: #selector(signin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(hard), for: .touchUpInside)
         return button
     }()
     
@@ -58,7 +58,7 @@ class ReviewView: UIView {
         button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoSecondBlue
-        //button.addTarget(self, action: #selector(signin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(easy), for: .touchUpInside)
         return button
     }()
     
@@ -80,8 +80,9 @@ class ReviewView: UIView {
         return stack
     }()
     
-    // Card
+    // Cards
     let card = CardView()
+    let cardMessage = CardMessageView()
     
     // MARK: - INIT
     
@@ -95,6 +96,20 @@ class ReviewView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - ACTIONS
+    
+    // Wrong Button Action
+    var wrongAction: (() -> Void)!
+    @objc func wrong(sender: UIButton!) { wrongAction() }
+    
+    // Hard Button Action
+    var hardAction: (() -> Void)!
+    @objc func hard(sender: UIButton!) { hardAction() }
+    
+    // Easy Button Action
+    var easyAction: (() -> Void)!
+    @objc func easy(sender: UIButton!) { easyAction() }
+    
     // MARK: - FUNCTIONS
     
     override func layoutSubviews() {
@@ -105,6 +120,8 @@ class ReviewView: UIView {
     }
     
     func setUpViews() {
+        cardMessage.isHidden = true
+        
         buttonsStack.addArrangedSubview(wrongButton)
         buttonsStack.addArrangedSubview(hardButton)
         buttonsStack.addArrangedSubview(easyButton)
@@ -115,10 +132,12 @@ class ReviewView: UIView {
         self.addSubviews(
             labelsStack,
             card,
+            cardMessage,
             buttonsStack
         )
         self.setUpLabelsStack()
         self.setUpCard()
+        self.setUpCardMessage()
         self.setUpButtonsStack()
     }
 }

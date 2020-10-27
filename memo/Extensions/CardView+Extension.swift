@@ -47,8 +47,8 @@ extension CardView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 20),
-            tableView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            tableView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
+            tableView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
+            tableView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20)
         ])
     }

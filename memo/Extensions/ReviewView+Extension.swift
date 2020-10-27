@@ -38,4 +38,14 @@ extension ReviewView {
             card.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -17)
         ])
     }
+    
+    func setUpCardMessage() {
+        cardMessage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            cardMessage.topAnchor.constraint(equalTo: labelsStack.bottomAnchor, constant: 10),
+            cardMessage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 17),
+            cardMessage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -17),
+            cardMessage.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -17)
+        ])
+    }
 }
