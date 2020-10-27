@@ -9,6 +9,7 @@
 import UIKit
 
 class SearchView: UIView {
+    
     // MARK: - UIELEMENTS
     
     lazy var searchTextField: UITextField = {
@@ -26,6 +27,7 @@ class SearchView: UIView {
         textField.returnKeyType = .search
         textField.layer.borderColor = UIColor.memoDarkGray.cgColor
         textField.tintColor = .memoSecondBlue
+        textField.addTarget(self, action: #selector(search), for: .primaryActionTriggered)
         
         return textField
     }()
@@ -33,9 +35,9 @@ class SearchView: UIView {
     lazy var saveButton: UIButton = {
         let button = UIButton()
         button.setTitle("SALVAR", for: .normal)
-        button.backgroundColor = .memoSecondBlue
-        button.setTitleColor(.memoWhite, for: .normal)
         button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
+        button.addTarget(self, action: #selector(save), for: .touchUpInside)
+        
         return button
     }()
     
@@ -52,6 +54,19 @@ class SearchView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - ACTIONS
+    
+    // Save Button Action
+    var saveAction: (() -> Void)!
+    @objc func save(sender: UIButton!) { saveAction() }
+    
+    // Search Button Action
+    var searchAction: ((String) -> Void)!
+    @objc func search(sender: UIButton!) {
+        searchAction(searchTextField.text!)
+        searchTextField.endEditing(true)
     }
     
     // MARK: - FUNCTIONS
@@ -71,5 +86,16 @@ class SearchView: UIView {
         self.setupTextField()
         self.setupButton()
         self.setupCard()
+    }
+    
+    func activateButton(_ value: Bool) {
+        if value {
+            self.saveButton.backgroundColor = .memoSecondBlue
+            self.saveButton.setTitleColor(.memoWhite, for: .normal)
+        } else {
+            self.saveButton.backgroundColor = .memoLightGray
+            self.saveButton.setTitleColor(.memoDarkGray, for: .normal)
+        }
+        self.saveButton.isEnabled = value
     }
 }

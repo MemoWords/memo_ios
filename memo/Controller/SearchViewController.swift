@@ -14,7 +14,11 @@ class SearchViewController: UIViewController {
     
     let searchView = SearchView() // VIEW
     
-    var definitions = [Definition]()
+    var definitions = [Definition]() {
+        didSet {
+            self.searchView.card.tableView.reloadData()
+        }
+    }
     let cardRepository = CardRepository()
     var wordToSave: String?
     
@@ -23,58 +27,62 @@ class SearchViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = self.searchView
+        self.searchView.saveAction = self.saveButtonTapped
+        self.searchView.searchAction = self.searchButtonTapped
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpNavBar()
-        // Datasource and delegate.
-//        tableView.dataSource = self
-//        tableView.delegate   = self
         
-        // Register the xib as a cell.
-//        tableView.register(UINib.init(nibName: "DefinitionTableViewCell", bundle: nil), forCellReuseIdentifier: "DefinitionCell")
+        searchView.card.tableView.dataSource = self
+        searchView.card.tableView.delegate   = self
+        
+        searchView.card.tableView.register(UINib.init(nibName: "DefinitionTableViewCell", bundle: nil), forCellReuseIdentifier: "DefinitionCell")
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.card.isHidden = true
-//        self.searchTextField.text = ""
+        searchView.searchTextField.text = ""
+        searchView.card.isHidden = true
+        searchView.activateButton(false)
     }
     
     // MARK: - Actions.
     
-    @IBAction func searchAction(_ sender: Any) {
-//        AnswerRepository.search(
-//        word: self.searchTextField.text!,
-//        completion: { (answer) in
-//            DispatchQueue.main.async {
-//                self.view.endEditing(true)
-//                self.card.isHidden = false
-//                if let pronunciation = answer.pronunciation {
-//                    self.labelPronunciation.text = "/\(pronunciation)/"
-//                } else {
-//                    self.labelPronunciation.text = "/.../"
-//                }
-//                self.labelTitle.text = answer.word
-//                self.wordToSave = answer.word
-//                self.definitions = answer.definitions
-//                self.tableView.reloadData()
-//
-//                // verificar se o card ja existe.
-//                if self.cardRepository.exists(word: answer.word) {
-//                    self.deactivateButtonSave()
-//                } else {
-//                    self.acticateButtonSave()
-//                }
-//            }
-//        })
+    func searchButtonTapped(_ word: String) {
+        
+        AnswerRepository.search(
+        word: word,
+        completion: { (answer) in
+            DispatchQueue.main.async {
+                
+                self.searchView.card.isHidden = false
+                
+                if let pronunciation = answer.pronunciation {
+                    self.searchView.card.pronunciationLabel.text = "/\(pronunciation)/"
+                } else {
+                    self.searchView.card.pronunciationLabel.text = "/.../"
+                }
+                
+                self.searchView.card.titleLabel.text = answer.word
+                self.wordToSave = answer.word
+                self.definitions = answer.definitions
+                
+                // verificar se o card ja existe.
+                self.searchView.activateButton(
+                    !self.cardRepository.exists(word: word)
+                )
+                
+            }
+        })
+        
     }
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
+    func saveButtonTapped() {
+        print("Saving...")
         //self.performSegue(withIdentifier: "addWordSegue", sender: self)
     }
     
@@ -105,20 +113,10 @@ class SearchViewController: UIViewController {
 //        }
     }
     
-    func acticateButtonSave() {
-//        self.saveButton.layer.backgroundColor = UIColor(red: 54/255, green: 101/255, blue: 227/255, alpha: 1.0).cgColor
-//        self.saveButton.setTitleColor(UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1.0), for: .normal)
-//        self.saveButton.isEnabled = true
-    }
-    
-    func deactivateButtonSave() {
-//        self.saveButton.layer.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 245/255, alpha: 1.0).cgColor
-//        self.saveButton.setTitleColor(UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0), for: .disabled)
-//        self.saveButton.isEnabled = false
-    }
 }
 
 // MARK: - Extensions.
+
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.definitions.count
