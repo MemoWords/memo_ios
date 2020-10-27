@@ -11,12 +11,11 @@ import UIKit
 class ReviewViewController: UIViewController {
 
     // MARK: - Properties.
-    let reviewView = ReviewView()
+    let reviewView = ReviewView() // VIEW
     
     let cardRepository = CardRepository()
     var cards = [Card]()
     var collection: Collection?
-    
     var count = 0
     var numOfCardsToStudy = 0
     
@@ -120,7 +119,6 @@ class ReviewViewController: UIViewController {
             }
         } else {
             if DateHelper.isToday(dateString: self.cards[self.count].nextStudyDay!) {
-                //self.showMessage(false)
                 let title = self.cards[self.count].content!
                 self.setAnswerData(word: title)
             } else {
@@ -163,7 +161,6 @@ class ReviewViewController: UIViewController {
     }
     
     func update(val: Int) {
-        
         let algorithmData = Classification.classificate(val: val, lastDayIncremented: Int(self.cards[self.count].lastDaysIncremented))
 
         if algorithmData.days != 0 { // veririca se há valores a serem atualizados
