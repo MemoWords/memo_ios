@@ -55,9 +55,11 @@ class CollectionsViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.tintColor = .memoSecondBlue
         self.navigationController?.navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 34)!,
             NSAttributedString.Key.foregroundColor: UIColor.memoBlack
         ]
         self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 17)!,
             NSAttributedString.Key.foregroundColor: UIColor.memoBlack
         ]
     }
