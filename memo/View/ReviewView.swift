@@ -106,7 +106,8 @@ class ReviewView: UIView {
     }
     
     func setUpViews() {
-        card.isHidden = true // temporaly
+        cardMessage.isHidden = true
+        
         buttonsStack.addArrangedSubview(wrongButton)
         buttonsStack.addArrangedSubview(hardButton)
         buttonsStack.addArrangedSubview(easyButton)

@@ -29,7 +29,6 @@ class CollectionsViewController: UIViewController {
         
         collectionsView.tableView.dataSource = self
         collectionsView.tableView.delegate   = self
-        
         collectionsView.tableView.register(
             UINib.init(
                 nibName: "ColecoesTableViewCell",
@@ -54,7 +53,6 @@ class CollectionsViewController: UIViewController {
     func configureNavBar() {
         self.navigationItem.title = TabBarItems.collections.title
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .always
         self.navigationController?.navigationBar.tintColor = .memoSecondBlue
         self.navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.memoBlack
