@@ -56,44 +56,50 @@ class ReviewViewController: UIViewController {
         }
         
         self.numOfCardsToStudy = self.getNumOfCardsToStudy()
-        self.isContentHidden = false
+        
         self.show()
     }
     
     override func loadView() {
         super.loadView()
         self.view = reviewView
+        reviewView.wrongAction = self.wrongButtonTapped
+        reviewView.hardAction = self.hardButtonTapped
+        reviewView.easyAction = self.easyButtonTapped
+        reviewView.card.showAction = self.showButtonTapped
     }
 
     // MARK: - Actions.
     
     func showButtonTapped() {
-        //self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        reviewView.card.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        self.isContentHidden = false
     }
     
-    @IBAction func wrongButtonTapped(_ sender: Any) {
-        // Wrong
-        self.update(val: 0)
-        self.count += 1
-        self.show()
+    func wrongButtonTapped() {
+//        self.update(val: 0)
+//        self.count += 1
+//        self.show()
+        
+        print("Não Sei")
     }
     
-    @IBAction func hardButtonTapped(_ sender: Any) {
-        // Hard
-        self.numOfCardsToStudy -= 1
-        self.update(val: 1)
-        self.count += 1
-        //self.showButtonShowAnswer(value: true)
-        self.show()
+    func hardButtonTapped() {
+//        self.numOfCardsToStudy -= 1
+//        self.update(val: 1)
+//        self.count += 1
+//        //self.showButtonShowAnswer(value: true)
+//        self.show()
+        print("Difícil")
     }
     
-    @IBAction func easyButtonTapped(_ sender: Any) {
-        // Easy
-        self.numOfCardsToStudy -= 1
-        self.update(val: 2)
-        self.count += 1
-        //self.showButtonShowAnswer(value: true)
-        self.show()
+    func easyButtonTapped() {
+//        self.numOfCardsToStudy -= 1
+//        self.update(val: 2)
+//        self.count += 1
+//        //self.showButtonShowAnswer(value: true)
+//        self.show()
+        print("Fácil")
     }
     
     // MARK: - Functions.
@@ -103,28 +109,26 @@ class ReviewViewController: UIViewController {
     }
     
     func show() {
-        // Set all the data to screen.
-        //self.buttonsIsActive = false
-//        labelTotal.text = String("Total: \(self.cards.count)")
-//        labelStudy.text = String("Estudar: \(self.numOfCardsToStudy)")
-//        self.labelPronunciation.text = "/.../"
-//        self.labelTitle.text = "..."
+        self.isContentHidden = true
+        self.showMessage(false)
+        
+        reviewView.labelTotal.text = String("Total: \(self.cards.count)")
+        reviewView.labelStudy.text = String("Estudar: \(self.numOfCardsToStudy)")
+        reviewView.card.titleLabel.text = "..."
+        reviewView.card.pronunciationLabel.text = "/.../"
         
         if self.count >= self.cards.count {
             if numOfCardsToStudy == 0 {
-                self.showMessage(value: true)
+                self.showMessage(true)
             } else {
                 self.count = 0
                 self.show()
             }
         } else {
             if DateHelper.isToday(dateString: self.cards[self.count].nextStudyDay!) {
-//                if !message.isHidden {
-//                    self.showMessage(value: false)
-//                }
-//                let title = self.cards[self.count].content!
-//
-//                self.setAnswerData(word: title)
+                //self.showMessage(false)
+                let title = self.cards[self.count].content!
+                self.setAnswerData(word: title)
             } else {
                 self.count += 1
                 self.show()
@@ -137,28 +141,21 @@ class ReviewViewController: UIViewController {
         word: word,
         completion: { (answer) in
             DispatchQueue.main.async {
-//                self.labelTitle.text = word
-//                if let pronunciation = answer.pronunciation {
-//                    self.labelPronunciation.text = "/\(pronunciation)/"
-//                } else {
-//                    self.labelPronunciation.text = "/.../"
-//                }
-//                self.buttonsIsActive = true
-//                self.definitions = answer.definitions
+                self.reviewView.card.titleLabel.text = word
+                if let pronunciation = answer.pronunciation {
+                    self.reviewView.card.pronunciationLabel.text = "/\(pronunciation)/"
+                } else {
+                    self.reviewView.card.pronunciationLabel.text = "/.../"
+                }
+                self.definitions = answer.definitions
             }
         })
     }
     
-    func showMessage(value: Bool) {
-//        labelTitle.isHidden = value
-//        labelPronunciation.isHidden = value
-//        imageView.isHidden = value
-//        tableView.isHidden = value
-//        buttonShow.isHidden = value
-//        separator.isHidden = value
-//        buttonsStack.isHidden = value
-//        // Show
-//        message.isHidden = !value
+    func showMessage(_ value: Bool) {
+        self.reviewView.card.isHidden = value
+        self.reviewView.buttonsStack.isHidden = value
+        self.reviewView.cardMessage.isHidden = !value
     }
     
     func getNumOfCardsToStudy() -> Int {
@@ -194,13 +191,13 @@ class ReviewViewController: UIViewController {
 extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
     // Number of cells.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.definitions.count
     }
     // Add the cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefinitionCell", for: indexPath) as! DefinitionTableViewCell
         
-        //cell.configure(definition: self.definitions[indexPath.row])
+        cell.configure(definition: self.definitions[indexPath.row])
         
         return cell
     }

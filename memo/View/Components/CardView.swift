@@ -58,7 +58,7 @@ class CardView: UIView {
         button.setImage(image, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.tintColor = .memoSecondBlue
-        //button.addTarget(self, action: #selector(signin), for: .touchUpInside)
+        button.addTarget(self, action: #selector(show), for: .touchUpInside)
         return button
     }()
     
@@ -73,6 +73,12 @@ class CardView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - ACTIONS
+    
+    // Show Button Action
+    var showAction: (() -> Void)!
+    @objc func show(sender: UIButton!) { showAction() }
     
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
