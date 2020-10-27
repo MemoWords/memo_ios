@@ -51,6 +51,7 @@ class CardView: UIView {
         let mediumConfig = UIImage.SymbolConfiguration(pointSize: 16, weight: .bold, scale: .medium)
         let image = UIImage(systemName: "chevron.down", withConfiguration: mediumConfig)
         let button = UIButton()
+        button.isHidden = true
         button.setTitle("MOSTRAR RESPOSTA", for: .normal)
         button.titleLabel?.font = UIFont(name: "SF Pro Text Bold", size: 16)
         button.setTitleColor(.memoSecondBlue, for: .normal)

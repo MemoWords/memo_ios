@@ -24,12 +24,8 @@ class TabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // this code is temporaly.
-        let storyboard = UIStoryboard(name: "Search", bundle: nil)
-        let searchController = storyboard.instantiateViewController(identifier: "SearchViewController")
-        
         self.collectionsNavController = UINavigationController(rootViewController: CollectionsViewController())
-        self.searchNavController = UINavigationController(rootViewController: searchController)
+        self.searchNavController = UINavigationController(rootViewController: SearchViewController())
         self.configNavController = UINavigationController(rootViewController: ConfigViewController())
         
         self.configItems()
@@ -44,7 +40,7 @@ class TabBar: UITabBarController {
         searchItem.title = TabBarItems.search.title
         searchItem.image = UIImage(systemName: "magnifyingglass")
         configItem.title = TabBarItems.settings.title
-        configItem.image = UIImage(named: "gear_selected")
+        configItem.image = UIImage(systemName: "gearshape")
     }
     
     private func addItems() {

@@ -39,6 +39,9 @@
 		DE8E829425478A610067899B /* CardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E829325478A610067899B /* CardTableView.swift */; };
 		DE8E829C2547991B0067899B /* CardView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E829B2547991B0067899B /* CardView+Extension.swift */; };
 		DE8E82A12547A1AB0067899B /* CardMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E82A02547A1AB0067899B /* CardMessageView.swift */; };
+		DE8E82C12548645D0067899B /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E82C02548645D0067899B /* SearchView.swift */; };
+		DE8E82C62548679F0067899B /* SearchView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E82C52548679F0067899B /* SearchView+Extension.swift */; };
+		DE8E82CB2548A9050067899B /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E82CA2548A9050067899B /* TextField+Extension.swift */; };
 		DE913EFE24EC092800383CFC /* AddWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE913EFD24EC092800383CFC /* AddWord.storyboard */; };
 		DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913EFF24EC095200383CFC /* AddWordViewController.swift */; };
 		DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */; };
@@ -120,6 +123,9 @@
 		DE8E829325478A610067899B /* CardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableView.swift; sourceTree = "<group>"; };
 		DE8E829B2547991B0067899B /* CardView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Extension.swift"; sourceTree = "<group>"; };
 		DE8E82A02547A1AB0067899B /* CardMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMessageView.swift; sourceTree = "<group>"; };
+		DE8E82C02548645D0067899B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		DE8E82C52548679F0067899B /* SearchView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchView+Extension.swift"; sourceTree = "<group>"; };
+		DE8E82CA2548A9050067899B /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		DE913EFD24EC092800383CFC /* AddWord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddWord.storyboard; sourceTree = "<group>"; };
 		DE913EFF24EC095200383CFC /* AddWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
 		DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewCell.swift; sourceTree = "<group>"; };
@@ -252,6 +258,7 @@
 				DE4428DD2547022300A8657C /* Components */,
 				DE4428D52547017100A8657C /* CollectionsView.swift */,
 				DE4429042547470400A8657C /* ReviewView.swift */,
+				DE8E82C02548645D0067899B /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,6 +324,8 @@
 				DE44290925474D3800A8657C /* UIView+Extension.swift */,
 				DE44290E25474D7A00A8657C /* ReviewView+Extension.swift */,
 				DE8E829B2547991B0067899B /* CardView+Extension.swift */,
+				DE8E82C52548679F0067899B /* SearchView+Extension.swift */,
+				DE8E82CA2548A9050067899B /* TextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -553,12 +562,15 @@
 				DE4428D62547017100A8657C /* CollectionsView.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
 				DE8E829C2547991B0067899B /* CardView+Extension.swift in Sources */,
+				DE8E82C62548679F0067899B /* SearchView+Extension.swift in Sources */,
 				DE913F1924EEA71300383CFC /* Definition.swift in Sources */,
 				DE913F2324F1B25600383CFC /* AddWordTableViewCell.swift in Sources */,
 				DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */,
 				DE44290F25474D7A00A8657C /* ReviewView+Extension.swift in Sources */,
+				DE8E82C12548645D0067899B /* SearchView.swift in Sources */,
 				DE44291425476B6600A8657C /* CardView.swift in Sources */,
 				DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */,
+				DE8E82CB2548A9050067899B /* TextField+Extension.swift in Sources */,
 				DE8E829425478A610067899B /* CardTableView.swift in Sources */,
 				DE913F1B24EEA72400383CFC /* Answer.swift in Sources */,
 				DE617B8325406210009FEE40 /* Collection+CoreDataClass.swift in Sources */,
