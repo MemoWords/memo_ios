@@ -77,29 +77,23 @@ class ReviewViewController: UIViewController {
     }
     
     func wrongButtonTapped() {
-//        self.update(val: 0)
-//        self.count += 1
-//        self.show()
-        
-        print("Não Sei")
+        self.update(val: 0)
+        self.count += 1
+        self.show()
     }
     
     func hardButtonTapped() {
-//        self.numOfCardsToStudy -= 1
-//        self.update(val: 1)
-//        self.count += 1
-//        //self.showButtonShowAnswer(value: true)
-//        self.show()
-        print("Difícil")
+        self.numOfCardsToStudy -= 1
+        self.update(val: 1)
+        self.count += 1
+        self.show()
     }
     
     func easyButtonTapped() {
-//        self.numOfCardsToStudy -= 1
-//        self.update(val: 2)
-//        self.count += 1
-//        //self.showButtonShowAnswer(value: true)
-//        self.show()
-        print("Fácil")
+        self.numOfCardsToStudy -= 1
+        self.update(val: 2)
+        self.count += 1
+        self.show()
     }
     
     // MARK: - Functions.
