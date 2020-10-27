@@ -36,6 +36,8 @@
 		DE8E828125477F3B0067899B /* SFProTextSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827C25477F3B0067899B /* SFProTextSemibold.otf */; };
 		DE8E828225477F3B0067899B /* SFProTextRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827D25477F3B0067899B /* SFProTextRegular.otf */; };
 		DE8E828325477F3B0067899B /* SFProTextMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827E25477F3B0067899B /* SFProTextMedium.otf */; };
+		DE8E829425478A610067899B /* CardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E829325478A610067899B /* CardTableView.swift */; };
+		DE8E829C2547991B0067899B /* CardView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8E829B2547991B0067899B /* CardView+Extension.swift */; };
 		DE913EFE24EC092800383CFC /* AddWord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE913EFD24EC092800383CFC /* AddWord.storyboard */; };
 		DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913EFF24EC095200383CFC /* AddWordViewController.swift */; };
 		DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */; };
@@ -114,6 +116,8 @@
 		DE8E827C25477F3B0067899B /* SFProTextSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextSemibold.otf; sourceTree = "<group>"; };
 		DE8E827D25477F3B0067899B /* SFProTextRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextRegular.otf; sourceTree = "<group>"; };
 		DE8E827E25477F3B0067899B /* SFProTextMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextMedium.otf; sourceTree = "<group>"; };
+		DE8E829325478A610067899B /* CardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableView.swift; sourceTree = "<group>"; };
+		DE8E829B2547991B0067899B /* CardView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardView+Extension.swift"; sourceTree = "<group>"; };
 		DE913EFD24EC092800383CFC /* AddWord.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddWord.storyboard; sourceTree = "<group>"; };
 		DE913EFF24EC095200383CFC /* AddWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewController.swift; sourceTree = "<group>"; };
 		DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				DE4428DE2547025700A8657C /* CollectionsTableView.swift */,
+				DE8E829325478A610067899B /* CardTableView.swift */,
 				DE44291325476B6600A8657C /* CardView.swift */,
 			);
 			path = Components;
@@ -308,6 +313,7 @@
 				DEC831C22544987500229AFF /* Color+Extension.swift */,
 				DE44290925474D3800A8657C /* UIView+Extension.swift */,
 				DE44290E25474D7A00A8657C /* ReviewView+Extension.swift */,
+				DE8E829B2547991B0067899B /* CardView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -543,12 +549,14 @@
 				DE617B8125406210009FEE40 /* Card+CoreDataClass.swift in Sources */,
 				DE4428D62547017100A8657C /* CollectionsView.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
+				DE8E829C2547991B0067899B /* CardView+Extension.swift in Sources */,
 				DE913F1924EEA71300383CFC /* Definition.swift in Sources */,
 				DE913F2324F1B25600383CFC /* AddWordTableViewCell.swift in Sources */,
 				DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */,
 				DE44290F25474D7A00A8657C /* ReviewView+Extension.swift in Sources */,
 				DE44291425476B6600A8657C /* CardView.swift in Sources */,
 				DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */,
+				DE8E829425478A610067899B /* CardTableView.swift in Sources */,
 				DE913F1B24EEA72400383CFC /* Answer.swift in Sources */,
 				DE617B8325406210009FEE40 /* Collection+CoreDataClass.swift in Sources */,
 				DEC831C32544987500229AFF /* Color+Extension.swift in Sources */,

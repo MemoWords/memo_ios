@@ -26,7 +26,11 @@ class CollectionsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
         
-    // MARK: - CONSTRAINTS
+}
+
+// MARK: - CONSTRAINTS
+
+extension CollectionsView {
     func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
