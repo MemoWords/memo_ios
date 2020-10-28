@@ -41,12 +41,18 @@ class AddWordViewController: UIViewController {
         addWordView.tableView.register(UINib.init(nibName: "AddWordTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionNameCell")
         self.collections = collectionRepository.fetchAll()
         
+        addWordView.nameTextField.addTarget(self, action: #selector(dismissKeyboard), for: .primaryActionTriggered)
+        
     }
     
     // MARK: - Actions.
     
     @IBAction func calcelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
     }
     
     func addButtonTapped() {

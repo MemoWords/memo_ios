@@ -246,8 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				DE77DADF24E6FE5000095D73 /* Assets.xcassets */,
-				DEF04A6524EAB6C3003457F2 /* Xibs */,
 				DEE2C7AC2544720F0005992E /* Storyboards */,
+				DEF04A6524EAB6C3003457F2 /* Xibs */,
 				DE4428DD2547022300A8657C /* Components */,
 				DE4428D52547017100A8657C /* CollectionsView.swift */,
 				DE4429042547470400A8657C /* ReviewView.swift */,
