@@ -83,7 +83,8 @@ class SearchViewController: UIViewController {
     
     func saveButtonTapped() {
         print("Saving...")
-        //self.performSegue(withIdentifier: "addWordSegue", sender: self)
+        let addWordController = AddWordViewController()
+        self.navigationController?.pushViewController(addWordController, animated: true)
     }
     
     // MARK: - Functions.

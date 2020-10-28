@@ -17,7 +17,7 @@ class SearchView: UIView {
         let imageView = UIImageView(image: UIImage(named: "lens.png"))
         
         textField.placeholder = "Pesquisar"
-        textField.font = UIFont(name: "SF Pro Text Medium", size: 20)
+        textField.font = UIFont(name: "SF Pro Text Medium", size: 18)
         textField.textColor = .memoBlack
         textField.layer.borderWidth = 1
         textField.setLeftPadding(12)

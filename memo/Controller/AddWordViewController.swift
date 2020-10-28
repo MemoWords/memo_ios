@@ -11,15 +11,12 @@ import UIKit
 class AddWordViewController: UIViewController {
     
     // MARK: - Properties.
-    
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
+    let addWordView = AddWordView()// VIEW
     
     let repository = CollectionRepository()
     var collections = [Collection]() {
         didSet {
-            self.tableView.reloadData()
+            self.addWordView.tableView.reloadData()
         }
     }
     weak var addWordDelegate: SaveWordDelegate?
@@ -27,25 +24,34 @@ class AddWordViewController: UIViewController {
     
     // MARK: - Lifecycle.
     
+    override func loadView() {
+        super.loadView()
+        self.view = self.addWordView
+        self.addWordView.addAction = self.addButtonTapped
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.overrideUserInterfaceStyle = .light
-        self.title = "Salvar \(self.wordToSave!)"
+        self.configNavBar()
+        //self.title = "Salvar \(self.wordToSave!)"
         
         // TextField Style
-        nameTextField.layer.cornerRadius = 10
-        nameTextField.layer.borderWidth = 1
-        nameTextField.layer.borderColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0).cgColor
-        nameTextField.attributedPlaceholder = NSAttributedString(string: "Nome da Coleção", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black.withAlphaComponent(0.30)])
-        // Button Style
-        self.addButton.layer.cornerRadius = 10
+//        nameTextField.layer.cornerRadius = 10
+//        nameTextField.layer.borderWidth = 1
+//        nameTextField.layer.borderColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0).cgColor
+//        nameTextField.attributedPlaceholder = NSAttributedString(string: "Nome da Coleção", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black.withAlphaComponent(0.30)])
+//        // Button Style
+//        self.addButton.layer.cornerRadius = 10
+//
         
-        // TableView Config
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.register(UINib.init(nibName: "AddWordTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionNameCell")
+        addWordView.tableView.dataSource = self
+        addWordView.tableView.delegate = self
+//
+        addWordView.tableView.register(UINib.init(nibName: "AddWordTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionNameCell")
         self.collections = repository.fetchAll()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     // MARK: - Actions.
@@ -54,11 +60,23 @@ class AddWordViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func addButtonTapped(_ sender: Any) {
-        if nameTextField.text != "" {
-            addWordDelegate?.save(collection: nil, collectionName: nameTextField.text!, word: self.wordToSave!)
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+    func addButtonTapped() {
+        print("Adding...")
+//        if nameTextField.text != "" {
+//            addWordDelegate?.save(collection: nil, collectionName: nameTextField.text!, word: self.wordToSave!)
+//            self.navigationController?.popToRootViewController(animated: true)
+//        }
+    }
+    
+    // MARK: - FUNCTIONS
+    
+    private func configNavBar() {
+        self.title = "Adicionar palavra"
+        self.navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }
