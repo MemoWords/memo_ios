@@ -11,15 +11,13 @@ import UIKit
 class AddWordViewController: UIViewController {
     
     // MARK: - Properties.
+    let addWordView = AddWordView()// VIEW
     
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
-    
-    let repository = CollectionRepository()
+    let collectionRepository = CollectionRepository()
+    let cardRepository = CardRepository()
     var collections = [Collection]() {
         didSet {
-            self.tableView.reloadData()
+            self.addWordView.tableView.reloadData()
         }
     }
     weak var addWordDelegate: SaveWordDelegate?
@@ -27,25 +25,24 @@ class AddWordViewController: UIViewController {
     
     // MARK: - Lifecycle.
     
+    override func loadView() {
+        super.loadView()
+        self.view = self.addWordView
+        self.addWordView.addAction = self.addButtonTapped
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.overrideUserInterfaceStyle = .light
-        self.title = "Salvar \(self.wordToSave!)"
+        self.configNavBar()
         
-        // TextField Style
-        nameTextField.layer.cornerRadius = 10
-        nameTextField.layer.borderWidth = 1
-        nameTextField.layer.borderColor = UIColor(red: 181/255, green: 182/255, blue: 190/255, alpha: 1.0).cgColor
-        nameTextField.attributedPlaceholder = NSAttributedString(string: "Nome da Coleção", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black.withAlphaComponent(0.30)])
-        // Button Style
-        self.addButton.layer.cornerRadius = 10
+        addWordView.tableView.dataSource = self
+        addWordView.tableView.delegate = self
+//
+        addWordView.tableView.register(UINib.init(nibName: "AddWordTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionNameCell")
+        self.collections = collectionRepository.fetchAll()
         
-        // TableView Config
-        tableView.dataSource = self
-        tableView.delegate = self
+        addWordView.nameTextField.addTarget(self, action: #selector(dismissKeyboard), for: .primaryActionTriggered)
         
-        tableView.register(UINib.init(nibName: "AddWordTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionNameCell")
-        self.collections = repository.fetchAll()
     }
     
     // MARK: - Actions.
@@ -54,11 +51,22 @@ class AddWordViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func addButtonTapped(_ sender: Any) {
-        if nameTextField.text != "" {
-            addWordDelegate?.save(collection: nil, collectionName: nameTextField.text!, word: self.wordToSave!)
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    func addButtonTapped() {
+        if addWordView.nameTextField.text != "" {
+            self.cardRepository.create(collectionName: addWordView.nameTextField.text!, content: self.wordToSave!)
             self.navigationController?.popToRootViewController(animated: true)
         }
+    }
+    
+    // MARK: - FUNCTIONS
+    
+    private func configNavBar() {
+        self.title = "Salvar \(self.wordToSave!)"
+        self.navigationItem.largeTitleDisplayMode = .never
     }
     
 }
@@ -80,10 +88,9 @@ extension AddWordViewController: UITableViewDelegate, UITableViewDataSource {
     
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        addWordDelegate?.save(
+        self.cardRepository.create(
             collection: self.collections[indexPath.row],
-            collectionName: self.collections[indexPath.row].name!,
-            word: self.wordToSave!
+            content: self.wordToSave!
         )
         self.navigationController?.popToRootViewController(animated: true)
     }
