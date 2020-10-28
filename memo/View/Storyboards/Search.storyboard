@@ -16,7 +16,7 @@
         <!--Pesquisar-->
         <scene sceneID="mHN-HU-Oq3">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="8aJ-en-K3l" customClass="SearchViewController" customModule="memo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="8aJ-en-K3l" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HFz-Vd-yqw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
