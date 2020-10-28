@@ -81,9 +81,11 @@ class SearchViewController: UIViewController {
         
     }
     
+    // MARK: - ACTIONS
+    
     func saveButtonTapped() {
-        print("Saving...")
         let addWordController = AddWordViewController()
+        addWordController.wordToSave = self.wordToSave!
         self.navigationController?.pushViewController(addWordController, animated: true)
     }
     
@@ -104,14 +106,6 @@ class SearchViewController: UIViewController {
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 17)!,
             NSAttributedString.Key.foregroundColor: UIColor.memoBlack
         ]
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.destination is AddWordViewController {
-//            let vc = segue.destination as? AddWordViewController
-//            vc?.addWordDelegate = self
-//            vc?.wordToSave = self.wordToSave!
-//        }
     }
     
 }
@@ -137,10 +131,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension SearchViewController: SaveWordDelegate {
     func save(collection: Collection?, collectionName: String?, word: String) {
-        if let col = collection {
-            self.cardRepository.create(collection: col, content: word)
-        } else {
-            self.cardRepository.create(collectionName: collectionName!, content: word)
-        }
+        
     }
 }
