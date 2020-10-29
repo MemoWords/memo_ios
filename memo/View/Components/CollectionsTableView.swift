@@ -19,7 +19,7 @@ class CollectionsTableView: UITableView {
         self.separatorInset = .zero
         self.tableFooterView = UIView()
         self.separatorStyle = .none
-        self.rowHeight = 140
+        self.rowHeight = 135
     }
     
     required init?(coder: NSCoder) {
