@@ -50,13 +50,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 para estudar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiE-2t-5tG">
-                                <rect key="frame" x="15" y="92" width="173" height="20"/>
+                                <rect key="frame" x="15" y="93" width="173" height="19"/>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                 <color key="textColor" name="white_color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verbos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdv-a2-fBF">
-                                <rect key="frame" x="15" y="66" width="173" height="24"/>
+                                <rect key="frame" x="15" y="67" width="173" height="24"/>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="20"/>
                                 <color key="textColor" name="white_color"/>
                                 <nil key="highlightedColor"/>
@@ -90,6 +90,11 @@
                 <constraint firstItem="bfI-g4-eak" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="ye5-mB-inB"/>
             </constraints>
             <size key="customSize" width="227" height="141"/>
+            <connections>
+                <outlet property="bodyLabel" destination="HiE-2t-5tG" id="CJf-7F-Kba"/>
+                <outlet property="mainFrame" destination="bfI-g4-eak" id="UYK-pi-7oe"/>
+                <outlet property="titleLabel" destination="Hdv-a2-fBF" id="884-ok-Y4M"/>
+            </connections>
             <point key="canvasLocation" x="258.69565217391306" y="145.98214285714286"/>
         </collectionViewCell>
     </objects>
