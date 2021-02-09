@@ -12,6 +12,7 @@ class CollectionsView: UIView {
     
     // MARK: - PROPERTIES
     let tableView = CollectionsTableView(frame: .zero, style: .plain)
+    var collectionView: StudyCollectionView
     let bugView = UIView()
     let messageCard = MessageCard()
 
@@ -36,16 +37,33 @@ class CollectionsView: UIView {
         button.setTitle(nil, for: .normal)
         button.setImage(UIImage(systemName: "folder.fill.badge.plus"), for: .normal)
         button.tintColor = .primaryColor
-        //button.addTarget(self, action: #selector(wrong), for: .touchUpInside)
+        button.addTarget(self, action: #selector(add), for: .touchUpInside)
         return button
     }()
+
+    @objc func add() {
+        collectionView.isHidden = !collectionView.isHidden
+        messageCard.isHidden = !messageCard.isHidden
+    }
     
     // MARK: - INIT
     override init(frame: CGRect) {
+
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 223, height: 152)
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInset.left = 12
+        layout.sectionInset.right = 12
+
+        self.collectionView = StudyCollectionView(frame: .zero, collectionViewLayout: layout)
+
         super.init(frame: frame)
+
         self.backgroundColor = .backgroundColor
-        self.addSubviews(bugView, labelStudy, messageCard, labelFolder, addFolderButton, tableView)
+        self.addSubviews(bugView, labelStudy, collectionView, messageCard, labelFolder, addFolderButton, tableView)
         self.setUpLabelStudy()
+        self.setUpCollectionView()
         self.setUpLabelFolder()
         self.setUpMessageCard()
         self.setUpButton()
@@ -70,6 +88,16 @@ extension CollectionsView {
         ])
     }
 
+    func setUpCollectionView() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 10),
+            collectionView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            collectionView.heightAnchor.constraint(equalToConstant: 152)
+        ])
+    }
+
     func setUpMessageCard() {
         messageCard.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -83,7 +111,7 @@ extension CollectionsView {
     func setUpLabelFolder() {
         labelFolder.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelFolder.topAnchor.constraint(equalTo: messageCard.bottomAnchor, constant: 20),
+            labelFolder.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10),
             labelFolder.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 22),
             labelFolder.trailingAnchor.constraint(equalTo: addFolderButton.trailingAnchor, constant: -20)
         ])

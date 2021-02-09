@@ -26,9 +26,14 @@ class CollectionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureNavBar()
+
+        collectionsView.messageCard.isHidden = true
         
         collectionsView.tableView.dataSource = self
         collectionsView.tableView.delegate   = self
+        collectionsView.collectionView.dataSource = self
+        collectionsView.collectionView.delegate   = self
+
         collectionsView.tableView.register(
             UINib.init(
                 nibName: "FolderTableViewCell",
@@ -36,6 +41,15 @@ class CollectionsViewController: UIViewController {
             ),
             forCellReuseIdentifier: "FolderCell"
         )
+
+        collectionsView.collectionView.register(
+            UINib.init(
+                nibName: "StudyCollectionViewCell",
+                bundle: nil
+            ),
+            forCellWithReuseIdentifier: "StudyCell"
+        )
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +81,7 @@ class CollectionsViewController: UIViewController {
     
 }
 
-// MARK: - Extension
+// MARK: - TableView
 
 // Table view population.
 extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -97,4 +111,18 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
 //        self.navigationController?.pushViewController(reviewViewController, animated: true)
     }
     
+}
+
+// MARK: - CollectionView
+
+extension CollectionsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        3
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StudyCell", for: indexPath) as! StudyCollectionViewCell
+
+        return cell
+    }
 }
