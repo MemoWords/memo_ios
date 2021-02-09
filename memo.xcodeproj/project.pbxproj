@@ -28,6 +28,8 @@
 		DE77DAF924E6FE5000095D73 /* memoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77DAF824E6FE5000095D73 /* memoUITests.swift */; };
 		DE7D991725D2B97A0053679C /* StudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D991525D2B97A0053679C /* StudyCollectionViewCell.swift */; };
 		DE7D991825D2B97A0053679C /* StudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7D991625D2B97A0053679C /* StudyCollectionViewCell.xib */; };
+		DE7D991E25D2C3840053679C /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D991C25D2C3840053679C /* FolderTableViewCell.swift */; };
+		DE7D991F25D2C3840053679C /* FolderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7D991D25D2C3840053679C /* FolderTableViewCell.xib */; };
 		DE8E826725477EAC0067899B /* SFPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E826125477EAC0067899B /* SFPro.ttf */; };
 		DE8E827F25477F3B0067899B /* SFProTextBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827A25477F3B0067899B /* SFProTextBold.otf */; };
 		DE8E828025477F3B0067899B /* SFProTextMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827B25477F3B0067899B /* SFProTextMediumItalic.otf */; };
@@ -110,6 +112,8 @@
 		DE77DAFA24E6FE5000095D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE7D991525D2B97A0053679C /* StudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE7D991625D2B97A0053679C /* StudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyCollectionViewCell.xib; sourceTree = "<group>"; };
+		DE7D991C25D2C3840053679C /* FolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
+		DE7D991D25D2C3840053679C /* FolderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderTableViewCell.xib; sourceTree = "<group>"; };
 		DE8E826125477EAC0067899B /* SFPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPro.ttf; sourceTree = "<group>"; };
 		DE8E827A25477F3B0067899B /* SFProTextBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextBold.otf; sourceTree = "<group>"; };
 		DE8E827B25477F3B0067899B /* SFProTextMediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextMediumItalic.otf; sourceTree = "<group>"; };
@@ -264,7 +268,6 @@
 		DE77DB0724E7065400095D73 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DEF04A6A24EAB7C9003457F2 /* XibController */,
 				DE4428D02546FBC200A8657C /* TabBar.swift */,
 				DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */,
 				DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */,
@@ -340,23 +343,18 @@
 		DEF04A6524EAB6C3003457F2 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */,
 				DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */,
+				DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */,
 				DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */,
+				DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */,
 				DE913F2224F1B25600383CFC /* AddWordTableViewCell.xib */,
 				DE7D991525D2B97A0053679C /* StudyCollectionViewCell.swift */,
 				DE7D991625D2B97A0053679C /* StudyCollectionViewCell.xib */,
+				DE7D991C25D2C3840053679C /* FolderTableViewCell.swift */,
+				DE7D991D25D2C3840053679C /* FolderTableViewCell.xib */,
 			);
 			path = Xibs;
-			sourceTree = "<group>";
-		};
-		DEF04A6A24EAB7C9003457F2 /* XibController */ = {
-			isa = PBXGroup;
-			children = (
-				DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */,
-				DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */,
-				DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */,
-			);
-			path = XibController;
 			sourceTree = "<group>";
 		};
 		DEF04A6D24EAC9F1003457F2 /* Fonts */ = {
@@ -490,6 +488,7 @@
 				DE913F2724F2E11500383CFC /* .swiftlint.yml in Resources */,
 				DE8E827F25477F3B0067899B /* SFProTextBold.otf in Resources */,
 				DE77DAE324E6FE5000095D73 /* LaunchScreen.storyboard in Resources */,
+				DE7D991F25D2C3840053679C /* FolderTableViewCell.xib in Resources */,
 				DE8E828225477F3B0067899B /* SFProTextRegular.otf in Resources */,
 				DE8E828325477F3B0067899B /* SFProTextMedium.otf in Resources */,
 				DE8E828025477F3B0067899B /* SFProTextMediumItalic.otf in Resources */,
@@ -549,6 +548,7 @@
 				DE7D991725D2B97A0053679C /* StudyCollectionViewCell.swift in Sources */,
 				DE617B8125406210009FEE40 /* Card+CoreDataClass.swift in Sources */,
 				DE4428D62547017100A8657C /* CollectionsView.swift in Sources */,
+				DE7D991E25D2C3840053679C /* FolderTableViewCell.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
 				DE8E829C2547991B0067899B /* CardView+Extension.swift in Sources */,
 				DE8E82C62548679F0067899B /* SearchView+Extension.swift in Sources */,

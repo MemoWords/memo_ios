@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SFProTextBold.otf">
+        <array key="SF-Pro-Text-Bold.otf">
             <string>SFProText-Bold</string>
         </array>
-        <array key="SFProTextMedium.otf">
+        <array key="SF-Pro-Text-Medium.otf">
             <string>SFProText-Medium</string>
         </array>
     </customFonts>
