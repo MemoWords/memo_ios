@@ -54,6 +54,7 @@ class CollectionsViewController: UIViewController {
         self.navigationItem.title = TabBarItems.collections.title
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.tintColor = .memoSecondBlue
+
         self.navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 34)!,
             NSAttributedString.Key.foregroundColor: UIColor.memoBlack
