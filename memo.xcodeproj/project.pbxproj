@@ -26,6 +26,8 @@
 		DE77DAE024E6FE5000095D73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE77DADF24E6FE5000095D73 /* Assets.xcassets */; };
 		DE77DAE324E6FE5000095D73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE77DAE124E6FE5000095D73 /* LaunchScreen.storyboard */; };
 		DE77DAF924E6FE5000095D73 /* memoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77DAF824E6FE5000095D73 /* memoUITests.swift */; };
+		DE7D991725D2B97A0053679C /* StudyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D991525D2B97A0053679C /* StudyCollectionViewCell.swift */; };
+		DE7D991825D2B97A0053679C /* StudyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7D991625D2B97A0053679C /* StudyCollectionViewCell.xib */; };
 		DE8E826725477EAC0067899B /* SFPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E826125477EAC0067899B /* SFPro.ttf */; };
 		DE8E827F25477F3B0067899B /* SFProTextBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827A25477F3B0067899B /* SFProTextBold.otf */; };
 		DE8E828025477F3B0067899B /* SFProTextMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827B25477F3B0067899B /* SFProTextMediumItalic.otf */; };
@@ -106,6 +108,8 @@
 		DE77DAF424E6FE5000095D73 /* memoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = memoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE77DAF824E6FE5000095D73 /* memoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memoUITests.swift; sourceTree = "<group>"; };
 		DE77DAFA24E6FE5000095D73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE7D991525D2B97A0053679C /* StudyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE7D991625D2B97A0053679C /* StudyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE8E826125477EAC0067899B /* SFPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPro.ttf; sourceTree = "<group>"; };
 		DE8E827A25477F3B0067899B /* SFProTextBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextBold.otf; sourceTree = "<group>"; };
 		DE8E827B25477F3B0067899B /* SFProTextMediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextMediumItalic.otf; sourceTree = "<group>"; };
@@ -339,6 +343,8 @@
 				DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */,
 				DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */,
 				DE913F2224F1B25600383CFC /* AddWordTableViewCell.xib */,
+				DE7D991525D2B97A0053679C /* StudyCollectionViewCell.swift */,
+				DE7D991625D2B97A0053679C /* StudyCollectionViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -488,6 +494,7 @@
 				DE8E828325477F3B0067899B /* SFProTextMedium.otf in Resources */,
 				DE8E828025477F3B0067899B /* SFProTextMediumItalic.otf in Resources */,
 				DE8E828125477F3B0067899B /* SFProTextSemibold.otf in Resources */,
+				DE7D991825D2B97A0053679C /* StudyCollectionViewCell.xib in Resources */,
 				DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */,
 				DE913F2424F1B25600383CFC /* AddWordTableViewCell.xib in Resources */,
 				DE8E826725477EAC0067899B /* SFPro.ttf in Resources */,
@@ -539,6 +546,7 @@
 			files = (
 				DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */,
 				DE44290A25474D3800A8657C /* UIView+Extension.swift in Sources */,
+				DE7D991725D2B97A0053679C /* StudyCollectionViewCell.swift in Sources */,
 				DE617B8125406210009FEE40 /* Card+CoreDataClass.swift in Sources */,
 				DE4428D62547017100A8657C /* CollectionsView.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
