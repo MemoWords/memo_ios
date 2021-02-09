@@ -16,13 +16,21 @@ class FolderTableViewCell: UITableViewCell {
 
   override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        mainFrame.layer.cornerRadius = 18
+        mainFrame.layer.shadowColor = UIColor.black.cgColor
+        mainFrame.layer.shadowOpacity = 0.05
+        mainFrame.layer.shadowRadius = 4
+        mainFrame.layer.shadowOffset = .init(width: 1, height: 3)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func prepareForReuse() {
+        titleLabel.text = nil
+        bodyLabel.text = nil
+    }
 
-        // Configure the view for the selected state
+    func configure(collection: Collection) {
+        self.titleLabel.text = collection.name
+        self.bodyLabel.text = String("\(collection.cards!.count) Palavras")
     }
     
 }

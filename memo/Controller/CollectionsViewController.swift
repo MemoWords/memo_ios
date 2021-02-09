@@ -31,10 +31,10 @@ class CollectionsViewController: UIViewController {
         collectionsView.tableView.delegate   = self
         collectionsView.tableView.register(
             UINib.init(
-                nibName: "ColecoesTableViewCell",
+                nibName: "FolderTableViewCell",
                 bundle: nil
             ),
-            forCellReuseIdentifier: "CollectionsCell"
+            forCellReuseIdentifier: "FolderCell"
         )
     }
     
@@ -53,15 +53,15 @@ class CollectionsViewController: UIViewController {
     func configureNavBar() {
         self.navigationItem.title = TabBarItems.collections.title
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.tintColor = .memoSecondBlue
+        self.navigationController?.navigationBar.tintColor = .primaryColor
 
         self.navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 34)!,
-            NSAttributedString.Key.foregroundColor: UIColor.memoBlack
+            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 32)!,
+            NSAttributedString.Key.foregroundColor: UIColor.titleColor
         ]
         self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 17)!,
-            NSAttributedString.Key.foregroundColor: UIColor.memoBlack
+            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 16)!,
+            NSAttributedString.Key.foregroundColor: UIColor.titleColor
         ]
     }
     
@@ -80,9 +80,9 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     // Add the cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: "CollectionsCell",
+            withIdentifier: "FolderCell",
             for: indexPath
-        ) as! ColecoesTableViewCell
+        ) as! FolderTableViewCell
         
         cell.selectionStyle = .none
         cell.configure(collection: self.collections[indexPath.row])
@@ -92,9 +92,9 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
 
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let reviewViewController = ReviewViewController()
-        reviewViewController.collection = self.collections[indexPath.row]
-        self.navigationController?.pushViewController(reviewViewController, animated: true)
+//        let reviewViewController = ReviewViewController()
+//        reviewViewController.collection = self.collections[indexPath.row]
+//        self.navigationController?.pushViewController(reviewViewController, animated: true)
     }
     
 }

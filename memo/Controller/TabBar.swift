@@ -37,9 +37,9 @@ class TabBar: UITabBarController {
     private func configItems() {
         collectionItem.imageInsets = UIEdgeInsets(top: 15, left: 0, bottom: -15, right: 0)
         collectionItem.title = nil
-        collectionItem.image = UIImage(systemName: "folder.circle.fill")
+        collectionItem.image = UIImage(systemName: "folder.fill")
         searchItem.title = nil
-        searchItem.image = UIImage(systemName: "magnifyingglass.circle.fill")
+        searchItem.image = UIImage(systemName: "magnifyingglass")
         configItem.title = nil
         configItem.image = UIImage(systemName: "gearshape.fill")
     }
