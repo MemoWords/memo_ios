@@ -33,13 +33,17 @@ class TabBar: UITabBarController {
 
     // MARK: - Functions
     private func configItems() {
-        collectionsNavController?.tabBarItem.image = UIImage(named: "folder")
-        collectionsNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -25, right: 0)
-        searchNavController?.tabBarItem.image = UIImage(named: "lens_bold")
-        searchNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -25, right: 0)
+        collectionsNavController?.tabBarItem.image = UIImage(named: "folder_unselected")
+        collectionsNavController?.tabBarItem.selectedImage = UIImage(named: "folder")
+        collectionsNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 0)
 
-        configNavController?.tabBarItem.image = UIImage(named: "gear")
-        configNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -25, right: 0)
+        searchNavController?.tabBarItem.image = UIImage(named: "lens_unselected")
+        searchNavController?.tabBarItem.selectedImage = UIImage(named: "lens_bold")
+        searchNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 0)
+
+        configNavController?.tabBarItem.image = UIImage(named: "gear_unselected")
+        configNavController?.tabBarItem.selectedImage = UIImage(named: "gear")
+        configNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 0)
     }
     
     private func getControllers() -> [UINavigationController] {
