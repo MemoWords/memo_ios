@@ -30,12 +30,8 @@ class WordListViewController: UIViewController {
     }
 
     func configureNavBar() {
-        title = collection?.name
+        navigationItem.title = collection?.name
         navigationItem.largeTitleDisplayMode = .never
-        // Make the navigation bar background clear
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
     }
 
 }

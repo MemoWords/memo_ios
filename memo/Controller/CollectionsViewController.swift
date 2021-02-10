@@ -66,18 +66,31 @@ class CollectionsViewController: UIViewController {
     // MARK: - Funcs.
     
     func configureNavBar() {
-        self.navigationItem.title = TabBarItems.collections.title
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.tintColor = .primaryColor
+        navigationItem.title = TabBarItems.collections.title
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .primaryColor
 
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [
+        navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 32)!,
             NSAttributedString.Key.foregroundColor: UIColor.titleColor
         ]
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 16)!,
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 17)!,
             NSAttributedString.Key.foregroundColor: UIColor.titleColor
         ]
+
+        let image = UIImage(systemName: "arrow.left")
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+
+        navigationController?.navigationBar.backIndicatorImage = image
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+
+        // Make the navigation bar background clear
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
     
 }
