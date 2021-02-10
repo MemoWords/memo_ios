@@ -55,6 +55,7 @@ class CollectionsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.collections = collectionRepository.fetchAll()
         collectionsView.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        collectionsView.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredHorizontally, animated: false)
     }
     
     override func loadView() {
@@ -106,9 +107,8 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
 
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let reviewViewController = ReviewViewController()
-//        reviewViewController.collection = self.collections[indexPath.row]
-//        self.navigationController?.pushViewController(reviewViewController, animated: true)
+        let wordListController = WordListViewController()
+        self.navigationController?.pushViewController(wordListController, animated: true)
     }
     
 }
@@ -117,12 +117,19 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension CollectionsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StudyCell", for: indexPath) as! StudyCollectionViewCell
 
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Clicou na célula \(indexPath.row)!")
+//        let reviewViewController = ReviewViewController()
+//        reviewViewController.collection = self.collections[indexPath.row]
+//        self.navigationController?.pushViewController(reviewViewController, animated: true)
     }
 }
