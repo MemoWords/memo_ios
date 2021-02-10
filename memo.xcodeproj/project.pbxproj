@@ -68,8 +68,6 @@
 		DE913F4824F31D1200383CFC /* ClassificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4724F31D1200383CFC /* ClassificateTests.swift */; };
 		DE913F4A24F321EB00383CFC /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4924F321EB00383CFC /* CardTests.swift */; };
 		DEC831C32544987500229AFF /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC831C22544987500229AFF /* Color+Extension.swift */; };
-		DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */; };
-		DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
 		DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */; };
 		DEF04A8224EB0CC0003457F2 /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */; };
@@ -160,8 +158,6 @@
 		DE913F4724F31D1200383CFC /* ClassificateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificateTests.swift; sourceTree = "<group>"; };
 		DE913F4924F321EB00383CFC /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		DEC831C22544987500229AFF /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
-		DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColecoesTableViewCell.swift; sourceTree = "<group>"; };
-		DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColecoesTableViewCell.xib; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
 		DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
@@ -359,8 +355,6 @@
 		DEF04A6524EAB6C3003457F2 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				DEF04A6624EAB7BD003457F2 /* ColecoesTableViewCell.swift */,
-				DEF04A6724EAB7BD003457F2 /* ColecoesTableViewCell.xib */,
 				DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */,
 				DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */,
 				DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */,
@@ -514,7 +508,6 @@
 				DE8E828125477F3B0067899B /* SFProTextSemibold.otf in Resources */,
 				DE7D991825D2B97A0053679C /* StudyCollectionViewCell.xib in Resources */,
 				DE7D994725D3635C0053679C /* WordTableViewCell.xib in Resources */,
-				DEF04A6924EAB7BD003457F2 /* ColecoesTableViewCell.xib in Resources */,
 				DE913F2424F1B25600383CFC /* AddWordTableViewCell.xib in Resources */,
 				DE8E826725477EAC0067899B /* SFPro.ttf in Resources */,
 				DE913F0424EC4F5800383CFC /* DefinitionTableViewCell.xib in Resources */,
@@ -604,7 +597,6 @@
 				DE8E82A12547A1AB0067899B /* CardMessageView.swift in Sources */,
 				DE4428F72547410800A8657C /* TabBar+Title.swift in Sources */,
 				DE913F1224ED9E2800383CFC /* DateHelper.swift in Sources */,
-				DEF04A6824EAB7BD003457F2 /* ColecoesTableViewCell.swift in Sources */,
 				DE913F0B24ED5FF300383CFC /* Classification.swift in Sources */,
 				DE617B8F254065FA009FEE40 /* CollectionRepositry.swift in Sources */,
 				DE617B36253F668C009FEE40 /* memo.xcdatamodeld in Sources */,
