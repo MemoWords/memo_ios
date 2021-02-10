@@ -35,12 +35,13 @@ class TabBar: UITabBarController {
     
     // MARK: - Functions
     private func configItems() {
-        collectionItem.title = TabBarItems.collections.title
-        collectionItem.image = UIImage(systemName: "folder")
-        searchItem.title = TabBarItems.search.title
+        collectionItem.imageInsets = UIEdgeInsets(top: 15, left: 0, bottom: -15, right: 0)
+        collectionItem.title = nil
+        collectionItem.image = UIImage(systemName: "folder.fill")
+        searchItem.title = nil
         searchItem.image = UIImage(systemName: "magnifyingglass")
-        configItem.title = TabBarItems.settings.title
-        configItem.image = UIImage(systemName: "gearshape")
+        configItem.title = nil
+        configItem.image = UIImage(systemName: "gearshape.fill")
     }
     
     private func addItems() {
@@ -59,7 +60,12 @@ class TabBar: UITabBarController {
     
     private func configTabBar() {
         self.overrideUserInterfaceStyle = .light
-        self.tabBar.tintColor = .memoSecondBlue
+        self.tabBar.tintColor = .primaryColor
+        self.tabBar.backgroundColor = .whiteColor
+        self.tabBar.unselectedItemTintColor = .bodyColor
+        self.tabBar.isTranslucent = false
+        self.tabBar.layer.borderWidth = 0
+        self.tabBar.clipsToBounds = true
         self.viewControllers = self.getControllers()
     }
 

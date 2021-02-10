@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Text-Bold.otf">
+        <array key="SFProTextBold.otf">
             <string>SFProText-Bold</string>
         </array>
-        <array key="SF-Pro-Text-Medium.otf">
+        <array key="SFProTextMedium.otf">
             <string>SFProText-Medium</string>
         </array>
     </customFonts>
@@ -56,8 +56,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verbos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdv-a2-fBF">
-                                <rect key="frame" x="15" y="67" width="173" height="24"/>
-                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="20"/>
+                                <rect key="frame" x="15" y="70" width="173" height="21"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
                                 <color key="textColor" name="white_color"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -92,6 +92,7 @@
             <size key="customSize" width="227" height="141"/>
             <connections>
                 <outlet property="bodyLabel" destination="HiE-2t-5tG" id="CJf-7F-Kba"/>
+                <outlet property="card" destination="WND-j7-NhX" id="As7-ND-Toj"/>
                 <outlet property="mainFrame" destination="bfI-g4-eak" id="UYK-pi-7oe"/>
                 <outlet property="titleLabel" destination="Hdv-a2-fBF" id="884-ok-Y4M"/>
             </connections>
