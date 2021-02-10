@@ -37,76 +37,73 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configNavBar()
+        configNavBar()
         
         reviewView.card.tableView.dataSource = self
         reviewView.card.tableView.delegate  = self
 
         reviewView.card.tableView.register(
-            UINib.init(
-                nibName: "DefinitionTableViewCell",
-                bundle: nil
-            ),
+            UINib.init(nibName: "DefinitionTableViewCell", bundle: nil),
             forCellReuseIdentifier: "DefinitionCell"
         )
         
-        if let cards = self.collection?.cards {
+        if let cards = collection?.cards {
             self.cards = cards.allObjects as! [Card]
         }
         
-        self.numOfCardsToStudy = self.getNumOfCardsToStudy()
+        numOfCardsToStudy = getNumOfCardsToStudy()
         
-        self.show()
+        show()
     }
     
     override func loadView() {
         super.loadView()
-        self.view = reviewView
-        reviewView.wrongAction = self.wrongButtonTapped
-        reviewView.hardAction = self.hardButtonTapped
-        reviewView.easyAction = self.easyButtonTapped
-        reviewView.card.showAction = self.showButtonTapped
+        view = reviewView
+        reviewView.wrongAction = wrongButtonTapped
+        reviewView.hardAction = hardButtonTapped
+        reviewView.easyAction = easyButtonTapped
+        reviewView.card.showAction = showButtonTapped
     }
 
     // MARK: - Actions.
     
     func showButtonTapped() {
         reviewView.card.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-        self.isContentHidden = false
+        isContentHidden = false
     }
     
     func wrongButtonTapped() {
-        self.update(val: 0)
-        self.count += 1
-        self.show()
+        update(val: 0)
+        count += 1
+        show()
     }
     
     func hardButtonTapped() {
-        self.numOfCardsToStudy -= 1
-        self.update(val: 1)
-        self.count += 1
-        self.show()
+        numOfCardsToStudy -= 1
+        update(val: 1)
+        count += 1
+        show()
     }
     
     func easyButtonTapped() {
-        self.numOfCardsToStudy -= 1
-        self.update(val: 2)
-        self.count += 1
-        self.show()
+        numOfCardsToStudy -= 1
+        update(val: 2)
+        count += 1
+        show()
     }
     
     // MARK: - Functions.
     func configNavBar() {
-        self.title = self.collection?.name
-        self.navigationItem.largeTitleDisplayMode = .never
+        navigationItem.title = self.collection?.name
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     func show() {
-        self.isContentHidden = true
-        self.showMessage(false)
+        isContentHidden = true
+        showMessage(false)
         
-        reviewView.labelTotal.text = String("Total: \(self.cards.count)")
-        reviewView.labelStudy.text = String("Estudar: \(self.numOfCardsToStudy)")
+        reviewView.labelTotal.text = String("Total: \(cards.count)")
+        reviewView.labelStudy.text = String("Estudar: \(numOfCardsToStudy)")
         reviewView.card.titleLabel.text = "..."
         reviewView.card.pronunciationLabel.text = "/.../"
         

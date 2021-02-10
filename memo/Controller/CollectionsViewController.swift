@@ -25,42 +25,43 @@ class CollectionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureNavBar()
+        configureNavBar()
 
         collectionsView.messageCard.isHidden = true
-        
         collectionsView.tableView.dataSource = self
         collectionsView.tableView.delegate   = self
         collectionsView.collectionView.dataSource = self
         collectionsView.collectionView.delegate   = self
 
-        collectionsView.tableView.register(
-            UINib.init(
-                nibName: "FolderTableViewCell",
-                bundle: nil
-            ),
-            forCellReuseIdentifier: "FolderCell"
+        collectionsView.collectionView.register(
+            UINib.init(nibName: "StudyCollectionViewCell", bundle: nil),
+            forCellWithReuseIdentifier: "StudyCell"
         )
 
-        collectionsView.collectionView.register(
-            UINib.init(
-                nibName: "StudyCollectionViewCell",
-                bundle: nil
-            ),
-            forCellWithReuseIdentifier: "StudyCell"
+        collectionsView.tableView.register(
+            UINib.init(nibName: "FolderTableViewCell",bundle: nil),
+            forCellReuseIdentifier: "FolderCell"
         )
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.collections = collectionRepository.fetchAll()
-        collectionsView.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-        collectionsView.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredHorizontally, animated: false)
+        collections = collectionRepository.fetchAll()
+        collectionsView.tableView.scrollToRow(
+            at: IndexPath(row: 0, section: 0),
+            at: .top,
+            animated: false
+        )
+        collectionsView.collectionView.scrollToItem(
+            at: IndexPath(row: 0, section: 0),
+            at: .centeredHorizontally,
+            animated: false
+        )
     }
     
     override func loadView() {
         super.loadView()
-        self.view = collectionsView
+        view = collectionsView
     }
     
     // MARK: - Funcs.
@@ -95,41 +96,10 @@ class CollectionsViewController: UIViewController {
     
 }
 
-// MARK: - TableView
-
-// Table view population.
-extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    // Sets the number of cells on tableview.
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.collections.count
-    }
-    
-    // Add the cells.
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: "FolderCell",
-            for: indexPath
-        ) as! FolderTableViewCell
-        
-        cell.selectionStyle = .none
-        cell.configure(collection: self.collections[indexPath.row])
-        
-        return cell
-    }
-
-    // When a cell is selected.
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let wordListController = WordListViewController()
-        wordListController.collection = self.collections[indexPath.row]
-        self.navigationController?.pushViewController(wordListController, animated: true)
-    }
-    
-}
-
 // MARK: - CollectionView
 
 extension CollectionsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         10
     }
@@ -146,4 +116,36 @@ extension CollectionsViewController: UICollectionViewDelegate, UICollectionViewD
 //        reviewViewController.collection = self.collections[indexPath.row]
 //        self.navigationController?.pushViewController(reviewViewController, animated: true)
     }
+
+}
+
+// MARK: - TableView
+
+extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    // Sets the number of cells on tableview.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        collections.count
+    }
+    
+    // Add the cells.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "FolderCell",
+            for: indexPath
+        ) as! FolderTableViewCell
+        
+        cell.selectionStyle = .none
+        cell.configure(collection: collections[indexPath.row])
+        
+        return cell
+    }
+
+    // When a cell is selected.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let wordListController = WordListViewController()
+        wordListController.collection = collections[indexPath.row]
+        navigationController?.pushViewController(wordListController, animated: true)
+    }
+    
 }

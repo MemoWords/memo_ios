@@ -14,21 +14,17 @@ class TabBar: UITabBarController {
     var collectionsNavController: UINavigationController?
     var searchNavController: UINavigationController?
     var configNavController: UINavigationController?
-    
-//    let collectionItem = UITabBarItem()
-//    let searchItem = UITabBarItem()
-//    let configItem = UITabBarItem()
+
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionsNavController = UINavigationController(rootViewController: CollectionsViewController())
-        self.searchNavController = UINavigationController(rootViewController: SearchViewController())
-        self.configNavController = UINavigationController(rootViewController: ConfigViewController())
-        
-        self.configItems()
-        self.configTabBar()
+        collectionsNavController = UINavigationController(rootViewController: CollectionsViewController())
+        searchNavController = UINavigationController(rootViewController: SearchViewController())
+        configNavController = UINavigationController(rootViewController: ConfigViewController())
+        configItems()
+        configTabBar()
     }
 
     // MARK: - Functions
@@ -55,14 +51,14 @@ class TabBar: UITabBarController {
     }
     
     private func configTabBar() {
-        self.overrideUserInterfaceStyle = .light
-        self.tabBar.tintColor = .primaryColor
-        self.tabBar.backgroundColor = .whiteColor
-        self.tabBar.unselectedItemTintColor = .bodyColor
-        self.tabBar.isTranslucent = false
-        self.tabBar.layer.borderWidth = 0
-        self.tabBar.clipsToBounds = true
-        self.viewControllers = self.getControllers()
+        overrideUserInterfaceStyle = .light
+        tabBar.tintColor = .primaryColor
+        tabBar.backgroundColor = .whiteColor
+        tabBar.unselectedItemTintColor = .bodyColor
+        tabBar.isTranslucent = false
+        tabBar.layer.borderWidth = 0
+        tabBar.clipsToBounds = true
+        viewControllers = getControllers()
     }
 
 }

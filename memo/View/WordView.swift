@@ -45,9 +45,9 @@ extension WordView {
     func setUpLabel() {
         totalLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            totalLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 30),
-            totalLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 22),
-            totalLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -22)
+            totalLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
+            totalLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 22),
+            totalLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -22)
         ])
     }
 

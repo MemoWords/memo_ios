@@ -48,8 +48,8 @@ class SearchView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .memoWhite
-        self.setUpViews()
+        backgroundColor = .memoWhite
+        setUpViews()
     }
     
     required init?(coder: NSCoder) {
@@ -78,24 +78,24 @@ class SearchView: UIView {
     }
     
     private func setUpViews() {
-        self.addSubviews(
+        addSubviews(
             searchTextField,
             card,
             saveButton
         )
-        self.setupTextField()
-        self.setupButton()
-        self.setupCard()
+        setupTextField()
+        setupButton()
+        setupCard()
     }
     
     func activateButton(_ value: Bool) {
         if value {
-            self.saveButton.backgroundColor = .memoSecondBlue
-            self.saveButton.setTitleColor(.memoWhite, for: .normal)
+            saveButton.backgroundColor = .memoSecondBlue
+            saveButton.setTitleColor(.memoWhite, for: .normal)
         } else {
-            self.saveButton.backgroundColor = .memoLightGray
-            self.saveButton.setTitleColor(.memoDarkGray, for: .normal)
+            saveButton.backgroundColor = .memoLightGray
+            saveButton.setTitleColor(.memoDarkGray, for: .normal)
         }
-        self.saveButton.isEnabled = value
+        saveButton.isEnabled = value
     }
 }

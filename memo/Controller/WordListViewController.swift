@@ -13,15 +13,18 @@ class WordListViewController: UIViewController {
     var collection: Collection?
     let wordView = WordView()
 
+    override func loadView() {
+      view = wordView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = wordView
         configureNavBar()
+
         wordView.totalLabel.text = "TOTAL: \(collection!.cards!.count)"
 
         wordView.tableView.dataSource = self
         wordView.tableView.delegate   = self
-
         wordView.tableView.register(UINib.init(
             nibName: "WordTableViewCell",
             bundle: nil

@@ -88,8 +88,8 @@ class ReviewView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .memoWhite
-        self.setUpViews()
+        backgroundColor = .memoWhite
+        setUpViews()
     }
     
     required init?(coder: NSCoder) {
@@ -129,15 +129,15 @@ class ReviewView: UIView {
         labelsStack.addArrangedSubview(labelStudy)
         labelsStack.addArrangedSubview(labelTotal)
         
-        self.addSubviews(
+        addSubviews(
             labelsStack,
             card,
             cardMessage,
             buttonsStack
         )
-        self.setUpLabelsStack()
-        self.setUpCard()
-        self.setUpCardMessage()
-        self.setUpButtonsStack()
+        setUpLabelsStack()
+        setUpCard()
+        setUpCardMessage()
+        setUpButtonsStack()
     }
 }
