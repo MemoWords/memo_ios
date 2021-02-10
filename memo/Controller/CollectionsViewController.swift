@@ -108,6 +108,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let wordListController = WordListViewController()
+        wordListController.collection = self.collections[indexPath.row]
         self.navigationController?.pushViewController(wordListController, animated: true)
     }
     
