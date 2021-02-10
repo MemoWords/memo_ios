@@ -42,11 +42,14 @@ class WordListViewController: UIViewController {
 
 extension WordListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        collection!.cards!.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell", for: indexPath) as! WordTableViewCell
+        if let cards = collection!.cards {
+            cell.configure(card: (cards.allObjects as! [Card])[indexPath.row])
+        }
         return cell
     }
 }

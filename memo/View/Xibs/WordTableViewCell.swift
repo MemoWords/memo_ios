@@ -22,5 +22,10 @@ class WordTableViewCell: UITableViewCell {
         mainFrame.layer.shadowRadius = 3
         mainFrame.layer.shadowOffset = .init(width: 1, height: 2)
     }
+
+    func configure(card: Card) {
+        titleLabel.text = card.content
+        dateLabel.text = card.nextStudyDay
+    }
     
 }
