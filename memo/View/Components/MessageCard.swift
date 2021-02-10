@@ -40,6 +40,10 @@ class MessageCard: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .clear
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.20
+        self.layer.shadowRadius = 4
+        self.layer.shadowOffset = .init(width: 1, height: 3)
         self.addSubviews(image, titleLabel, messageLabel)
         self.setUpImage()
         self.setUpLabels()

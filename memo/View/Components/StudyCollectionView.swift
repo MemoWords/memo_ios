@@ -14,7 +14,7 @@ class StudyCollectionView: UICollectionView {
         super.init(frame: frame, collectionViewLayout: layout)
 
         self.backgroundColor = .clear
-        self.alwaysBounceHorizontal = false
+        self.alwaysBounceHorizontal = true
         self.showsHorizontalScrollIndicator = false
 
     }
