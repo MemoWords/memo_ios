@@ -15,39 +15,31 @@ class TabBar: UITabBarController {
     var searchNavController: UINavigationController?
     var configNavController: UINavigationController?
     
-    let collectionItem = UITabBarItem()
-    let searchItem = UITabBarItem()
-    let configItem = UITabBarItem()
+//    let collectionItem = UITabBarItem()
+//    let searchItem = UITabBarItem()
+//    let configItem = UITabBarItem()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.collectionsNavController = UINavigationController(rootViewController: CollectionsViewController())
         self.searchNavController = UINavigationController(rootViewController: SearchViewController())
         self.configNavController = UINavigationController(rootViewController: ConfigViewController())
         
         self.configItems()
-        self.addItems()
         self.configTabBar()
     }
-    
+
     // MARK: - Functions
     private func configItems() {
-        collectionItem.imageInsets = UIEdgeInsets(top: 15, left: 0, bottom: -15, right: 0)
-        collectionItem.title = nil
-        collectionItem.image = UIImage(systemName: "folder.fill")
-        searchItem.title = nil
-        searchItem.image = UIImage(systemName: "magnifyingglass")
-        configItem.title = nil
-        configItem.image = UIImage(systemName: "gearshape.fill")
-    }
-    
-    private func addItems() {
-        collectionsNavController?.tabBarItem = collectionItem
-        searchNavController?.tabBarItem = searchItem
-        configNavController?.tabBarItem = configItem
+        collectionsNavController?.tabBarItem.image = UIImage(named: "folder")
+        collectionsNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -25, right: 0)
+        searchNavController?.tabBarItem.image = UIImage(named: "lens_bold")
+        searchNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -25, right: 0)
+
+        configNavController?.tabBarItem.image = UIImage(named: "gear")
+        configNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -25, right: 0)
     }
     
     private func getControllers() -> [UINavigationController] {
