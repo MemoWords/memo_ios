@@ -14,6 +14,7 @@ class CollectionRepository {
     // Properties.
     let context: NSManagedObjectContext
     var collections: [Collection]?
+    var collectionsToStudy: [Collection]?
     
     // Initializer.
     init() {
@@ -42,5 +43,15 @@ class CollectionRepository {
     func fetchAll() -> [Collection] {
         self.collections = try! context.fetch(Collection.fetchRequest())
         return self.collections!
+    }
+
+    // Function to fetch collections to sutdy.
+    func getCollectionsToStudy() -> [Collection] {
+        let predicate = NSPredicate(format: "ANY cards.nextStudyDay = %@", DateHelper.today)
+        let request: NSFetchRequest<Collection> = Collection.fetchRequest()
+        request.predicate = predicate
+
+        self.collectionsToStudy = try! context.fetch(request)
+        return self.collectionsToStudy!
     }
 }

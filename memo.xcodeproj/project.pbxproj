@@ -16,6 +16,7 @@
 		DE44290A25474D3800A8657C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44290925474D3800A8657C /* UIView+Extension.swift */; };
 		DE44290F25474D7A00A8657C /* ReviewView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44290E25474D7A00A8657C /* ReviewView+Extension.swift */; };
 		DE44291425476B6600A8657C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44291325476B6600A8657C /* CardView.swift */; };
+		DE4E3A5D25D6B4F2005093B0 /* CollectionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4E3A5C25D6B4F2005093B0 /* CollectionsPresenter.swift */; };
 		DE617B30253F60F4009FEE40 /* CardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B2F253F60F4009FEE40 /* CardRepository.swift */; };
 		DE617B36253F668C009FEE40 /* memo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE617B34253F668C009FEE40 /* memo.xcdatamodeld */; };
 		DE617B8125406210009FEE40 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B7D25406210009FEE40 /* Card+CoreDataClass.swift */; };
@@ -100,6 +101,7 @@
 		DE44290925474D3800A8657C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		DE44290E25474D7A00A8657C /* ReviewView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewView+Extension.swift"; sourceTree = "<group>"; };
 		DE44291325476B6600A8657C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DE4E3A5C25D6B4F2005093B0 /* CollectionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsPresenter.swift; sourceTree = "<group>"; };
 		DE617B2F253F60F4009FEE40 /* CardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRepository.swift; sourceTree = "<group>"; };
 		DE617B35253F668C009FEE40 /* memo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = memo.xcdatamodel; sourceTree = "<group>"; };
 		DE617B7D25406210009FEE40 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -202,6 +204,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		DE4E3A5B25D6B35D005093B0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DE4E3A5C25D6B4F2005093B0 /* CollectionsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		DE617B932540BA96009FEE40 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,7 +251,7 @@
 				DE913F0924ED5F8000383CFC /* Algorithm */,
 				DE77DB0824E7065D00095D73 /* Model */,
 				DEF04A7A24EAFABD003457F2 /* Repository */,
-				DE77DB0724E7065400095D73 /* Controller */,
+				DE4E3A5B25D6B35D005093B0 /* Presenter */,
 				DE77DB0624E7064600095D73 /* View */,
 				DE77DAD624E6FE4D00095D73 /* AppDelegate.swift */,
 				DE77DAD824E6FE4D00095D73 /* SceneDelegate.swift */,
@@ -266,7 +276,7 @@
 			children = (
 				DEE2C7AC2544720F0005992E /* Storyboards */,
 				DEF04A6524EAB6C3003457F2 /* Xibs */,
-				DE4428DD2547022300A8657C /* Components */,
+				DE77DB0724E7065400095D73 /* ViewController */,
 				DE4428D52547017100A8657C /* CollectionsView.swift */,
 				DE4429042547470400A8657C /* ReviewView.swift */,
 				DE8E82C02548645D0067899B /* SearchView.swift */,
@@ -276,7 +286,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DE77DB0724E7065400095D73 /* Controller */ = {
+		DE77DB0724E7065400095D73 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				DE4428D02546FBC200A8657C /* TabBar.swift */,
@@ -288,7 +298,7 @@
 				DE4428F12547238200A8657C /* ConfigViewController.swift */,
 				DE7D993F25D35A250053679C /* WordListViewController.swift */,
 			);
-			path = Controller;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		DE77DB0824E7065D00095D73 /* Model */ = {
@@ -355,6 +365,7 @@
 		DEF04A6524EAB6C3003457F2 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				DE4428DD2547022300A8657C /* Components */,
 				DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */,
 				DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */,
 				DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */,
@@ -593,6 +604,7 @@
 				DE7D993225D337B20053679C /* StudyCollectionView.swift in Sources */,
 				DE4428F22547238200A8657C /* ConfigViewController.swift in Sources */,
 				DE4428DF2547025700A8657C /* CollectionsTableView.swift in Sources */,
+				DE4E3A5D25D6B4F2005093B0 /* CollectionsPresenter.swift in Sources */,
 				DE4429052547470400A8657C /* ReviewView.swift in Sources */,
 				DE8E82A12547A1AB0067899B /* CardMessageView.swift in Sources */,
 				DE4428F72547410800A8657C /* TabBar+Title.swift in Sources */,

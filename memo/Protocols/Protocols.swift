@@ -11,3 +11,8 @@ import Foundation
 protocol SaveWordDelegate: class {
     func save(collection: Collection?, collectionName: String?, word: String)
 }
+
+// Protocol to update the collections screen.
+protocol CollectionPresenterDelegate: class {
+    func reloadData(value: Bool)
+}

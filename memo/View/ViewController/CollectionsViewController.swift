@@ -13,21 +13,25 @@ class CollectionsViewController: UIViewController {
     // MARK: - Properties.
 
     let collectionsView = CollectionsView()
-    let collectionRepository = CollectionRepository()
-    
-    var collections = [Collection]() {
-        didSet {
-            collectionsView.tableView.reloadData()
-        }
-    }
-    
+	var presenter: CollectionsPresenter
+	
     // MARK: - Lifecycle.
-    
+
+	init(with presenter: CollectionsPresenter) {
+		self.presenter = presenter
+		super.init(nibName: nil, bundle: nil)
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavBar()
-
         collectionsView.messageCard.isHidden = true
+
+        presenter.delegate = self
         collectionsView.tableView.dataSource = self
         collectionsView.tableView.delegate   = self
         collectionsView.collectionView.dataSource = self
@@ -39,14 +43,14 @@ class CollectionsViewController: UIViewController {
         )
 
         collectionsView.tableView.register(
-            UINib.init(nibName: "FolderTableViewCell",bundle: nil),
+            UINib.init(nibName: "FolderTableViewCell", bundle: nil),
             forCellReuseIdentifier: "FolderCell"
         )
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        collections = collectionRepository.fetchAll()
+        presenter.updateData()
         collectionsView.tableView.scrollToRow(
             at: IndexPath(row: 0, section: 0),
             at: .top,
@@ -96,25 +100,38 @@ class CollectionsViewController: UIViewController {
     
 }
 
+// MARK: - Presenter protocol.
+
+extension CollectionsViewController: CollectionPresenterDelegate {
+    func reloadData(value: Bool) {
+        collectionsView.tableView.reloadData()
+        collectionsView.collectionView.reloadData()
+
+        collectionsView.collectionView.isHidden = !value
+        collectionsView.messageCard.isHidden = value
+    }
+}
+
 // MARK: - CollectionView
 
 extension CollectionsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        presenter.collectionsToStudy.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StudyCell", for: indexPath) as! StudyCollectionViewCell
 
+        cell.configure(collection: presenter.collectionsToStudy[indexPath.row])
+
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Clicou na célula \(indexPath.row)!")
-//        let reviewViewController = ReviewViewController()
-//        reviewViewController.collection = self.collections[indexPath.row]
-//        self.navigationController?.pushViewController(reviewViewController, animated: true)
+        let reviewViewController = ReviewViewController()
+        reviewViewController.collection = presenter.collectionsToStudy[indexPath.row]
+        self.navigationController?.pushViewController(reviewViewController, animated: true)
     }
 
 }
@@ -125,7 +142,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     
     // Sets the number of cells on tableview.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        collections.count
+        presenter.collections.count
     }
     
     // Add the cells.
@@ -136,7 +153,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
         ) as! FolderTableViewCell
         
         cell.selectionStyle = .none
-        cell.configure(collection: collections[indexPath.row])
+        cell.configure(collection: presenter.collections[indexPath.row])
         
         return cell
     }
@@ -144,7 +161,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let wordListController = WordListViewController()
-        wordListController.collection = collections[indexPath.row]
+        wordListController.collection = presenter.collections[indexPath.row]
         navigationController?.pushViewController(wordListController, animated: true)
     }
     

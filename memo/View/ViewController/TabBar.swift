@@ -15,12 +15,12 @@ class TabBar: UITabBarController {
     var searchNavController: UINavigationController?
     var configNavController: UINavigationController?
 
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionsNavController = UINavigationController(rootViewController: CollectionsViewController())
+		let collectionsPresenter = CollectionsPresenter()
+		collectionsNavController = UINavigationController(rootViewController: CollectionsViewController(with: collectionsPresenter))
         searchNavController = UINavigationController(rootViewController: SearchViewController())
         configNavController = UINavigationController(rootViewController: ConfigViewController())
         configItems()

@@ -29,8 +29,21 @@ class StudyCollectionViewCell: UICollectionViewCell {
 
     // Prepare the cell for reuse at the table.
     override func prepareForReuse() {
-//        titleLabel.text = nil
-//        bodyLabel.text = nil
+        titleLabel.text = nil
+        bodyLabel.text = nil
+    }
+
+    func configure(collection: Collection) {
+        var study: Int = 0
+
+        for card in collection.cards?.allObjects as! [Card] {
+            if DateHelper.isToday(dateString: card.nextStudyDay!) {
+                study += 1
+            }
+        }
+
+        self.titleLabel.text = collection.name
+        self.bodyLabel.text = String("\(study) para estudar")
     }
 
 }
