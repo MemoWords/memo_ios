@@ -38,7 +38,6 @@ class CardRepository {
     // Function to create a card with a new collection.
     func create(collectionName: String, content: String) {
         let collection = collectionRepository.create(name: collectionName)
-        
         let card = Card(context: self.context)
         card.collection = collection
         

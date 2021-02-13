@@ -36,8 +36,8 @@ class CollectionsPresenter {
 	}
 
     func updateData() {
-        collections = collectionRepository.fetchAll()
         collectionsToStudy = collectionRepository.getCollectionsToStudy()
+        collections = collectionRepository.fetchAll()
     }
 
 }

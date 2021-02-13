@@ -51,7 +51,10 @@ class CollectionRepository {
         let request: NSFetchRequest<Collection> = Collection.fetchRequest()
         request.predicate = predicate
 
-        self.collectionsToStudy = try! context.fetch(request)
-        return self.collectionsToStudy!
+        collectionsToStudy = try! context.fetch(request)
+
+        try! context.save()
+
+        return collectionsToStudy!
     }
 }

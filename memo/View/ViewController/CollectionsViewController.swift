@@ -61,6 +61,18 @@ class CollectionsViewController: UIViewController {
             at: .centeredHorizontally,
             animated: false
         )
+    
+//        print("--------------------------------------------------------")
+//        print("--------------------------------------------------------")
+//        for collection in presenter.collectionsToStudy {
+//            print("--------------------------")
+//            print(collection.name!)
+//            print("--------------------------")
+//            for card in collection.cards?.allObjects as! [Card] {
+//                print(" - \(card.content!)")
+//            }
+//        }
+//        print("--------------------------------------------------------")
     }
     
     override func loadView() {
@@ -104,9 +116,8 @@ class CollectionsViewController: UIViewController {
 
 extension CollectionsViewController: CollectionPresenterDelegate {
     func reloadData(value: Bool) {
-        collectionsView.tableView.reloadData()
         collectionsView.collectionView.reloadData()
-
+        collectionsView.tableView.reloadData()
         collectionsView.collectionView.isHidden = !value
         collectionsView.messageCard.isHidden = value
     }
