@@ -37,14 +37,8 @@ class CollectionsView: UIView {
         button.setTitle(nil, for: .normal)
         button.setImage(UIImage(systemName: "folder.fill.badge.plus"), for: .normal)
         button.tintColor = .primaryColor
-        button.addTarget(self, action: #selector(add), for: .touchUpInside)
         return button
     }()
-
-    @objc func add() {
-        collectionView.isHidden = !collectionView.isHidden
-        messageCard.isHidden = !messageCard.isHidden
-    }
     
     // MARK: - INIT
     override init(frame: CGRect) {

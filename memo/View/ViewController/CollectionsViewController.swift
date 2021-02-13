@@ -31,6 +31,8 @@ class CollectionsViewController: UIViewController {
         configureNavBar()
         collectionsView.messageCard.isHidden = true
 
+        collectionsView.addFolderButton.addTarget(self, action: #selector(addFolder), for: .touchUpInside)
+
         presenter.delegate = self
         collectionsView.tableView.dataSource = self
         collectionsView.tableView.delegate   = self
@@ -81,6 +83,10 @@ class CollectionsViewController: UIViewController {
     }
     
     // MARK: - Funcs.
+
+    @objc func addFolder() {
+
+    }
     
     func configureNavBar() {
         navigationItem.title = TabBarItems.collections.title
