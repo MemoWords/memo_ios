@@ -31,6 +31,8 @@ class CollectionsViewController: UIViewController {
         configureNavBar()
         collectionsView.messageCard.isHidden = true
 
+        collectionsView.addFolderButton.addTarget(self, action: #selector(addFolder), for: .touchUpInside)
+
         presenter.delegate = self
         collectionsView.tableView.dataSource = self
         collectionsView.tableView.delegate   = self
@@ -80,8 +82,30 @@ class CollectionsViewController: UIViewController {
         view = collectionsView
     }
     
+    // MARK: - Actions.
+
+    @objc func addFolder() {
+        let alert = UIAlertController(title: "Nome da nova pasta:", message: nil, preferredStyle: .alert)
+        alert.overrideUserInterfaceStyle = .light
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Name:"
+        })
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            if let name = alert.textFields?.first?.text {
+                self.presenter.add(name: name)
+                self.collectionsView.tableView.reloadData()
+                self.presenter.updateData()
+            }
+        }))
+
+        self.present(alert, animated: true)
+    }
+
     // MARK: - Funcs.
-    
+
     func configureNavBar() {
         navigationItem.title = TabBarItems.collections.title
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -99,11 +123,10 @@ class CollectionsViewController: UIViewController {
         let image = UIImage(systemName: "arrow.left")
         let backButton = UIBarButtonItem()
         backButton.title = ""
-
+        // Set the back button.
         navigationController?.navigationBar.backIndicatorImage = image
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-
         // Make the navigation bar background clear
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
