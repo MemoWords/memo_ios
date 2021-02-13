@@ -40,4 +40,8 @@ class CollectionsPresenter {
         collectionsToStudy = collectionRepository.getCollectionsToStudy()
     }
 
+    func add(name: String) {
+        collectionRepository.create(name: name)
+    }
+
 }
