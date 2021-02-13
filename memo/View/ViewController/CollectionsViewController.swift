@@ -198,5 +198,17 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
         wordListController.collection = presenter.collections[indexPath.row]
         navigationController?.pushViewController(wordListController, animated: true)
     }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "") {
+            [weak self] (action, view, _) in
+        }
+
+        deleteAction.image = UIImage(systemName: "trash.fill")
+        deleteAction.backgroundColor = .inactiveColor
+        deleteAction.image?.withTintColor(.whiteColor)
+
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
     
 }

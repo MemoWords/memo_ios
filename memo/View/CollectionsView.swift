@@ -126,8 +126,8 @@ extension CollectionsView {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: labelFolder.bottomAnchor, constant: 10),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ])
     }
 }
