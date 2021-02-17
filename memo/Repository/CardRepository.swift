@@ -94,6 +94,11 @@ class CardRepository {
         
         self.save()
     }
+
+    func delete(card: Card) {
+        context.delete(card)
+        save()
+    }
     
     // function to save the context.
     func save() {

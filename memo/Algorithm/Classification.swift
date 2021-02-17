@@ -1,5 +1,5 @@
 import Foundation
-/**
+/*
  * Algoritimo básico para repetição espaçada.
  * se a classificação for 0, ele mantem para revisar no mesmo dia.
  * se a classificação for 1, ele faz vc revisar no dia sequinte

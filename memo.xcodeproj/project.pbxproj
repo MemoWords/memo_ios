@@ -69,6 +69,7 @@
 		DE913F4824F31D1200383CFC /* ClassificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4724F31D1200383CFC /* ClassificateTests.swift */; };
 		DE913F4A24F321EB00383CFC /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4924F321EB00383CFC /* CardTests.swift */; };
 		DEC831C32544987500229AFF /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC831C22544987500229AFF /* Color+Extension.swift */; };
+		DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7092825DD557E001FE1D4 /* CardPresenter.swift */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
 		DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */; };
 		DEF04A8224EB0CC0003457F2 /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */; };
@@ -160,6 +161,7 @@
 		DE913F4724F31D1200383CFC /* ClassificateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificateTests.swift; sourceTree = "<group>"; };
 		DE913F4924F321EB00383CFC /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		DEC831C22544987500229AFF /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		DED7092825DD557E001FE1D4 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
 		DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				DE4E3A5C25D6B4F2005093B0 /* CollectionsPresenter.swift */,
+				DED7092825DD557E001FE1D4 /* CardPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -467,7 +470,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Academy IFCE";
 				TargetAttributes = {
 					DE77DAD224E6FE4D00095D73 = {
@@ -582,6 +585,7 @@
 				DE8E82E32549ADAA0067899B /* AddWordTableView.swift in Sources */,
 				DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */,
 				DE44290F25474D7A00A8657C /* ReviewView+Extension.swift in Sources */,
+				DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */,
 				DE8E82C12548645D0067899B /* SearchView.swift in Sources */,
 				DE8E82D9254994490067899B /* AddWordView.swift in Sources */,
 				DE44291425476B6600A8657C /* CardView.swift in Sources */,
@@ -687,6 +691,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -711,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -747,6 +752,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -765,7 +771,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -786,6 +792,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.academyifce.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -804,6 +811,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.academyifce.memo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

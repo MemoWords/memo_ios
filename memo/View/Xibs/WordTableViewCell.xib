@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nLy-aH-gAR">
-                        <rect key="frame" x="22" y="8" width="286" height="60"/>
+                        <rect key="frame" x="10" y="8" width="310" height="60"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XVk-al-75N">
                                 <rect key="frame" x="20" y="17" width="21" height="26"/>
@@ -36,7 +36,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22/02/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-m2-4Yc">
-                                <rect key="frame" x="189" y="21" width="77" height="18"/>
+                                <rect key="frame" x="213" y="21" width="77" height="18"/>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="15"/>
                                 <color key="textColor" name="body_color"/>
                                 <nil key="highlightedColor"/>
@@ -64,8 +64,8 @@
                 <constraints>
                     <constraint firstItem="nLy-aH-gAR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Fm8-Vw-pRP"/>
                     <constraint firstAttribute="bottom" secondItem="nLy-aH-gAR" secondAttribute="bottom" constant="8" id="Hfy-O8-Wyf"/>
-                    <constraint firstAttribute="trailing" secondItem="nLy-aH-gAR" secondAttribute="trailing" constant="22" id="MNE-dw-0zC"/>
-                    <constraint firstItem="nLy-aH-gAR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="Vb9-6a-vy2"/>
+                    <constraint firstAttribute="trailing" secondItem="nLy-aH-gAR" secondAttribute="trailing" constant="10" id="MNE-dw-0zC"/>
+                    <constraint firstItem="nLy-aH-gAR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Vb9-6a-vy2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

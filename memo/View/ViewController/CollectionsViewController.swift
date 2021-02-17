@@ -63,18 +63,7 @@ class CollectionsViewController: UIViewController {
             at: .centeredHorizontally,
             animated: false
         )
-    
-//        print("--------------------------------------------------------")
-//        print("--------------------------------------------------------")
-//        for collection in presenter.collectionsToStudy {
-//            print("--------------------------")
-//            print(collection.name!)
-//            print("--------------------------")
-//            for card in collection.cards?.allObjects as! [Card] {
-//                print(" - \(card.content!)")
-//            }
-//        }
-//        print("--------------------------------------------------------")
+
     }
     
     override func loadView() {
@@ -194,18 +183,35 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
 
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let wordListController = WordListViewController()
-        wordListController.collection = presenter.collections[indexPath.row]
+        let cardPresenter = CardPresenter(collection: presenter.collections[indexPath.row])
+        let wordListController = WordListViewController(with: cardPresenter)
         navigationController?.pushViewController(wordListController, animated: true)
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "") {
-            [weak self] (action, view, _) in
-        }
+        let deleteAction = UIContextualAction(style: .destructive, title: "") { (_, _, _) in
+            if self.presenter.collections[indexPath.row].cards?.count != 0 {
+                let alert = UIAlertController(
+                    title: "A pasta \(String(describing: self.presenter.collections[indexPath.row].name!)) não está vazia, tem certeza que quer excluí-la?",
+                    message: nil,
+                    preferredStyle: .alert
+                )
+                alert.overrideUserInterfaceStyle = .light
+                alert.addAction(UIAlertAction(title: "Não", style: .destructive, handler: nil))
 
-        deleteAction.image = UIImage(systemName: "trash.fill")
-        deleteAction.backgroundColor = .inactiveColor
+                alert.addAction(UIAlertAction(title: "Sim", style: .default, handler: { _ in
+                    self.presenter.delete(at: indexPath.row)
+                }))
+
+                self.present(alert, animated: true)
+            } else {
+                self.presenter.delete(at: indexPath.row)
+            }
+
+        }
+        //deleteAction.image = UIImage(systemName: "trash.fill")
+        deleteAction.image = UIImage(named: "delete")
+        deleteAction.backgroundColor = .backgroundColor
         deleteAction.image?.withTintColor(.whiteColor)
 
         return UISwipeActionsConfiguration(actions: [deleteAction])

@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 public class Collection: NSManagedObject {
     // Fetch function.
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Collection> {

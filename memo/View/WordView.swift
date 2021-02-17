@@ -55,9 +55,9 @@ extension WordView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: totalLabel.bottomAnchor, constant: 10),
-            tableView.leftAnchor.constraint(equalTo: leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            tableView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            tableView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

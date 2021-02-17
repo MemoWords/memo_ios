@@ -73,7 +73,7 @@ extension MessageCard {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 30)
         ])
 
         messageLabel.translatesAutoresizingMaskIntoConstraints = false

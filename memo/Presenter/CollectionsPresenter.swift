@@ -41,7 +41,12 @@ class CollectionsPresenter {
     }
 
     func add(name: String) {
-        collectionRepository.create(name: name)
+        _ = collectionRepository.create(name: name)
+    }
+
+    func delete(at: Int) {
+        collectionRepository.delete(at: at)
+        updateData()
     }
 
 }

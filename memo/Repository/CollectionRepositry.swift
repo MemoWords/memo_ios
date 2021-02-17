@@ -57,4 +57,24 @@ class CollectionRepository {
 
         return collectionsToStudy!
     }
+
+    func delete(at: Int) {
+        let obj = collections![at]
+
+        for card in collections![at].cards! {
+            context.delete(card as! NSManagedObject)
+        }
+
+        context.delete(obj)
+        save()
+    }
+    
+    // function to save the context.
+    func save() {
+        do {
+            try self.context.save()
+        } catch {
+            print(error)
+        }
+    }
 }
