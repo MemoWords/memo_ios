@@ -29,8 +29,8 @@ class FolderTableViewCell: UITableViewCell {
     }
 
     func configure(collection: Collection) {
-        self.titleLabel.text = collection.name
-        self.bodyLabel.text = String("\(collection.cards!.count) Palavras")
+        titleLabel.text = collection.name
+        bodyLabel.text = String("\(collection.cards!.count) Palavras")
     }
     
 }

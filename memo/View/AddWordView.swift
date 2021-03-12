@@ -72,8 +72,8 @@ class AddWordView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .memoWhite
-        self.setupViews()
+        backgroundColor = .memoWhite
+        setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -95,7 +95,7 @@ class AddWordView: UIView {
     }
     
     private func setupViews() {
-        self.addSubviews(
+        addSubviews(
             createLabel,
             nameTextField,
             addButton,
@@ -104,10 +104,10 @@ class AddWordView: UIView {
             tableView
         )
         
-        self.setupLabel()
-        self.setupTextField()
-        self.setupAddButton()
-        self.setupLabels()
-        self.setupTableView()
+        setupLabel()
+        setupTextField()
+        setupAddButton()
+        setupLabels()
+        setupTableView()
     }
 }

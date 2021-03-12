@@ -18,14 +18,13 @@ class CollectionRepository {
     
     // Initializer.
     init() {
-        self.context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        self.collections = try! context.fetch(Collection.fetchRequest())
-        
+        context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        _ = fetchAll()
         // Creates a Default collection if it doesn't exists.
-        if self.collections?.count == 0 {
-            let collection = Collection(context: self.context)
+        if collections?.count == 0 {
+            let collection = Collection(context: context)
             collection.name = "Default"
-            try! self.context.save()
+            try! context.save()
         }
     }
     
@@ -33,16 +32,16 @@ class CollectionRepository {
     
     // Function to create a collection.
     func create(name: String) -> Collection {
-        let collection = Collection(context: self.context)
+        let collection = Collection(context: context)
         collection.name = name
-        try! self.context.save()
+        try! context.save()
         return collection
     }
     
     // Function to fetch all collectins.
     func fetchAll() -> [Collection] {
-        self.collections = try! context.fetch(Collection.fetchRequest())
-        return self.collections!
+        collections = try! context.fetch(Collection.fetchRequest())
+        return collections!
     }
 
     // Function to fetch collections to sutdy.
@@ -72,7 +71,7 @@ class CollectionRepository {
     // function to save the context.
     func save() {
         do {
-            try self.context.save()
+            try context.save()
         } catch {
             print(error)
         }

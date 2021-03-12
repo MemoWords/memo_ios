@@ -12,7 +12,7 @@ class AddCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.overrideUserInterfaceStyle = .light
+        navigationController?.overrideUserInterfaceStyle = .light
     }
     
 }

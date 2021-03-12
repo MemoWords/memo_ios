@@ -67,8 +67,8 @@ class CardView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .memoWhite
-        self.setUpViews()
+        backgroundColor = .memoWhite
+        setUpViews()
     }
     
     required init?(coder: NSCoder) {
@@ -84,18 +84,18 @@ class CardView: UIView {
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = 8
-        self.layer.borderWidth = 0.5
-        self.layer.borderColor = UIColor.memoDarkGray.cgColor
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.1
-        self.layer.shadowRadius = 6
-        self.layer.shadowOffset = .init(width: 0, height: 3)
+        layer.cornerRadius = 8
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.memoDarkGray.cgColor
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.1
+        layer.shadowRadius = 6
+        layer.shadowOffset = .init(width: 0, height: 3)
         img.layer.cornerRadius = img.frame.height / 2
     }
     
     func setUpViews() {
-        self.addSubviews(
+        addSubviews(
             titleLabel,
             pronunciationLabel,
             separator,
@@ -104,10 +104,10 @@ class CardView: UIView {
             showAnswerButton
         )
         
-        self.configureLabels()
-        self.configureSeparator()
-        self.configureImg()
-        self.configureTableView()
-        self.configureShowAnswerButton()
+        configureLabels()
+        configureSeparator()
+        configureImg()
+        configureTableView()
+        configureShowAnswerButton()
     }
 }

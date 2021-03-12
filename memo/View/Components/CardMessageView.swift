@@ -35,8 +35,8 @@ class CardMessageView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .memoWhite
-        self.setUpViews()
+        backgroundColor = .memoWhite
+        setUpViews()
     }
     
     required init?(coder: NSCoder) {
@@ -46,21 +46,21 @@ class CardMessageView: UIView {
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = 8
-        self.layer.borderWidth = 0.5
-        self.layer.borderColor = UIColor.memoDarkGray.cgColor
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.1
-        self.layer.shadowRadius = 6
-        self.layer.shadowOffset = .init(width: 0, height: 3)
+        layer.cornerRadius = 8
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.memoDarkGray.cgColor
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.1
+        layer.shadowRadius = 6
+        layer.shadowOffset = .init(width: 0, height: 3)
     }
     
     func setUpViews() {
-        self.addSubviews(
+        addSubviews(
             titleLabel,
             bodyLabel
         )
-        self.setUpLabels()
+        setUpLabels()
     }
 }
 
@@ -72,15 +72,15 @@ extension CardMessageView {
         bodyLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
+            titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             titleLabel.bottomAnchor.constraint(equalTo: bodyLabel.topAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            bodyLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            bodyLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
-            bodyLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 10)
+            bodyLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            bodyLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            bodyLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 10)
         ])
     }
 }

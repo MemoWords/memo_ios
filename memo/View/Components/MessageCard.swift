@@ -39,14 +39,14 @@ class MessageCard: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .clear
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.20
-        self.layer.shadowRadius = 4
-        self.layer.shadowOffset = .init(width: 1, height: 3)
-        self.addSubviews(image, titleLabel, messageLabel)
-        self.setUpImage()
-        self.setUpLabels()
+        backgroundColor = .clear
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.20
+        layer.shadowRadius = 4
+        layer.shadowOffset = .init(width: 1, height: 3)
+        addSubviews(image, titleLabel, messageLabel)
+        setUpImage()
+        setUpLabels()
     }
 
     override func layoutSubviews() {
@@ -62,24 +62,24 @@ extension MessageCard {
     func setUpImage() {
         image.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: self.topAnchor),
-            image.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            image.leftAnchor.constraint(equalTo: self.leftAnchor),
-            image.rightAnchor.constraint(equalTo: self.rightAnchor)
+            image.topAnchor.constraint(equalTo: topAnchor),
+            image.bottomAnchor.constraint(equalTo: bottomAnchor),
+            image.leftAnchor.constraint(equalTo: leftAnchor),
+            image.rightAnchor.constraint(equalTo: rightAnchor)
         ])
     }
 
     func setUpLabels() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 30)
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 30)
         ])
 
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            messageLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            messageLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30)
+            messageLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            messageLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30)
         ])
     }
 }

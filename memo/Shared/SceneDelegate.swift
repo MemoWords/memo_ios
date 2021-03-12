@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        self.repository.updateCardsToStudy()
+        repository.updateCardsToStudy()
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

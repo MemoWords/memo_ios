@@ -12,9 +12,9 @@ extension AddWordView {
     func setupLabel() {
         createLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            createLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 15),
-            createLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25),
-            createLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -25)
+            createLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
+            createLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
+            createLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -25)
         ])
     }
     
@@ -22,8 +22,8 @@ extension AddWordView {
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             nameTextField.topAnchor.constraint(equalTo: createLabel.bottomAnchor, constant: 12),
-            nameTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            nameTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
+            nameTextField.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            nameTextField.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             nameTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
@@ -32,8 +32,8 @@ extension AddWordView {
         addButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             addButton.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 15),
-            addButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            addButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
+            addButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            addButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             addButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
@@ -42,14 +42,14 @@ extension AddWordView {
         orLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             orLabel.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 35),
-            orLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+            orLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         
         selectLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             selectLabel.topAnchor.constraint(equalTo: orLabel.bottomAnchor, constant: 25),
-            selectLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25),
-            selectLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -25)
+            selectLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
+            selectLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -25)
         ])
     }
     
@@ -57,9 +57,9 @@ extension AddWordView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: selectLabel.bottomAnchor, constant: 20),
-            tableView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            tableView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
-            tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
+            tableView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            tableView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

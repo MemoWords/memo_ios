@@ -17,7 +17,7 @@ class AddWordViewController: UIViewController {
     let cardRepository = CardRepository()
     var collections = [Collection]() {
         didSet {
-            self.addWordView.tableView.reloadData()
+            addWordView.tableView.reloadData()
         }
     }
     weak var addWordDelegate: SaveWordDelegate?
@@ -27,19 +27,19 @@ class AddWordViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        self.view = self.addWordView
-        self.addWordView.addAction = self.addButtonTapped
+        view = addWordView
+        addWordView.addAction = addButtonTapped
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configNavBar()
+        configNavBar()
         
         addWordView.tableView.dataSource = self
         addWordView.tableView.delegate = self
 //
         addWordView.tableView.register(UINib.init(nibName: "AddWordTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionNameCell")
-        self.collections = collectionRepository.fetchAll()
+        collections = collectionRepository.fetchAll()
         
         addWordView.nameTextField.addTarget(self, action: #selector(dismissKeyboard), for: .primaryActionTriggered)
         
@@ -48,25 +48,25 @@ class AddWordViewController: UIViewController {
     // MARK: - Actions.
     
     @IBAction func calcelButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func dismissKeyboard() {
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     func addButtonTapped() {
         if addWordView.nameTextField.text != "" {
-            self.cardRepository.create(collectionName: addWordView.nameTextField.text!, content: self.wordToSave!)
-            self.navigationController?.popToRootViewController(animated: true)
+            cardRepository.create(collectionName: addWordView.nameTextField.text!, content: wordToSave!)
+            navigationController?.popToRootViewController(animated: true)
         }
     }
     
     // MARK: - FUNCTIONS
     
     private func configNavBar() {
-        self.title = "Salvar \(self.wordToSave!)"
-        self.navigationItem.largeTitleDisplayMode = .never
+        title = "Salvar \(wordToSave!)"
+        navigationItem.largeTitleDisplayMode = .never
     }
     
 }
@@ -75,13 +75,13 @@ class AddWordViewController: UIViewController {
 
 extension AddWordViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.collections.count
+        return collections.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionNameCell", for: indexPath) as! AddWordTableViewCell
         cell.selectionStyle = .none
-        cell.configure(name: self.collections[indexPath.row].name!)
+        cell.configure(name: collections[indexPath.row].name!)
         
         return cell
     }
@@ -89,9 +89,9 @@ extension AddWordViewController: UITableViewDelegate, UITableViewDataSource {
     // When a cell is selected.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.cardRepository.create(
-            collection: self.collections[indexPath.row],
-            content: self.wordToSave!
+            collection: collections[indexPath.row],
+            content: wordToSave!
         )
-        self.navigationController?.popToRootViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
 }

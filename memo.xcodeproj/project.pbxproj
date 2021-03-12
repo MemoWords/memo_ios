@@ -11,7 +11,7 @@
 		DE4428D62547017100A8657C /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4428D52547017100A8657C /* CollectionsView.swift */; };
 		DE4428DF2547025700A8657C /* CollectionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4428DE2547025700A8657C /* CollectionsTableView.swift */; };
 		DE4428F22547238200A8657C /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4428F12547238200A8657C /* ConfigViewController.swift */; };
-		DE4428F72547410800A8657C /* TabBar+Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4428F62547410800A8657C /* TabBar+Title.swift */; };
+		DE4428F72547410800A8657C /* TabBarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4428F62547410800A8657C /* TabBarTitle.swift */; };
 		DE4429052547470400A8657C /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4429042547470400A8657C /* ReviewView.swift */; };
 		DE44290A25474D3800A8657C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44290925474D3800A8657C /* UIView.swift */; };
 		DE44290F25474D7A00A8657C /* ReviewView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44290E25474D7A00A8657C /* ReviewView+Constraints.swift */; };
@@ -97,7 +97,7 @@
 		DE4428D52547017100A8657C /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		DE4428DE2547025700A8657C /* CollectionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsTableView.swift; sourceTree = "<group>"; };
 		DE4428F12547238200A8657C /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
-		DE4428F62547410800A8657C /* TabBar+Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBar+Title.swift"; sourceTree = "<group>"; };
+		DE4428F62547410800A8657C /* TabBarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTitle.swift; sourceTree = "<group>"; };
 		DE4429042547470400A8657C /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		DE44290925474D3800A8657C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		DE44290E25474D7A00A8657C /* ReviewView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewView+Constraints.swift"; sourceTree = "<group>"; };
@@ -197,11 +197,11 @@
 			children = (
 				DE4428DE2547025700A8657C /* CollectionsTableView.swift */,
 				DE8E829325478A610067899B /* CardTableView.swift */,
+				DE8E82E22549ADAA0067899B /* AddWordTableView.swift */,
+				DE7D993125D337B20053679C /* StudyCollectionView.swift */,
 				DE44291325476B6600A8657C /* CardView.swift */,
 				DE8E82A02547A1AB0067899B /* CardMessageView.swift */,
-				DE8E82E22549ADAA0067899B /* AddWordTableView.swift */,
 				DE7D992C25D32B640053679C /* MessageCard.swift */,
-				DE7D993125D337B20053679C /* StudyCollectionView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -278,6 +278,7 @@
 			children = (
 				DEE2C7AC2544720F0005992E /* Storyboards */,
 				DEF04A6524EAB6C3003457F2 /* Xibs */,
+				DE4428DD2547022300A8657C /* Components */,
 				DE77DB0724E7065400095D73 /* ViewController */,
 				DE4428D52547017100A8657C /* CollectionsView.swift */,
 				DE4429042547470400A8657C /* ReviewView.swift */,
@@ -310,7 +311,7 @@
 				DE617B7F25406210009FEE40 /* Collection+CoreDataClass.swift */,
 				DE913F1824EEA71300383CFC /* Definition.swift */,
 				DE913F1A24EEA72400383CFC /* Answer.swift */,
-				DE4428F62547410800A8657C /* TabBar+Title.swift */,
+				DE4428F62547410800A8657C /* TabBarTitle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -376,7 +377,6 @@
 		DEF04A6524EAB6C3003457F2 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				DE4428DD2547022300A8657C /* Components */,
 				DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */,
 				DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */,
 				DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */,
@@ -619,7 +619,7 @@
 				DE4E3A5D25D6B4F2005093B0 /* CollectionsPresenter.swift in Sources */,
 				DE4429052547470400A8657C /* ReviewView.swift in Sources */,
 				DE8E82A12547A1AB0067899B /* CardMessageView.swift in Sources */,
-				DE4428F72547410800A8657C /* TabBar+Title.swift in Sources */,
+				DE4428F72547410800A8657C /* TabBarTitle.swift in Sources */,
 				DE913F1224ED9E2800383CFC /* DateHelper.swift in Sources */,
 				DE913F0B24ED5FF300383CFC /* Classification.swift in Sources */,
 				DE617B8F254065FA009FEE40 /* CollectionRepositry.swift in Sources */,

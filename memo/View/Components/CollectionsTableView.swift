@@ -12,14 +12,14 @@ class CollectionsTableView: UITableView {
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
-        self.backgroundColor = .clear
-        self.alwaysBounceVertical = true
-        self.tableHeaderView = .none
-        self.alwaysBounceHorizontal = false
-        self.separatorInset = .zero
-        self.tableFooterView = UIView()
-        self.separatorStyle = .none
-        self.rowHeight = 96
+        backgroundColor = .clear
+        alwaysBounceVertical = true
+        tableHeaderView = .none
+        alwaysBounceHorizontal = false
+        separatorInset = .zero
+        tableFooterView = UIView()
+        separatorStyle = .none
+        rowHeight = 96
     }
     
     required init?(coder: NSCoder) {

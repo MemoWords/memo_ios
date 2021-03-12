@@ -18,45 +18,45 @@ class CardRepository {
     
     // Initializer.
     init() {
-        self.context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     }
     
 // MARK: - FUNCS.
     
     // Function to create a card with an existing collection.
     func create(collection: Collection, content: String) {
-        let card = Card(context: self.context)
+        let card = Card(context: context)
         card.collection = collection
         
         card.content = content
         card.nextStudyDay = DateHelper.today
         card.lastDaysIncremented = 1
         
-        self.save()
+        save()
     }
     
     // Function to create a card with a new collection.
     func create(collectionName: String, content: String) {
         let collection = collectionRepository.create(name: collectionName)
-        let card = Card(context: self.context)
+        let card = Card(context: context)
         card.collection = collection
         
         card.content = content
         card.nextStudyDay = DateHelper.today
         card.lastDaysIncremented = 1
         
-        self.save()
+        save()
     }
     
     // Function to fetch all cards.
     func fetchCards() -> [Card] {
         do {
-            self.cards = try self.context.fetch(Card.fetchRequest())
+            cards = try context.fetch(Card.fetchRequest())
         } catch {
             print(error)
         }
         
-        return self.cards!
+        return cards!
     }
     
     // function to verify if a card exists.
@@ -79,7 +79,7 @@ class CardRepository {
     
     // function to update all cards.
     func updateCardsToStudy() {
-        let cards = self.fetchCards()
+        let cards = fetchCards()
         
         for card in cards {
             //let nowString = dateFormatter.string(from: now)
@@ -92,7 +92,7 @@ class CardRepository {
             }
         }
         
-        self.save()
+        save()
     }
 
     func delete(card: Card) {
@@ -103,7 +103,7 @@ class CardRepository {
     // function to save the context.
     func save() {
         do {
-            try self.context.save()
+            try context.save()
         } catch {
             print(error)
         }

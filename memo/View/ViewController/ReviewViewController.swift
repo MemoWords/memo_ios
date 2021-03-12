@@ -94,7 +94,7 @@ class ReviewViewController: UIViewController {
     
     // MARK: - Functions.
     func configNavBar() {
-        navigationItem.title = self.collection?.name
+        navigationItem.title = collection?.name
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -107,28 +107,26 @@ class ReviewViewController: UIViewController {
         reviewView.card.titleLabel.text = "..."
         reviewView.card.pronunciationLabel.text = "/.../"
         
-        if self.count >= self.cards.count {
+        if self.count >= cards.count {
             if numOfCardsToStudy == 0 {
-                self.showMessage(true)
+                showMessage(true)
             } else {
-                self.count = 0
-                self.show()
+                count = 0
+                show()
             }
         } else {
-            if DateHelper.isToday(dateString: self.cards[self.count].nextStudyDay!) {
-                let title = self.cards[self.count].content!
-                self.setAnswerData(word: title)
+            if DateHelper.isToday(dateString: cards[count].nextStudyDay!) {
+                let title = cards[count].content!
+                setAnswerData(word: title)
             } else {
-                self.count += 1
-                self.show()
+                count += 1
+                show()
             }
         }
     }
     
     func setAnswerData(word: String) {
-        AnswerRepository.search(
-        word: word,
-        completion: { (answer) in
+        AnswerRepository.search(word: word) { answer in
             DispatchQueue.main.async {
                 self.reviewView.card.titleLabel.text = word
                 if let pronunciation = answer.pronunciation {
@@ -138,18 +136,18 @@ class ReviewViewController: UIViewController {
                 }
                 self.definitions = answer.definitions
             }
-        })
+        }
     }
     
     func showMessage(_ value: Bool) {
-        self.reviewView.card.isHidden = value
-        self.reviewView.buttonsStack.isHidden = value
-        self.reviewView.cardMessage.isHidden = !value
+        reviewView.card.isHidden = value
+        reviewView.buttonsStack.isHidden = value
+        reviewView.cardMessage.isHidden = !value
     }
     
     func getNumOfCardsToStudy() -> Int {
         var num = 0
-        for card in self.cards {
+        for card in cards {
             if DateHelper.isToday(dateString: card.nextStudyDay!) {
                 num += 1
             }
@@ -158,18 +156,18 @@ class ReviewViewController: UIViewController {
     }
     
     func update(val: Int) {
-        let algorithmData = Classification.classificate(val: val, lastDayIncremented: Int(self.cards[self.count].lastDaysIncremented))
+        let algorithmData = Classification.classificate(val: val, lastDayIncremented: Int(cards[count].lastDaysIncremented))
 
         if algorithmData.days != 0 { // veririca se há valores a serem atualizados
             // Atualiza os valores no card.
-            self.cards[self.count].nextStudyDay = DateHelper.incrementDate(
-                data: self.cards[self.count].nextStudyDay!,
+            cards[count].nextStudyDay = DateHelper.incrementDate(
+                data: cards[count].nextStudyDay!,
                 val: algorithmData.days
             )
-            self.cards[self.count].lastDaysIncremented = Int64(algorithmData.lastIncrement)
+            cards[count].lastDaysIncremented = Int64(algorithmData.lastIncrement)
         }
         // Solicita o salvamento da lista de cards no arquivo.
-        self.cardRepository.save()
+        cardRepository.save()
     }
     
 }
@@ -179,13 +177,13 @@ class ReviewViewController: UIViewController {
 extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
     // Number of cells.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.definitions.count
+        return definitions.count
     }
     // Add the cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefinitionCell", for: indexPath) as! DefinitionTableViewCell
         
-        cell.configure(definition: self.definitions[indexPath.row])
+        cell.configure(definition: definitions[indexPath.row])
         
         return cell
     }

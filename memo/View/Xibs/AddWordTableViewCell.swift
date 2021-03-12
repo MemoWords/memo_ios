@@ -17,12 +17,12 @@ class AddWordTableViewCell: UITableViewCell {
     // Runs when the view is loaded.
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.card.layer.cornerRadius = 20
+        card.layer.cornerRadius = 20
     }
     
     // Configure the data to apear at the cell.
     func configure(name: String) {
-        self.labelTitle.text = name
+        labelTitle.text = name
     }
     
 }

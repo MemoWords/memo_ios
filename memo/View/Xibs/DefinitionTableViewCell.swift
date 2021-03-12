@@ -23,12 +23,12 @@ class DefinitionTableViewCell: UITableViewCell {
     
     // Configure the data to apear at the cell.
     func configure(definition: Definition) {
-        self.labelType.text = definition.type
-        self.labelDefinition.text = definition.definition
+        labelType.text = definition.type
+        labelDefinition.text = definition.definition
         if let example = definition.example {
-            self.labelExample.text = "\"\(example)\""
+            labelExample.text = "\"\(example)\""
         } else {
-            self.labelExample.text = ""
+            labelExample.text = ""
         }
     }
     

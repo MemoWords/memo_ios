@@ -42,8 +42,8 @@ class StudyCollectionViewCell: UICollectionViewCell {
             }
         }
 
-        self.titleLabel.text = collection.name
-        self.bodyLabel.text = String("\(study) para estudar")
+        titleLabel.text = collection.name
+        bodyLabel.text = String("\(study) para estudar")
     }
 
 }

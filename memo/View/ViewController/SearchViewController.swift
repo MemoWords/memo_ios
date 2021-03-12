@@ -16,7 +16,7 @@ class SearchViewController: UIViewController {
     
     var definitions = [Definition]() {
         didSet {
-            self.searchView.card.tableView.reloadData()
+            searchView.card.tableView.reloadData()
         }
     }
     let cardRepository = CardRepository()
@@ -26,21 +26,21 @@ class SearchViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        self.view = self.searchView
-        self.searchView.saveAction = self.saveButtonTapped
-        self.searchView.searchAction = self.searchButtonTapped
+        view = searchView
+        searchView.saveAction = saveButtonTapped
+        searchView.searchAction = searchButtonTapped
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpNavBar()
+        setUpNavBar()
         
         searchView.card.tableView.dataSource = self
         searchView.card.tableView.delegate   = self
         
         searchView.card.tableView.register(UINib.init(nibName: "DefinitionTableViewCell", bundle: nil), forCellReuseIdentifier: "DefinitionCell")
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
     
@@ -54,9 +54,7 @@ class SearchViewController: UIViewController {
     
     func searchButtonTapped(_ word: String) {
         
-        AnswerRepository.search(
-        word: word,
-        completion: { (answer) in
+        AnswerRepository.search(word: word) { answer in
             DispatchQueue.main.async {
                 
                 self.searchView.card.isHidden = false
@@ -77,7 +75,7 @@ class SearchViewController: UIViewController {
                 )
                 
             }
-        })
+        }
         
     }
     
@@ -85,8 +83,8 @@ class SearchViewController: UIViewController {
     
     func saveButtonTapped() {
         let addWordController = AddWordViewController()
-        addWordController.wordToSave = self.wordToSave!
-        self.navigationController?.pushViewController(addWordController, animated: true)
+        addWordController.wordToSave = wordToSave!
+        navigationController?.pushViewController(addWordController, animated: true)
     }
     
     // MARK: - Functions.
@@ -95,16 +93,16 @@ class SearchViewController: UIViewController {
     }
     
     private func setUpNavBar() {
-        self.navigationItem.title = TabBarItems.search.title
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.tintColor = .memoSecondBlue
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [
+        navigationItem.title = TabBarItems.search.title
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .memoSecondBlue
+        navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 34)!,
-            NSAttributedString.Key.foregroundColor: UIColor.memoBlack
+            NSAttributedString.Key.foregroundColor: UIColor.memoBlack!
         ]
-        self.navigationController?.navigationBar.titleTextAttributes = [
+        navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 17)!,
-            NSAttributedString.Key.foregroundColor: UIColor.memoBlack
+            NSAttributedString.Key.foregroundColor: UIColor.memoBlack!
         ]
     }
     
@@ -114,14 +112,14 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.definitions.count
+        return definitions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Cell with data.
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefinitionCell", for: indexPath) as! DefinitionTableViewCell
         
-        cell.configure(definition: self.definitions[indexPath.row])
+        cell.configure(definition: definitions[indexPath.row])
         
         cell.selectionStyle = .none
         
