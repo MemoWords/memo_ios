@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "lens_bold.png",
+      "filename" : "search_unselected.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "lens_bold@2x.png",
+      "filename" : "search_unselected@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "lens_bold@3x.png",
+      "filename" : "search_unselected@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

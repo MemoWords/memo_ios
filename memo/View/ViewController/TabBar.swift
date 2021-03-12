@@ -29,16 +29,16 @@ class TabBar: UITabBarController {
 
     // MARK: - Functions
     private func configItems() {
-        collectionsNavController?.tabBarItem.image = UIImage(named: "folder_unselected")
-        collectionsNavController?.tabBarItem.selectedImage = UIImage(named: "folder")
+        collectionsNavController?.tabBarItem.image = UIImage(named: "foldert_unselected")
+        collectionsNavController?.tabBarItem.selectedImage = UIImage(named: "foldert")
         collectionsNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -15, right: 0)
 
-        searchNavController?.tabBarItem.image = UIImage(named: "lens_unselected")
-        searchNavController?.tabBarItem.selectedImage = UIImage(named: "lens_bold")
+        searchNavController?.tabBarItem.image = UIImage(named: "search_unselected")
+        searchNavController?.tabBarItem.selectedImage = UIImage(named: "search")
         searchNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -15, right: 0)
 
-        configNavController?.tabBarItem.image = UIImage(named: "gear_unselected")
-        configNavController?.tabBarItem.selectedImage = UIImage(named: "gear")
+        configNavController?.tabBarItem.image = UIImage(named: "settings_unselected")
+        configNavController?.tabBarItem.selectedImage = UIImage(named: "settings")
         configNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -15, right: 0)
     }
     

@@ -18,7 +18,7 @@ class CollectionsView: UIView {
 
     lazy var labelStudy: UILabel = {
         let label = UILabel()
-        label.text = "STUDAR"
+        label.text = "ESTUDAR"
         label.font = UIFont(name: "SF Pro Text Medium", size: 16)
         label.textColor = .bodyColor
         return label
