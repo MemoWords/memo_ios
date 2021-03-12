@@ -66,14 +66,13 @@ extension WordListViewController: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title: "") { (_, _, _) in
             if let cards = self.presenter.collection.cards {
                 let alert = UIAlertController(
-                    title: "Tem certeza que quer excluir \((self.presenter.collection.cards?.allObjects as! [Card])[indexPath.row].content!)?",
+                    title: "Tem certeza que quer excluir \"\((self.presenter.collection.cards?.allObjects as! [Card])[indexPath.row].content!)\"?",
                     message: nil,
                     preferredStyle: .alert
                 )
-                alert.overrideUserInterfaceStyle = .light
-                alert.addAction(UIAlertAction(title: "Não", style: .destructive, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: nil))
 
-                alert.addAction(UIAlertAction(title: "Sim", style: .default, handler: { _ in
+                alert.addAction(UIAlertAction(title: "Excluir", style: .destructive, handler: { _ in
                     self.presenter.delete(card: (cards.allObjects as! [Card])[indexPath.row])
                     tableView.reloadData()
                 }))

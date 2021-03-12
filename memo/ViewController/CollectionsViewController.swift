@@ -74,15 +74,14 @@ class CollectionsViewController: UIViewController {
     // MARK: - Actions.
 
     @objc func addFolder() {
-        let alert = UIAlertController(title: "Nome da nova pasta:", message: nil, preferredStyle: .alert)
-        alert.overrideUserInterfaceStyle = .light
+        let alert = UIAlertController(title: "Adicionar pasta", message: "Digite o nome da nova pasta:", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
 
         alert.addTextField(configurationHandler: { textField in
             textField.placeholder = "Name:"
         })
 
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Salvar", style: .default, handler: { _ in
             if let name = alert.textFields?.first?.text {
                 self.presenter.add(name: name)
                 self.collectionsView.tableView.reloadData()
@@ -192,14 +191,13 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
         let deleteAction = UIContextualAction(style: .destructive, title: "") { (_, _, _) in
             if self.presenter.collections[indexPath.row].cards?.count != 0 {
                 let alert = UIAlertController(
-                    title: "A pasta \(String(describing: self.presenter.collections[indexPath.row].name!)) não está vazia, tem certeza que quer excluí-la?",
-                    message: nil,
+                    title: "Deletar \(String(describing: self.presenter.collections[indexPath.row].name!))",
+                    message: "A pasta  não está vazia, tem certeza que quer excluí-la?",
                     preferredStyle: .alert
                 )
-                alert.overrideUserInterfaceStyle = .light
-                alert.addAction(UIAlertAction(title: "Não", style: .destructive, handler: nil))
+                alert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: nil))
 
-                alert.addAction(UIAlertAction(title: "Sim", style: .default, handler: { _ in
+                alert.addAction(UIAlertAction(title: "Excluir", style: .destructive, handler: { _ in
                     self.presenter.delete(at: indexPath.row)
                 }))
 

@@ -46,7 +46,6 @@ class CardView: UIView {
     // TableView
     let tableView = MemoTableView(frame: .zero, style: .plain)
 
-    
     // Button Show Answer.
     lazy var showAnswerButton: UIButton = {
         let mediumConfig = UIImage.SymbolConfiguration(pointSize: 16, weight: .bold, scale: .medium)

@@ -69,7 +69,6 @@
 		DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7092825DD557E001FE1D4 /* CardPresenter.swift */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
 		DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */; };
-		DEF04A8224EB0CC0003457F2 /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,7 +157,6 @@
 		DED7092825DD557E001FE1D4 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
 		DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
-		DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +245,7 @@
 				DE77DB0824E7065D00095D73 /* Model */,
 				DEF04A7A24EAFABD003457F2 /* Repository */,
 				DE4E3A5B25D6B35D005093B0 /* Presenter */,
+				DE77DB0724E7065400095D73 /* ViewController */,
 				DE77DB0624E7064600095D73 /* View */,
 				DE7D997125D391E10053679C /* Assets.xcassets */,
 				DE77DAE424E6FE5000095D73 /* Info.plist */,
@@ -267,10 +266,8 @@
 		DE77DB0624E7064600095D73 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DEE2C7AC2544720F0005992E /* Storyboards */,
 				DEF04A6524EAB6C3003457F2 /* Xibs */,
 				DE4428DD2547022300A8657C /* Components */,
-				DE77DB0724E7065400095D73 /* ViewController */,
 				DE4428D52547017100A8657C /* CollectionsView.swift */,
 				DE4429042547470400A8657C /* ReviewView.swift */,
 				DE8E82C02548645D0067899B /* SearchView.swift */,
@@ -288,7 +285,6 @@
 				DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */,
 				DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */,
 				DE913EFF24EC095200383CFC /* AddWordViewController.swift */,
-				DEF04A8124EB0CC0003457F2 /* AddCollectionViewController.swift */,
 				DE4428F12547238200A8657C /* ConfigViewController.swift */,
 				DE7D993F25D35A250053679C /* WordListViewController.swift */,
 			);
@@ -339,8 +335,21 @@
 			children = (
 				DE77DAD624E6FE4D00095D73 /* AppDelegate.swift */,
 				DE77DAD824E6FE4D00095D73 /* SceneDelegate.swift */,
+				DE77DAE124E6FE5000095D73 /* LaunchScreen.storyboard */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		DEBBE27E25FBFE670083CF38 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */,
+				DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */,
+				DE7D991525D2B97A0053679C /* StudyCollectionViewCell.swift */,
+				DE7D991C25D2C3840053679C /* FolderTableViewCell.swift */,
+				DE7D994425D3635C0053679C /* WordTableViewCell.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		DEC831C12544985200229AFF /* Extensions */ = {
@@ -357,26 +366,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		DEE2C7AC2544720F0005992E /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				DE77DAE124E6FE5000095D73 /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
 		DEF04A6524EAB6C3003457F2 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				DE913F0124EC4F5800383CFC /* DefinitionTableViewCell.swift */,
+				DEBBE27E25FBFE670083CF38 /* Controller */,
 				DE913F0224EC4F5800383CFC /* DefinitionTableViewCell.xib */,
-				DE913F2124F1B25600383CFC /* AddWordTableViewCell.swift */,
 				DE913F2224F1B25600383CFC /* AddWordTableViewCell.xib */,
-				DE7D991525D2B97A0053679C /* StudyCollectionViewCell.swift */,
 				DE7D991625D2B97A0053679C /* StudyCollectionViewCell.xib */,
-				DE7D991C25D2C3840053679C /* FolderTableViewCell.swift */,
 				DE7D991D25D2C3840053679C /* FolderTableViewCell.xib */,
-				DE7D994425D3635C0053679C /* WordTableViewCell.swift */,
 				DE7D994525D3635C0053679C /* WordTableViewCell.xib */,
 			);
 			path = Xibs;
@@ -596,7 +593,6 @@
 				DE8E82DE25499F780067899B /* AddWordView+Constraints.swift in Sources */,
 				DE7D992D25D32B640053679C /* MessageCard.swift in Sources */,
 				DEC831C32544987500229AFF /* Color.swift in Sources */,
-				DEF04A8224EB0CC0003457F2 /* AddCollectionViewController.swift in Sources */,
 				DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */,
 				DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */,
 				DE77DAD924E6FE4D00095D73 /* SceneDelegate.swift in Sources */,

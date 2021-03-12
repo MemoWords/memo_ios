@@ -51,7 +51,6 @@ class TabBar: UITabBarController {
     }
     
     private func configTabBar() {
-        overrideUserInterfaceStyle = .light
         tabBar.tintColor = .primaryColor
         tabBar.backgroundColor = .whiteColor
         tabBar.unselectedItemTintColor = .bodyColor
