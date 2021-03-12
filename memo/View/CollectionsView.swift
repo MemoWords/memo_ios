@@ -11,10 +11,37 @@ import UIKit
 class CollectionsView: UIView {
     
     // MARK: - PROPERTIES
-    let tableView = CollectionsTableView(frame: .zero, style: .plain)
-    var collectionView: StudyCollectionView
     let bugView = UIView()
     let messageCard = MessageCard()
+
+    // MARK: - UI
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 223, height: 152)
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInset.left = 12
+        layout.sectionInset.right = 12
+
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.backgroundColor = .clear
+        collection.alwaysBounceHorizontal = true
+        collection.showsHorizontalScrollIndicator = false
+        return collection
+    }()
+
+    lazy var tableView: UITableView = {
+        let table = UITableView(frame: .zero, style: .plain)
+        table.backgroundColor = .clear
+        table.alwaysBounceVertical = true
+        table.tableHeaderView = .none
+        table.alwaysBounceHorizontal = false
+        table.separatorInset = .zero
+        table.tableFooterView = UIView()
+        table.separatorStyle = .none
+        table.rowHeight = 96
+        return table
+    }()
 
     lazy var labelStudy: UILabel = {
         let label = UILabel()
@@ -42,18 +69,7 @@ class CollectionsView: UIView {
     
     // MARK: - INIT
     override init(frame: CGRect) {
-
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 223, height: 152)
-        layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 0
-        layout.sectionInset.left = 12
-        layout.sectionInset.right = 12
-
-        collectionView = StudyCollectionView(frame: .zero, collectionViewLayout: layout)
-
         super.init(frame: frame)
-
         backgroundColor = .backgroundColor
         addSubviews(bugView, labelStudy, collectionView, messageCard, labelFolder, addFolderButton, tableView)
         setUpLabelStudy()

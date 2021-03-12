@@ -44,7 +44,17 @@ class CardView: UIView {
     }()
     
     // TableView
-    let tableView = CardTableView(frame: .zero, style: .plain)
+    lazy var tableView: UITableView = {
+        let table = UITableView(frame: .zero, style: .plain)
+        table.backgroundColor = .clear
+        table.alwaysBounceVertical = true
+        table.tableHeaderView = .none
+        table.alwaysBounceHorizontal = false
+        table.separatorInset = .zero
+        table.tableFooterView = UIView()
+        table.separatorStyle = .none
+        return table
+    }()
     
     // Button Show Answer.
     lazy var showAnswerButton: UIButton = {
