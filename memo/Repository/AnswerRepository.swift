@@ -9,24 +9,24 @@
 import Foundation
 
 class AnswerRepository {
+    // Search on the API by a word.
     static func search(word: String, completion: @escaping (Answer) -> Void) {
-        // Create URL
+        // Create URL.
         guard let url = URL(string: "https://owlbot.info/api/v4/dictionary/\(word)") else {
             return
         }
-        // Token
+        // Token.
         let token = UserDefaults.standard.value(forKey: "Token")
-        // Create URLRequest
+        // Create URLRequest.
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
             "Content-Type": "application/json",
             "Authorization": "Token \(token!)"
         ]
-        //request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
-        // Create Session
+        // Create Session.
         let session = URLSession(configuration: .default)
-        
+        // Task.
         let getAnswerTask = session.dataTask(with: request) { (data, _, _) in
             if let data = data {
                 if let answer = try? JSONDecoder().decode(Answer.self, from: data) {

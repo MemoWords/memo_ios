@@ -14,7 +14,7 @@ class HelperTests: XCTestCase {
 
     func test_helper_today_todaysDateWithNoTime() {
         //When
-        let output = Helper.today()
+        let output = DateHelper.today()
         
         //Then
         XCTAssertEqual(output, "23-08-2020")
@@ -23,7 +23,7 @@ class HelperTests: XCTestCase {
     func test_helper_isToday_toBeEqualToTrue() {
         let input = "23-08-2020"
         
-        let output = Helper.isToday(dateString: input)
+        let output = DateHelper.isToday(dateString: input)
         
         XCTAssertEqual(output, true)
     }
@@ -32,7 +32,7 @@ class HelperTests: XCTestCase {
         let input1 = "23-08-2020"
         let input2 = 1
         
-        let output = Helper.incrementDate(data: input1, val: input2)
+        let output = DateHelper.incrementDate(data: input1, val: input2)
         
         XCTAssertEqual(output, "24-08-2020")
     }
