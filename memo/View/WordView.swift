@@ -17,11 +17,8 @@ class WordView: UIView {
         return label
     }()
 
-    lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
-        tableView.backgroundColor = .clear
-        tableView.alwaysBounceVertical = true
-        tableView.separatorStyle = .none
+    lazy var tableView: MemoTableView = {
+        let tableView = MemoTableView(frame: .zero, style: .plain)
         tableView.allowsSelection = false
         tableView.rowHeight = 76
         return tableView

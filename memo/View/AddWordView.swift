@@ -66,16 +66,9 @@ class AddWordView: UIView {
         return label
     }()
 
-    lazy var tableView: UITableView = {
-        let table = UITableView()
-        table.backgroundColor = .clear
-        table.alwaysBounceVertical = true
-        table.tableHeaderView = .none
-        table.alwaysBounceHorizontal = false
-        table.separatorInset = .zero
+    lazy var tableView: MemoTableView = {
+        let table = MemoTableView()
         table.showsVerticalScrollIndicator = false
-        table.tableFooterView = UIView()
-        table.separatorStyle = .none
         table.rowHeight = 93
         return table
     }()

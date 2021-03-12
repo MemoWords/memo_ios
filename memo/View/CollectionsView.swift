@@ -30,15 +30,8 @@ class CollectionsView: UIView {
         return collection
     }()
 
-    lazy var tableView: UITableView = {
-        let table = UITableView(frame: .zero, style: .plain)
-        table.backgroundColor = .clear
-        table.alwaysBounceVertical = true
-        table.tableHeaderView = .none
-        table.alwaysBounceHorizontal = false
-        table.separatorInset = .zero
-        table.tableFooterView = UIView()
-        table.separatorStyle = .none
+    lazy var tableView: MemoTableView = {
+        let table = MemoTableView(frame: .zero, style: .plain)
         table.rowHeight = 96
         return table
     }()

@@ -64,6 +64,7 @@
 		DE913F4024F3086900383CFC /* memoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F3F24F3086900383CFC /* memoTests.swift */; };
 		DE913F4824F31D1200383CFC /* ClassificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4724F31D1200383CFC /* ClassificateTests.swift */; };
 		DE913F4A24F321EB00383CFC /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4924F321EB00383CFC /* CardTests.swift */; };
+		DEBBE27A25FBFA0D0083CF38 /* MemoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */; };
 		DEC831C32544987500229AFF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC831C22544987500229AFF /* Color.swift */; };
 		DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7092825DD557E001FE1D4 /* CardPresenter.swift */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
@@ -152,6 +153,7 @@
 		DE913F4124F3086900383CFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE913F4724F31D1200383CFC /* ClassificateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificateTests.swift; sourceTree = "<group>"; };
 		DE913F4924F321EB00383CFC /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableView.swift; sourceTree = "<group>"; };
 		DEC831C22544987500229AFF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DED7092825DD557E001FE1D4 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				DE44291325476B6600A8657C /* CardView.swift */,
 				DE8E82A02547A1AB0067899B /* CardMessageView.swift */,
 				DE7D992C25D32B640053679C /* MessageCard.swift */,
+				DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				DE8E82D9254994490067899B /* AddWordView.swift in Sources */,
 				DE44291425476B6600A8657C /* CardView.swift in Sources */,
 				DE7D994C25D365FB0053679C /* WordView.swift in Sources */,
+				DEBBE27A25FBFA0D0083CF38 /* MemoTableView.swift in Sources */,
 				DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */,
 				DE8E82CB2548A9050067899B /* TextField.swift in Sources */,
 				DE913F1B24EEA72400383CFC /* Answer.swift in Sources */,
