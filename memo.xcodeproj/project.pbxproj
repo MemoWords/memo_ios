@@ -247,6 +247,7 @@
 		DE77DAD524E6FE4D00095D73 /* memo */ = {
 			isa = PBXGroup;
 			children = (
+				DEB2867325FAEE8400AD2A36 /* Shared */,
 				DEF04A6D24EAC9F1003457F2 /* Fonts */,
 				DEC831C12544985200229AFF /* Extensions */,
 				DE617B932540BA96009FEE40 /* Protocols */,
@@ -256,9 +257,6 @@
 				DEF04A7A24EAFABD003457F2 /* Repository */,
 				DE4E3A5B25D6B35D005093B0 /* Presenter */,
 				DE77DB0624E7064600095D73 /* View */,
-				DE77DAD624E6FE4D00095D73 /* AppDelegate.swift */,
-				DE77DAD824E6FE4D00095D73 /* SceneDelegate.swift */,
-				DE7D997125D391E10053679C /* Assets.xcassets */,
 				DE77DAE424E6FE5000095D73 /* Info.plist */,
 				DE617B34253F668C009FEE40 /* memo.xcdatamodeld */,
 			);
@@ -341,6 +339,16 @@
 				DE913F4924F321EB00383CFC /* CardTests.swift */,
 			);
 			path = memoTests;
+			sourceTree = "<group>";
+		};
+		DEB2867325FAEE8400AD2A36 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DE77DAD624E6FE4D00095D73 /* AppDelegate.swift */,
+				DE77DAD824E6FE4D00095D73 /* SceneDelegate.swift */,
+				DE7D997125D391E10053679C /* Assets.xcassets */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		DEC831C12544985200229AFF /* Extensions */ = {
