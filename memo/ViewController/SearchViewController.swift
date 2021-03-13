@@ -98,11 +98,11 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .memoSecondBlue
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 34)!,
-            NSAttributedString.Key.foregroundColor: UIColor.memoBlack!
+            NSAttributedString.Key.foregroundColor: UIColor.memoBlack
         ]
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 17)!,
-            NSAttributedString.Key.foregroundColor: UIColor.memoBlack!
+            NSAttributedString.Key.foregroundColor: UIColor.memoBlack
         ]
     }
     

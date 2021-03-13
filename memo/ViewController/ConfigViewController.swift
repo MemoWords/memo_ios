@@ -12,7 +12,7 @@ class ConfigViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .memoBackground
         // Do any additional setup after loading the view.
     }
 

@@ -63,7 +63,7 @@ class CollectionsView: UIView {
     // MARK: - INIT
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .backgroundColor
+        backgroundColor = .memoBackground
         addSubviews(bugView, labelStudy, collectionView, messageCard, labelFolder, addFolderButton, tableView)
         setUpLabelStudy()
         setUpCollectionView()

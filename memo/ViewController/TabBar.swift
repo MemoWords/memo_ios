@@ -51,13 +51,26 @@ class TabBar: UITabBarController {
     }
     
     private func configTabBar() {
+        tabBar.backgroundColor = .memoLightBackground
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+        tabBar.layer.shadowRadius = 8
+        tabBar.layer.shadowColor = UIColor.black.cgColor
+        tabBar.layer.shadowOpacity = 0.12
+        tabBar.layer.cornerRadius = 21
+
+        tabBar.backgroundImage = UIImage()
+        tabBar.shadowImage = UIImage()
+
         tabBar.tintColor = .primaryColor
-        tabBar.backgroundColor = .whiteColor
         tabBar.unselectedItemTintColor = .bodyColor
-        tabBar.isTranslucent = false
-        tabBar.layer.borderWidth = 0
-        tabBar.clipsToBounds = true
         viewControllers = getControllers()
     }
 
 }
+
+//        let tabBackgroundView = UIView(frame: tabBar.bounds)
+//        tabBackgroundView.backgroundColor = .memoLightBackground
+//        tabBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+//        tabBackgroundView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        tabBar.addSubview(tabBackgroundView)
+//        tabBar.sendSubviewToBack(tabBackgroundView)

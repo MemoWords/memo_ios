@@ -71,7 +71,6 @@ extension WordListViewController: UITableViewDelegate, UITableViewDataSource {
                     preferredStyle: .alert
                 )
                 alert.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: nil))
-
                 alert.addAction(UIAlertAction(title: "Excluir", style: .destructive, handler: { _ in
                     self.presenter.delete(card: (cards.allObjects as! [Card])[indexPath.row])
                     tableView.reloadData()
