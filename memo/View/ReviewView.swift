@@ -17,7 +17,7 @@ class ReviewView: UIView {
         let label = UILabel()
         label.text = "Estudar: 0"
         label.font = UIFont(name: "SF Pro Text Medium", size: 18)
-        label.textColor = .memoBlack
+        label.textColor = .memoGray
         return label
     }()
     
@@ -25,7 +25,7 @@ class ReviewView: UIView {
         let label = UILabel()
         label.text = "Total: 0"
         label.font = UIFont(name: "SF Pro Text Medium", size: 18)
-        label.textColor = .memoBlack
+        label.textColor = .memoGray
         return label
     }()
     
@@ -44,10 +44,8 @@ class ReviewView: UIView {
         let button = UIButton()
         button.setTitle("DIFÍCIL", for: .normal)
         button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
-        button.setTitleColor(.memoSecondBlue, for: .normal)
-        button.backgroundColor = .memoWhite
-        button.layer.borderWidth = 1.0
-        button.layer.borderColor = UIColor.memoSecondBlue.cgColor
+        button.setTitleColor(.memoWhite, for: .normal)
+        button.backgroundColor = .memoBlue
         button.addTarget(self, action: #selector(hard), for: .touchUpInside)
         return button
     }()
@@ -57,7 +55,7 @@ class ReviewView: UIView {
         button.setTitle("FÁCIL", for: .normal)
         button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
         button.setTitleColor(.memoWhite, for: .normal)
-        button.backgroundColor = .memoSecondBlue
+        button.backgroundColor = .memoGreen
         button.addTarget(self, action: #selector(easy), for: .touchUpInside)
         return button
     }()
@@ -88,7 +86,7 @@ class ReviewView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .memoWhite
+        backgroundColor = .memoBackground
         setUpViews()
     }
     

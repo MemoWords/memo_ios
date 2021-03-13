@@ -13,7 +13,7 @@ class WordView: UIView {
     lazy var totalLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "SF Pro Text Medium", size: 16)
-        label.textColor = .bodyColor
+        label.textColor = .memoGray
         return label
     }()
 
@@ -26,7 +26,7 @@ class WordView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .backgroundColor
+        backgroundColor = .memoBackground
         addSubviews(totalLabel, tableView)
         setUpLabel()
         setUpTableView()

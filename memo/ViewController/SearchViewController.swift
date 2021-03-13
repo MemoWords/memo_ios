@@ -95,15 +95,27 @@ class SearchViewController: UIViewController {
     private func setUpNavBar() {
         navigationItem.title = TabBarItems.search.title
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = .memoSecondBlue
+        navigationController?.navigationBar.tintColor = .memoBlue
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 34)!,
-            NSAttributedString.Key.foregroundColor: UIColor.memoBlack
+            NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 17)!,
-            NSAttributedString.Key.foregroundColor: UIColor.memoBlack
+            NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
+        let image = UIImage(systemName: "arrow.left")
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        // Set the back button.
+        navigationController?.navigationBar.backIndicatorImage = image
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+
+        // Make the navigation bar background clear
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
     
 }

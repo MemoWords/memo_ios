@@ -17,7 +17,7 @@ class CardView: UIView {
         let label = UILabel()
         label.text = "car"
         label.font = UIFont(name: "SF Pro Text Medium", size: 32)
-        label.textColor = .memoBlack
+        label.textColor = .memoText
         return label
     }()
     
@@ -25,14 +25,14 @@ class CardView: UIView {
         let label = UILabel()
         label.text = "/kär/"
         label.font = UIFont(name: "SF Pro Text Medium", size: 21)
-        label.textColor = .memoDarkGray
+        label.textColor = .memoGray
         return label
     }()
     
     // Separator
     lazy var separator: UIView = {
         let view = UIView()
-        view.backgroundColor = .memoDarkGray
+        view.backgroundColor = .memoGray
         return view
     }()
     
@@ -54,11 +54,11 @@ class CardView: UIView {
         button.isHidden = true
         button.setTitle("MOSTRAR RESPOSTA", for: .normal)
         button.titleLabel?.font = UIFont(name: "SF Pro Text Bold", size: 16)
-        button.setTitleColor(.memoSecondBlue, for: .normal)
+        button.setTitleColor(.memoBlue, for: .normal)
         button.backgroundColor = .clear
         button.setImage(image, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
-        button.tintColor = .memoSecondBlue
+        button.tintColor = .memoBlue
         button.addTarget(self, action: #selector(show), for: .touchUpInside)
         return button
     }()
@@ -67,7 +67,7 @@ class CardView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .memoWhite
+        backgroundColor = .memoLightBackground
         setUpViews()
     }
     
@@ -84,9 +84,7 @@ class CardView: UIView {
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 8
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.memoDarkGray.cgColor
+        layer.cornerRadius = 15
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.1
         layer.shadowRadius = 6

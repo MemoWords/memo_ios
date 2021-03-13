@@ -16,7 +16,7 @@ class AddWordView: UIView {
         let label = UILabel()
         label.text = "Criar uma nova coleção:"
         label.font = UIFont(name: "SF Pro Text Bold", size: 18)
-        label.textColor = .memoBlack
+        label.textColor = .memoText
         return label
     }()
     
@@ -25,14 +25,14 @@ class AddWordView: UIView {
         
         textField.placeholder = "Nome da coleção"
         textField.font = UIFont(name: "SF Pro Text Medium", size: 18)
-        textField.textColor = .memoBlack
+        textField.textColor = .memoText
         textField.layer.borderWidth = 1
         textField.setLeftPadding(12)
         textField.setRightPadding(12)
         textField.autocapitalizationType = .none
         textField.returnKeyType = .done
-        textField.layer.borderColor = UIColor.memoDarkGray.cgColor
-        textField.tintColor = .memoSecondBlue
+        textField.layer.borderColor = UIColor.memoGray.cgColor
+        textField.tintColor = .memoBlue
         
         return textField
     }()
@@ -41,7 +41,7 @@ class AddWordView: UIView {
         let button = UIButton()
         button.setTitle("ADICIONAR", for: .normal)
         button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
-        button.backgroundColor = .memoSecondBlue
+        button.backgroundColor = .memoBlue
         button.setTitleColor(.memoWhite, for: .normal)
         button.addTarget(self, action: #selector(add), for: .touchUpInside)
         
@@ -52,7 +52,7 @@ class AddWordView: UIView {
         let label = UILabel()
         label.text = "OU"
         label.font = UIFont(name: "SF Pro Text Bold", size: 18)
-        label.textColor = .memoBlack
+        label.textColor = .memoText
         label.textAlignment = .center
         
         return label
@@ -62,7 +62,7 @@ class AddWordView: UIView {
         let label = UILabel()
         label.text = "Selecione uma coleção:"
         label.font = UIFont(name: "SF Pro Text Bold", size: 18)
-        label.textColor = .memoBlack
+        label.textColor = .memoText
         return label
     }()
 
@@ -77,7 +77,7 @@ class AddWordView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .memoWhite
+        backgroundColor = .memoBackground
         setupViews()
     }
     

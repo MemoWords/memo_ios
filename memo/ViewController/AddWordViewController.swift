@@ -65,7 +65,7 @@ class AddWordViewController: UIViewController {
     // MARK: - FUNCTIONS
     
     private func configNavBar() {
-        title = "Salvar \(wordToSave!)"
+        navigationItem.title = "Salvar \"\(wordToSave!)\""
         navigationItem.largeTitleDisplayMode = .never
     }
     

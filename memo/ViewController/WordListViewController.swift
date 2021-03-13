@@ -83,8 +83,8 @@ extension WordListViewController: UITableViewDelegate, UITableViewDataSource {
 
         //deleteAction.image = UIImage(systemName: "trash.fill")
         deleteAction.image = UIImage(named: "delete")
-        deleteAction.backgroundColor = .backgroundColor
-        deleteAction.image?.withTintColor(.whiteColor)
+        deleteAction.backgroundColor = .memoBackground
+        deleteAction.image?.withTintColor(.memoWhite)
 
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }

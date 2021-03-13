@@ -61,8 +61,8 @@ class TabBar: UITabBarController {
         tabBar.backgroundImage = UIImage()
         tabBar.shadowImage = UIImage()
 
-        tabBar.tintColor = .primaryColor
-        tabBar.unselectedItemTintColor = .bodyColor
+        tabBar.tintColor = .memoBlue
+        tabBar.unselectedItemTintColor = .memoGray
         viewControllers = getControllers()
     }
 

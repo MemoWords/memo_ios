@@ -97,15 +97,15 @@ class CollectionsViewController: UIViewController {
     func configureNavBar() {
         navigationItem.title = TabBarItems.collections.title
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = .primaryColor
+        navigationController?.navigationBar.tintColor = .memoBlue
 
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 32)!,
-            NSAttributedString.Key.foregroundColor: UIColor.titleColor
+            NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 17)!,
-            NSAttributedString.Key.foregroundColor: UIColor.titleColor
+            NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
 
         let image = UIImage(systemName: "arrow.left")
@@ -188,7 +188,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "") { (_, _, _) in
+        let deleteAction = UIContextualAction(style: .normal, title: "") { (_, _, _) in
             if self.presenter.collections[indexPath.row].cards?.count != 0 {
                 let alert = UIAlertController(
                     title: "Deletar \(String(describing: self.presenter.collections[indexPath.row].name!))",
@@ -209,9 +209,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
         }
         //deleteAction.image = UIImage(systemName: "trash.fill")
         deleteAction.image = UIImage(named: "delete")
-        deleteAction.backgroundColor = .backgroundColor
-        deleteAction.image?.withTintColor(.whiteColor)
-
+        deleteAction.backgroundColor = .memoBackground
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     

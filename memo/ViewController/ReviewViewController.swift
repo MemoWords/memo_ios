@@ -25,14 +25,6 @@ class ReviewViewController: UIViewController {
         }
     }
     
-    var isContentHidden: Bool? {
-        didSet {
-            reviewView.card.img.isHidden = isContentHidden!
-            reviewView.card.tableView.isHidden = isContentHidden!
-            reviewView.card.showAnswerButton.isHidden = !isContentHidden!
-        }
-    }
-    
     // MARK: - Lifecycle.
     
     override func viewDidLoad() {
@@ -69,7 +61,7 @@ class ReviewViewController: UIViewController {
     
     func showButtonTapped() {
         reviewView.card.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-        isContentHidden = false
+        showContent(value: true)
     }
     
     func wrongButtonTapped() {
@@ -93,13 +85,44 @@ class ReviewViewController: UIViewController {
     }
     
     // MARK: - Functions.
+
+    func showContent(value: Bool) {
+        if value {
+            UIView.transition(
+                with: self.view,
+                duration: 0.2,
+                options: .transitionCrossDissolve,
+                animations: {
+                    self.reviewView.card.showAnswerButton.isHidden = value
+                },
+                completion: { _ in
+                    UIView.transition(
+                        with: self.view,
+                        duration: 0.5,
+                        options: .transitionCrossDissolve,
+                        animations: {
+                            self.reviewView.card.img.isHidden = !value
+                            self.reviewView.card.tableView.isHidden = !value
+                        },
+                        completion: nil
+                    )
+                }
+            )
+
+        } else {
+            self.reviewView.card.showAnswerButton.isHidden = value
+            self.reviewView.card.img.isHidden = !value
+            self.reviewView.card.tableView.isHidden = !value
+        }
+    }
+
     func configNavBar() {
         navigationItem.title = collection?.name
         navigationItem.largeTitleDisplayMode = .never
     }
     
     func show() {
-        isContentHidden = true
+        showContent(value: false)
         showMessage(false)
         
         reviewView.labelTotal.text = String("Total: \(cards.count)")

@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -29,7 +28,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XVk-al-75N">
                                 <rect key="frame" x="20" y="17" width="21" height="26"/>
-                                <color key="tintColor" name="body_color"/>
+                                <color key="tintColor" name="memo_gray"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="9Xb-yW-5hZ"/>
                                     <constraint firstAttribute="width" constant="21" id="g4Y-gt-9oM"/>
@@ -38,17 +37,17 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22/02/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-m2-4Yc">
                                 <rect key="frame" x="213" y="21" width="77" height="18"/>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="15"/>
-                                <color key="textColor" name="body_color"/>
+                                <color key="textColor" name="memo_gray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="love" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUL-K9-RBv">
                                 <rect key="frame" x="61" y="20.5" width="29.5" height="19"/>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
-                                <color key="textColor" name="title_color"/>
+                                <color key="textColor" name="memo_text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="memo_lightBackground"/>
                         <constraints>
                             <constraint firstItem="LUL-K9-RBv" firstAttribute="centerY" secondItem="nLy-aH-gAR" secondAttribute="centerY" id="0a2-Hz-kzI"/>
                             <constraint firstItem="XVk-al-75N" firstAttribute="leading" secondItem="nLy-aH-gAR" secondAttribute="leading" constant="20" id="2ZY-iS-cBI"/>
@@ -80,14 +79,14 @@
     </objects>
     <resources>
         <image name="doc.fill" catalog="system" width="115" height="128"/>
-        <namedColor name="body_color">
-            <color red="0.67799997329711914" green="0.69800001382827759" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="memo_gray">
+            <color red="0.67799997329711914" green="0.69800001382827759" blue="0.74900001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="title_color">
-            <color red="0.20800000429153442" green="0.20000000298023224" blue="0.20399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="memo_lightBackground">
+            <color red="0.98400002717971802" green="0.98400002717971802" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="memo_text">
+            <color red="0.11800000071525574" green="0.11400000005960464" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

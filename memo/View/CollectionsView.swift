@@ -40,7 +40,7 @@ class CollectionsView: UIView {
         let label = UILabel()
         label.text = "ESTUDAR"
         label.font = UIFont(name: "SF Pro Text Medium", size: 16)
-        label.textColor = .bodyColor
+        label.textColor = .memoGray
         return label
     }()
 
@@ -48,7 +48,7 @@ class CollectionsView: UIView {
         let label = UILabel()
         label.text = "PASTAS"
         label.font = UIFont(name: "SF Pro Text Medium", size: 16)
-        label.textColor = .bodyColor
+        label.textColor = .memoGray
         return label
     }()
 
@@ -56,7 +56,7 @@ class CollectionsView: UIView {
         let button = UIButton()
         button.setTitle(nil, for: .normal)
         button.setImage(UIImage(systemName: "folder.fill.badge.plus"), for: .normal)
-        button.tintColor = .primaryColor
+        button.tintColor = .memoBlue
         return button
     }()
     
@@ -125,8 +125,8 @@ extension CollectionsView {
         NSLayoutConstraint.activate([
             addFolderButton.centerYAnchor.constraint(equalTo: labelFolder.centerYAnchor),
             addFolderButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22),
-            addFolderButton.widthAnchor.constraint(equalToConstant: 32),
-            addFolderButton.heightAnchor.constraint(equalToConstant: 19)
+            addFolderButton.widthAnchor.constraint(equalToConstant: 35),
+            addFolderButton.heightAnchor.constraint(equalToConstant: 22)
         ])
     }
 
