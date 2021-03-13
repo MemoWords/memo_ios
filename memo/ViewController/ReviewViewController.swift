@@ -88,25 +88,17 @@ class ReviewViewController: UIViewController {
 
     func showContent(value: Bool) {
         if value {
+
             UIView.transition(
-                with: self.view,
-                duration: 0.2,
-                options: .transitionCrossDissolve,
+                with: self.reviewView.card,
+                duration: 0.5,
+                options: .transitionFlipFromRight,
                 animations: {
                     self.reviewView.card.showAnswerButton.isHidden = value
+                    self.reviewView.card.img.isHidden = !value
+                    self.reviewView.card.tableView.isHidden = !value
                 },
-                completion: { _ in
-                    UIView.transition(
-                        with: self.view,
-                        duration: 0.5,
-                        options: .transitionCrossDissolve,
-                        animations: {
-                            self.reviewView.card.img.isHidden = !value
-                            self.reviewView.card.tableView.isHidden = !value
-                        },
-                        completion: nil
-                    )
-                }
+                completion: nil
             )
 
         } else {
