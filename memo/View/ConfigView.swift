@@ -13,6 +13,9 @@ class ConfigView: UIView {
     lazy var contentView: UIView = {
         let view = UIView()
         view.backgroundColor = .memoLightBackground
+        view.layer.shadowOpacity = 0.05
+        view.layer.shadowRadius = 4
+        view.layer.shadowOffset = .init(width: 1, height: 3)
         return view
     }()
 
@@ -34,11 +37,13 @@ class ConfigView: UIView {
         return label
     }()
 
+    let bugView = UIView()
+
     // MARK: - INIT
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(tableView)
-        addSubviews(contentView, versionLabel)
+        addSubviews(bugView, contentView, versionLabel)
         setUpContentView()
         setUpTableView()
         setUpLabel()

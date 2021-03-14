@@ -41,7 +41,7 @@ class ConfigViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
 
-        let image = UIImage(systemName: "arrow.left")
+        let image = UIImage(named: "back_button")
         let backButton = UIBarButtonItem()
         backButton.title = ""
         // Set the back button.
@@ -62,6 +62,11 @@ class ConfigViewController: UIViewController {
             UINib(nibName: NotificationTableViewCell.xibName, bundle: nil),
             forCellReuseIdentifier: NotificationTableViewCell.identifier
         )
+
+        configView.tableView.register(
+            UINib(nibName: ThemeTableViewCell.xibName, bundle: nil),
+            forCellReuseIdentifier: ThemeTableViewCell.identifier
+        )
     }
 
 }
@@ -73,11 +78,22 @@ extension ConfigViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.identifier, for: indexPath) as! NotificationTableViewCell
-        return cell
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.identifier, for: indexPath) as! NotificationTableViewCell
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ThemeTableViewCell.identifier, for: indexPath) as! ThemeTableViewCell
+            cell.configure(with: "Dark")
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 1 {
+            let themesController = ThemesViewController()
+            navigationController?.pushViewController(themesController, animated: true)
+        }
     }
 }

@@ -68,6 +68,9 @@
 		DEBBE28625FE8F280083CF38 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE28525FE8F280083CF38 /* ConfigView.swift */; };
 		DEBBE29A25FE9E760083CF38 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE29825FE9E760083CF38 /* NotificationTableViewCell.swift */; };
 		DEBBE29B25FE9E760083CF38 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBBE29925FE9E760083CF38 /* NotificationTableViewCell.xib */; };
+		DEBBE2A425FEA3D00083CF38 /* ThemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE2A225FEA3D00083CF38 /* ThemeTableViewCell.swift */; };
+		DEBBE2A525FEA3D00083CF38 /* ThemeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBBE2A325FEA3D00083CF38 /* ThemeTableViewCell.xib */; };
+		DEBBE2AD25FEA9B50083CF38 /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE2AC25FEA9B50083CF38 /* ThemesViewController.swift */; };
 		DEC831C32544987500229AFF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC831C22544987500229AFF /* Color.swift */; };
 		DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7092825DD557E001FE1D4 /* CardPresenter.swift */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
@@ -159,6 +162,9 @@
 		DEBBE28525FE8F280083CF38 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		DEBBE29825FE9E760083CF38 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		DEBBE29925FE9E760083CF38 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		DEBBE2A225FEA3D00083CF38 /* ThemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewCell.swift; sourceTree = "<group>"; };
+		DEBBE2A325FEA3D00083CF38 /* ThemeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeTableViewCell.xib; sourceTree = "<group>"; };
+		DEBBE2AC25FEA9B50083CF38 /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
 		DEC831C22544987500229AFF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DED7092825DD557E001FE1D4 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +300,7 @@
 				DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */,
 				DE913EFF24EC095200383CFC /* AddWordViewController.swift */,
 				DE4428F12547238200A8657C /* ConfigViewController.swift */,
+				DEBBE2AC25FEA9B50083CF38 /* ThemesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -356,6 +363,7 @@
 				DE7D991C25D2C3840053679C /* FolderTableViewCell.swift */,
 				DE7D994425D3635C0053679C /* WordTableViewCell.swift */,
 				DEBBE29825FE9E760083CF38 /* NotificationTableViewCell.swift */,
+				DEBBE2A225FEA3D00083CF38 /* ThemeTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,6 +392,7 @@
 				DE7D991D25D2C3840053679C /* FolderTableViewCell.xib */,
 				DE7D994525D3635C0053679C /* WordTableViewCell.xib */,
 				DEBBE29925FE9E760083CF38 /* NotificationTableViewCell.xib */,
+				DEBBE2A325FEA3D00083CF38 /* ThemeTableViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -529,6 +538,7 @@
 				DE7D991825D2B97A0053679C /* StudyCollectionViewCell.xib in Resources */,
 				DE7D994725D3635C0053679C /* WordTableViewCell.xib in Resources */,
 				DE913F2424F1B25600383CFC /* AddWordTableViewCell.xib in Resources */,
+				DEBBE2A525FEA3D00083CF38 /* ThemeTableViewCell.xib in Resources */,
 				DE8E826725477EAC0067899B /* SFPro.ttf in Resources */,
 				DE913F0424EC4F5800383CFC /* DefinitionTableViewCell.xib in Resources */,
 			);
@@ -585,6 +595,7 @@
 				DE7D991E25D2C3840053679C /* FolderTableViewCell.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
 				DE8E829C2547991B0067899B /* CardView+Constraints.swift in Sources */,
+				DEBBE2AD25FEA9B50083CF38 /* ThemesViewController.swift in Sources */,
 				DE8E82C62548679F0067899B /* SearchView+Constraints.swift in Sources */,
 				DE913F1924EEA71300383CFC /* Definition.swift in Sources */,
 				DE913F2324F1B25600383CFC /* AddWordTableViewCell.swift in Sources */,
@@ -605,6 +616,7 @@
 				DE8E82DE25499F780067899B /* AddWordView+Constraints.swift in Sources */,
 				DE7D992D25D32B640053679C /* MessageCard.swift in Sources */,
 				DEC831C32544987500229AFF /* Color.swift in Sources */,
+				DEBBE2A425FEA3D00083CF38 /* ThemeTableViewCell.swift in Sources */,
 				DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */,
 				DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */,
 				DE77DAD924E6FE4D00095D73 /* SceneDelegate.swift in Sources */,
