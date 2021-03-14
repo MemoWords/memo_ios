@@ -53,16 +53,20 @@ class CollectionsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         presenter.updateData()
-        collectionsView.tableView.scrollToRow(
-            at: IndexPath(row: 0, section: 0),
-            at: .top,
-            animated: false
-        )
+        if presenter.collectionsToStudy.count != 0 {
+            collectionsView.tableView.scrollToRow(
+                at: IndexPath(row: 0, section: 0),
+                at: .top,
+                animated: false
+            )
+        }
         collectionsView.collectionView.scrollToItem(
             at: IndexPath(row: 0, section: 0),
             at: .centeredHorizontally,
             animated: false
         )
+
+        print("will apear")
 
     }
     
@@ -108,7 +112,7 @@ class CollectionsViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
 
-        let image = UIImage(systemName: "arrow.left")
+        let image = UIImage(named: "back_button")
         let backButton = UIBarButtonItem()
         backButton.title = ""
         // Set the back button.

@@ -104,7 +104,7 @@ class SearchViewController: UIViewController {
             NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 20)!,
             NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
-        let image = UIImage(systemName: "arrow.left")
+        let image = UIImage(named: "back_button")
         let backButton = UIBarButtonItem()
         backButton.title = ""
         // Set the back button.

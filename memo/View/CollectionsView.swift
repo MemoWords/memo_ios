@@ -114,7 +114,7 @@ extension CollectionsView {
     func setUpLabelFolder() {
         labelFolder.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelFolder.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10),
+            labelFolder.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
             labelFolder.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
             labelFolder.trailingAnchor.constraint(equalTo: addFolderButton.trailingAnchor, constant: -20)
         ])
