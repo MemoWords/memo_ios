@@ -65,6 +65,9 @@
 		DE913F4824F31D1200383CFC /* ClassificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4724F31D1200383CFC /* ClassificateTests.swift */; };
 		DE913F4A24F321EB00383CFC /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4924F321EB00383CFC /* CardTests.swift */; };
 		DEBBE27A25FBFA0D0083CF38 /* MemoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */; };
+		DEBBE28625FE8F280083CF38 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE28525FE8F280083CF38 /* ConfigView.swift */; };
+		DEBBE29A25FE9E760083CF38 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE29825FE9E760083CF38 /* NotificationTableViewCell.swift */; };
+		DEBBE29B25FE9E760083CF38 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBBE29925FE9E760083CF38 /* NotificationTableViewCell.xib */; };
 		DEC831C32544987500229AFF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC831C22544987500229AFF /* Color.swift */; };
 		DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7092825DD557E001FE1D4 /* CardPresenter.swift */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
@@ -153,6 +156,9 @@
 		DE913F4724F31D1200383CFC /* ClassificateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificateTests.swift; sourceTree = "<group>"; };
 		DE913F4924F321EB00383CFC /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableView.swift; sourceTree = "<group>"; };
+		DEBBE28525FE8F280083CF38 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
+		DEBBE29825FE9E760083CF38 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		DEBBE29925FE9E760083CF38 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		DEC831C22544987500229AFF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DED7092825DD557E001FE1D4 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -270,9 +276,10 @@
 				DE4428DD2547022300A8657C /* Components */,
 				DE4428D52547017100A8657C /* CollectionsView.swift */,
 				DE4429042547470400A8657C /* ReviewView.swift */,
+				DE7D994B25D365FB0053679C /* WordView.swift */,
 				DE8E82C02548645D0067899B /* SearchView.swift */,
 				DE8E82D8254994490067899B /* AddWordView.swift */,
-				DE7D994B25D365FB0053679C /* WordView.swift */,
+				DEBBE28525FE8F280083CF38 /* ConfigView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,10 +290,10 @@
 				DE4428D02546FBC200A8657C /* TabBar.swift */,
 				DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */,
 				DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */,
+				DE7D993F25D35A250053679C /* WordListViewController.swift */,
 				DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */,
 				DE913EFF24EC095200383CFC /* AddWordViewController.swift */,
 				DE4428F12547238200A8657C /* ConfigViewController.swift */,
-				DE7D993F25D35A250053679C /* WordListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -348,6 +355,7 @@
 				DE7D991525D2B97A0053679C /* StudyCollectionViewCell.swift */,
 				DE7D991C25D2C3840053679C /* FolderTableViewCell.swift */,
 				DE7D994425D3635C0053679C /* WordTableViewCell.swift */,
+				DEBBE29825FE9E760083CF38 /* NotificationTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -375,6 +383,7 @@
 				DE7D991625D2B97A0053679C /* StudyCollectionViewCell.xib */,
 				DE7D991D25D2C3840053679C /* FolderTableViewCell.xib */,
 				DE7D994525D3635C0053679C /* WordTableViewCell.xib */,
+				DEBBE29925FE9E760083CF38 /* NotificationTableViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -512,6 +521,7 @@
 				DE77DAE324E6FE5000095D73 /* LaunchScreen.storyboard in Resources */,
 				DE7D991F25D2C3840053679C /* FolderTableViewCell.xib in Resources */,
 				DE7D997225D391E10053679C /* Assets.xcassets in Resources */,
+				DEBBE29B25FE9E760083CF38 /* NotificationTableViewCell.xib in Resources */,
 				DE8E828225477F3B0067899B /* SFProTextRegular.otf in Resources */,
 				DE8E828325477F3B0067899B /* SFProTextMedium.otf in Resources */,
 				DE8E828025477F3B0067899B /* SFProTextMediumItalic.otf in Resources */,
@@ -581,11 +591,13 @@
 				DE913F0024EC095200383CFC /* AddWordViewController.swift in Sources */,
 				DE44290F25474D7A00A8657C /* ReviewView+Constraints.swift in Sources */,
 				DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */,
+				DEBBE29A25FE9E760083CF38 /* NotificationTableViewCell.swift in Sources */,
 				DE8E82C12548645D0067899B /* SearchView.swift in Sources */,
 				DE8E82D9254994490067899B /* AddWordView.swift in Sources */,
 				DE44291425476B6600A8657C /* CardView.swift in Sources */,
 				DE7D994C25D365FB0053679C /* WordView.swift in Sources */,
 				DEBBE27A25FBFA0D0083CF38 /* MemoTableView.swift in Sources */,
+				DEBBE28625FE8F280083CF38 /* ConfigView.swift in Sources */,
 				DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */,
 				DE8E82CB2548A9050067899B /* TextField.swift in Sources */,
 				DE913F1B24EEA72400383CFC /* Answer.swift in Sources */,

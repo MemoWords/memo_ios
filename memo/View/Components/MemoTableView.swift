@@ -17,7 +17,8 @@ class MemoTableView: UITableView {
         tableHeaderView = .none
         separatorInset = .zero
         separatorStyle = .none
-        tableFooterView = UIView()
+        tableHeaderView = UIView()
+        tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 1))
     }
     
     required init?(coder: NSCoder) {

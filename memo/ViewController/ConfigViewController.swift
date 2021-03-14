@@ -10,12 +10,23 @@ import UIKit
 
 class ConfigViewController: UIViewController {
 
+    // MARK: - Properties
+    let configView = ConfigView()
+
+    // MARK: - LifeCycle
+    override func loadView() {
+        super.loadView()
+        view = configView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .memoBackground
         configureNavBar()
+        setUpTableView()
     }
 
+    // MARK: - Functions
     func configureNavBar() {
         navigationItem.title = TabBarItems.settings.title
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -43,4 +54,30 @@ class ConfigViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
     }
 
+    func setUpTableView() {
+        configView.tableView.delegate   = self
+        configView.tableView.dataSource = self
+
+        configView.tableView.register(
+            UINib(nibName: NotificationTableViewCell.xibName, bundle: nil),
+            forCellReuseIdentifier: NotificationTableViewCell.identifier
+        )
+    }
+
+}
+
+// MARK: - TableView DataSource
+extension ConfigViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: NotificationTableViewCell.identifier, for: indexPath) as! NotificationTableViewCell
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
