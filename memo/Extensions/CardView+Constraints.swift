@@ -12,7 +12,7 @@ extension CardView {
     func configureLabels() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         
@@ -27,8 +27,8 @@ extension CardView {
         separator.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             separator.topAnchor.constraint(equalTo: pronunciationLabel.bottomAnchor, constant: 15),
-            separator.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-            separator.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
+            separator.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            separator.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             separator.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
@@ -56,7 +56,7 @@ extension CardView {
     func configureShowAnswerButton() {
         showAnswerButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            showAnswerButton.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 20),
+            showAnswerButton.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 30),
             showAnswerButton.centerXAnchor.constraint(equalTo: img.centerXAnchor)
         ])
     }

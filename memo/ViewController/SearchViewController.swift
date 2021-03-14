@@ -97,11 +97,11 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .memoBlue
         navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 34)!,
+            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Bold", size: 30)!,
             NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
         navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 17)!,
+            NSAttributedString.Key.font: UIFont(name: "SF Pro Text Semibold", size: 20)!,
             NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
         let image = UIImage(systemName: "arrow.left")

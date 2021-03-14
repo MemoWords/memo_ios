@@ -16,7 +16,7 @@ class WordTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        mainFrame.layer.cornerRadius = 16
+        mainFrame.layer.cornerRadius = 18
         mainFrame.layer.shadowColor = UIColor.black.cgColor
         mainFrame.layer.shadowOpacity = 0.03
         mainFrame.layer.shadowRadius = 3

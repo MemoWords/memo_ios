@@ -34,7 +34,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="203" height="132"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tWv-oD-ojC">
-                                <rect key="frame" x="15" y="16" width="32" height="29.5"/>
+                                <rect key="frame" x="20" y="16" width="32" height="29.5"/>
                                 <color key="tintColor" name="memo_yellow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="jWA-SQ-KrV"/>
@@ -42,7 +42,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9Fm-iN-WlU">
-                                <rect key="frame" x="156" y="15.5" width="32" height="31"/>
+                                <rect key="frame" x="151" y="15.5" width="32" height="31"/>
                                 <color key="tintColor" name="memo_white"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="Y8t-c8-caP"/>
@@ -50,13 +50,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 para estudar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiE-2t-5tG">
-                                <rect key="frame" x="15" y="93" width="173" height="19"/>
+                                <rect key="frame" x="20" y="95" width="163" height="19"/>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
                                 <color key="textColor" name="memo_white"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verbos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdv-a2-fBF">
-                                <rect key="frame" x="15" y="70" width="173" height="21"/>
+                                <rect key="frame" x="20" y="70" width="56" height="21"/>
                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="18"/>
                                 <color key="textColor" name="memo_white"/>
                                 <nil key="highlightedColor"/>
@@ -64,19 +64,18 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HiE-2t-5tG" firstAttribute="top" secondItem="Hdv-a2-fBF" secondAttribute="bottom" constant="2" id="3oC-ck-GS2"/>
-                            <constraint firstItem="Hdv-a2-fBF" firstAttribute="leading" secondItem="bfI-g4-eak" secondAttribute="leading" constant="15" id="J0z-pB-ck6"/>
+                            <constraint firstItem="Hdv-a2-fBF" firstAttribute="leading" secondItem="bfI-g4-eak" secondAttribute="leading" constant="20" id="Ccp-he-AQ8"/>
+                            <constraint firstItem="Hdv-a2-fBF" firstAttribute="top" secondItem="tWv-oD-ojC" secondAttribute="bottom" constant="23" id="JBx-wd-ih3"/>
+                            <constraint firstItem="HiE-2t-5tG" firstAttribute="leading" secondItem="bfI-g4-eak" secondAttribute="leading" constant="20" id="NDj-Cr-Jnr"/>
                             <constraint firstAttribute="bottom" secondItem="WND-j7-NhX" secondAttribute="bottom" id="Ss1-sW-a2v"/>
                             <constraint firstItem="tWv-oD-ojC" firstAttribute="top" secondItem="bfI-g4-eak" secondAttribute="top" constant="15" id="WmU-e3-EF4"/>
-                            <constraint firstAttribute="trailing" secondItem="9Fm-iN-WlU" secondAttribute="trailing" constant="15" id="bWA-31-XiT"/>
-                            <constraint firstItem="tWv-oD-ojC" firstAttribute="leading" secondItem="bfI-g4-eak" secondAttribute="leading" constant="15" id="d3C-cs-Eng"/>
-                            <constraint firstAttribute="bottom" secondItem="HiE-2t-5tG" secondAttribute="bottom" constant="20" id="dTT-xF-8Hm"/>
-                            <constraint firstItem="HiE-2t-5tG" firstAttribute="leading" secondItem="bfI-g4-eak" secondAttribute="leading" constant="15" id="g6p-hz-NVt"/>
+                            <constraint firstItem="HiE-2t-5tG" firstAttribute="top" secondItem="Hdv-a2-fBF" secondAttribute="bottom" constant="4" id="Z2I-d3-Vcf"/>
+                            <constraint firstAttribute="trailing" secondItem="9Fm-iN-WlU" secondAttribute="trailing" constant="20" id="bWA-31-XiT"/>
+                            <constraint firstItem="tWv-oD-ojC" firstAttribute="leading" secondItem="bfI-g4-eak" secondAttribute="leading" constant="20" id="d3C-cs-Eng"/>
                             <constraint firstItem="9Fm-iN-WlU" firstAttribute="top" secondItem="bfI-g4-eak" secondAttribute="top" constant="15" id="lKZ-XG-OmS"/>
-                            <constraint firstAttribute="trailing" secondItem="HiE-2t-5tG" secondAttribute="trailing" constant="15" id="m2V-Cx-PaD"/>
+                            <constraint firstAttribute="trailing" secondItem="HiE-2t-5tG" secondAttribute="trailing" constant="20" id="lue-aq-IIp"/>
                             <constraint firstAttribute="trailing" secondItem="WND-j7-NhX" secondAttribute="trailing" id="nI7-sH-I9c"/>
                             <constraint firstItem="WND-j7-NhX" firstAttribute="leading" secondItem="bfI-g4-eak" secondAttribute="leading" id="oWx-gb-UMr"/>
-                            <constraint firstAttribute="trailing" secondItem="Hdv-a2-fBF" secondAttribute="trailing" constant="15" id="oZm-0B-mJ7"/>
                             <constraint firstItem="WND-j7-NhX" firstAttribute="top" secondItem="bfI-g4-eak" secondAttribute="top" id="uE5-Q7-TOD"/>
                         </constraints>
                     </view>

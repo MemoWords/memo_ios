@@ -13,7 +13,7 @@ class SearchView: UIView {
     // MARK: - UIELEMENTS
     lazy var searchTextFieldView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 16
         view.backgroundColor = .memoLightBackground
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.08
@@ -25,7 +25,6 @@ class SearchView: UIView {
     lazy var searchTextField: UITextField = {
         let textField = UITextField()
         let imageView = UIImageView(image: UIImage(named: "lens.png"))
-        
         textField.placeholder = "Pesquisar"
         textField.font = UIFont(name: "SF Pro Text Medium", size: 18)
         textField.textColor = .memoText
@@ -37,14 +36,13 @@ class SearchView: UIView {
         textField.backgroundColor = .memoLightBackground
         textField.tintColor = .memoBlue
         textField.addTarget(self, action: #selector(search), for: .primaryActionTriggered)
-        
         return textField
     }()
     
     lazy var saveButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("SALVAR", for: .normal)
-        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
+        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 16)
         button.addTarget(self, action: #selector(save), for: .touchUpInside)
         
         return button
@@ -82,8 +80,8 @@ class SearchView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        searchTextField.layer.cornerRadius = 8
-        saveButton.layer.cornerRadius = 8
+        searchTextField.layer.cornerRadius = 16
+        saveButton.layer.cornerRadius = 16
     }
     
     private func setUpViews() {

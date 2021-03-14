@@ -16,7 +16,7 @@ class CardView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "car"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 32)
+        label.font = UIFont(name: "SF Pro Text Medium", size: 30)
         label.textColor = .memoText
         return label
     }()
@@ -24,7 +24,7 @@ class CardView: UIView {
     lazy var pronunciationLabel: UILabel = {
         let label = UILabel()
         label.text = "/kär/"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 21)
+        label.font = UIFont(name: "SF Pro Text Medium", size: 20)
         label.textColor = .memoGray
         return label
     }()
@@ -38,7 +38,7 @@ class CardView: UIView {
     
     // Image.
     lazy var img: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "car"))
+        let imageView = UIImageView(image: UIImage(named: "photo"))
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -49,8 +49,8 @@ class CardView: UIView {
     // Button Show Answer.
     lazy var showAnswerButton: UIButton = {
         let mediumConfig = UIImage.SymbolConfiguration(pointSize: 16, weight: .bold, scale: .medium)
-        let image = UIImage(systemName: "chevron.down", withConfiguration: mediumConfig)
-        let button = UIButton()
+        let image = UIImage(systemName: "arrowtriangle.down.fill", withConfiguration: mediumConfig)
+        let button = UIButton(type: .system)
         button.isHidden = true
         button.setTitle("MOSTRAR RESPOSTA", for: .normal)
         button.titleLabel?.font = UIFont(name: "SF Pro Text Bold", size: 16)

@@ -12,40 +12,38 @@ extension ReviewView {
     func setUpButtonsStack() {
         buttonsStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            buttonsStack.leftAnchor.constraint(equalTo: leftAnchor, constant: 17),
-            buttonsStack.rightAnchor.constraint(equalTo: rightAnchor, constant: -17),
-            buttonsStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -17),
+            buttonsStack.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
+            buttonsStack.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
+            buttonsStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             buttonsStack.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
-    func setUpLabelsStack() {
-        labelsStack.translatesAutoresizingMaskIntoConstraints = false
+    func setUpLabel() {
+        labelStudy.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelsStack.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
-            labelsStack.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
-            labelsStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
-            labelsStack.heightAnchor.constraint(equalToConstant: 20)
+            labelStudy.centerXAnchor.constraint(equalTo: centerXAnchor),
+            labelStudy.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5)
         ])
     }
     
     func setUpCard() {
         card.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            card.topAnchor.constraint(equalTo: labelsStack.bottomAnchor, constant: 10),
-            card.leftAnchor.constraint(equalTo: leftAnchor, constant: 17),
-            card.rightAnchor.constraint(equalTo: rightAnchor, constant: -17),
-            card.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -17)
+            card.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
+            card.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
+            card.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
+            card.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -20)
         ])
     }
     
     func setUpCardMessage() {
         cardMessage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            cardMessage.topAnchor.constraint(equalTo: labelsStack.bottomAnchor, constant: 10),
-            cardMessage.leftAnchor.constraint(equalTo: leftAnchor, constant: 17),
-            cardMessage.rightAnchor.constraint(equalTo: rightAnchor, constant: -17),
-            cardMessage.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -17)
+            cardMessage.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
+            cardMessage.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
+            cardMessage.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
+            cardMessage.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -20)
         ])
     }
 }

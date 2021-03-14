@@ -12,7 +12,7 @@ extension SearchView {
     func setupTextFieldView() {
         searchTextFieldView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            searchTextFieldView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            searchTextFieldView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             searchTextFieldView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             searchTextFieldView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             searchTextFieldView.heightAnchor.constraint(equalToConstant: 50)

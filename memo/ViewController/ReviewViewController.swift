@@ -116,9 +116,8 @@ class ReviewViewController: UIViewController {
     func show() {
         showContent(value: false)
         showMessage(false)
-        
-        reviewView.labelTotal.text = String("Total: \(cards.count)")
-        reviewView.labelStudy.text = String("Estudar: \(numOfCardsToStudy)")
+
+        reviewView.labelStudy.text = String("ESTUDAR: \(numOfCardsToStudy)")
         reviewView.card.titleLabel.text = "..."
         reviewView.card.pronunciationLabel.text = "/.../"
         

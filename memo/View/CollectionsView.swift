@@ -20,8 +20,8 @@ class CollectionsView: UIView {
         layout.itemSize = CGSize(width: 223, height: 152)
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
-        layout.sectionInset.left = 12
-        layout.sectionInset.right = 12
+        layout.sectionInset.left = 10
+        layout.sectionInset.right = 10
 
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.backgroundColor = .clear
@@ -32,7 +32,7 @@ class CollectionsView: UIView {
 
     lazy var tableView: MemoTableView = {
         let table = MemoTableView(frame: .zero, style: .plain)
-        table.rowHeight = 96
+        table.rowHeight = 100
         return table
     }()
 
@@ -53,9 +53,9 @@ class CollectionsView: UIView {
     }()
 
     lazy var addFolderButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle(nil, for: .normal)
-        button.setImage(UIImage(systemName: "folder.fill.badge.plus"), for: .normal)
+        button.setImage(UIImage(named: "add_folder"), for: .normal)
         button.tintColor = .memoBlue
         return button
     }()
@@ -85,7 +85,7 @@ extension CollectionsView {
     func setUpLabelStudy() {
         labelStudy.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelStudy.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
+            labelStudy.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 2),
             labelStudy.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
             labelStudy.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22)
         ])
@@ -94,7 +94,7 @@ extension CollectionsView {
     func setUpCollectionView() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 10),
+            collectionView.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 5),
             collectionView.leftAnchor.constraint(equalTo: leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: rightAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 152)
@@ -104,9 +104,9 @@ extension CollectionsView {
     func setUpMessageCard() {
         messageCard.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            messageCard.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 20),
-            messageCard.leftAnchor.constraint(equalTo: leftAnchor, constant: 50),
-            messageCard.rightAnchor.constraint(equalTo: rightAnchor, constant: -50),
+            messageCard.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
+            messageCard.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            messageCard.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             messageCard.heightAnchor.constraint(equalToConstant: 132)
         ])
     }
@@ -125,8 +125,8 @@ extension CollectionsView {
         NSLayoutConstraint.activate([
             addFolderButton.centerYAnchor.constraint(equalTo: labelFolder.centerYAnchor),
             addFolderButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22),
-            addFolderButton.widthAnchor.constraint(equalToConstant: 35),
-            addFolderButton.heightAnchor.constraint(equalToConstant: 22)
+            addFolderButton.widthAnchor.constraint(equalToConstant: 32),
+            addFolderButton.heightAnchor.constraint(equalToConstant: 21)
         ])
     }
 

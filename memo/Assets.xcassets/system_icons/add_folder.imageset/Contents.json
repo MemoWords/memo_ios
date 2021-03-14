@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "car.png",
+      "filename" : "add_folder.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "car@2x.png",
+      "filename" : "add_folder@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "car@3x.png",
+      "filename" : "add_folder@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
