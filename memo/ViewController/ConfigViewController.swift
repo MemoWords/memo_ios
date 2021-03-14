@@ -12,6 +12,7 @@ class ConfigViewController: UIViewController {
 
     // MARK: - Properties
     let configView = ConfigView()
+    let settings = Settings.getInstance()
 
     // MARK: - LifeCycle
     override func loadView() {
@@ -24,6 +25,11 @@ class ConfigViewController: UIViewController {
         view.backgroundColor = .memoBackground
         configureNavBar()
         setUpTableView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configView.tableView.reloadData()
     }
 
     // MARK: - Functions
@@ -84,7 +90,7 @@ extension ConfigViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: ThemeTableViewCell.identifier, for: indexPath) as! ThemeTableViewCell
-            cell.configure(with: "Dark")
+            cell.configure(with: settings.getSelectedThemeName())
             return cell
         }
     }

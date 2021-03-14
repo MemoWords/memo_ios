@@ -12,15 +12,18 @@ class NotificationTableViewCell: UITableViewCell {
 
     static let xibName = "NotificationTableViewCell"
     static let identifier = "NotificationCell"
+    let settings = Settings.getInstance()
 
     @IBOutlet weak var notifySwitch: UISwitch!
 
     @IBAction func notifySwitchValueChanged(_ sender: Any) {
+        settings.notification = notifySwitch.isOn
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
+        notifySwitch.isOn = settings.notification
     }
     
 }

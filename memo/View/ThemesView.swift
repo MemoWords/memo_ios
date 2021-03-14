@@ -29,22 +29,13 @@ class ThemesView: UIView {
         return tableView
     }()
 
-    lazy var versionLabel: UILabel = {
-        let label = UILabel()
-        label.text = "v1.0 - beta"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 16)
-        label.textColor = .memoGray
-        return label
-    }()
-
     // MARK: - INIT
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(tableView)
-        addSubviews(contentView, versionLabel)
+        addSubview(contentView)
         setUpContentView()
         setUpTableView()
-        setUpLabel()
     }
 
     required init?(coder: NSCoder) {
@@ -78,14 +69,6 @@ extension ThemesView {
             tableView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0),
             tableView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
-    }
-
-    func setUpLabel() {
-        versionLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            versionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            versionLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
     }
 }
