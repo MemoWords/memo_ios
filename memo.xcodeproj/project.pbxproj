@@ -71,6 +71,7 @@
 		DEBBE2A425FEA3D00083CF38 /* ThemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE2A225FEA3D00083CF38 /* ThemeTableViewCell.swift */; };
 		DEBBE2A525FEA3D00083CF38 /* ThemeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBBE2A325FEA3D00083CF38 /* ThemeTableViewCell.xib */; };
 		DEBBE2AD25FEA9B50083CF38 /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE2AC25FEA9B50083CF38 /* ThemesViewController.swift */; };
+		DEBBE2B225FEAED40083CF38 /* ThemesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE2B125FEAED40083CF38 /* ThemesView.swift */; };
 		DEC831C32544987500229AFF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC831C22544987500229AFF /* Color.swift */; };
 		DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7092825DD557E001FE1D4 /* CardPresenter.swift */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
@@ -165,6 +166,7 @@
 		DEBBE2A225FEA3D00083CF38 /* ThemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewCell.swift; sourceTree = "<group>"; };
 		DEBBE2A325FEA3D00083CF38 /* ThemeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeTableViewCell.xib; sourceTree = "<group>"; };
 		DEBBE2AC25FEA9B50083CF38 /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
+		DEBBE2B125FEAED40083CF38 /* ThemesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesView.swift; sourceTree = "<group>"; };
 		DEC831C22544987500229AFF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DED7092825DD557E001FE1D4 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				DE8E82C02548645D0067899B /* SearchView.swift */,
 				DE8E82D8254994490067899B /* AddWordView.swift */,
 				DEBBE28525FE8F280083CF38 /* ConfigView.swift */,
+				DEBBE2B125FEAED40083CF38 /* ThemesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				DE44290F25474D7A00A8657C /* ReviewView+Constraints.swift in Sources */,
 				DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */,
 				DEBBE29A25FE9E760083CF38 /* NotificationTableViewCell.swift in Sources */,
+				DEBBE2B225FEAED40083CF38 /* ThemesView.swift in Sources */,
 				DE8E82C12548645D0067899B /* SearchView.swift in Sources */,
 				DE8E82D9254994490067899B /* AddWordView.swift in Sources */,
 				DE44291425476B6600A8657C /* CardView.swift in Sources */,
