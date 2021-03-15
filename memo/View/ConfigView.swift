@@ -31,7 +31,7 @@ class ConfigView: UIView {
 
     lazy var versionLabel: UILabel = {
         let label = UILabel()
-        label.text = "v1.0 - beta"
+        label.text = "v1.0.1 - beta"
         label.font = UIFont(name: "SF Pro Text Medium", size: 16)
         label.textColor = .memoGray
         return label

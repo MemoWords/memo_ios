@@ -68,7 +68,13 @@ class SearchViewController: UIViewController {
                 self.searchView.card.titleLabel.text = answer.word
                 self.wordToSave = answer.word
                 self.definitions = answer.definitions
-                
+
+                if let img = answer.definitions[0].image_url {
+                    self.searchView.card.img.load(urlString: img)
+                } else {
+                    self.searchView.card.img.image = UIImage(named: "photo")
+                }
+
                 // verificar se o card ja existe.
                 self.searchView.activateButton(
                     !self.cardRepository.exists(word: word)

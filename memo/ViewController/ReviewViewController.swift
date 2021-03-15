@@ -143,6 +143,13 @@ class ReviewViewController: UIViewController {
         AnswerRepository.search(word: word) { answer in
             DispatchQueue.main.async {
                 self.reviewView.card.titleLabel.text = word
+                
+                if let img = answer.definitions[0].image_url {
+                    self.reviewView.card.img.load(urlString: img)
+                } else {
+                    self.reviewView.card.img.image = UIImage(named: "photo")
+                }
+
                 if let pronunciation = answer.pronunciation {
                     self.reviewView.card.pronunciationLabel.text = "/\(pronunciation)/"
                 } else {
