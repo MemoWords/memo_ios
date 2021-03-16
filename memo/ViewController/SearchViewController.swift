@@ -37,6 +37,7 @@ class SearchViewController: UIViewController {
         
         searchView.card.tableView.dataSource = self
         searchView.card.tableView.delegate   = self
+        searchView.searchTextField.delegate  = self
         
         searchView.card.tableView.register(UINib.init(nibName: "DefinitionTableViewCell", bundle: nil), forCellReuseIdentifier: "DefinitionCell")
         
@@ -53,33 +54,47 @@ class SearchViewController: UIViewController {
     // MARK: - Actions.
     
     func searchButtonTapped(_ word: String) {
+
+        let wordToFind = word.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
         
-        AnswerRepository.search(word: word) { answer in
-            DispatchQueue.main.async {
-                
-                self.searchView.card.isHidden = false
-                
-                if let pronunciation = answer.pronunciation {
-                    self.searchView.card.pronunciationLabel.text = "/\(pronunciation)/"
-                } else {
-                    self.searchView.card.pronunciationLabel.text = "/.../"
-                }
-                
-                self.searchView.card.titleLabel.text = answer.word
-                self.wordToSave = answer.word
-                self.definitions = answer.definitions
+        AnswerRepository.search(word: wordToFind) { answer in
+            if let response = answer {
+                DispatchQueue.main.async {
 
-                if let img = answer.definitions[0].image_url {
-                    self.searchView.card.img.load(urlString: img)
-                } else {
-                    self.searchView.card.img.image = UIImage(named: "photo")
-                }
+                    if let pronunciation = response.pronunciation {
+                        self.searchView.card.pronunciationLabel.text = "/\(pronunciation)/"
+                    } else {
+                        self.searchView.card.pronunciationLabel.text = "/.../"
+                    }
 
-                // verificar se o card ja existe.
-                self.searchView.activateButton(
-                    !self.cardRepository.exists(word: word)
-                )
-                
+                    self.searchView.card.titleLabel.text = response.word
+                    self.wordToSave = response.word
+                    self.definitions = response.definitions
+
+                    if let img = response.definitions[0].image_url {
+                        self.searchView.card.img.load(urlString: img)
+                    } else {
+                        self.searchView.card.img.image = UIImage(named: "photo")
+                    }
+
+                    UIView.transition(with: self.searchView.card, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                        self.searchView.card.isHidden = false
+                        // verificar se o card ja existe.
+                        self.searchView.activateButton(
+                            !self.cardRepository.exists(word: word)
+                        )
+                    }, completion: nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.searchView.card.isHidden = true
+                    self.searchView.activateButton(false)
+
+                    let alert = UIAlertController(title: "Desculpe! \"\(word)\" não foi encontrada na nossa base de dados", message: nil, preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
         
@@ -148,5 +163,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: SaveWordDelegate {
     func save(collection: Collection?, collectionName: String?, word: String) {
         
+    }
+}
+
+// TextField Max Lenth
+extension SearchViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= 50
     }
 }

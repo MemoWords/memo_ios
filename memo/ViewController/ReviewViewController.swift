@@ -141,21 +141,23 @@ class ReviewViewController: UIViewController {
     
     func setAnswerData(word: String) {
         AnswerRepository.search(word: word) { answer in
-            DispatchQueue.main.async {
-                self.reviewView.card.titleLabel.text = word
-                
-                if let img = answer.definitions[0].image_url {
-                    self.reviewView.card.img.load(urlString: img)
-                } else {
-                    self.reviewView.card.img.image = UIImage(named: "photo")
-                }
+            if let response = answer {
+                DispatchQueue.main.async {
+                    self.reviewView.card.titleLabel.text = word
 
-                if let pronunciation = answer.pronunciation {
-                    self.reviewView.card.pronunciationLabel.text = "/\(pronunciation)/"
-                } else {
-                    self.reviewView.card.pronunciationLabel.text = "/.../"
+                    if let img = response.definitions[0].image_url {
+                        self.reviewView.card.img.load(urlString: img)
+                    } else {
+                        self.reviewView.card.img.image = UIImage(named: "photo")
+                    }
+
+                    if let pronunciation = response.pronunciation {
+                        self.reviewView.card.pronunciationLabel.text = "/\(pronunciation)/"
+                    } else {
+                        self.reviewView.card.pronunciationLabel.text = "/.../"
+                    }
+                    self.definitions = response.definitions
                 }
-                self.definitions = answer.definitions
             }
         }
     }

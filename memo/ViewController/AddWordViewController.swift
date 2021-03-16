@@ -35,8 +35,9 @@ class AddWordViewController: UIViewController {
         super.viewDidLoad()
         configNavBar()
         
-        addWordView.tableView.dataSource = self
-        addWordView.tableView.delegate = self
+        addWordView.tableView.dataSource   = self
+        addWordView.tableView.delegate     = self
+        addWordView.nameTextField.delegate = self
 //
         addWordView.tableView.register(UINib.init(nibName: "AddWordTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionNameCell")
         collections = collectionRepository.fetchAll()
@@ -93,5 +94,18 @@ extension AddWordViewController: UITableViewDelegate, UITableViewDataSource {
             content: wordToSave!
         )
         navigationController?.popToRootViewController(animated: true)
+    }
+}
+
+// TextField Max Lenth
+extension AddWordViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= 50
     }
 }

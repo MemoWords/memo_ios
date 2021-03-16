@@ -26,8 +26,8 @@ class DefinitionTableViewCell: UITableViewCell {
         labelType.text = definition.type
         labelDefinition.text = definition.definition
         if let example = definition.example {
-            let attributed = example.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-            labelExample.text = "\"\(attributed)\""
+            let example = example.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+            labelExample.text = "\"\(example)\""
         } else {
             labelExample.text = ""
         }
