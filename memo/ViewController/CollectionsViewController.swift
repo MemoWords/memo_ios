@@ -87,7 +87,9 @@ class CollectionsViewController: UIViewController {
 
         alert.addAction(UIAlertAction(title: "Salvar", style: .default, handler: { _ in
             if let name = alert.textFields?.first?.text {
-                self.presenter.add(name: name)
+                let folderName = name.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
+                if folderName == ""{ return }
+                self.presenter.add(name: folderName)
                 self.collectionsView.tableView.reloadData()
                 self.presenter.updateData()
             }
@@ -97,7 +99,7 @@ class CollectionsViewController: UIViewController {
     }
 
     // MARK: - Funcs.
-
+    
     func configureNavBar() {
         navigationItem.title = TabBarItems.collections.title
         navigationController?.navigationBar.prefersLargeTitles = true

@@ -41,7 +41,7 @@ class MessageCard: UIView {
         super.init(frame: frame)
         backgroundColor = .clear
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.20
+        layer.shadowOpacity = 0.25
         layer.shadowRadius = 4
         layer.shadowOffset = .init(width: 1, height: 3)
         addSubviews(image, titleLabel, messageLabel)

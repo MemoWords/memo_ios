@@ -18,7 +18,7 @@ class FolderTableViewCell: UITableViewCell {
         super.awakeFromNib()
         mainFrame.layer.cornerRadius = 18
         mainFrame.layer.shadowColor = UIColor.black.cgColor
-        mainFrame.layer.shadowOpacity = 0.05
+        mainFrame.layer.shadowOpacity = 0.08
         mainFrame.layer.shadowRadius = 4
         mainFrame.layer.shadowOffset = .init(width: 1, height: 3)
     }

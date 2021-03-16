@@ -19,7 +19,7 @@ class AddWordTableViewCell: UITableViewCell {
         super.awakeFromNib()
         card.layer.cornerRadius = 20
         card.layer.shadowColor = UIColor.black.cgColor
-        card.layer.shadowOpacity = 0.05
+        card.layer.shadowOpacity = 0.08
         card.layer.shadowRadius = 4
         card.layer.shadowOffset = .init(width: 1, height: 3)
     }

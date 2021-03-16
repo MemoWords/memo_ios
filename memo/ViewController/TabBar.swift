@@ -52,10 +52,10 @@ class TabBar: UITabBarController {
     
     private func configTabBar() {
         tabBar.backgroundColor = .memoLightBackground
-        tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
-        tabBar.layer.shadowRadius = 8
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: -3)
+        tabBar.layer.shadowRadius = 4
         tabBar.layer.shadowColor = UIColor.black.cgColor
-        tabBar.layer.shadowOpacity = 0.12
+        tabBar.layer.shadowOpacity = 0.08
         tabBar.layer.cornerRadius = 21
 
         tabBar.backgroundImage = UIImage()

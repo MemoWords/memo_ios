@@ -22,7 +22,7 @@ class StudyCollectionViewCell: UICollectionViewCell {
         mainFrame.backgroundColor = .clear
         card.layer.cornerRadius = 22
         mainFrame.layer.shadowColor = UIColor.black.cgColor
-        mainFrame.layer.shadowOpacity = 0.20
+        mainFrame.layer.shadowOpacity = 0.25
         mainFrame.layer.shadowRadius = 4
         mainFrame.layer.shadowOffset = .init(width: 1, height: 3)
     }

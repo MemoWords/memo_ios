@@ -58,7 +58,9 @@ class AddWordViewController: UIViewController {
     
     func addButtonTapped() {
         if addWordView.nameTextField.text != "" {
-            cardRepository.create(collectionName: addWordView.nameTextField.text!, content: wordToSave!)
+            let name = addWordView.nameTextField.text!.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
+            if name == "" { return }
+            cardRepository.create(collectionName: name, content: wordToSave!)
             navigationController?.popToRootViewController(animated: true)
         }
     }

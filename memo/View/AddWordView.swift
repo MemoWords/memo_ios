@@ -48,7 +48,7 @@ class AddWordView: UIView {
         let view = UIView()
         view.backgroundColor = .memoLightBackground
         view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 0.05
+        view.layer.shadowOpacity = 0.08
         view.layer.shadowRadius = 4
         view.layer.shadowOffset = .init(width: 1, height: 3)
         return view
