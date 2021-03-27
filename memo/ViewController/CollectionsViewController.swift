@@ -65,9 +65,6 @@ class CollectionsViewController: UIViewController {
             at: .centeredHorizontally,
             animated: false
         )
-
-        print("will apear")
-
     }
     
     override func loadView() {

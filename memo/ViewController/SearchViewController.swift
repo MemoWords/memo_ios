@@ -72,9 +72,9 @@ class SearchViewController: UIViewController {
                     self.definitions = response.definitions
 
                     if let img = response.definitions[0].image_url {
-                        self.searchView.card.img.load(urlString: img)
+                        self.searchView.card.headerView.img.load(urlString: img)
                     } else {
-                        self.searchView.card.img.image = UIImage(named: "photo")
+                        self.searchView.card.headerView.img.image = UIImage(named: "photo")
                     }
 
                     UIView.transition(with: self.searchView.card, duration: 0.2, options: .transitionCrossDissolve, animations: {

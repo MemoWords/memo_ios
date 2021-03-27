@@ -95,7 +95,6 @@ class ReviewViewController: UIViewController {
                 options: .transitionFlipFromRight,
                 animations: {
                     self.reviewView.card.showAnswerButton.isHidden = value
-                    self.reviewView.card.img.isHidden = !value
                     self.reviewView.card.tableView.isHidden = !value
                 },
                 completion: nil
@@ -103,7 +102,6 @@ class ReviewViewController: UIViewController {
 
         } else {
             self.reviewView.card.showAnswerButton.isHidden = value
-            self.reviewView.card.img.isHidden = !value
             self.reviewView.card.tableView.isHidden = !value
         }
     }
@@ -146,9 +144,9 @@ class ReviewViewController: UIViewController {
                     self.reviewView.card.titleLabel.text = word
 
                     if let img = response.definitions[0].image_url {
-                        self.reviewView.card.img.load(urlString: img)
+                        self.reviewView.card.headerView.img.load(urlString: img)
                     } else {
-                        self.reviewView.card.img.image = UIImage(named: "photo")
+                        self.reviewView.card.headerView.img.image = UIImage(named: "photo")
                     }
 
                     if let pronunciation = response.pronunciation {

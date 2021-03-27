@@ -35,14 +35,14 @@ class CardView: UIView {
         view.backgroundColor = .memoGray
         return view
     }()
-    
-    // Image.
-    lazy var img: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "photo"))
-        imageView.clipsToBounds = true
-        return imageView
+
+    // HeaderView
+    lazy var headerView: DefinitionTableViewHeader = {
+        let view = DefinitionTableViewHeader()
+        view.frame.size.height = 80
+        return view
     }()
-    
+
     // TableView
     let tableView = MemoTableView(frame: .zero, style: .plain)
 
@@ -68,6 +68,7 @@ class CardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .memoLightBackground
+        tableView.tableHeaderView = headerView
         setUpViews()
     }
     
@@ -76,8 +77,6 @@ class CardView: UIView {
     }
     
     // MARK: - ACTIONS
-    
-    // Show Button Action
     var showAction: (() -> Void)!
     @objc func show(sender: UIButton!) { showAction() }
     
@@ -89,7 +88,6 @@ class CardView: UIView {
         layer.shadowOpacity = 0.08
         layer.shadowRadius = 4
         layer.shadowOffset = .init(width: 1, height: 3)
-        img.layer.cornerRadius = img.frame.height / 2
     }
     
     func setUpViews() {
@@ -97,14 +95,12 @@ class CardView: UIView {
             titleLabel,
             pronunciationLabel,
             separator,
-            img,
             tableView,
             showAnswerButton
         )
         
         configureLabels()
         configureSeparator()
-        configureImg()
         configureTableView()
         configureShowAnswerButton()
     }
