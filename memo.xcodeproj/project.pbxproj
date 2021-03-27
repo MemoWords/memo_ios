@@ -64,6 +64,7 @@
 		DE913F4024F3086900383CFC /* memoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F3F24F3086900383CFC /* memoTests.swift */; };
 		DE913F4824F31D1200383CFC /* ClassificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4724F31D1200383CFC /* ClassificateTests.swift */; };
 		DE913F4A24F321EB00383CFC /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4924F321EB00383CFC /* CardTests.swift */; };
+		DEA2F44F260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA2F44E260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift */; };
 		DEBBE27A25FBFA0D0083CF38 /* MemoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */; };
 		DEBBE28625FE8F280083CF38 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE28525FE8F280083CF38 /* ConfigView.swift */; };
 		DEBBE29A25FE9E760083CF38 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE29825FE9E760083CF38 /* NotificationTableViewCell.swift */; };
@@ -162,6 +163,7 @@
 		DE913F4124F3086900383CFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE913F4724F31D1200383CFC /* ClassificateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificateTests.swift; sourceTree = "<group>"; };
 		DE913F4924F321EB00383CFC /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		DEA2F44E260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewHeader.swift; sourceTree = "<group>"; };
 		DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableView.swift; sourceTree = "<group>"; };
 		DEBBE28525FE8F280083CF38 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		DEBBE29825FE9E760083CF38 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				DE8E82A02547A1AB0067899B /* CardMessageView.swift */,
 				DE7D992C25D32B640053679C /* MessageCard.swift */,
 				DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */,
+				DEA2F44E260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				DE617B8325406210009FEE40 /* Collection+CoreDataClass.swift in Sources */,
 				DE8E82DE25499F780067899B /* AddWordView+Constraints.swift in Sources */,
 				DE7D992D25D32B640053679C /* MessageCard.swift in Sources */,
+				DEA2F44F260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift in Sources */,
 				DEC831C32544987500229AFF /* Color.swift in Sources */,
 				DEBBE2A425FEA3D00083CF38 /* ThemeTableViewCell.swift in Sources */,
 				DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */,
@@ -826,7 +830,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = VV557L4WY2;
 				INFOPLIST_FILE = memo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -846,7 +850,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = VV557L4WY2;
 				INFOPLIST_FILE = memo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

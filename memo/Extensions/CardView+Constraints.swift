@@ -26,27 +26,17 @@ extension CardView {
     func configureSeparator() {
         separator.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            separator.topAnchor.constraint(equalTo: pronunciationLabel.bottomAnchor, constant: 15),
+            separator.topAnchor.constraint(equalTo: pronunciationLabel.bottomAnchor, constant: 10),
             separator.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             separator.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             separator.heightAnchor.constraint(equalToConstant: 0.5)
         ])
     }
     
-    func configureImg() {
-        img.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            img.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 20),
-            img.centerXAnchor.constraint(equalTo: separator.centerXAnchor),
-            img.heightAnchor.constraint(equalToConstant: 80),
-            img.widthAnchor.constraint(equalTo: img.heightAnchor)
-        ])
-    }
-    
     func configureTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 20),
+            tableView.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 10),
             tableView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
             tableView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
@@ -57,7 +47,7 @@ extension CardView {
         showAnswerButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             showAnswerButton.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 30),
-            showAnswerButton.centerXAnchor.constraint(equalTo: img.centerXAnchor)
+            showAnswerButton.centerXAnchor.constraint(equalTo: separator.centerXAnchor)
         ])
     }
 }
