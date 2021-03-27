@@ -11,31 +11,38 @@ import UIKit
 class SearchView: UIView {
     
     // MARK: - UIELEMENTS
+    lazy var searchTextFieldView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 16
+        view.backgroundColor = .memoLightBackground
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.08
+        view.layer.shadowRadius = 4
+        view.layer.shadowOffset = .init(width: 1, height: 3)
+        return view
+    }()
     
     lazy var searchTextField: UITextField = {
         let textField = UITextField()
         let imageView = UIImageView(image: UIImage(named: "lens.png"))
-        
         textField.placeholder = "Pesquisar"
         textField.font = UIFont(name: "SF Pro Text Medium", size: 18)
-        textField.textColor = .memoBlack
-        textField.layer.borderWidth = 1
+        textField.textColor = .memoText
         textField.setLeftPadding(12)
         textField.rightView = imageView
         textField.rightViewMode = .always
         textField.autocapitalizationType = .none
         textField.returnKeyType = .search
-        textField.layer.borderColor = UIColor.memoDarkGray.cgColor
-        textField.tintColor = .memoSecondBlue
+        textField.backgroundColor = .memoLightBackground
+        textField.tintColor = .memoBlue
         textField.addTarget(self, action: #selector(search), for: .primaryActionTriggered)
-        
         return textField
     }()
     
     lazy var saveButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("SALVAR", for: .normal)
-        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
+        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 16)
         button.addTarget(self, action: #selector(save), for: .touchUpInside)
         
         return button
@@ -48,7 +55,7 @@ class SearchView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .memoWhite
+        backgroundColor = .memoBackground
         setUpViews()
     }
     
@@ -73,16 +80,18 @@ class SearchView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        searchTextField.layer.cornerRadius = 8
-        saveButton.layer.cornerRadius = 8
+        searchTextField.layer.cornerRadius = 16
+        saveButton.layer.cornerRadius = 16
     }
     
     private func setUpViews() {
+        searchTextFieldView.addSubview(searchTextField)
         addSubviews(
-            searchTextField,
+            searchTextFieldView,
             card,
             saveButton
         )
+        setupTextFieldView()
         setupTextField()
         setupButton()
         setupCard()
@@ -90,11 +99,11 @@ class SearchView: UIView {
     
     func activateButton(_ value: Bool) {
         if value {
-            saveButton.backgroundColor = .memoSecondBlue
+            saveButton.backgroundColor = .memoBlue
             saveButton.setTitleColor(.memoWhite, for: .normal)
         } else {
-            saveButton.backgroundColor = .memoLightGray
-            saveButton.setTitleColor(.memoDarkGray, for: .normal)
+            saveButton.backgroundColor = .memoTextBackground
+            saveButton.setTitleColor(.memoGray, for: .normal)
         }
         saveButton.isEnabled = value
     }

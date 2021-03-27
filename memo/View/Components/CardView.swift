@@ -16,49 +16,49 @@ class CardView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "car"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 32)
-        label.textColor = .memoBlack
+        label.font = UIFont(name: "SF Pro Text Medium", size: 30)
+        label.textColor = .memoText
         return label
     }()
     
     lazy var pronunciationLabel: UILabel = {
         let label = UILabel()
         label.text = "/kär/"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 21)
-        label.textColor = .memoDarkGray
+        label.font = UIFont(name: "SF Pro Text Medium", size: 20)
+        label.textColor = .memoGray
         return label
     }()
     
     // Separator
     lazy var separator: UIView = {
         let view = UIView()
-        view.backgroundColor = .memoDarkGray
+        view.backgroundColor = .memoGray
         return view
     }()
-    
-    // Image.
-    lazy var img: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "car"))
-        imageView.clipsToBounds = true
-        return imageView
+
+    // HeaderView
+    lazy var headerView: DefinitionTableViewHeader = {
+        let view = DefinitionTableViewHeader()
+        view.frame.size.height = 80
+        return view
     }()
-    
+
     // TableView
-    let tableView = CardTableView(frame: .zero, style: .plain)
-    
+    let tableView = MemoTableView(frame: .zero, style: .plain)
+
     // Button Show Answer.
     lazy var showAnswerButton: UIButton = {
         let mediumConfig = UIImage.SymbolConfiguration(pointSize: 16, weight: .bold, scale: .medium)
-        let image = UIImage(systemName: "chevron.down", withConfiguration: mediumConfig)
-        let button = UIButton()
+        let image = UIImage(systemName: "arrowtriangle.down.fill", withConfiguration: mediumConfig)
+        let button = UIButton(type: .system)
         button.isHidden = true
         button.setTitle("MOSTRAR RESPOSTA", for: .normal)
         button.titleLabel?.font = UIFont(name: "SF Pro Text Bold", size: 16)
-        button.setTitleColor(.memoSecondBlue, for: .normal)
+        button.setTitleColor(.memoBlue, for: .normal)
         button.backgroundColor = .clear
         button.setImage(image, for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
-        button.tintColor = .memoSecondBlue
+        button.tintColor = .memoBlue
         button.addTarget(self, action: #selector(show), for: .touchUpInside)
         return button
     }()
@@ -67,7 +67,8 @@ class CardView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .memoWhite
+        backgroundColor = .memoLightBackground
+        tableView.tableHeaderView = headerView
         setUpViews()
     }
     
@@ -76,22 +77,17 @@ class CardView: UIView {
     }
     
     // MARK: - ACTIONS
-    
-    // Show Button Action
     var showAction: (() -> Void)!
     @objc func show(sender: UIButton!) { showAction() }
     
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 8
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.memoDarkGray.cgColor
+        layer.cornerRadius = 15
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.1
-        layer.shadowRadius = 6
-        layer.shadowOffset = .init(width: 0, height: 3)
-        img.layer.cornerRadius = img.frame.height / 2
+        layer.shadowOpacity = 0.08
+        layer.shadowRadius = 4
+        layer.shadowOffset = .init(width: 1, height: 3)
     }
     
     func setUpViews() {
@@ -99,14 +95,12 @@ class CardView: UIView {
             titleLabel,
             pronunciationLabel,
             separator,
-            img,
             tableView,
             showAnswerButton
         )
         
         configureLabels()
         configureSeparator()
-        configureImg()
         configureTableView()
         configureShowAnswerButton()
     }

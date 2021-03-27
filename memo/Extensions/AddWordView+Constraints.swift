@@ -12,28 +12,33 @@ extension AddWordView {
     func setupLabel() {
         createLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            createLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
+            createLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             createLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
             createLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -25)
         ])
     }
-    
-    func setupTextField() {
+    func setUpAddFolderView() {
+        addFolderView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            addFolderView.topAnchor.constraint(equalTo: createLabel.bottomAnchor, constant: 16),
+            addFolderView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            addFolderView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20)
+        ])
+
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            nameTextField.topAnchor.constraint(equalTo: createLabel.bottomAnchor, constant: 12),
-            nameTextField.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
-            nameTextField.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            nameTextField.topAnchor.constraint(equalTo: addFolderView.topAnchor, constant: 20),
+            nameTextField.leftAnchor.constraint(equalTo: addFolderView.leftAnchor, constant: 20),
+            nameTextField.rightAnchor.constraint(equalTo: addFolderView.rightAnchor, constant: -20),
             nameTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
-    }
-    
-    func setupAddButton() {
+
         addButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            addButton.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 15),
-            addButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
-            addButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            addButton.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 20),
+            addButton.leftAnchor.constraint(equalTo: addFolderView.leftAnchor, constant: 20),
+            addButton.rightAnchor.constraint(equalTo: addFolderView.rightAnchor, constant: -20),
+            addButton.bottomAnchor.constraint(equalTo: addFolderView.bottomAnchor, constant: -20),
             addButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
@@ -41,13 +46,13 @@ extension AddWordView {
     func setupLabels() {
         orLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            orLabel.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 35),
+            orLabel.topAnchor.constraint(equalTo: addFolderView.bottomAnchor, constant: 25),
             orLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         
         selectLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            selectLabel.topAnchor.constraint(equalTo: orLabel.bottomAnchor, constant: 25),
+            selectLabel.topAnchor.constraint(equalTo: orLabel.bottomAnchor, constant: 20),
             selectLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
             selectLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -25)
         ])
@@ -56,9 +61,9 @@ extension AddWordView {
     func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: selectLabel.bottomAnchor, constant: 20),
-            tableView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
-            tableView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            tableView.topAnchor.constraint(equalTo: selectLabel.bottomAnchor, constant: 10),
+            tableView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            tableView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
             tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }

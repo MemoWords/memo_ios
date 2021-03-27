@@ -20,44 +20,44 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="FolderTableViewCell" customModule="memo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="411" height="96"/>
+            <rect key="frame" x="0.0" y="0.0" width="398" height="96"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="411" height="96"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="96"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGx-4b-cb6">
-                        <rect key="frame" x="10" y="6" width="391" height="80"/>
+                        <rect key="frame" x="10" y="6" width="378" height="84"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uXf-s2-pQO">
-                                <rect key="frame" x="25" y="25" width="32" height="29.5"/>
-                                <color key="tintColor" name="body_color"/>
+                                <rect key="frame" x="25" y="27" width="32" height="29.5"/>
+                                <color key="tintColor" name="memo_gray"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="XBu-aJ-oPs"/>
                                     <constraint firstAttribute="width" constant="32" id="a01-2w-RUg"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Hw-hf-KyB">
-                                <rect key="frame" x="354" y="31" width="15" height="19"/>
-                                <color key="tintColor" name="body_color"/>
+                                <rect key="frame" x="341" y="33" width="15" height="19"/>
+                                <color key="tintColor" name="memo_text"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22.5" id="5cs-Ze-K4x"/>
                                     <constraint firstAttribute="width" constant="15" id="ROa-Ca-WY8"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ueW-kM-cQH">
-                                <rect key="frame" x="82" y="19.5" width="245" height="41"/>
+                                <rect key="frame" x="82" y="21.5" width="232" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verbos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il7-oj-JLk">
-                                        <rect key="frame" x="0.0" y="0.0" width="245" height="19"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="232" height="19"/>
                                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
-                                        <color key="textColor" name="title_color"/>
+                                        <color key="textColor" name="memo_text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="25 palavras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLv-Qm-fyq">
-                                        <rect key="frame" x="0.0" y="19" width="245" height="22"/>
-                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="14"/>
-                                        <color key="textColor" name="body_color"/>
+                                        <rect key="frame" x="0.0" y="19" width="232" height="22"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="16"/>
+                                        <color key="textColor" name="memo_gray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -66,14 +66,14 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="white_color"/>
+                        <color key="backgroundColor" name="memo_lightBackground"/>
                         <constraints>
                             <constraint firstItem="uXf-s2-pQO" firstAttribute="leading" secondItem="zGx-4b-cb6" secondAttribute="leading" constant="25" id="5dR-7L-hCm"/>
                             <constraint firstAttribute="trailing" secondItem="5Hw-hf-KyB" secondAttribute="trailing" constant="22" id="E7a-xY-yWJ"/>
                             <constraint firstItem="ueW-kM-cQH" firstAttribute="leading" secondItem="uXf-s2-pQO" secondAttribute="trailing" constant="25" id="F0x-ON-cb6"/>
                             <constraint firstItem="uXf-s2-pQO" firstAttribute="centerY" secondItem="zGx-4b-cb6" secondAttribute="centerY" id="Ots-C8-Tzm"/>
                             <constraint firstItem="ueW-kM-cQH" firstAttribute="centerY" secondItem="zGx-4b-cb6" secondAttribute="centerY" id="UpK-bp-pRt"/>
-                            <constraint firstAttribute="height" constant="80" id="W76-IU-Cga"/>
+                            <constraint firstAttribute="height" constant="84" id="W76-IU-Cga"/>
                             <constraint firstItem="5Hw-hf-KyB" firstAttribute="centerY" secondItem="zGx-4b-cb6" secondAttribute="centerY" id="WQA-On-SMN"/>
                             <constraint firstItem="5Hw-hf-KyB" firstAttribute="leading" secondItem="ueW-kM-cQH" secondAttribute="trailing" constant="27" id="vid-7S-poH"/>
                         </constraints>
@@ -95,20 +95,20 @@
                 <outlet property="mainFrame" destination="zGx-4b-cb6" id="sbx-bz-y4O"/>
                 <outlet property="titleLabel" destination="Il7-oj-JLk" id="Ca8-Gx-Peq"/>
             </connections>
-            <point key="canvasLocation" x="123.91304347826087" y="136.60714285714286"/>
+            <point key="canvasLocation" x="114.49275362318842" y="136.60714285714286"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
-        <namedColor name="body_color">
-            <color red="0.67799997329711914" green="0.69800001382827759" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="memo_gray">
+            <color red="0.67799997329711914" green="0.69800001382827759" blue="0.74900001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="title_color">
-            <color red="0.20800000429153442" green="0.20000000298023224" blue="0.20399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="white_color">
+        <namedColor name="memo_lightBackground">
             <color red="0.98400002717971802" green="0.98400002717971802" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="memo_text">
+            <color red="0.11800000071525574" green="0.11400000005960464" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

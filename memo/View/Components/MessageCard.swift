@@ -21,8 +21,8 @@ class MessageCard: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "0"
-        label.font = UIFont(name: "SF Pro Text Bold", size: 32)
-        label.textColor = .whiteColor
+        label.font = UIFont(name: "SF Pro Text Bold", size: 30)
+        label.textColor = .memoWhite
         return label
     }()
 
@@ -30,8 +30,8 @@ class MessageCard: UIView {
     lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.text = "palavras para hoje"
-        label.font = UIFont(name: "SF Pro Text Bold", size: 18)
-        label.textColor = .whiteColor
+        label.font = UIFont(name: "SF Pro Text Bold", size: 20)
+        label.textColor = .memoWhite
         return label
     }()
 
@@ -41,7 +41,7 @@ class MessageCard: UIView {
         super.init(frame: frame)
         backgroundColor = .clear
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.20
+        layer.shadowOpacity = 0.25
         layer.shadowRadius = 4
         layer.shadowOffset = .init(width: 1, height: 3)
         addSubviews(image, titleLabel, messageLabel)

@@ -15,7 +15,7 @@ class CardMessageView: UIView {
         let label = UILabel()
         label.text = "Você revisou tudo por aqui!"
         label.font = UIFont(name: "SF Pro Text Medium", size: 24)
-        label.textColor = .memoBlack
+        label.textColor = .memoText
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -25,7 +25,7 @@ class CardMessageView: UIView {
         let label = UILabel()
         label.text = "Aguarde o próximo dia de estudos ou adicione mais palavras a esta coleção clicando na aba pesquisar logo abaixo."
         label.font = UIFont(name: "SF Pro Text Medium", size: 17)
-        label.textColor = .memoDarkGray
+        label.textColor = .memoGray
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -35,7 +35,7 @@ class CardMessageView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .memoWhite
+        backgroundColor = .memoLightBackground
         setUpViews()
     }
     
@@ -46,13 +46,11 @@ class CardMessageView: UIView {
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 8
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.memoDarkGray.cgColor
+        layer.cornerRadius = 15
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.1
-        layer.shadowRadius = 6
-        layer.shadowOffset = .init(width: 0, height: 3)
+        layer.shadowOpacity = 0.08
+        layer.shadowRadius = 4
+        layer.shadowOffset = .init(width: 1, height: 3)
     }
     
     func setUpViews() {

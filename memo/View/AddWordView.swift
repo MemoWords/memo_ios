@@ -14,45 +14,51 @@ class AddWordView: UIView {
     
     lazy var createLabel: UILabel = {
         let label = UILabel()
-        label.text = "Criar uma nova coleção:"
-        label.font = UIFont(name: "SF Pro Text Bold", size: 18)
-        label.textColor = .memoBlack
+        label.text = "CRIAR UMA NOVA PASTA:"
+        label.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        label.textColor = .memoText
         return label
     }()
     
     lazy var nameTextField: UITextField = {
         let textField = UITextField()
-        
-        textField.placeholder = "Nome da coleção"
+        textField.placeholder = "Nome da pasta"
         textField.font = UIFont(name: "SF Pro Text Medium", size: 18)
-        textField.textColor = .memoBlack
-        textField.layer.borderWidth = 1
+        textField.backgroundColor = .memoTextBackground
+        textField.textColor = .memoText
         textField.setLeftPadding(12)
         textField.setRightPadding(12)
         textField.autocapitalizationType = .none
         textField.returnKeyType = .done
-        textField.layer.borderColor = UIColor.memoDarkGray.cgColor
-        textField.tintColor = .memoSecondBlue
-        
+        textField.tintColor = .memoBlue
         return textField
     }()
     
     lazy var addButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("ADICIONAR", for: .normal)
-        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 18)
-        button.backgroundColor = .memoSecondBlue
+        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        button.backgroundColor = .memoBlue
         button.setTitleColor(.memoWhite, for: .normal)
         button.addTarget(self, action: #selector(add), for: .touchUpInside)
-        
         return button
+    }()
+
+    lazy var addFolderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .memoLightBackground
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.08
+        view.layer.shadowRadius = 4
+        view.layer.shadowOffset = .init(width: 1, height: 3)
+        return view
     }()
     
     lazy var orLabel: UILabel = {
         let label = UILabel()
         label.text = "OU"
-        label.font = UIFont(name: "SF Pro Text Bold", size: 18)
-        label.textColor = .memoBlack
+        label.font = UIFont(name: "SF Pro Text Bold", size: 20)
+        label.textColor = .memoText
         label.textAlignment = .center
         
         return label
@@ -60,19 +66,24 @@ class AddWordView: UIView {
     
     lazy var selectLabel: UILabel = {
         let label = UILabel()
-        label.text = "Selecione uma coleção:"
-        label.font = UIFont(name: "SF Pro Text Bold", size: 18)
-        label.textColor = .memoBlack
+        label.text = "SELECIONE UMA PASTA:"
+        label.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        label.textColor = .memoText
         return label
     }()
-    
-    let tableView = AddWordTableView()
+
+    lazy var tableView: MemoTableView = {
+        let table = MemoTableView()
+        table.showsVerticalScrollIndicator = false
+        table.rowHeight = 86
+        return table
+    }()
     
     // MARK: - INIT
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .memoWhite
+        backgroundColor = .memoBackground
         setupViews()
     }
     
@@ -90,23 +101,23 @@ class AddWordView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        nameTextField.layer.cornerRadius = 8
-        addButton.layer.cornerRadius = 8
+        nameTextField.layer.cornerRadius = 16
+        addButton.layer.cornerRadius = 16
+        addFolderView.layer.cornerRadius = 25
     }
     
     private func setupViews() {
+        addFolderView.addSubviews(nameTextField, addButton)
         addSubviews(
             createLabel,
-            nameTextField,
-            addButton,
+            addFolderView,
             orLabel,
             selectLabel,
             tableView
         )
         
         setupLabel()
-        setupTextField()
-        setupAddButton()
+        setUpAddFolderView()
         setupLabels()
         setupTableView()
     }

@@ -10,7 +10,7 @@ import Foundation
 
 class AnswerRepository {
     // Search on the API by a word.
-    static func search(word: String, completion: @escaping (Answer) -> Void) {
+    static func search(word: String, completion: @escaping (Answer?) -> Void) {
         // Create URL.
         guard let url = URL(string: "https://owlbot.info/api/v4/dictionary/\(word)") else {
             return
@@ -32,9 +32,10 @@ class AnswerRepository {
                 if let answer = try? JSONDecoder().decode(Answer.self, from: data) {
                     completion(answer)
                 } else {
-                    print("Erro no decode")
-                    //completion([])
+                    completion(nil)
                 }
+            } else {
+                print("Erro no decode")
             }
         }
         // Execute the task.

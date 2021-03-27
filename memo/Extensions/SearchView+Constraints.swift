@@ -9,13 +9,23 @@
 import UIKit
 
 extension SearchView {
+    func setupTextFieldView() {
+        searchTextFieldView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            searchTextFieldView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            searchTextFieldView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            searchTextFieldView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            searchTextFieldView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+
     func setupTextField() {
         searchTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            searchTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            searchTextField.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
-            searchTextField.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
-            searchTextField.heightAnchor.constraint(equalToConstant: 50)
+            searchTextField.topAnchor.constraint(equalTo: searchTextFieldView.topAnchor, constant: 10),
+            searchTextField.leftAnchor.constraint(equalTo: searchTextFieldView.leftAnchor),
+            searchTextField.rightAnchor.constraint(equalTo: searchTextFieldView.rightAnchor),
+            searchTextField.bottomAnchor.constraint(equalTo: searchTextFieldView.bottomAnchor, constant: -10)
         ])
     }
     
@@ -32,7 +42,7 @@ extension SearchView {
     func setupCard() {
         card.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            card.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 20),
+            card.topAnchor.constraint(equalTo: searchTextFieldView.bottomAnchor, constant: 20),
             card.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             card.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             card.bottomAnchor.constraint(equalTo: saveButton.topAnchor, constant: -20)
