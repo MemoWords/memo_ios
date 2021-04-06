@@ -26,14 +26,24 @@ extension ReviewView {
             labelStudy.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5)
         ])
     }
-    
-    func setUpCard() {
-        card.translatesAutoresizingMaskIntoConstraints = false
+
+    func setUpCardFront() {
+        cardFront.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            card.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
-            card.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
-            card.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
-            card.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -20)
+            cardFront.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
+            cardFront.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
+            cardFront.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
+            cardFront.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -20)
+        ])
+    }
+    
+    func setUpCardBack() {
+        cardBack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            cardBack.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
+            cardBack.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
+            cardBack.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
+            cardBack.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -20)
         ])
     }
     

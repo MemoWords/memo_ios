@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension CardView {
+extension CardBackView {
     func configureLabels() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -40,14 +40,6 @@ extension CardView {
             tableView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
             tableView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
-        ])
-    }
-    
-    func configureShowAnswerButton() {
-        showAnswerButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            showAnswerButton.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 30),
-            showAnswerButton.centerXAnchor.constraint(equalTo: separator.centerXAnchor)
         ])
     }
 }

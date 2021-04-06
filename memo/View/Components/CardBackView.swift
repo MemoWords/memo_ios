@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardView: UIView {
+class CardBackView: UIView {
     
     // MARK: - UIELEMENTS
     
@@ -45,23 +45,6 @@ class CardView: UIView {
 
     // TableView
     let tableView = MemoTableView(frame: .zero, style: .plain)
-
-    // Button Show Answer.
-    lazy var showAnswerButton: UIButton = {
-        let mediumConfig = UIImage.SymbolConfiguration(pointSize: 16, weight: .bold, scale: .medium)
-        let image = UIImage(systemName: "arrowtriangle.down.fill", withConfiguration: mediumConfig)
-        let button = UIButton(type: .system)
-        button.isHidden = true
-        button.setTitle("MOSTRAR RESPOSTA", for: .normal)
-        button.titleLabel?.font = UIFont(name: "SF Pro Text Bold", size: 16)
-        button.setTitleColor(.memoBlue, for: .normal)
-        button.backgroundColor = .clear
-        button.setImage(image, for: .normal)
-        button.semanticContentAttribute = .forceRightToLeft
-        button.tintColor = .memoBlue
-        button.addTarget(self, action: #selector(show), for: .touchUpInside)
-        return button
-    }()
     
     // MARK: - INIT
     
@@ -75,10 +58,6 @@ class CardView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - ACTIONS
-    var showAction: (() -> Void)!
-    @objc func show(sender: UIButton!) { showAction() }
     
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
@@ -95,13 +74,11 @@ class CardView: UIView {
             titleLabel,
             pronunciationLabel,
             separator,
-            tableView,
-            showAnswerButton
+            tableView
         )
         
         configureLabels()
         configureSeparator()
         configureTableView()
-        configureShowAnswerButton()
     }
 }

@@ -21,7 +21,7 @@ class ReviewViewController: UIViewController {
     
     var definitions = [Definition]() {
         didSet {
-            reviewView.card.tableView.reloadData()
+            reviewView.cardBack.tableView.reloadData()
         }
     }
     
@@ -31,10 +31,10 @@ class ReviewViewController: UIViewController {
         super.viewDidLoad()
         configNavBar()
         
-        reviewView.card.tableView.dataSource = self
-        reviewView.card.tableView.delegate  = self
+        reviewView.cardBack.tableView.dataSource = self
+        reviewView.cardBack.tableView.delegate  = self
 
-        reviewView.card.tableView.register(
+        reviewView.cardBack.tableView.register(
             UINib.init(nibName: "DefinitionTableViewCell", bundle: nil),
             forCellReuseIdentifier: "DefinitionCell"
         )
@@ -44,6 +44,9 @@ class ReviewViewController: UIViewController {
         }
         
         numOfCardsToStudy = getNumOfCardsToStudy()
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showCardTapped))
+        reviewView.cardFront.addGestureRecognizer(tap)
         
         show()
     }
@@ -54,13 +57,13 @@ class ReviewViewController: UIViewController {
         reviewView.wrongAction = wrongButtonTapped
         reviewView.hardAction = hardButtonTapped
         reviewView.easyAction = easyButtonTapped
-        reviewView.card.showAction = showButtonTapped
     }
 
     // MARK: - Actions.
-    
-    func showButtonTapped() {
-        showContent(true)
+
+    @objc
+    func showCardTapped() {
+        showContent()
     }
     
     func wrongButtonTapped() {
@@ -85,25 +88,13 @@ class ReviewViewController: UIViewController {
     
     // MARK: - Functions.
 
-    func showContent(_ value: Bool) {
-        if value {
+    func showContent() {
+        UIView.transition(with: self.reviewView.cardBack, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            self.reviewView.cardBack.isHidden = false
 
-            UIView.transition(
-                with: self.reviewView.card,
-                duration: 0.5,
-                options: .transitionFlipFromRight,
-                animations: {
-                    self.reviewView.card.showAnswerButton.isHidden = value
-                    self.reviewView.card.tableView.isHidden = !value
-                    self.reviewView.card.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
-                },
-                completion: nil
-            )
-
-        } else {
-            self.reviewView.card.showAnswerButton.isHidden = value
-            self.reviewView.card.tableView.isHidden = !value
-        }
+        }, completion: {_ in
+            self.reviewView.cardFront.isHidden = true
+        })
     }
 
     func configNavBar() {
@@ -112,12 +103,14 @@ class ReviewViewController: UIViewController {
     }
     
     func show() {
-        showContent(false)
-        showMessage(false)
+        //showContent(false)
+        //showMessage(false)
 
         reviewView.labelStudy.text = String("ESTUDAR: \(numOfCardsToStudy)")
-        reviewView.card.titleLabel.text = "..."
-        reviewView.card.pronunciationLabel.text = "/.../"
+        reviewView.cardBack.titleLabel.text = "..."
+        reviewView.cardBack.pronunciationLabel.text = "/.../"
+        reviewView.cardFront.titleLabel.text = "..."
+        reviewView.cardFront.pronunciationLabel.text = "/.../"
         
         if self.count >= cards.count {
             if numOfCardsToStudy == 0 {
@@ -141,18 +134,21 @@ class ReviewViewController: UIViewController {
         AnswerRepository.search(word: word) { answer in
             if let response = answer {
                 DispatchQueue.main.async {
-                    self.reviewView.card.titleLabel.text = word
+                    self.reviewView.cardBack.titleLabel.text = word
+                    self.reviewView.cardFront.titleLabel.text = word
 
                     if let img = response.definitions[0].image_url {
-                        self.reviewView.card.headerView.img.load(urlString: img)
+                        self.reviewView.cardBack.headerView.img.load(urlString: img)
                     } else {
-                        self.reviewView.card.headerView.img.image = UIImage(named: "photo")
+                        self.reviewView.cardBack.headerView.img.image = UIImage(named: "photo")
                     }
 
                     if let pronunciation = response.pronunciation {
-                        self.reviewView.card.pronunciationLabel.text = "/\(pronunciation)/"
+                        self.reviewView.cardBack.pronunciationLabel.text = "/\(pronunciation)/"
+                        self.reviewView.cardFront.pronunciationLabel.text = "/\(pronunciation)/"
                     } else {
-                        self.reviewView.card.pronunciationLabel.text = "/.../"
+                        self.reviewView.cardBack.pronunciationLabel.text = "/.../"
+                        self.reviewView.cardFront.pronunciationLabel.text = "/.../"
                     }
                     self.definitions = response.definitions
                 }
@@ -161,9 +157,7 @@ class ReviewViewController: UIViewController {
     }
     
     func showMessage(_ value: Bool) {
-        reviewView.card.isHidden = value
-        reviewView.buttonsStack.isHidden = value
-        reviewView.cardMessage.isHidden = !value
+
     }
     
     func getNumOfCardsToStudy() -> Int {

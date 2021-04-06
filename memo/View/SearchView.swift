@@ -49,7 +49,7 @@ class SearchView: UIView {
     }()
     
     // Card
-    let card = CardView()
+    let card = CardBackView()
 
     // MARK: - INIT
     
