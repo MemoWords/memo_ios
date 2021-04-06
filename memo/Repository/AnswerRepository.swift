@@ -13,6 +13,7 @@ class AnswerRepository {
     static func search(word: String, completion: @escaping (Answer?) -> Void) {
         // Create URL.
         guard let url = URL(string: "https://owlbot.info/api/v4/dictionary/\(word)") else {
+            completion(nil)
             return
         }
         // Token.
