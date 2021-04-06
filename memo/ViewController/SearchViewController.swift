@@ -47,7 +47,7 @@ class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         searchView.searchTextField.text = ""
-        searchView.card.isHidden = true
+        showCard(false)
         searchView.activateButton(false)
     }
     
@@ -78,7 +78,7 @@ class SearchViewController: UIViewController {
                     }
 
                     UIView.transition(with: self.searchView.card, duration: 0.2, options: .transitionCrossDissolve, animations: {
-                        self.searchView.card.isHidden = false
+                        self.showCard(true)
                         // verificar se o card ja existe.
                         self.searchView.activateButton(
                             !self.cardRepository.exists(word: word)
@@ -87,7 +87,7 @@ class SearchViewController: UIViewController {
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.searchView.card.isHidden = true
+                    self.showCard(false)
                     self.searchView.activateButton(false)
 
                     let alert = UIAlertController(title: "Desculpe! \"\(word)\" não foi encontrada na nossa base de dados", message: nil, preferredStyle: .alert)
@@ -138,7 +138,13 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
     }
-    
+
+    private func showCard(_ value: Bool) {
+        searchView.card.isHidden = !value
+        if value {
+            searchView.card.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
+        }
+    }
 }
 
 // MARK: - Extensions.

@@ -60,8 +60,7 @@ class ReviewViewController: UIViewController {
     // MARK: - Actions.
     
     func showButtonTapped() {
-        reviewView.card.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-        showContent(value: true)
+        showContent(true)
     }
     
     func wrongButtonTapped() {
@@ -86,7 +85,7 @@ class ReviewViewController: UIViewController {
     
     // MARK: - Functions.
 
-    func showContent(value: Bool) {
+    func showContent(_ value: Bool) {
         if value {
 
             UIView.transition(
@@ -96,6 +95,7 @@ class ReviewViewController: UIViewController {
                 animations: {
                     self.reviewView.card.showAnswerButton.isHidden = value
                     self.reviewView.card.tableView.isHidden = !value
+                    self.reviewView.card.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
                 },
                 completion: nil
             )
@@ -112,7 +112,7 @@ class ReviewViewController: UIViewController {
     }
     
     func show() {
-        showContent(value: false)
+        showContent(false)
         showMessage(false)
 
         reviewView.labelStudy.text = String("ESTUDAR: \(numOfCardsToStudy)")
