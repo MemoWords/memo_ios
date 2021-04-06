@@ -55,7 +55,8 @@ class SearchViewController: UIViewController {
     
     func searchButtonTapped(_ word: String) {
 
-        let wordToFind = word.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
+        var wordToFind = word.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
+        wordToFind = wordToFind.trimmingCharacters(in: .punctuationCharacters)
         
         AnswerRepository.search(word: wordToFind) { answer in
             if let response = answer {
