@@ -46,6 +46,8 @@ class CardView: UIView {
             front
         )
         setUpConstraints()
+        back.isHidden = true
+        message.isHidden = true
     }
 
     // MARK: - ANIMATIONS
@@ -79,7 +81,7 @@ class CardView: UIView {
                 from: back,
                 to: message,
                 duration: 0.5,
-                options: [.transitionCrossDissolve],
+                options: [.transitionCrossDissolve, .showHideTransitionViews],
                 completion: nil)
         } else {
             isFlipped = true
@@ -87,7 +89,7 @@ class CardView: UIView {
                 from: front,
                 to: message,
                 duration: 0.5,
-                options: [.transitionCrossDissolve],
+                options: [.transitionCrossDissolve, .showHideTransitionViews],
                 completion: nil)
         }
     }
