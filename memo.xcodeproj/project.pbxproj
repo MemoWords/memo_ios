@@ -14,8 +14,10 @@
 		DE4429052547470400A8657C /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4429042547470400A8657C /* ReviewView.swift */; };
 		DE44290A25474D3800A8657C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44290925474D3800A8657C /* UIView.swift */; };
 		DE44290F25474D7A00A8657C /* ReviewView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44290E25474D7A00A8657C /* ReviewView+Constraints.swift */; };
-		DE44291425476B6600A8657C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44291325476B6600A8657C /* CardView.swift */; };
+		DE44291425476B6600A8657C /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE44291325476B6600A8657C /* CardBackView.swift */; };
 		DE4E3A5D25D6B4F2005093B0 /* CollectionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4E3A5C25D6B4F2005093B0 /* CollectionsPresenter.swift */; };
+		DE5598A4261CA60000AB3665 /* CardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5598A3261CA60000AB3665 /* CardFrontView.swift */; };
+		DE5598C1261DE87000AB3665 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5598C0261DE87000AB3665 /* CardView.swift */; };
 		DE617B30253F60F4009FEE40 /* CardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B2F253F60F4009FEE40 /* CardRepository.swift */; };
 		DE617B36253F668C009FEE40 /* memo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE617B34253F668C009FEE40 /* memo.xcdatamodeld */; };
 		DE617B8125406210009FEE40 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE617B7D25406210009FEE40 /* Card+CoreDataClass.swift */; };
@@ -107,8 +109,10 @@
 		DE4429042547470400A8657C /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		DE44290925474D3800A8657C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		DE44290E25474D7A00A8657C /* ReviewView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewView+Constraints.swift"; sourceTree = "<group>"; };
-		DE44291325476B6600A8657C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DE44291325476B6600A8657C /* CardBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
 		DE4E3A5C25D6B4F2005093B0 /* CollectionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsPresenter.swift; sourceTree = "<group>"; };
+		DE5598A3261CA60000AB3665 /* CardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontView.swift; sourceTree = "<group>"; };
+		DE5598C0261DE87000AB3665 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		DE617B2F253F60F4009FEE40 /* CardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRepository.swift; sourceTree = "<group>"; };
 		DE617B35253F668C009FEE40 /* memo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = memo.xcdatamodel; sourceTree = "<group>"; };
 		DE617B7D25406210009FEE40 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -209,11 +213,13 @@
 		DE4428DD2547022300A8657C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DE44291325476B6600A8657C /* CardView.swift */,
+				DE5598A3261CA60000AB3665 /* CardFrontView.swift */,
+				DE44291325476B6600A8657C /* CardBackView.swift */,
 				DE8E82A02547A1AB0067899B /* CardMessageView.swift */,
 				DE7D992C25D32B640053679C /* MessageCard.swift */,
 				DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */,
 				DEA2F44E260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift */,
+				DE5598C0261DE87000AB3665 /* CardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -628,10 +634,11 @@
 				DEBBE2B825FEB6E10083CF38 /* SettingsKeys.swift in Sources */,
 				DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */,
 				DEBBE29A25FE9E760083CF38 /* NotificationTableViewCell.swift in Sources */,
+				DE5598A4261CA60000AB3665 /* CardFrontView.swift in Sources */,
 				DEBBE2B225FEAED40083CF38 /* ThemesView.swift in Sources */,
 				DE8E82C12548645D0067899B /* SearchView.swift in Sources */,
 				DE8E82D9254994490067899B /* AddWordView.swift in Sources */,
-				DE44291425476B6600A8657C /* CardView.swift in Sources */,
+				DE44291425476B6600A8657C /* CardBackView.swift in Sources */,
 				DE7D994C25D365FB0053679C /* WordView.swift in Sources */,
 				DEBBE27A25FBFA0D0083CF38 /* MemoTableView.swift in Sources */,
 				DEBBE28625FE8F280083CF38 /* ConfigView.swift in Sources */,
@@ -639,6 +646,7 @@
 				DE8E82CB2548A9050067899B /* TextField.swift in Sources */,
 				DE913F1B24EEA72400383CFC /* Answer.swift in Sources */,
 				DE617B8325406210009FEE40 /* Collection+CoreDataClass.swift in Sources */,
+				DE5598C1261DE87000AB3665 /* CardView.swift in Sources */,
 				DE8E82DE25499F780067899B /* AddWordView+Constraints.swift in Sources */,
 				DE7D992D25D32B640053679C /* MessageCard.swift in Sources */,
 				DEA2F44F260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift in Sources */,

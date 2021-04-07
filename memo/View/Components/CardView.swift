@@ -1,107 +1,123 @@
 //
-//  CardView.swift
+//  Card.swift
 //  memo
 //
-//  Created by Elias Ferreira on 26/10/20.
-//  Copyright © 2020 Academy IFCE. All rights reserved.
+//  Created by Elias Ferreira on 07/04/21.
+//  Copyright © 2021 Academy IFCE. All rights reserved.
 //
 
 import UIKit
 
 class CardView: UIView {
-    
-    // MARK: - UIELEMENTS
-    
-    // Labels
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "car"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 30)
-        label.textColor = .memoText
-        return label
-    }()
-    
-    lazy var pronunciationLabel: UILabel = {
-        let label = UILabel()
-        label.text = "/kär/"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 20)
-        label.textColor = .memoGray
-        return label
-    }()
-    
-    // Separator
-    lazy var separator: UIView = {
-        let view = UIView()
-        view.backgroundColor = .memoGray
-        return view
-    }()
+    // MARK: - PROPERTIES
+    var isFlipped: Bool
 
-    // HeaderView
-    lazy var headerView: DefinitionTableViewHeader = {
-        let view = DefinitionTableViewHeader()
-        view.frame.size.height = 80
-        return view
-    }()
+    // MARK: - UI
+    let front = CardFrontView()
+    let back = CardBackView()
+    let message = CardMessageView()
 
-    // TableView
-    let tableView = MemoTableView(frame: .zero, style: .plain)
-
-    // Button Show Answer.
-    lazy var showAnswerButton: UIButton = {
-        let mediumConfig = UIImage.SymbolConfiguration(pointSize: 16, weight: .bold, scale: .medium)
-        let image = UIImage(systemName: "arrowtriangle.down.fill", withConfiguration: mediumConfig)
-        let button = UIButton(type: .system)
-        button.isHidden = true
-        button.setTitle("MOSTRAR RESPOSTA", for: .normal)
-        button.titleLabel?.font = UIFont(name: "SF Pro Text Bold", size: 16)
-        button.setTitleColor(.memoBlue, for: .normal)
-        button.backgroundColor = .clear
-        button.setImage(image, for: .normal)
-        button.semanticContentAttribute = .forceRightToLeft
-        button.tintColor = .memoBlue
-        button.addTarget(self, action: #selector(show), for: .touchUpInside)
-        return button
-    }()
-    
     // MARK: - INIT
-    
+
     override init(frame: CGRect) {
+        isFlipped = false
         super.init(frame: frame)
-        backgroundColor = .memoLightBackground
-        tableView.tableHeaderView = headerView
-        setUpViews()
+        configViews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - ACTIONS
-    var showAction: (() -> Void)!
-    @objc func show(sender: UIButton!) { showAction() }
-    
+
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 15
+        layer.cornerRadius = 16
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.08
         layer.shadowRadius = 4
         layer.shadowOffset = .init(width: 1, height: 3)
     }
-    
-    func setUpViews() {
+
+    func configViews() {
         addSubviews(
-            titleLabel,
-            pronunciationLabel,
-            separator,
-            tableView,
-            showAnswerButton
+            message,
+            back,
+            front
         )
-        
-        configureLabels()
-        configureSeparator()
-        configureTableView()
-        configureShowAnswerButton()
+        setUpConstraints()
+    }
+
+    // MARK: - ANIMATIONS
+    func showContent() {
+        if !isFlipped {
+            isFlipped = true
+            UIView.transition(
+                from: front,
+                to: back,
+                duration: 0.5,
+                options: [.transitionFlipFromLeft, .showHideTransitionViews],
+                completion: nil)
+        }
+    }
+
+    func hideContent() {
+        if isFlipped {
+            isFlipped = false
+            UIView.transition(
+                from: back,
+                to: front,
+                duration: 0.5,
+                options: [.transitionFlipFromLeft, .showHideTransitionViews],
+                completion: nil)
+        }
+    }
+
+    func showMessage() {
+        if isFlipped {
+            UIView.transition(
+                from: back,
+                to: message,
+                duration: 0.5,
+                options: [.transitionCrossDissolve],
+                completion: nil)
+        } else {
+            isFlipped = true
+            UIView.transition(
+                from: front,
+                to: message,
+                duration: 0.5,
+                options: [.transitionCrossDissolve],
+                completion: nil)
+        }
+    }
+}
+
+// MARK: - CONSTRAINTS
+extension CardView {
+    func setUpConstraints() {
+        front.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            front.topAnchor.constraint(equalTo: topAnchor),
+            front.leftAnchor.constraint(equalTo: leftAnchor),
+            front.rightAnchor.constraint(equalTo: rightAnchor),
+            front.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+
+        back.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            back.topAnchor.constraint(equalTo: topAnchor),
+            back.leftAnchor.constraint(equalTo: leftAnchor),
+            back.rightAnchor.constraint(equalTo: rightAnchor),
+            back.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+
+        message.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            message.topAnchor.constraint(equalTo: topAnchor),
+            message.leftAnchor.constraint(equalTo: leftAnchor),
+            message.rightAnchor.constraint(equalTo: rightAnchor),
+            message.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }
