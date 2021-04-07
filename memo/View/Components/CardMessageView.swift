@@ -31,6 +31,16 @@ class CardMessageView: UIView {
         return label
     }()
 
+    lazy var endButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("FINALIZAR", for: .normal)
+        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        button.setTitleColor(.memoWhite, for: .normal)
+        button.backgroundColor = .memoBlue
+        button.addTarget(self, action: #selector(end), for: .touchUpInside)
+        return button
+    }()
+
     // MARK: - INIT
     
     override init(frame: CGRect) {
@@ -42,32 +52,40 @@ class CardMessageView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - ACTIONS
+    // End Button Action
+    var endAction: (() -> Void)!
+    @objc func end(sender: UIButton!) { endAction() }
     
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = 15
+        layer.cornerRadius = 16
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.08
         layer.shadowRadius = 4
         layer.shadowOffset = .init(width: 1, height: 3)
+        endButton.layer.cornerRadius = 16
     }
     
     func setUpViews() {
         addSubviews(
             titleLabel,
-            bodyLabel
+            bodyLabel,
+            endButton
         )
-        setUpLabels()
+        setUpConstraints()
     }
 }
 
 // MARK: - CONSTRAINTS
 
 extension CardMessageView {
-    func setUpLabels() {
+    func setUpConstraints() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         bodyLabel.translatesAutoresizingMaskIntoConstraints = false
+        endButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
@@ -79,6 +97,13 @@ extension CardMessageView {
             bodyLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             bodyLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             bodyLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 10)
+        ])
+
+        NSLayoutConstraint.activate([
+            endButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            endButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            endButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            endButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }
