@@ -63,9 +63,7 @@ class ReviewView: UIView {
     }()
     
     // Cards
-    let cardFront = CardFrontView()
-    let cardBack = CardBackView()
-    let cardMessage = CardMessageView()
+    let cardView = CardView()
     
     // MARK: - INIT
     
@@ -106,21 +104,22 @@ class ReviewView: UIView {
         buttonsStack.addArrangedSubview(wrongButton)
         buttonsStack.addArrangedSubview(hardButton)
         buttonsStack.addArrangedSubview(easyButton)
+        buttonsStack.isHidden = false
         
         addSubviews(
             labelStudy,
-            cardMessage,
-            cardFront,
-            cardBack,
+            cardView,
             buttonsStack
         )
 
-        cardMessage.isHidden = true
-        cardBack.isHidden = true
         setUpLabel()
-        setUpCardFront()
-        setUpCardBack()
-        setUpCardMessage()
+        setUpCard()
         setUpButtonsStack()
+    }
+
+    func hideButtons() {
+        UIView.transition(with: buttonsStack, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.buttonsStack.isHidden = true
+        }, completion: nil)
     }
 }

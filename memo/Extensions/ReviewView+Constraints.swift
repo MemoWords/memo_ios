@@ -27,33 +27,13 @@ extension ReviewView {
         ])
     }
 
-    func setUpCardFront() {
-        cardFront.translatesAutoresizingMaskIntoConstraints = false
+    func setUpCard() {
+        cardView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            cardFront.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
-            cardFront.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
-            cardFront.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
-            cardFront.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -20)
-        ])
-    }
-    
-    func setUpCardBack() {
-        cardBack.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            cardBack.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
-            cardBack.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
-            cardBack.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
-            cardBack.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -20)
-        ])
-    }
-    
-    func setUpCardMessage() {
-        cardMessage.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            cardMessage.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
-            cardMessage.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
-            cardMessage.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
-            cardMessage.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -20)
+            cardView.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
+            cardView.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
+            cardView.rightAnchor.constraint(equalTo: rightAnchor, constant: -25),
+            cardView.bottomAnchor.constraint(equalTo: buttonsStack.topAnchor, constant: -20)
         ])
     }
 }
