@@ -213,13 +213,13 @@
 		DE4428DD2547022300A8657C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DE5598C0261DE87000AB3665 /* CardView.swift */,
 				DE5598A3261CA60000AB3665 /* CardFrontView.swift */,
 				DE44291325476B6600A8657C /* CardBackView.swift */,
 				DE8E82A02547A1AB0067899B /* CardMessageView.swift */,
 				DE7D992C25D32B640053679C /* MessageCard.swift */,
 				DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */,
 				DEA2F44E260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift */,
-				DE5598C0261DE87000AB3665 /* CardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
