@@ -54,7 +54,7 @@ class ReviewViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = reviewView
-        reviewView.cardMessage.endAction = endAction
+        reviewView.cardView.message.endAction = endAction
         reviewView.wrongAction = wrongButtonTapped
         reviewView.hardAction = hardButtonTapped
         reviewView.easyAction = easyButtonTapped
