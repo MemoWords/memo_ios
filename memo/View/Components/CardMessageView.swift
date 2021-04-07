@@ -90,13 +90,14 @@ extension CardMessageView {
         NSLayoutConstraint.activate([
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
-            titleLabel.bottomAnchor.constraint(equalTo: bodyLabel.topAnchor)
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            titleLabel.bottomAnchor.constraint(equalTo: bodyLabel.topAnchor, constant: -10)
         ])
         
         NSLayoutConstraint.activate([
             bodyLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             bodyLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
-            bodyLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 10)
+            bodyLabel.bottomAnchor.constraint(equalTo: endButton.topAnchor, constant: -20)
         ])
 
         NSLayoutConstraint.activate([
@@ -104,6 +105,7 @@ extension CardMessageView {
             endButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             endButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             endButton.heightAnchor.constraint(equalToConstant: 50)
+
         ])
     }
 }

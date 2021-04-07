@@ -46,6 +46,8 @@ class CardView: UIView {
             front
         )
         setUpConstraints()
+        back.isHidden = true
+        message.isHidden = true
     }
 
     // MARK: - ANIMATIONS
@@ -79,7 +81,7 @@ class CardView: UIView {
                 from: back,
                 to: message,
                 duration: 0.5,
-                options: [.transitionCrossDissolve],
+                options: [.transitionCrossDissolve, .showHideTransitionViews],
                 completion: nil)
         } else {
             isFlipped = true
@@ -87,7 +89,7 @@ class CardView: UIView {
                 from: front,
                 to: message,
                 duration: 0.5,
-                options: [.transitionCrossDissolve],
+                options: [.transitionCrossDissolve, .showHideTransitionViews],
                 completion: nil)
         }
     }
@@ -114,10 +116,10 @@ extension CardView {
 
         message.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            message.topAnchor.constraint(equalTo: topAnchor),
-            message.leftAnchor.constraint(equalTo: leftAnchor),
             message.rightAnchor.constraint(equalTo: rightAnchor),
-            message.bottomAnchor.constraint(equalTo: bottomAnchor)
+            message.centerYAnchor.constraint(equalTo: centerYAnchor),
+            message.leftAnchor.constraint(equalTo: leftAnchor),
+            message.heightAnchor.constraint(greaterThanOrEqualToConstant: 200)
         ])
     }
 }
