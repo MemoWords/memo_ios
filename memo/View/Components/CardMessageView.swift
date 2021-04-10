@@ -10,7 +10,17 @@ import UIKit
 
 class CardMessageView: UIView {
     
-    // MARK: - LABELS
+    // MARK: - UI
+
+    lazy var emojiLabel: UILabel = {
+        let label = UILabel()
+        label.text = "🎉"
+        label.font = UIFont(name: "SF Pro Text Medium", size: 24)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }()
+
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Você revisou tudo por aqui!"
@@ -71,6 +81,7 @@ class CardMessageView: UIView {
     
     func setUpViews() {
         addSubviews(
+            emojiLabel,
             titleLabel,
             bodyLabel,
             endButton
@@ -83,14 +94,21 @@ class CardMessageView: UIView {
 
 extension CardMessageView {
     func setUpConstraints() {
+        emojiLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         bodyLabel.translatesAutoresizingMaskIntoConstraints = false
         endButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            emojiLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            emojiLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            emojiLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20)
+        ])
         
         NSLayoutConstraint.activate([
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
             titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: emojiLabel.bottomAnchor, constant: 10),
             titleLabel.bottomAnchor.constraint(equalTo: bodyLabel.topAnchor, constant: -10)
         ])
         
