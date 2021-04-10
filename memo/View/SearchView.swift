@@ -28,9 +28,9 @@ class SearchView: UIView {
         textField.placeholder = "Pesquisar"
         textField.font = UIFont(name: "SF Pro Text Medium", size: 18)
         textField.textColor = .memoText
-        textField.setLeftPadding(12)
-        textField.rightView = imageView
-        textField.rightViewMode = .always
+        textField.setRightPadding(12)
+        textField.leftView = imageView
+        textField.leftViewMode = .always
         textField.autocapitalizationType = .none
         textField.returnKeyType = .search
         textField.backgroundColor = .memoLightBackground
