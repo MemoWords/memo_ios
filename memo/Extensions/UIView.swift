@@ -17,19 +17,26 @@ extension UIView {
 }
 
 extension UIView: Loadingprotocol {
-    func setLoading(_ loading: Bool) {
-        if loading {
+    private var indicator: UIActivityIndicatorView {
+        if let indicator = subviews.compactMap({$0 as? UIActivityIndicatorView}).first {
+            return indicator
+        } else {
             let indicator = UIActivityIndicatorView(style: .large)
             addSubview(indicator)
             indicator.translatesAutoresizingMaskIntoConstraints = false
             indicator.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
             indicator.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
             indicator.color = .memoGray
+            indicator.hidesWhenStopped = true
+            return indicator
+        }
+    }
+
+    @objc func setLoading(_ loading: Bool) {
+        if loading {
             indicator.startAnimating()
         } else {
-            if let indicator = subviews.compactMap({$0 as? UIActivityIndicatorView}).first {
-                indicator.removeFromSuperview()
-            }
+            indicator.stopAnimating()
         }
     }
 }
