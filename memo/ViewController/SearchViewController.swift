@@ -54,6 +54,10 @@ class SearchViewController: UIViewController {
     // MARK: - Actions.
     
     func searchButtonTapped(_ word: String) {
+        showCard(false)
+        searchView.activateButton(false)
+        // start activity animation
+        searchView.setLoading(true)
 
         var wordToFind = word.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
         wordToFind = wordToFind.trimmingCharacters(in: .punctuationCharacters)
@@ -84,17 +88,20 @@ class SearchViewController: UIViewController {
                         self.searchView.activateButton(
                             !self.cardRepository.exists(word: word)
                         )
-                    }, completion: nil)
+                    }, completion: { _ in
+                        // stop activity animation
+                        self.searchView.setLoading(false)
+                    })
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.showCard(false)
-                    self.searchView.activateButton(false)
-
-                    let alert = UIAlertController(title: "Desculpe! \"\(word)\" não foi encontrada na nossa base de dados", message: nil, preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Desculpe!", message: "\"\(word)\" não foi encontrada na nossa base de dados!", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
+                    self.present(alert, animated: true) {
+                        // stop activity animation
+                        self.searchView.setLoading(false)
+                    }
                 }
             }
         }

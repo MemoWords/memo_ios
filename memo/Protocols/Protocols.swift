@@ -16,3 +16,8 @@ protocol SaveWordDelegate: class {
 protocol CollectionPresenterDelegate: class {
     func reloadData(value: Bool)
 }
+
+// IndicatorView protocol
+protocol Loadingprotocol: class {
+    func setLoading(_ loading: Bool)
+}
