@@ -58,7 +58,7 @@ class CardView: UIView {
                 from: front,
                 to: back,
                 duration: 0.5,
-                options: [.transitionFlipFromLeft, .showHideTransitionViews],
+                options: [.transitionFlipFromRight, .showHideTransitionViews],
                 completion: nil)
         }
     }
