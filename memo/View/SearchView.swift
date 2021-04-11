@@ -72,10 +72,10 @@ class SearchView: UIView {
     // Search Button Action
     var searchAction: ((String) -> Void)!
     @objc func search(sender: UIButton!) {
+        self.searchTextField.resignFirstResponder()
         searchAction(searchTextField.text!)
-        searchTextField.endEditing(true)
     }
-    
+
     // MARK: - FUNCTIONS
     
     override func layoutSubviews() {

@@ -6,7 +6,7 @@ target 'memo' do
   use_frameworks!
 
   # Pods for memo
-  pod 'Toaster'
+  pod 'Toast-Swift', '~> 5.0.0'
 
   target 'memoTests' do
     inherit! :search_paths

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -69,6 +69,7 @@
 		DE913F4024F3086900383CFC /* memoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F3F24F3086900383CFC /* memoTests.swift */; };
 		DE913F4824F31D1200383CFC /* ClassificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4724F31D1200383CFC /* ClassificateTests.swift */; };
 		DE913F4A24F321EB00383CFC /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F4924F321EB00383CFC /* CardTests.swift */; };
+		DE9339FA262380F400C06984 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9339F9262380F400C06984 /* AlertHelper.swift */; };
 		DEA2F44F260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA2F44E260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift */; };
 		DEBBE27A25FBFA0D0083CF38 /* MemoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */; };
 		DEBBE28625FE8F280083CF38 /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE28525FE8F280083CF38 /* ConfigView.swift */; };
@@ -184,6 +185,7 @@
 		DE913F4124F3086900383CFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE913F4724F31D1200383CFC /* ClassificateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificateTests.swift; sourceTree = "<group>"; };
 		DE913F4924F321EB00383CFC /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		DE9339F9262380F400C06984 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		DEA2F44E260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewHeader.swift; sourceTree = "<group>"; };
 		DEBBE27925FBFA0D0083CF38 /* MemoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableView.swift; sourceTree = "<group>"; };
 		DEBBE28525FE8F280083CF38 /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
@@ -245,7 +247,6 @@
 				4100442232026690AED13252 /* Pods-memoTests.debug.xcconfig */,
 				3C141096EC261229814EB91A /* Pods-memoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -392,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				DE913F1124ED9E2800383CFC /* DateHelper.swift */,
+				DE9339F9262380F400C06984 /* AlertHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -838,6 +840,7 @@
 				DE8E82A12547A1AB0067899B /* CardMessageView.swift in Sources */,
 				DE4428F72547410800A8657C /* TabBarTitle.swift in Sources */,
 				DE913F1224ED9E2800383CFC /* DateHelper.swift in Sources */,
+				DE9339FA262380F400C06984 /* AlertHelper.swift in Sources */,
 				DE913F0B24ED5FF300383CFC /* Classification.swift in Sources */,
 				DE617B8F254065FA009FEE40 /* CollectionRepositry.swift in Sources */,
 				DEC5BA51262345970082D846 /* HTTP.swift in Sources */,
@@ -1021,7 +1024,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.academyifce.memo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.academyifce.memoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1042,7 +1045,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.academyifce.memo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.academyifce.memoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

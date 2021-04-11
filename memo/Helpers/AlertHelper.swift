@@ -6,4 +6,19 @@
 //  Copyright © 2021 Academy IFCE. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class AlertHelper {
+
+    static func showErrorToast(message: String) {
+    }
+
+    static func showSuccessToast(message: String) {
+
+    }
+
+    static func showWarningToast(message: String) {
+
+    }
+
+}
