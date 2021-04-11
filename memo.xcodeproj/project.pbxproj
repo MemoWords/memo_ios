@@ -56,7 +56,7 @@
 		DE913F0B24ED5FF300383CFC /* Classification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F0A24ED5FF300383CFC /* Classification.swift */; };
 		DE913F1224ED9E2800383CFC /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1124ED9E2800383CFC /* DateHelper.swift */; };
 		DE913F1524EDABE000383CFC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1424EDABE000383CFC /* Protocols.swift */; };
-		DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1624EEA6A500383CFC /* AnswerRepository.swift */; };
+		DE913F1724EEA6A500383CFC /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1624EEA6A500383CFC /* Service.swift */; };
 		DE913F1924EEA71300383CFC /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1824EEA71300383CFC /* Definition.swift */; };
 		DE913F1B24EEA72400383CFC /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1A24EEA72400383CFC /* Answer.swift */; };
 		DE913F1D24EEF3DA00383CFC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */; };
@@ -78,8 +78,12 @@
 		DEBBE2B825FEB6E10083CF38 /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE2B725FEB6E10083CF38 /* SettingsKeys.swift */; };
 		DEBBE2C025FEB72D0083CF38 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBBE2BF25FEB72D0083CF38 /* Settings.swift */; };
 		DEC5BA3F26224AF30082D846 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5BA3E26224AF30082D846 /* UIButton.swift */; };
+		DEC5BA51262345970082D846 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5BA50262345970082D846 /* HTTP.swift */; };
 		DEC831C32544987500229AFF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC831C22544987500229AFF /* Color.swift */; };
 		DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7092825DD557E001FE1D4 /* CardPresenter.swift */; };
+		DEDD3551262350DC0078DB7C /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDD3550262350DC0078DB7C /* ServiceError.swift */; };
+		DEDD3559262368A80078DB7C /* AnswerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDD3558262368A80078DB7C /* AnswerRepository.swift */; };
+		DEDD355E262370C40078DB7C /* AnswerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDD355D262370C40078DB7C /* AnswerResponse.swift */; };
 		DEEC9DE326000E67005259C0 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC9DE226000E67005259C0 /* UIImageView.swift */; };
 		DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */; };
 		DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */; };
@@ -156,7 +160,7 @@
 		DE913F0A24ED5FF300383CFC /* Classification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classification.swift; sourceTree = "<group>"; };
 		DE913F1124ED9E2800383CFC /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		DE913F1424EDABE000383CFC /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		DE913F1624EEA6A500383CFC /* AnswerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRepository.swift; sourceTree = "<group>"; };
+		DE913F1624EEA6A500383CFC /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		DE913F1824EEA71300383CFC /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		DE913F1A24EEA72400383CFC /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		DE913F1C24EEF3DA00383CFC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -180,8 +184,12 @@
 		DEBBE2B725FEB6E10083CF38 /* SettingsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 		DEBBE2BF25FEB72D0083CF38 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		DEC5BA3E26224AF30082D846 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		DEC5BA50262345970082D846 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		DEC831C22544987500229AFF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DED7092825DD557E001FE1D4 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
+		DEDD3550262350DC0078DB7C /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		DEDD3558262368A80078DB7C /* AnswerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRepository.swift; sourceTree = "<group>"; };
+		DEDD355D262370C40078DB7C /* AnswerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerResponse.swift; sourceTree = "<group>"; };
 		DEEC9DE226000E67005259C0 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		DEF04A6B24EAC439003457F2 /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
 		DEF04A7D24EB068E003457F2 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB2867325FAEE8400AD2A36 /* Shared */,
+				DEC5BA4C262343C00082D846 /* Service */,
 				DEF04A6D24EAC9F1003457F2 /* Fonts */,
 				DEBBE2B625FEB6BC0083CF38 /* Util */,
 				DEC831C12544985200229AFF /* Extensions */,
@@ -333,6 +342,7 @@
 				DE617B7F25406210009FEE40 /* Collection+CoreDataClass.swift */,
 				DE913F1824EEA71300383CFC /* Definition.swift */,
 				DE913F1A24EEA72400383CFC /* Answer.swift */,
+				DEDD355D262370C40078DB7C /* AnswerResponse.swift */,
 				DE4428F62547410800A8657C /* TabBarTitle.swift */,
 				DEBBE2B725FEB6E10083CF38 /* SettingsKeys.swift */,
 			);
@@ -398,6 +408,16 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		DEC5BA4C262343C00082D846 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DEDD3550262350DC0078DB7C /* ServiceError.swift */,
+				DEC5BA50262345970082D846 /* HTTP.swift */,
+				DE913F1624EEA6A500383CFC /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		DEC831C12544985200229AFF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,9 +465,9 @@
 		DEF04A7A24EAFABD003457F2 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				DE913F1624EEA6A500383CFC /* AnswerRepository.swift */,
 				DE617B8E254065FA009FEE40 /* CollectionRepositry.swift */,
 				DE617B2F253F60F4009FEE40 /* CardRepository.swift */,
+				DEDD3558262368A80078DB7C /* AnswerRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -619,6 +639,7 @@
 			files = (
 				DEF04A6C24EAC439003457F2 /* CollectionsViewController.swift in Sources */,
 				DE44290A25474D3800A8657C /* UIView.swift in Sources */,
+				DEDD3551262350DC0078DB7C /* ServiceError.swift in Sources */,
 				DE7D994025D35A250053679C /* WordListViewController.swift in Sources */,
 				DEBBE2C025FEB72D0083CF38 /* Settings.swift in Sources */,
 				DE7D994625D3635C0053679C /* WordTableViewCell.swift in Sources */,
@@ -646,7 +667,8 @@
 				DE7D994C25D365FB0053679C /* WordView.swift in Sources */,
 				DEBBE27A25FBFA0D0083CF38 /* MemoTableView.swift in Sources */,
 				DEBBE28625FE8F280083CF38 /* ConfigView.swift in Sources */,
-				DE913F1724EEA6A500383CFC /* AnswerRepository.swift in Sources */,
+				DEDD355E262370C40078DB7C /* AnswerResponse.swift in Sources */,
+				DE913F1724EEA6A500383CFC /* Service.swift in Sources */,
 				DE8E82CB2548A9050067899B /* TextField.swift in Sources */,
 				DE913F1B24EEA72400383CFC /* Answer.swift in Sources */,
 				DE617B8325406210009FEE40 /* Collection+CoreDataClass.swift in Sources */,
@@ -656,6 +678,7 @@
 				DEA2F44F260F6EEE00B4CF1B /* DefinitionTableViewHeader.swift in Sources */,
 				DEC831C32544987500229AFF /* Color.swift in Sources */,
 				DEBBE2A425FEA3D00083CF38 /* ThemeTableViewCell.swift in Sources */,
+				DEDD3559262368A80078DB7C /* AnswerRepository.swift in Sources */,
 				DE913F0324EC4F5800383CFC /* DefinitionTableViewCell.swift in Sources */,
 				DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */,
 				DEEC9DE326000E67005259C0 /* UIImageView.swift in Sources */,
@@ -671,6 +694,7 @@
 				DE913F1224ED9E2800383CFC /* DateHelper.swift in Sources */,
 				DE913F0B24ED5FF300383CFC /* Classification.swift in Sources */,
 				DE617B8F254065FA009FEE40 /* CollectionRepositry.swift in Sources */,
+				DEC5BA51262345970082D846 /* HTTP.swift in Sources */,
 				DE617B36253F668C009FEE40 /* memo.xcdatamodeld in Sources */,
 				DE4428D12546FBC200A8657C /* TabBar.swift in Sources */,
 			);
