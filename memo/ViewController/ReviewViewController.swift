@@ -99,8 +99,8 @@ class ReviewViewController: UIViewController {
     }
     
     func show() {
+        // Set title and placeholders.
         reviewView.cardView.hideContent()
-
         reviewView.labelStudy.text = String("ESTUDAR: \(numOfCardsToStudy)")
         reviewView.cardView.back.titleLabel.text = "..."
         reviewView.cardView.back.pronunciationLabel.text = "/.../"
@@ -127,27 +127,31 @@ class ReviewViewController: UIViewController {
     }
     
     func setAnswerData(word: String) {
-        AnswerRepository.search(word: word) { answer in
-            if let response = answer {
+        AnswerRepository.search(word: word) { response in
+            if let answer = response.answer {
                 DispatchQueue.main.async {
                     self.reviewView.cardView.back.titleLabel.text = word
                     self.reviewView.cardView.front.titleLabel.text = word
 
-                    if let img = response.definitions[0].image_url {
+                    if let img = answer.definitions[0].image_url {
                         self.reviewView.cardView.back.headerView.img.load(urlString: img)
                     } else {
                         self.reviewView.cardView.back.headerView.img.image = UIImage(named: "photo")
                     }
 
-                    if let pronunciation = response.pronunciation {
+                    if let pronunciation = answer.pronunciation {
                         self.reviewView.cardView.back.pronunciationLabel.text = "/\(pronunciation)/"
                         self.reviewView.cardView.front.pronunciationLabel.text = "/\(pronunciation)/"
                     } else {
                         self.reviewView.cardView.back.pronunciationLabel.text = "/.../"
                         self.reviewView.cardView.front.pronunciationLabel.text = "/.../"
                     }
-                    self.definitions = response.definitions
+                    self.definitions = answer.definitions
                 }
+            }
+
+            if let error = response.error {
+                print(error.description)
             }
         }
     }

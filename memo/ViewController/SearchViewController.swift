@@ -62,21 +62,21 @@ class SearchViewController: UIViewController {
         var wordToFind = word.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
         wordToFind = wordToFind.trimmingCharacters(in: .punctuationCharacters)
         
-        AnswerRepository.search(word: wordToFind) { answer in
-            if let response = answer {
+        AnswerRepository.search(word: wordToFind) { response in
+            if let answer = response.answer {
                 DispatchQueue.main.async {
 
-                    if let pronunciation = response.pronunciation {
+                    if let pronunciation = answer.pronunciation {
                         self.searchView.card.pronunciationLabel.text = "/\(pronunciation)/"
                     } else {
                         self.searchView.card.pronunciationLabel.text = "/.../"
                     }
 
-                    self.searchView.card.titleLabel.text = response.word
-                    self.wordToSave = response.word
-                    self.definitions = response.definitions
+                    self.searchView.card.titleLabel.text = answer.word
+                    self.wordToSave = answer.word
+                    self.definitions = answer.definitions
 
-                    if let img = response.definitions[0].image_url {
+                    if let img = answer.definitions[0].image_url {
                         self.searchView.card.headerView.img.load(urlString: img)
                     } else {
                         self.searchView.card.headerView.img.image = UIImage(named: "photo")
@@ -93,14 +93,22 @@ class SearchViewController: UIViewController {
                         self.searchView.setLoading(false)
                     })
                 }
-            } else {
+            }
+
+            if let error = response.error {
                 DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Desculpe!", message: "\"\(word)\" não foi encontrada na nossa base de dados!", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alert.addAction(action)
-                    self.present(alert, animated: true) {
-                        // stop activity animation
-                        self.searchView.setLoading(false)
+                    self.searchView.setLoading(false)
+                    switch error {
+                    case .notFound:
+                        let alert = UIAlertController(title: "Desculpe!", message: error.description, preferredStyle: .alert)
+                        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alert.addAction(action)
+                        self.present(alert, animated: true) {
+                            // stop activity animation
+                            self.searchView.setLoading(false)
+                        }
+                    default:
+                        print(error.description)
                     }
                 }
             }
