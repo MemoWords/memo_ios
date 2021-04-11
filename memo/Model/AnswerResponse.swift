@@ -9,6 +9,6 @@
 import Foundation
 
 struct AnswerResponse {
-    let answer: Answer?
-    let error: ServiceError?
+    var answer: Answer?
+    var error: ServiceError?
 }

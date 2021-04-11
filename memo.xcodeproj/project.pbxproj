@@ -275,8 +275,8 @@
 		DE77DAD524E6FE4D00095D73 /* memo */ = {
 			isa = PBXGroup;
 			children = (
-				DEC5BA4C262343C00082D846 /* Service */,
 				DEB2867325FAEE8400AD2A36 /* Shared */,
+				DEC5BA4C262343C00082D846 /* Service */,
 				DEF04A6D24EAC9F1003457F2 /* Fonts */,
 				DEBBE2B625FEB6BC0083CF38 /* Util */,
 				DEC831C12544985200229AFF /* Extensions */,
@@ -342,9 +342,9 @@
 				DE617B7F25406210009FEE40 /* Collection+CoreDataClass.swift */,
 				DE913F1824EEA71300383CFC /* Definition.swift */,
 				DE913F1A24EEA72400383CFC /* Answer.swift */,
+				DEDD355D262370C40078DB7C /* AnswerResponse.swift */,
 				DE4428F62547410800A8657C /* TabBarTitle.swift */,
 				DEBBE2B725FEB6E10083CF38 /* SettingsKeys.swift */,
-				DEDD355D262370C40078DB7C /* AnswerResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

@@ -16,13 +16,13 @@ class AnswerRepository {
             case .success(let data):
                 do {
                     let answer = try JSONDecoder().decode(Answer.self, from: data!)
-                    completion(AnswerResponse(answer: answer, error: nil))
+                    completion(AnswerResponse(answer: answer))
                 } catch {
-                    completion(AnswerResponse(answer: nil, error: .dataError))
+                    completion(AnswerResponse(error: .dataError))
                 }
                 return
             case .failure(let error):
-                completion(AnswerResponse(answer: nil, error: error))
+                completion(AnswerResponse(error: error))
                 return
             }
         }
