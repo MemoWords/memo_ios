@@ -3,6 +3,9 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=xcode,xcodeinjection,swift,macos
 
 ### macOS ###
+### Pod folder ###
+Pods/
+
 # General
 .DS_Store
 .AppleDouble
@@ -128,8 +131,14 @@ iOSInjectionProject/
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
+/*.gcno
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
+
+# End of https://www.gitignore.io/api/swift,xcode,macos
+Podfile.lock
+memo.xcworkspace/contents.xcworkspacedata
+memo.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
 
 ### XcodeInjection ###
 # Code Injection

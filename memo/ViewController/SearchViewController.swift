@@ -54,18 +54,18 @@ class SearchViewController: UIViewController {
     // MARK: - Actions.
     
     func searchButtonTapped(_ word: String) {
+
         showCard(false)
         searchView.activateButton(false)
-        // start activity animation
         searchView.setLoading(true)
 
         var wordToFind = word.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
         wordToFind = wordToFind.trimmingCharacters(in: .punctuationCharacters)
-        
-        AnswerRepository.search(word: wordToFind) { response in
-            if let answer = response.answer {
-                DispatchQueue.main.async {
 
+        AnswerRepository.search(word: wordToFind) { response in
+            DispatchQueue.main.async {
+            
+            if let answer = response.answer {
                     if let pronunciation = answer.pronunciation {
                         self.searchView.card.pronunciationLabel.text = "/\(pronunciation)/"
                     } else {
@@ -92,26 +92,24 @@ class SearchViewController: UIViewController {
                         // stop activity animation
                         self.searchView.setLoading(false)
                     })
-                }
+
+                return
             }
 
             if let error = response.error {
-                DispatchQueue.main.async {
-                    self.searchView.setLoading(false)
-                    switch error {
-                    case .notFound:
+                self.searchView.setLoading(false)
+                switch error {
+                case .notFound:
                         let alert = UIAlertController(title: "Desculpe!", message: error.description, preferredStyle: .alert)
                         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                         alert.addAction(action)
-                        self.present(alert, animated: true) {
-                            // stop activity animation
-                            self.searchView.setLoading(false)
-                        }
-                    default:
-                        print(error.description)
-                    }
+                        self.present(alert, animated: true)
+                default:
+                    AlertHelper.showErrorToast(view: self.view, message: error.description)
                 }
+                return
             }
+        }
         }
         
     }
