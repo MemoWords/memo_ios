@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Toast_Swift
 
 class SearchViewController: UIViewController {
     
@@ -106,7 +105,7 @@ class SearchViewController: UIViewController {
                         alert.addAction(action)
                         self.present(alert, animated: true)
                 default:
-                    self.view.makeToast(error.description, duration: 2.0, position: .center)
+                    AlertHelper.showErrorToast(view: self.view, message: error.description)
                 }
                 return
             }
