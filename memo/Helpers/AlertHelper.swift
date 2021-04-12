@@ -11,25 +11,29 @@ import Toast_Swift
 
 class AlertHelper {
 
+    // Toast
     static func showErrorToast(view: UIView, message: String) {
         var style = ToastStyle()
         style.messageColor = .memoWhite
         style.backgroundColor = .memoRed
-        view.makeToast(message, duration: 2.0, position: .center, style: style)
+        style.messageFont = UIFont(name: "SF Pro Text Medium", size: 16)!
+        view.makeToast(message, duration: 2.0, position: .bottom, style: style)
     }
 
     static func showSuccessToast(view: UIView, message: String) {
         var style = ToastStyle()
         style.messageColor = .memoWhite
         style.backgroundColor = .memoGreen
-        view.makeToast(message, duration: 2.0, position: .center, style: style)
+        style.messageFont = UIFont(name: "SF Pro Text Medium", size: 16)!
+        view.makeToast(message, duration: 2.0, position: .bottom, style: style)
     }
 
     static func showWarningToast(view: UIView, message: String) {
         var style = ToastStyle()
         style.messageColor = .memoWhite
         style.backgroundColor = .memoYellow
-        view.makeToast(message, duration: 2.0, position: .center, style: style)
+        style.messageFont = UIFont(name: "SF Pro Text Medium", size: 16)!
+        view.makeToast(message, duration: 2.0, position: .bottom, style: style)
     }
 
 }

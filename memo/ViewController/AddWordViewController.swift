@@ -62,6 +62,9 @@ class AddWordViewController: UIViewController {
             if name == "" { return }
             cardRepository.create(collectionName: name, content: wordToSave!)
             navigationController?.popToRootViewController(animated: true)
+            if let parentView = parent?.view {
+                AlertHelper.showSuccessToast(view: parentView, message: "Salvo!")
+            }
         }
     }
     
@@ -96,6 +99,9 @@ extension AddWordViewController: UITableViewDelegate, UITableViewDataSource {
             content: wordToSave!
         )
         navigationController?.popToRootViewController(animated: true)
+        if let parentView = parent?.view {
+            AlertHelper.showSuccessToast(view: parentView, message: "Salvo!")
+        }
     }
 }
 
