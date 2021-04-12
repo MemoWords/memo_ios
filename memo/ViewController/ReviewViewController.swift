@@ -97,9 +97,16 @@ class ReviewViewController: UIViewController {
         navigationItem.title = collection?.name
         navigationItem.largeTitleDisplayMode = .never
     }
+
+    func enableButtons(_ value: Bool) {
+        reviewView.wrongButton.isEnabled = value
+        reviewView.hardButton.isEnabled  = value
+        reviewView.easyButton.isEnabled  = value
+    }
     
     func show() {
         // Set title and placeholders.
+        enableButtons(false)
         reviewView.cardView.hideContent()
         reviewView.labelStudy.text = String("ESTUDAR: \(numOfCardsToStudy)")
         reviewView.cardView.back.titleLabel.text = "..."
@@ -130,6 +137,7 @@ class ReviewViewController: UIViewController {
         AnswerRepository.search(word: word) { response in
             if let answer = response.answer {
                 DispatchQueue.main.async {
+                    self.enableButtons(true)
                     self.reviewView.cardView.back.titleLabel.text = word
                     self.reviewView.cardView.front.titleLabel.text = word
 
@@ -152,6 +160,7 @@ class ReviewViewController: UIViewController {
 
             if let error = response.error {
                 DispatchQueue.main.async {
+                    self.enableButtons(false)
                     AlertHelper.showErrorToast(view: self.view, message: error.description)
                 }
             }
