@@ -151,7 +151,9 @@ class ReviewViewController: UIViewController {
             }
 
             if let error = response.error {
-                print(error.description)
+                DispatchQueue.main.async {
+                    AlertHelper.showErrorToast(view: self.view, message: error.description)
+                }
             }
         }
     }
