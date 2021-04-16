@@ -32,7 +32,7 @@ class ConfigView: UIView {
     lazy var versionLabel: UILabel = {
         let label = UILabel()
         label.text = "Versão: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String) - bravo"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        label.font = .memoMedium(ofSize: 16)
         label.textColor = .memoGray
         return label
     }()

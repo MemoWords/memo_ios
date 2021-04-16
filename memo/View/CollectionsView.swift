@@ -39,7 +39,7 @@ class CollectionsView: UIView {
     lazy var labelStudy: UILabel = {
         let label = UILabel()
         label.text = "ESTUDAR"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        label.font = .memoMedium(ofSize: 16)
         label.textColor = .memoGray
         return label
     }()
@@ -47,7 +47,7 @@ class CollectionsView: UIView {
     lazy var labelFolder: UILabel = {
         let label = UILabel()
         label.text = "PASTAS"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        label.font = .memoMedium(ofSize: 16)
         label.textColor = .memoGray
         return label
     }()

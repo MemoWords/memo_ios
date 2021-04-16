@@ -22,7 +22,6 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SFPro.ttf</string>
 		<string>SFProTextBold.otf</string>
 		<string>SFProTextMedium.otf</string>
 		<string>SFProTextMediumItalic.otf</string>
