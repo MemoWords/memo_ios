@@ -9,20 +9,13 @@ import UIKit
 
 class Settings {
 
-    private static var configurations: Settings?
+    static var shared = Settings()
     private var userDefaults: UserDefaults
     var themeNames: [String]
 
     private init () {
         userDefaults = UserDefaults.standard
         themeNames = ["Padrão do Sistema", "Claro", "Escuro"]
-    }
-
-    static func getInstance() -> Settings {
-        if Settings.configurations == nil {
-            Settings.configurations = Settings()
-        }
-        return Settings.configurations!
     }
 
     var theme: UIUserInterfaceStyle {
