@@ -16,7 +16,7 @@ class AlertHelper {
         var style = ToastStyle()
         style.messageColor = .memoWhite
         style.backgroundColor = .memoRed
-        style.messageFont = UIFont(name: "SF Pro Text Medium", size: 16)!
+        style.messageFont = .memoMedium(ofSize: 16)
         view.makeToast(message, duration: 2.0, position: .bottom, style: style)
     }
 
@@ -24,7 +24,7 @@ class AlertHelper {
         var style = ToastStyle()
         style.messageColor = .memoWhite
         style.backgroundColor = .memoGreen
-        style.messageFont = UIFont(name: "SF Pro Text Medium", size: 16)!
+        style.messageFont = .memoMedium(ofSize: 16)
         view.makeToast(message, duration: 2.0, position: .bottom, style: style)
     }
 
@@ -32,7 +32,7 @@ class AlertHelper {
         var style = ToastStyle()
         style.messageColor = .memoWhite
         style.backgroundColor = .memoYellow
-        style.messageFont = UIFont(name: "SF Pro Text Medium", size: 16)!
+        style.messageFont = .memoMedium(ofSize: 16)
         view.makeToast(message, duration: 2.0, position: .bottom, style: style)
     }
 

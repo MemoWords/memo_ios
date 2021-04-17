@@ -12,7 +12,7 @@ class WordView: UIView {
 
     lazy var totalLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        label.font = .memoMedium(ofSize: 16)
         label.textColor = .memoGray
         return label
     }()

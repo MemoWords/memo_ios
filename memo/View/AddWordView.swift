@@ -15,7 +15,7 @@ class AddWordView: UIView {
     lazy var createLabel: UILabel = {
         let label = UILabel()
         label.text = "CRIAR UMA NOVA PASTA:"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        label.font = .memoMedium(ofSize: 16)
         label.textColor = .memoText
         return label
     }()
@@ -23,7 +23,7 @@ class AddWordView: UIView {
     lazy var nameTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Nome da pasta"
-        textField.font = UIFont(name: "SF Pro Text Medium", size: 18)
+        textField.font = .memoMedium(ofSize: 18)
         textField.backgroundColor = .memoTextBackground
         textField.textColor = .memoText
         textField.setLeftPadding(12)
@@ -37,7 +37,7 @@ class AddWordView: UIView {
     lazy var addButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("ADICIONAR", for: .normal)
-        button.titleLabel?.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        button.titleLabel?.font = .memoMedium(ofSize: 16)
         button.backgroundColor = .memoBlue
         button.setTitleColor(.memoWhite, for: .normal)
         button.addTarget(self, action: #selector(add), for: .touchUpInside)
@@ -57,7 +57,7 @@ class AddWordView: UIView {
     lazy var orLabel: UILabel = {
         let label = UILabel()
         label.text = "OU"
-        label.font = UIFont(name: "SF Pro Text Bold", size: 20)
+        label.font = .memoBold(ofSize: 20)
         label.textColor = .memoText
         label.textAlignment = .center
         
@@ -67,7 +67,7 @@ class AddWordView: UIView {
     lazy var selectLabel: UILabel = {
         let label = UILabel()
         label.text = "SELECIONE UMA PASTA:"
-        label.font = UIFont(name: "SF Pro Text Medium", size: 16)
+        label.font = .memoMedium(ofSize: 16)
         label.textColor = .memoText
         return label
     }()

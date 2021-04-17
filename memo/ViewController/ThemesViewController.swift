@@ -66,7 +66,7 @@ extension ThemesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = settings.themeNames[indexPath.row]
         cell.tintColor = .memoBlue
         cell.selectionStyle = .none
-        cell.textLabel?.font = UIFont(name: "SF Pro Text Bold", size: 16)
+        cell.textLabel?.font = .memoBold(ofSize: 16)
         cell.textLabel?.tintColor = .memoText
         if settings.theme.rawValue == indexPath.row {
             cell.accessoryType = .checkmark

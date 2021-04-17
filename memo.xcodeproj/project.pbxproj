@@ -40,7 +40,6 @@
 		DE7D994725D3635C0053679C /* WordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7D994525D3635C0053679C /* WordTableViewCell.xib */; };
 		DE7D994C25D365FB0053679C /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D994B25D365FB0053679C /* WordView.swift */; };
 		DE7D997225D391E10053679C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7D997125D391E10053679C /* Assets.xcassets */; };
-		DE8E826725477EAC0067899B /* SFPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E826125477EAC0067899B /* SFPro.ttf */; };
 		DE8E827F25477F3B0067899B /* SFProTextBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827A25477F3B0067899B /* SFProTextBold.otf */; };
 		DE8E828025477F3B0067899B /* SFProTextMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827B25477F3B0067899B /* SFProTextMediumItalic.otf */; };
 		DE8E828125477F3B0067899B /* SFProTextSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827C25477F3B0067899B /* SFProTextSemibold.otf */; };
@@ -84,6 +83,7 @@
 		DEC5BA3F26224AF30082D846 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5BA3E26224AF30082D846 /* UIButton.swift */; };
 		DEC5BA51262345970082D846 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5BA50262345970082D846 /* HTTP.swift */; };
 		DEC831C32544987500229AFF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC831C22544987500229AFF /* Color.swift */; };
+		DECBA46B262A1BBA005EC5C1 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECBA46A262A1BBA005EC5C1 /* UIFont.swift */; };
 		DED7092925DD557E001FE1D4 /* CardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED7092825DD557E001FE1D4 /* CardPresenter.swift */; };
 		DEDD3551262350DC0078DB7C /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDD3550262350DC0078DB7C /* ServiceError.swift */; };
 		DEDD3559262368A80078DB7C /* AnswerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDD3558262368A80078DB7C /* AnswerRepository.swift */; };
@@ -154,7 +154,6 @@
 		DE7D994525D3635C0053679C /* WordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordTableViewCell.xib; sourceTree = "<group>"; };
 		DE7D994B25D365FB0053679C /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		DE7D997125D391E10053679C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DE8E826125477EAC0067899B /* SFPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPro.ttf; sourceTree = "<group>"; };
 		DE8E827A25477F3B0067899B /* SFProTextBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextBold.otf; sourceTree = "<group>"; };
 		DE8E827B25477F3B0067899B /* SFProTextMediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextMediumItalic.otf; sourceTree = "<group>"; };
 		DE8E827C25477F3B0067899B /* SFProTextSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextSemibold.otf; sourceTree = "<group>"; };
@@ -200,6 +199,7 @@
 		DEC5BA3E26224AF30082D846 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		DEC5BA50262345970082D846 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		DEC831C22544987500229AFF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		DECBA46A262A1BBA005EC5C1 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		DED7092825DD557E001FE1D4 /* CardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresenter.swift; sourceTree = "<group>"; };
 		DEDD3550262350DC0078DB7C /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		DEDD3558262368A80078DB7C /* AnswerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerRepository.swift; sourceTree = "<group>"; };
@@ -455,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC831C22544987500229AFF /* Color.swift */,
+				DECBA46A262A1BBA005EC5C1 /* UIFont.swift */,
 				DE44290925474D3800A8657C /* UIView.swift */,
 				DEC5BA3E26224AF30082D846 /* UIButton.swift */,
 				DE8E82CA2548A9050067899B /* TextField.swift */,
@@ -490,7 +491,6 @@
 				DE8E827B25477F3B0067899B /* SFProTextMediumItalic.otf */,
 				DE8E827D25477F3B0067899B /* SFProTextRegular.otf */,
 				DE8E827C25477F3B0067899B /* SFProTextSemibold.otf */,
-				DE8E826125477EAC0067899B /* SFPro.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -639,7 +639,6 @@
 				DE7D994725D3635C0053679C /* WordTableViewCell.xib in Resources */,
 				DE913F2424F1B25600383CFC /* AddWordTableViewCell.xib in Resources */,
 				DEBBE2A525FEA3D00083CF38 /* ThemeTableViewCell.xib in Resources */,
-				DE8E826725477EAC0067899B /* SFPro.ttf in Resources */,
 				DE913F0424EC4F5800383CFC /* DefinitionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -831,6 +830,7 @@
 				DEF04A7E24EB068E003457F2 /* ReviewViewController.swift in Sources */,
 				DEEC9DE326000E67005259C0 /* UIImageView.swift in Sources */,
 				DE77DAD924E6FE4D00095D73 /* SceneDelegate.swift in Sources */,
+				DECBA46B262A1BBA005EC5C1 /* UIFont.swift in Sources */,
 				DE617B30253F60F4009FEE40 /* CardRepository.swift in Sources */,
 				DE913F1D24EEF3DA00383CFC /* SearchViewController.swift in Sources */,
 				DE913F1524EDABE000383CFC /* Protocols.swift in Sources */,
