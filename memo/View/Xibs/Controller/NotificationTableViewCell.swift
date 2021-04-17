@@ -12,7 +12,7 @@ class NotificationTableViewCell: UITableViewCell {
 
     static let xibName = "NotificationTableViewCell"
     static let identifier = "NotificationCell"
-    let settings = Settings.getInstance()
+    let settings = Settings.shared
 
     @IBOutlet weak var notifySwitch: UISwitch!
 

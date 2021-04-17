@@ -14,7 +14,7 @@ struct Theme {
 class ThemesViewController: UIViewController {
     // MARK: - Properties
     let themesView = ThemesView()
-    let settings = Settings.getInstance()
+    let settings = Settings.shared
 
     override func loadView() {
         super.loadView()

@@ -12,7 +12,7 @@ class ConfigViewController: UIViewController {
 
     // MARK: - Properties
     let configView = ConfigView()
-    let settings = Settings.getInstance()
+    let settings = Settings.shared
 
     // MARK: - LifeCycle
     override func loadView() {
