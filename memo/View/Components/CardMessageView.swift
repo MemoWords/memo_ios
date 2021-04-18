@@ -47,7 +47,6 @@ class CardMessageView: UIView {
         button.titleLabel?.font = .memoMedium(ofSize: 16)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoBlue
-        button.addTarget(self, action: #selector(end), for: .touchUpInside)
         return button
     }()
 
@@ -64,9 +63,7 @@ class CardMessageView: UIView {
     }
 
     // MARK: - ACTIONS
-    // End Button Action
-    var endAction: (() -> Void)!
-    @objc func end(sender: UIButton!) { endAction() }
+    
     
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
