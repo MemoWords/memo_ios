@@ -65,12 +65,7 @@ class CollectionsView: UIView {
         super.init(frame: frame)
         backgroundColor = .memoBackground
         addSubviews(bugView, labelStudy, collectionView, messageCard, labelFolder, addFolderButton, tableView)
-        setUpLabelStudy()
-        setUpCollectionView()
-        setUpLabelFolder()
-        setUpMessageCard()
-        setUpButton()
-        setupTableView()
+        setUpConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -82,16 +77,14 @@ class CollectionsView: UIView {
 // MARK: - CONSTRAINTS
 
 extension CollectionsView {
-    func setUpLabelStudy() {
+    func setUpConstraints() {
         labelStudy.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             labelStudy.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 2),
             labelStudy.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
             labelStudy.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22)
         ])
-    }
 
-    func setUpCollectionView() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 5),
@@ -99,9 +92,7 @@ extension CollectionsView {
             collectionView.rightAnchor.constraint(equalTo: rightAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 152)
         ])
-    }
 
-    func setUpMessageCard() {
         messageCard.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             messageCard.topAnchor.constraint(equalTo: labelStudy.bottomAnchor, constant: 15),
@@ -109,18 +100,14 @@ extension CollectionsView {
             messageCard.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
             messageCard.heightAnchor.constraint(equalToConstant: 132)
         ])
-    }
 
-    func setUpLabelFolder() {
         labelFolder.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             labelFolder.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
             labelFolder.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
             labelFolder.trailingAnchor.constraint(equalTo: addFolderButton.trailingAnchor, constant: -20)
         ])
-    }
 
-    func setUpButton() {
         addFolderButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             addFolderButton.centerYAnchor.constraint(equalTo: labelFolder.centerYAnchor),
@@ -128,9 +115,7 @@ extension CollectionsView {
             addFolderButton.widthAnchor.constraint(equalToConstant: 32),
             addFolderButton.heightAnchor.constraint(equalToConstant: 21)
         ])
-    }
 
-    func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: labelFolder.bottomAnchor, constant: 10),

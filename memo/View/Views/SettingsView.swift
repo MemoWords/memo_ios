@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfigView: UIView {
+class SettingsView: UIView {
     // MARK: - UI
     lazy var contentView: UIView = {
         let view = UIView()
@@ -62,7 +62,7 @@ class ConfigView: UIView {
 }
 
 // MARK: - EXTENSIONS
-extension ConfigView {
+extension SettingsView {
     func setUpContentView() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

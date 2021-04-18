@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ConfigViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
     // MARK: - Properties
-    let configView = ConfigView()
+    let settingsView = SettingsView()
     let settings = Settings.shared
 
     // MARK: - LifeCycle
     override func loadView() {
         super.loadView()
-        view = configView
+        view = settingsView
     }
 
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class ConfigViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configView.tableView.reloadData()
+        settingsView.tableView.reloadData()
     }
 
     // MARK: - Functions
@@ -61,15 +61,15 @@ class ConfigViewController: UIViewController {
     }
 
     func setUpTableView() {
-        configView.tableView.delegate   = self
-        configView.tableView.dataSource = self
+        settingsView.tableView.delegate   = self
+        settingsView.tableView.dataSource = self
 
-        configView.tableView.register(
+        settingsView.tableView.register(
             UINib(nibName: NotificationTableViewCell.xibName, bundle: nil),
             forCellReuseIdentifier: NotificationTableViewCell.identifier
         )
 
-        configView.tableView.register(
+        settingsView.tableView.register(
             UINib(nibName: ThemeTableViewCell.xibName, bundle: nil),
             forCellReuseIdentifier: ThemeTableViewCell.identifier
         )
@@ -78,7 +78,7 @@ class ConfigViewController: UIViewController {
 }
 
 // MARK: - TableView DataSource
-extension ConfigViewController: UITableViewDataSource, UITableViewDelegate {
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }

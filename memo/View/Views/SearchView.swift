@@ -86,15 +86,8 @@ class SearchView: UIView {
     
     private func setUpViews() {
         searchTextFieldView.addSubview(searchTextField)
-        addSubviews(
-            searchTextFieldView,
-            card,
-            saveButton
-        )
-        setupTextFieldView()
-        setupTextField()
-        setupButton()
-        setupCard()
+        addSubviews(searchTextFieldView, card, saveButton)
+        setUpConstraints()
     }
     
     func activateButton(_ value: Bool) {
@@ -106,5 +99,42 @@ class SearchView: UIView {
             saveButton.setTitleColor(.memoGray, for: .normal)
         }
         saveButton.isEnabled = value
+    }
+}
+
+// MARK: - CONSTRAINTS
+extension SearchView {
+    func setUpConstraints() {
+        searchTextFieldView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            searchTextFieldView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            searchTextFieldView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            searchTextFieldView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            searchTextFieldView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+
+        searchTextField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            searchTextField.topAnchor.constraint(equalTo: searchTextFieldView.topAnchor, constant: 10),
+            searchTextField.leftAnchor.constraint(equalTo: searchTextFieldView.leftAnchor),
+            searchTextField.rightAnchor.constraint(equalTo: searchTextFieldView.rightAnchor),
+            searchTextField.bottomAnchor.constraint(equalTo: searchTextFieldView.bottomAnchor, constant: -10)
+        ])
+
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            saveButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            saveButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            saveButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            saveButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+
+        card.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            card.topAnchor.constraint(equalTo: searchTextFieldView.bottomAnchor, constant: 20),
+            card.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            card.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            card.bottomAnchor.constraint(equalTo: saveButton.topAnchor, constant: -20)
+        ])
     }
 }
