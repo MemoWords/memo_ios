@@ -9,6 +9,9 @@
 import UIKit
 
 class AddWordView: UIView {
+
+    // MARK: - PROPERTIES
+    weak var delegate: AddWordViewEventsDelegate?
     
     // MARK: - UIELEMENTS
     
@@ -84,6 +87,7 @@ class AddWordView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .memoBackground
+        nameTextField.addTarget(self, action: #selector(dismissKeyboard), for: .primaryActionTriggered)
         setupViews()
     }
     
@@ -92,10 +96,14 @@ class AddWordView: UIView {
     }
     
     // MARK: - ACTIONS
-    
-    // Save Button Action
-    var addAction: (() -> Void)!
-    @objc func add(sender: UIButton!) { addAction() }
+
+    @objc func dismissKeyboard() {
+        delegate?.dismissKeyboard()
+    }
+
+    @objc func add(sender: UIButton!) {
+        delegate?.addButtonTapped()
+    }
     
     // MARK: - FUNCTIONS
     

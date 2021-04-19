@@ -21,3 +21,26 @@ protocol CollectionPresenterDelegate: class {
 protocol Loadingprotocol: class {
     func setLoading(_ loading: Bool)
 }
+
+// MARK: - View Events Delegates
+protocol ReviewViewEventsDelegate: class {
+    func wrongButtonTapped()
+    func hardButtonTapped()
+    func easyButtonTapped()
+    func showCardTapped()
+    func endAction()
+}
+
+protocol CollectionsViewEventsDelegate: class {
+    func addFolder()
+}
+
+protocol SearchViewEventsDelegate: class {
+    func searchButtonTapped(_ word: String)
+    func saveButtonTapped()
+}
+
+protocol AddWordViewEventsDelegate: class {
+    func dismissKeyboard()
+    func addButtonTapped()
+}

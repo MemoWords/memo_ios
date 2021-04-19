@@ -12,13 +12,11 @@ class ReviewViewController: UIViewController {
 
     // MARK: - Properties.
     let reviewView = ReviewView() // VIEW
-    
     let cardRepository = CardRepository()
     var cards = [Card]()
     var collection: Collection?
     var count = 0
     var numOfCardsToStudy = 0
-    
     var definitions = [Definition]() {
         didSet {
             reviewView.cardView.back.tableView.reloadData()
@@ -26,7 +24,6 @@ class ReviewViewController: UIViewController {
     }
     
     // MARK: - Lifecycle.
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavBar()
@@ -45,54 +42,16 @@ class ReviewViewController: UIViewController {
         
         numOfCardsToStudy = getNumOfCardsToStudy()
 
-        let tap = UITapGestureRecognizer(target: self, action: #selector(showCardTapped))
-        reviewView.cardView.addGestureRecognizer(tap)
-        
         show()
     }
     
     override func loadView() {
         super.loadView()
         view = reviewView
-        reviewView.cardView.message.endAction = endAction
-        reviewView.wrongAction = wrongButtonTapped
-        reviewView.hardAction = hardButtonTapped
-        reviewView.easyAction = easyButtonTapped
-    }
-
-    // MARK: - Actions.
-
-    func endAction() {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
-    @objc
-    func showCardTapped() {
-        reviewView.cardView.showContent()
-    }
-    
-    func wrongButtonTapped() {
-        update(val: 0)
-        count += 1
-        show()
-    }
-    
-    func hardButtonTapped() {
-        numOfCardsToStudy -= 1
-        update(val: 1)
-        count += 1
-        show()
-    }
-    
-    func easyButtonTapped() {
-        numOfCardsToStudy -= 1
-        update(val: 2)
-        count += 1
-        show()
+        reviewView.delegate = self
     }
     
     // MARK: - Functions.
-
     func configNavBar() {
         navigationItem.title = collection?.name
         navigationItem.largeTitleDisplayMode = .never
@@ -194,8 +153,38 @@ class ReviewViewController: UIViewController {
     
 }
 
-// MARK: - Extensions
+// MARK: - Events Delegate
+extension ReviewViewController: ReviewViewEventsDelegate {
+    func wrongButtonTapped() {
+        update(val: 0)
+        count += 1
+        show()
+    }
 
+    func hardButtonTapped() {
+        numOfCardsToStudy -= 1
+        update(val: 1)
+        count += 1
+        show()
+    }
+
+    func easyButtonTapped() {
+        numOfCardsToStudy -= 1
+        update(val: 2)
+        count += 1
+        show()
+    }
+
+    func showCardTapped() {
+        reviewView.cardView.showContent()
+    }
+
+    func endAction() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+}
+
+// MARK: - TableView Delegate, DataSource
 extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
     // Number of cells.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

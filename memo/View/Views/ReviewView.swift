@@ -9,6 +9,9 @@
 import UIKit
 
 class ReviewView: UIView {
+
+    // MARK: - PROPERTIES
+    weak var delegate: ReviewViewEventsDelegate?
     
     // MARK: - UIELEMENTS
     
@@ -28,7 +31,7 @@ class ReviewView: UIView {
         button.titleLabel?.font = .memoMedium(ofSize: 16)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoRed
-        button.addTarget(self, action: #selector(wrong), for: .touchUpInside)
+        button.addTarget(self, action: #selector(wrongAction), for: .touchUpInside)
         return button
     }()
     
@@ -38,7 +41,7 @@ class ReviewView: UIView {
         button.titleLabel?.font = .memoMedium(ofSize: 16)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoBlue
-        button.addTarget(self, action: #selector(hard), for: .touchUpInside)
+        button.addTarget(self, action: #selector(hardAction), for: .touchUpInside)
         return button
     }()
     
@@ -48,7 +51,7 @@ class ReviewView: UIView {
         button.titleLabel?.font = .memoMedium(ofSize: 16)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoGreen
-        button.addTarget(self, action: #selector(easy), for: .touchUpInside)
+        button.addTarget(self, action: #selector(easyAction), for: .touchUpInside)
         return button
     }()
     
@@ -70,6 +73,9 @@ class ReviewView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .memoBackground
+        let tap = UITapGestureRecognizer(target: self, action: #selector(cardTapped))
+        cardView.addGestureRecognizer(tap)
+        cardView.message.endButton.addTarget(self, action: #selector(endAction), for: .touchUpInside)
         setUpViews()
     }
     
@@ -78,18 +84,25 @@ class ReviewView: UIView {
     }
     
     // MARK: - ACTIONS
-    
-    // Wrong Button Action
-    var wrongAction: (() -> Void)!
-    @objc func wrong(sender: UIButton!) { wrongAction() }
-    
-    // Hard Button Action
-    var hardAction: (() -> Void)!
-    @objc func hard(sender: UIButton!) { hardAction() }
-    
-    // Easy Button Action
-    var easyAction: (() -> Void)!
-    @objc func easy(sender: UIButton!) { easyAction() }
+    @objc func wrongAction(sender: UIButton!) {
+        delegate?.wrongButtonTapped()
+    }
+
+    @objc func hardAction(sender: UIButton!) {
+        delegate?.hardButtonTapped()
+    }
+
+    @objc func easyAction(sender: UIButton!) {
+        delegate?.easyButtonTapped()
+    }
+
+    @objc func cardTapped() {
+        delegate?.showCardTapped()
+    }
+
+    @objc func endAction() {
+        delegate?.endAction()
+    }
     
     // MARK: - FUNCTIONS
     

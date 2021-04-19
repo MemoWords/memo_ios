@@ -28,7 +28,7 @@ class AddWordViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = addWordView
-        addWordView.addAction = addButtonTapped
+        addWordView.delegate = self
     }
     
     override func viewDidLoad() {
@@ -42,20 +42,23 @@ class AddWordViewController: UIViewController {
         addWordView.tableView.register(UINib.init(nibName: "AddWordTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionNameCell")
         collections = collectionRepository.fetchAll()
         
-        addWordView.nameTextField.addTarget(self, action: #selector(dismissKeyboard), for: .primaryActionTriggered)
-        
     }
     
-    // MARK: - Actions.
+    // MARK: - FUNCTIONS
     
-    @IBAction func calcelButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    private func configNavBar() {
+        navigationItem.title = "Salvar \"\(wordToSave!)\""
+        navigationItem.largeTitleDisplayMode = .never
     }
     
-    @objc func dismissKeyboard() {
+}
+
+// MARK: - Events Delegate
+extension AddWordViewController: AddWordViewEventsDelegate {
+    func dismissKeyboard() {
         view.endEditing(true)
     }
-    
+
     func addButtonTapped() {
         if addWordView.nameTextField.text != "" {
             let name = addWordView.nameTextField.text!.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
@@ -67,14 +70,6 @@ class AddWordViewController: UIViewController {
             }
         }
     }
-    
-    // MARK: - FUNCTIONS
-    
-    private func configNavBar() {
-        navigationItem.title = "Salvar \"\(wordToSave!)\""
-        navigationItem.largeTitleDisplayMode = .never
-    }
-    
 }
 
 // MARK: - Extensions

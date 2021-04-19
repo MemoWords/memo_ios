@@ -13,6 +13,7 @@ class CollectionsView: UIView {
     // MARK: - PROPERTIES
     let bugView = UIView()
     let messageCard = MessageCard()
+    weak var delegate: CollectionsViewEventsDelegate?
 
     // MARK: - UI
     lazy var collectionView: UICollectionView = {
@@ -56,6 +57,7 @@ class CollectionsView: UIView {
         let button = UIButton(type: .system)
         button.setTitle(nil, for: .normal)
         button.setImage(UIImage(named: "add_folder"), for: .normal)
+        button.addTarget(self, action: #selector(addFolder), for: .touchUpInside)
         button.tintColor = .memoBlue
         return button
     }()
@@ -70,6 +72,11 @@ class CollectionsView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Actions
+    @objc func addFolder() {
+        delegate?.addFolder()
     }
         
 }
