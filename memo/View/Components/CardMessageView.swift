@@ -62,9 +62,6 @@ class CardMessageView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - ACTIONS
-    
-    
     // MARK: - FUNCTIONS
     override func layoutSubviews() {
         super.layoutSubviews()

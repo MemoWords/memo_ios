@@ -31,8 +31,6 @@ class CollectionsViewController: UIViewController {
         configureNavBar()
         collectionsView.messageCard.isHidden = true
 
-        collectionsView.addFolderButton.addTarget(self, action: #selector(addFolder), for: .touchUpInside)
-
         presenter.delegate = self
         collectionsView.tableView.dataSource = self
         collectionsView.tableView.delegate   = self
@@ -70,29 +68,7 @@ class CollectionsViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = collectionsView
-    }
-    
-    // MARK: - Actions.
-
-    @objc func addFolder() {
-        let alert = UIAlertController(title: "Adicionar pasta", message: "Digite o nome da nova pasta:", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
-
-        alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Name:"
-        })
-
-        alert.addAction(UIAlertAction(title: "Salvar", style: .default, handler: { _ in
-            if let name = alert.textFields?.first?.text {
-                let folderName = name.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
-                if folderName == ""{ return }
-                self.presenter.add(name: folderName)
-                self.collectionsView.tableView.reloadData()
-                self.presenter.updateData()
-            }
-        }))
-
-        self.present(alert, animated: true)
+        collectionsView.delegate = self
     }
 
     // MARK: - Funcs.
@@ -124,6 +100,30 @@ class CollectionsViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
     }
     
+}
+
+// MARK: Events Delegate
+extension CollectionsViewController: CollectionsViewEventsDelegate {
+    func addFolder() {
+        let alert = UIAlertController(title: "Adicionar pasta", message: "Digite o nome da nova pasta:", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Name:"
+        })
+
+        alert.addAction(UIAlertAction(title: "Salvar", style: .default, handler: { _ in
+            if let name = alert.textFields?.first?.text {
+                let folderName = name.replacingOccurrences(of: " ", with: "", options: .regularExpression, range: nil)
+                if folderName == ""{ return }
+                self.presenter.add(name: folderName)
+                self.collectionsView.tableView.reloadData()
+                self.presenter.updateData()
+            }
+        }))
+
+        self.present(alert, animated: true)
+    }
 }
 
 // MARK: - Presenter protocol.
