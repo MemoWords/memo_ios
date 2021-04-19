@@ -39,3 +39,8 @@ protocol SearchViewEventsDelegate: class {
     func searchButtonTapped(_ word: String)
     func saveButtonTapped()
 }
+
+protocol AddWordViewEventsDelegate: class {
+    func dismissKeyboard()
+    func addButtonTapped()
+}
