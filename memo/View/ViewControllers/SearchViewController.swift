@@ -27,8 +27,7 @@ class SearchViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = searchView
-        searchView.saveAction = saveButtonTapped
-        searchView.searchAction = searchButtonTapped
+        searchView.delegate = self
     }
     
     override func viewDidLoad() {
@@ -51,8 +50,47 @@ class SearchViewController: UIViewController {
         searchView.activateButton(false)
     }
     
-    // MARK: - Actions.
+    // MARK: - Functions.
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
+    private func setUpNavBar() {
+        navigationItem.title = TabBarItems.search.title
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .memoBlue
+        navigationController?.navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.memoBold(ofSize: 30),
+            NSAttributedString.Key.foregroundColor: UIColor.memoText
+        ]
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.memoSemibold(ofSize: 20),
+            NSAttributedString.Key.foregroundColor: UIColor.memoText
+        ]
+        let image = UIImage(named: "back_button")
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        // Set the back button.
+        navigationController?.navigationBar.backIndicatorImage = image
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+
+        // Make the navigation bar background clear
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+    }
+
+    private func showCard(_ value: Bool) {
+        searchView.card.isHidden = !value
+        if value {
+            searchView.card.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
+        }
+    }
+}
+
+// MARK: - Events Delegate
+extension SearchViewController: SearchViewEventsDelegate {
     func searchButtonTapped(_ word: String) {
 
         showCard(false)
@@ -64,7 +102,7 @@ class SearchViewController: UIViewController {
 
         AnswerRepository.search(word: wordToFind) { response in
             DispatchQueue.main.async {
-            
+
             if let answer = response.answer {
                     if let pronunciation = answer.pronunciation {
                         self.searchView.card.pronunciationLabel.text = "/\(pronunciation)/"
@@ -111,53 +149,13 @@ class SearchViewController: UIViewController {
             }
         }
         }
-        
+
     }
-    
-    // MARK: - ACTIONS
-    
+
     func saveButtonTapped() {
         let addWordController = AddWordViewController()
         addWordController.wordToSave = wordToSave!
         navigationController?.pushViewController(addWordController, animated: true)
-    }
-    
-    // MARK: - Functions.
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    private func setUpNavBar() {
-        navigationItem.title = TabBarItems.search.title
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = .memoBlue
-        navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.memoBold(ofSize: 30),
-            NSAttributedString.Key.foregroundColor: UIColor.memoText
-        ]
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.memoSemibold(ofSize: 20),
-            NSAttributedString.Key.foregroundColor: UIColor.memoText
-        ]
-        let image = UIImage(named: "back_button")
-        let backButton = UIBarButtonItem()
-        backButton.title = ""
-        // Set the back button.
-        navigationController?.navigationBar.backIndicatorImage = image
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-
-        // Make the navigation bar background clear
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-    }
-
-    private func showCard(_ value: Bool) {
-        searchView.card.isHidden = !value
-        if value {
-            searchView.card.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
-        }
     }
 }
 

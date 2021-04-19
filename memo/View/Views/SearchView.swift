@@ -9,6 +9,8 @@
 import UIKit
 
 class SearchView: UIView {
+
+    weak var delegate: SearchViewEventsDelegate?
     
     // MARK: - UIELEMENTS
     lazy var searchTextFieldView: UIView = {
@@ -64,16 +66,14 @@ class SearchView: UIView {
     }
     
     // MARK: - ACTIONS
-    
-    // Save Button Action
-    var saveAction: (() -> Void)!
-    @objc func save(sender: UIButton!) { saveAction() }
-    
-    // Search Button Action
-    var searchAction: ((String) -> Void)!
+
+    @objc func save(sender: UIButton!) {
+        delegate?.saveButtonTapped()
+    }
+
     @objc func search(sender: UIButton!) {
-        self.searchTextField.resignFirstResponder()
-        searchAction(searchTextField.text!)
+        self.endEditing(true)
+        delegate?.searchButtonTapped(searchTextField.text!)
     }
 
     // MARK: - FUNCTIONS

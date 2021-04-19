@@ -34,3 +34,8 @@ protocol ReviewViewEventsDelegate: class {
 protocol CollectionsViewEventsDelegate: class {
     func addFolder()
 }
+
+protocol SearchViewEventsDelegate: class {
+    func searchButtonTapped(_ word: String)
+    func saveButtonTapped()
+}
