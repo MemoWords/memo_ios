@@ -10,6 +10,7 @@ import UIKit
 
 class ReviewView: UIView {
 
+    // MARK: - PROPERTIES
     weak var delegate: ReviewViewEventsDelegate?
     
     // MARK: - UIELEMENTS

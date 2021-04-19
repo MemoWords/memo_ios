@@ -10,6 +10,7 @@ import UIKit
 
 class AddWordView: UIView {
 
+    // MARK: - PROPERTIES
     weak var delegate: AddWordViewEventsDelegate?
     
     // MARK: - UIELEMENTS

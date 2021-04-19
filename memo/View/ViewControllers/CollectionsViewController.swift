@@ -102,7 +102,7 @@ class CollectionsViewController: UIViewController {
     
 }
 
-// MARK: Events Delegate
+// MARK: - Events Delegate
 extension CollectionsViewController: CollectionsViewEventsDelegate {
     func addFolder() {
         let alert = UIAlertController(title: "Adicionar pasta", message: "Digite o nome da nova pasta:", preferredStyle: .alert)

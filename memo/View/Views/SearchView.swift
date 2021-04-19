@@ -10,6 +10,7 @@ import UIKit
 
 class SearchView: UIView {
 
+    // MARK: - PROPERTIES
     weak var delegate: SearchViewEventsDelegate?
     
     // MARK: - UIELEMENTS
