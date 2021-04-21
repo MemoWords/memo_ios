@@ -16,7 +16,7 @@ class AlertHelper {
         var style = ToastStyle()
         style.messageColor = .memoWhite
         style.backgroundColor = .memoRed
-        style.messageFont = .memoMedium(ofSize: 16)
+        style.messageFont = .memoMedium(ofSize: .normal)
         view.makeToast(message, duration: 2.0, position: .bottom, style: style)
     }
 
@@ -24,7 +24,7 @@ class AlertHelper {
         var style = ToastStyle()
         style.messageColor = .memoWhite
         style.backgroundColor = .memoGreen
-        style.messageFont = .memoMedium(ofSize: 16)
+        style.messageFont = .memoMedium(ofSize: .normal)
         view.makeToast(message, duration: 2.0, position: .bottom, style: style)
     }
 
@@ -32,7 +32,7 @@ class AlertHelper {
         var style = ToastStyle()
         style.messageColor = .memoWhite
         style.backgroundColor = .memoYellow
-        style.messageFont = .memoMedium(ofSize: 16)
+        style.messageFont = .memoMedium(ofSize: .normal)
         view.makeToast(message, duration: 2.0, position: .bottom, style: style)
     }
 
