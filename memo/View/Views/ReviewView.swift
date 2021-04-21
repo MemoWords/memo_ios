@@ -19,7 +19,7 @@ class ReviewView: UIView {
     lazy var labelStudy: UILabel = {
         let label = UILabel()
         label.text = "Estudar: 0"
-        label.font = .memoMedium(ofSize: 16)
+        label.font = .memoMedium(ofSize: .normal)
         label.textColor = .memoGray
         return label
     }()
@@ -28,7 +28,7 @@ class ReviewView: UIView {
     lazy var wrongButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("NÃO SEI", for: .normal)
-        button.titleLabel?.font = .memoMedium(ofSize: 16)
+        button.titleLabel?.font = .memoMedium(ofSize: .normal)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoRed
         button.addTarget(self, action: #selector(wrongAction), for: .touchUpInside)
@@ -38,7 +38,7 @@ class ReviewView: UIView {
     lazy var hardButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("DIFÍCIL", for: .normal)
-        button.titleLabel?.font = .memoMedium(ofSize: 16)
+        button.titleLabel?.font = .memoMedium(ofSize: .normal)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoBlue
         button.addTarget(self, action: #selector(hardAction), for: .touchUpInside)
@@ -48,7 +48,7 @@ class ReviewView: UIView {
     lazy var easyButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("FÁCIL", for: .normal)
-        button.titleLabel?.font = .memoMedium(ofSize: 16)
+        button.titleLabel?.font = .memoMedium(ofSize: .normal)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoGreen
         button.addTarget(self, action: #selector(easyAction), for: .touchUpInside)

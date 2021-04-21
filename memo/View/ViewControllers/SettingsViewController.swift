@@ -39,11 +39,11 @@ class SettingsViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .memoBlue
 
         navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.memoBold(ofSize: 30),
+            NSAttributedString.Key.font: UIFont.memoBold(ofSize: .large),
             NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
         navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.memoSemibold(ofSize: 20),
+            NSAttributedString.Key.font: UIFont.memoSemibold(ofSize: .mediumLarge),
             NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
 

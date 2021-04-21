@@ -16,7 +16,7 @@ class CardBackView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "car"
-        label.font = .memoMedium(ofSize: 30)
+        label.font = .memoMedium(ofSize: .large)
         label.textColor = .memoText
         return label
     }()
@@ -24,7 +24,7 @@ class CardBackView: UIView {
     lazy var pronunciationLabel: UILabel = {
         let label = UILabel()
         label.text = "/kär/"
-        label.font = .memoMedium(ofSize: 20)
+        label.font = .memoMedium(ofSize: .mediumLarge)
         label.textColor = .memoGray
         return label
     }()

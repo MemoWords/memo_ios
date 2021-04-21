@@ -21,7 +21,7 @@ class MessageCard: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "0"
-        label.font = .memoBold(ofSize: 30)
+        label.font = .memoBold(ofSize: .large)
         label.textColor = .memoWhite
         return label
     }()
@@ -30,7 +30,7 @@ class MessageCard: UIView {
     lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.text = "palavras para hoje"
-        label.font = .memoBold(ofSize: 20)
+        label.font = .memoBold(ofSize: .mediumLarge)
         label.textColor = .memoWhite
         return label
     }()
