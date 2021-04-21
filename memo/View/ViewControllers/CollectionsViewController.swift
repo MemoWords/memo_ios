@@ -30,7 +30,6 @@ class CollectionsViewController: UIViewController {
         super.viewDidLoad()
         configureNavBar()
         collectionsView.messageCard.isHidden = true
-
         presenter.delegate = self
         collectionsView.tableView.dataSource = self
         collectionsView.tableView.delegate   = self
@@ -46,7 +45,6 @@ class CollectionsViewController: UIViewController {
             UINib.init(nibName: "FolderTableViewCell", bundle: nil),
             forCellReuseIdentifier: "FolderCell"
         )
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +75,7 @@ class CollectionsViewController: UIViewController {
         navigationItem.title = TabBarItems.collections.title
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .memoBlue
-
+        // Set Title
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.memoBold(ofSize: .large),
             NSAttributedString.Key.foregroundColor: UIColor.memoText

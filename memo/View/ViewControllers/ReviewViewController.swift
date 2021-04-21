@@ -56,26 +56,16 @@ class ReviewViewController: UIViewController {
         navigationItem.title = collection?.name
         navigationItem.largeTitleDisplayMode = .never
     }
-
-    func enableButtons(_ value: Bool) {
-        reviewView.wrongButton.isEnabled = value
-        reviewView.hardButton.isEnabled  = value
-        reviewView.easyButton.isEnabled  = value
-    }
     
     func show() {
         // Set title and placeholders.
-        enableButtons(false)
-        reviewView.cardView.hideContent()
-        reviewView.labelStudy.text = String("ESTUDAR: \(numOfCardsToStudy)")
-        reviewView.cardView.back.titleLabel.text = "..."
-        reviewView.cardView.back.pronunciationLabel.text = "/.../"
-        reviewView.cardView.front.titleLabel.text = "..."
-        reviewView.cardView.front.pronunciationLabel.text = "/.../"
+        reviewView.enableButtons(false)
+        reviewView.hideContent()
+        reviewView.setPlaceHolders()
         
         if self.count >= cards.count {
             if numOfCardsToStudy == 0 {
-                reviewView.cardView.showMessage()
+                reviewView.showMessage()
                 reviewView.hideButtons()
             } else {
                 count = 0
@@ -96,22 +86,17 @@ class ReviewViewController: UIViewController {
         AnswerRepository.search(word: word) { response in
             if let answer = response.answer {
                 DispatchQueue.main.async {
-                    self.enableButtons(true)
-                    self.reviewView.cardView.back.titleLabel.text = word
-                    self.reviewView.cardView.front.titleLabel.text = word
+                    self.reviewView.enableButtons(true)
+                    self.reviewView.setTitles(with: word, and: self.numOfCardsToStudy)
 
-                    if let img = answer.definitions[0].image_url {
-                        self.reviewView.cardView.back.headerView.img.load(urlString: img)
+                    if let url = answer.definitions[0].image_url {
+                        self.reviewView.loadImage(with: url)
                     } else {
-                        self.reviewView.cardView.back.headerView.img.image = UIImage(named: "photo")
+                        self.reviewView.loadImage(with: UIImage(named: "photo"))
                     }
 
                     if let pronunciation = answer.pronunciation {
-                        self.reviewView.cardView.back.pronunciationLabel.text = "/\(pronunciation)/"
-                        self.reviewView.cardView.front.pronunciationLabel.text = "/\(pronunciation)/"
-                    } else {
-                        self.reviewView.cardView.back.pronunciationLabel.text = "/.../"
-                        self.reviewView.cardView.front.pronunciationLabel.text = "/.../"
+                        self.reviewView.setPronunciation(with: pronunciation)
                     }
                     self.definitions = answer.definitions
                 }
@@ -119,7 +104,7 @@ class ReviewViewController: UIViewController {
 
             if let error = response.error {
                 DispatchQueue.main.async {
-                    self.enableButtons(false)
+                    self.reviewView.enableButtons(false)
                     AlertHelper.showErrorToast(view: self.view, message: error.description)
                 }
             }
