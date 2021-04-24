@@ -105,19 +105,19 @@ extension SearchViewController: SearchViewEventsDelegate {
 
             if let answer = response.answer {
                     if let pronunciation = answer.pronunciation {
-                        self.searchView.card.pronunciationLabel.text = "/\(pronunciation)/"
+                        self.searchView.setPronunciation(with: pronunciation)
                     } else {
-                        self.searchView.card.pronunciationLabel.text = "/.../"
+                        self.searchView.setPronunciation(with: "...")
                     }
 
-                    self.searchView.card.titleLabel.text = answer.word
+                    self.searchView.setTitle(title: answer.word)
                     self.wordToSave = answer.word
                     self.definitions = answer.definitions
 
-                    if let img = answer.definitions[0].image_url {
-                        self.searchView.card.headerView.img.load(urlString: img)
+                    if let url = answer.definitions[0].image_url {
+                        self.searchView.loadImage(with: url)
                     } else {
-                        self.searchView.card.headerView.img.image = UIImage(named: "photo")
+                        self.searchView.loadImage(with: UIImage(named: "photo"))
                     }
 
                     UIView.transition(with: self.searchView.card, duration: 0.2, options: .transitionCrossDissolve, animations: {

@@ -50,17 +50,19 @@ class CollectionsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         presenter.updateData()
         if presenter.collectionsToStudy.count != 0 {
+            collectionsView.collectionView.scrollToItem(
+                at: IndexPath(row: 0, section: 0),
+                at: .centeredHorizontally,
+                animated: false
+            )
+        }
+        if presenter.collections.count != 0 {
             collectionsView.tableView.scrollToRow(
                 at: IndexPath(row: 0, section: 0),
                 at: .top,
                 animated: false
             )
         }
-        collectionsView.collectionView.scrollToItem(
-            at: IndexPath(row: 0, section: 0),
-            at: .centeredHorizontally,
-            animated: false
-        )
     }
     
     override func loadView() {
@@ -130,7 +132,6 @@ extension CollectionsViewController: CollectionPresenterDelegate {
     func reloadData(value: Bool) {
         collectionsView.collectionView.reloadData()
         collectionsView.tableView.reloadData()
-        collectionsView.collectionView.isHidden = !value
         collectionsView.messageCard.isHidden = value
     }
 }

@@ -101,6 +101,22 @@ class SearchView: UIView {
         }
         saveButton.isEnabled = value
     }
+
+    func setPronunciation(with pronunciation: String) {
+        card.pronunciationLabel.text = "/\(pronunciation)/"
+    }
+
+    func setTitle(title: String) {
+        card.titleLabel.text = title
+    }
+
+    func loadImage(with url: String) {
+        card.headerView.img.load(urlString: url)
+    }
+
+    func loadImage(with image: UIImage?) {
+        card.headerView.img.image = image
+    }
 }
 
 // MARK: - CONSTRAINTS
