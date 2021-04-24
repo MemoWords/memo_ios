@@ -48,7 +48,7 @@ class ReviewViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = reviewView
-        reviewView.delegate = self
+        reviewView.handler = self
     }
     
     // MARK: - Functions.
@@ -138,8 +138,8 @@ class ReviewViewController: UIViewController {
     
 }
 
-// MARK: - Events Delegate
-extension ReviewViewController: ReviewViewEventsDelegate {
+// MARK: - Handling Events
+extension ReviewViewController: ReviewViewHandleEvents {
     func wrongButtonTapped() {
         update(val: 0)
         count += 1

@@ -11,7 +11,7 @@ import UIKit
 class ReviewView: UIView {
 
     // MARK: - PROPERTIES
-    weak var delegate: ReviewViewEventsDelegate?
+    weak var handler: ReviewViewHandleEvents?
     
     // MARK: - UIELEMENTS
     
@@ -85,23 +85,23 @@ class ReviewView: UIView {
     
     // MARK: - ACTIONS
     @objc func wrongAction(sender: UIButton!) {
-        delegate?.wrongButtonTapped()
+        handler?.wrongButtonTapped()
     }
 
     @objc func hardAction(sender: UIButton!) {
-        delegate?.hardButtonTapped()
+        handler?.hardButtonTapped()
     }
 
     @objc func easyAction(sender: UIButton!) {
-        delegate?.easyButtonTapped()
+        handler?.easyButtonTapped()
     }
 
     @objc func cardTapped() {
-        delegate?.showCardTapped()
+        handler?.showCardTapped()
     }
 
     @objc func endAction() {
-        delegate?.endAction()
+        handler?.endAction()
     }
     
     // MARK: - FUNCTIONS

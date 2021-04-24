@@ -11,7 +11,7 @@ import UIKit
 class SearchView: UIView {
 
     // MARK: - PROPERTIES
-    weak var delegate: SearchViewEventsDelegate?
+    weak var handler: SearchViewHandleEvents?
     
     // MARK: - UIELEMENTS
     lazy var searchTextFieldView: UIView = {
@@ -69,12 +69,12 @@ class SearchView: UIView {
     // MARK: - ACTIONS
 
     @objc func save(sender: UIButton!) {
-        delegate?.saveButtonTapped()
+        handler?.saveButtonTapped()
     }
 
     @objc func search(sender: UIButton!) {
         self.endEditing(true)
-        delegate?.searchButtonTapped(searchTextField.text!)
+        handler?.searchButtonTapped(searchTextField.text!)
     }
 
     // MARK: - FUNCTIONS

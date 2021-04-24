@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = searchView
-        searchView.delegate = self
+        searchView.handler = self
     }
     
     override func viewDidLoad() {
@@ -89,8 +89,8 @@ class SearchViewController: UIViewController {
     }
 }
 
-// MARK: - Events Delegate
-extension SearchViewController: SearchViewEventsDelegate {
+// MARK: - Handling Events
+extension SearchViewController: SearchViewHandleEvents {
     func searchButtonTapped(_ word: String) {
 
         showCard(false)

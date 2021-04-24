@@ -68,7 +68,7 @@ class CollectionsViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = collectionsView
-        collectionsView.delegate = self
+        collectionsView.handler = self
     }
 
     // MARK: - Funcs.
@@ -102,8 +102,8 @@ class CollectionsViewController: UIViewController {
     
 }
 
-// MARK: - Events Delegate
-extension CollectionsViewController: CollectionsViewEventsDelegate {
+// MARK: - Handling Events
+extension CollectionsViewController: CollectionsViewHandleEvents {
     func addFolder() {
         let alert = UIAlertController(title: "Adicionar pasta", message: "Digite o nome da nova pasta:", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
