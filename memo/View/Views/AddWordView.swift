@@ -11,7 +11,7 @@ import UIKit
 class AddWordView: UIView {
 
     // MARK: - PROPERTIES
-    weak var delegate: AddWordViewEventsDelegate?
+    weak var handler: AddWordViewHandleEvents?
     
     // MARK: - UIELEMENTS
     
@@ -98,11 +98,11 @@ class AddWordView: UIView {
     // MARK: - ACTIONS
 
     @objc func dismissKeyboard() {
-        delegate?.dismissKeyboard()
+        handler?.dismissKeyboard()
     }
 
     @objc func add(sender: UIButton!) {
-        delegate?.addButtonTapped()
+        handler?.addButtonTapped()
     }
     
     // MARK: - FUNCTIONS

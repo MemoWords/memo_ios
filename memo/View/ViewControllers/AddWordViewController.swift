@@ -28,7 +28,7 @@ class AddWordViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = addWordView
-        addWordView.delegate = self
+        addWordView.handler = self
     }
     
     override func viewDidLoad() {
@@ -53,8 +53,8 @@ class AddWordViewController: UIViewController {
     
 }
 
-// MARK: - Events Delegate
-extension AddWordViewController: AddWordViewEventsDelegate {
+// MARK: - Handling Events
+extension AddWordViewController: AddWordViewHandleEvents {
     func dismissKeyboard() {
         view.endEditing(true)
     }

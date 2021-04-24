@@ -30,7 +30,6 @@ class CollectionsViewController: UIViewController {
         super.viewDidLoad()
         configureNavBar()
         collectionsView.messageCard.isHidden = true
-
         presenter.delegate = self
         collectionsView.tableView.dataSource = self
         collectionsView.tableView.delegate   = self
@@ -46,29 +45,30 @@ class CollectionsViewController: UIViewController {
             UINib.init(nibName: "FolderTableViewCell", bundle: nil),
             forCellReuseIdentifier: "FolderCell"
         )
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         presenter.updateData()
         if presenter.collectionsToStudy.count != 0 {
+            collectionsView.collectionView.scrollToItem(
+                at: IndexPath(row: 0, section: 0),
+                at: .centeredHorizontally,
+                animated: false
+            )
+        }
+        if presenter.collections.count != 0 {
             collectionsView.tableView.scrollToRow(
                 at: IndexPath(row: 0, section: 0),
                 at: .top,
                 animated: false
             )
         }
-        collectionsView.collectionView.scrollToItem(
-            at: IndexPath(row: 0, section: 0),
-            at: .centeredHorizontally,
-            animated: false
-        )
     }
     
     override func loadView() {
         super.loadView()
         view = collectionsView
-        collectionsView.delegate = self
+        collectionsView.handler = self
     }
 
     // MARK: - Funcs.
@@ -77,7 +77,7 @@ class CollectionsViewController: UIViewController {
         navigationItem.title = TabBarItems.collections.title
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .memoBlue
-
+        // Set Title
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.memoBold(ofSize: .large),
             NSAttributedString.Key.foregroundColor: UIColor.memoText
@@ -102,8 +102,8 @@ class CollectionsViewController: UIViewController {
     
 }
 
-// MARK: - Events Delegate
-extension CollectionsViewController: CollectionsViewEventsDelegate {
+// MARK: - Handling Events
+extension CollectionsViewController: CollectionsViewHandleEvents {
     func addFolder() {
         let alert = UIAlertController(title: "Adicionar pasta", message: "Digite o nome da nova pasta:", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
@@ -132,7 +132,6 @@ extension CollectionsViewController: CollectionPresenterDelegate {
     func reloadData(value: Bool) {
         collectionsView.collectionView.reloadData()
         collectionsView.tableView.reloadData()
-        collectionsView.collectionView.isHidden = !value
         collectionsView.messageCard.isHidden = value
     }
 }

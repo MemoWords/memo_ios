@@ -22,8 +22,8 @@ protocol Loadingprotocol: class {
     func setLoading(_ loading: Bool)
 }
 
-// MARK: - View Events Delegates
-protocol ReviewViewEventsDelegate: class {
+// MARK: - Views Events Handler Protocols
+protocol ReviewViewHandleEvents: class {
     func wrongButtonTapped()
     func hardButtonTapped()
     func easyButtonTapped()
@@ -31,16 +31,16 @@ protocol ReviewViewEventsDelegate: class {
     func endAction()
 }
 
-protocol CollectionsViewEventsDelegate: class {
+protocol CollectionsViewHandleEvents: class {
     func addFolder()
 }
 
-protocol SearchViewEventsDelegate: class {
+protocol SearchViewHandleEvents: class {
     func searchButtonTapped(_ word: String)
     func saveButtonTapped()
 }
 
-protocol AddWordViewEventsDelegate: class {
+protocol AddWordViewHandleEvents: class {
     func dismissKeyboard()
     func addButtonTapped()
 }

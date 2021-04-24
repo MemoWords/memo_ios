@@ -13,7 +13,7 @@ class CollectionsView: UIView {
     // MARK: - PROPERTIES
     let bugView = UIView()
     let messageCard = MessageCard()
-    weak var delegate: CollectionsViewEventsDelegate?
+    weak var handler: CollectionsViewHandleEvents?
 
     // MARK: - UI
     lazy var collectionView: UICollectionView = {
@@ -76,7 +76,7 @@ class CollectionsView: UIView {
 
     // MARK: - Actions
     @objc func addFolder() {
-        delegate?.addFolder()
+        handler?.addFolder()
     }
         
 }

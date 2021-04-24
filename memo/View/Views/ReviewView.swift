@@ -11,7 +11,7 @@ import UIKit
 class ReviewView: UIView {
 
     // MARK: - PROPERTIES
-    weak var delegate: ReviewViewEventsDelegate?
+    weak var handler: ReviewViewHandleEvents?
     
     // MARK: - UIELEMENTS
     
@@ -85,23 +85,23 @@ class ReviewView: UIView {
     
     // MARK: - ACTIONS
     @objc func wrongAction(sender: UIButton!) {
-        delegate?.wrongButtonTapped()
+        handler?.wrongButtonTapped()
     }
 
     @objc func hardAction(sender: UIButton!) {
-        delegate?.hardButtonTapped()
+        handler?.hardButtonTapped()
     }
 
     @objc func easyAction(sender: UIButton!) {
-        delegate?.easyButtonTapped()
+        handler?.easyButtonTapped()
     }
 
     @objc func cardTapped() {
-        delegate?.showCardTapped()
+        handler?.showCardTapped()
     }
 
     @objc func endAction() {
-        delegate?.endAction()
+        handler?.endAction()
     }
     
     // MARK: - FUNCTIONS
@@ -126,6 +126,47 @@ class ReviewView: UIView {
         UIView.transition(with: buttonsStack, duration: 0.5, options: .transitionCrossDissolve, animations: {
             self.buttonsStack.isHidden = true
         }, completion: nil)
+    }
+
+    func setPlaceHolders() {
+        cardView.back.titleLabel.text = "..."
+        cardView.back.pronunciationLabel.text = "/.../"
+        cardView.front.titleLabel.text = "..."
+        cardView.front.pronunciationLabel.text = "/.../"
+    }
+
+    func hideContent() {
+        cardView.hideContent()
+    }
+
+    func showMessage() {
+        labelStudy.text = String("ESTUDAR: 0")
+        cardView.showMessage()
+    }
+
+    func setTitles(with title: String, and numOfCards: Int) {
+        cardView.back.titleLabel.text = title
+        cardView.front.titleLabel.text = title
+        labelStudy.text = String("ESTUDAR: \(numOfCards)")
+    }
+
+    func loadImage(with url: String) {
+        cardView.back.headerView.img.load(urlString: url)
+    }
+
+    func loadImage(with image: UIImage?) {
+        cardView.back.headerView.img.image = image
+    }
+
+    func setPronunciation(with text: String) {
+        cardView.back.pronunciationLabel.text = "/\(text)/"
+        cardView.front.pronunciationLabel.text = "/\(text)/"
+    }
+
+    func enableButtons(_ value: Bool) {
+        wrongButton.isEnabled = value
+        hardButton.isEnabled  = value
+        easyButton.isEnabled  = value
     }
 }
 
