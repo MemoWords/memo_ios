@@ -28,7 +28,7 @@ class SearchView: UIView {
     lazy var searchTextField: UITextField = {
         let textField = UITextField()
         let imageView = UIImageView(image: UIImage(named: "lens.png"))
-        textField.placeholder = "Pesquisar"
+        textField.placeholder = Strings.SEARCH_PLACEHOLDER
         textField.font = .memoMedium(ofSize: .medium)
         textField.textColor = .memoText
         textField.setRightPadding(12)
@@ -44,7 +44,7 @@ class SearchView: UIView {
     
     lazy var saveButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("SALVAR", for: .normal)
+        button.setTitle(Strings.SAVE_BUTTON_TITLE.uppercased(), for: .normal)
         button.titleLabel?.font = .memoMedium(ofSize: .normal)
         button.addTarget(self, action: #selector(save), for: .touchUpInside)
         

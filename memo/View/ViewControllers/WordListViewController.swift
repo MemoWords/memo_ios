@@ -30,7 +30,7 @@ class WordListViewController: UIViewController {
         super.viewDidLoad()
         configureNavBar()
 
-        wordView.totalLabel.text = "TOTAL: \(presenter.collection.cards!.count)"
+        wordView.totalLabel.text = "\(Strings.TOTAL.uppercased()): \(presenter.collection.cards!.count)"
 
         wordView.tableView.dataSource = self
         wordView.tableView.delegate   = self

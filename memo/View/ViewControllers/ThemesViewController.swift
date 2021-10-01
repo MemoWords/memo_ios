@@ -35,7 +35,7 @@ class ThemesViewController: UIViewController {
     }
 
     func configNavBar() {
-        navigationItem.title = "Temas"
+        navigationItem.title = Strings.THEMES_TITLE
         navigationItem.largeTitleDisplayMode = .never
     }
 

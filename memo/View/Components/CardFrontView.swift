@@ -31,7 +31,7 @@ class CardFrontView: UIView {
 
     lazy var touchLabel: UILabel = {
         let label = UILabel()
-        label.text = "Toque no card para virar 􀬂"
+        label.text = "\(Strings.TOUCH_FOR_TURN) 􀬂"
         label.font = .memoMedium(ofSize: .normal)
         label.textColor = .memoGray
         return label

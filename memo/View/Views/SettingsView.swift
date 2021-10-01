@@ -31,7 +31,7 @@ class SettingsView: UIView {
 
     lazy var versionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Versão: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String) - bravo"
+        label.text = "\(Strings.VERSION): \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String) - bravo"
         label.font = .memoMedium(ofSize: .normal)
         label.textColor = .memoGray
         return label

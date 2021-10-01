@@ -23,7 +23,7 @@ class CardMessageView: UIView {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Você revisou tudo por aqui!"
+        label.text = "\(Strings.ALL_REVIEWD_MESSAGE)!"
         label.font = .memoMedium(ofSize: .mediumLarge)
         label.textColor = .memoText
         label.textAlignment = .center
@@ -33,7 +33,7 @@ class CardMessageView: UIView {
     
     lazy var bodyLabel: UILabel = {
         let label = UILabel()
-        label.text = "Aguarde o próximo dia de estudos ou adicione mais palavras a esta coleção clicando na aba pesquisar logo abaixo."
+        label.text = "\(Strings.WAIT_MESSAGE)."
         label.font = .memoMedium(ofSize: .normal)
         label.textColor = .memoGray
         label.textAlignment = .center
@@ -43,7 +43,7 @@ class CardMessageView: UIView {
 
     lazy var endButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("FINALIZAR", for: .normal)
+        button.setTitle(Strings.END_BUTTON_TITLE.uppercased(), for: .normal)
         button.titleLabel?.font = .memoMedium(ofSize: .normal)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoBlue

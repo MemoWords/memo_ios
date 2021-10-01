@@ -1,0 +1,67 @@
+/* 
+  Licalizable.strings
+  memo
+
+  Created by Elias Ferreira on 01/10/21.
+  Copyright © 2021 Academy IFCE. All rights reserved.
+*/
+
+// MARK: Navigation Titles
+
+"COLLECTIONS_TITLE" = "Coleções";
+"SEARCH_TITLE" = "Pesquisar";
+"SETTINGS_TITLE" = "Configurações";
+"THEMES_TITLE" = "Temas";
+
+// MARK: Labels
+
+"TOTAL" = "Total";
+"SAVE" = "Salvar";
+"STUDY" = "Estudar";
+"FOLDERS" = "Pastas";
+"WORDS" = "Palavras";
+"CREATE_NEW_FOLDER" = "Criar uma nova pasta";
+"FOLDERS_NAME" = "Nome da pasta";
+"SELECT_FOLDER" = "Selecione uma pasta";
+"OR" = "Ou";
+"VERSION" = "Versão";
+"TOUCH_FOR_TURN" = "Toque no card para virar";
+"WORDS_FOR_TODAY" = "Palavras para hoje";
+"TO_STUDY" = "Para estudar";
+
+// MARK: Messages
+
+"ALL_REVIEWD_MESSAGE" = "Você revisou tudo por aqui";
+"WAIT_MESSAGE" = "Aguarde o próximo dia de estudos ou adicione mais palavras a esta coleção clicando na aba pesquisar logo abaixo";
+
+// MARK: Button titles
+
+"DONT_KNOW_BUTTON_TITLE" = "Não sei";
+"HARD_BUTTON_TITLE" = "Difícil";
+"EASY_BUTTON_TITLE" = "Fácil";
+"SAVE_BUTTON_TITLE" = "Salvar";
+"ADD_BUTTON_TITLE" = "Adicionar";
+"END_BUTTON_TITLE" = "Finalizar";
+
+// MARK: Toast Messages
+
+"TOAST_SAVED" = "Salvo!";
+
+// MARK: Placeholders
+
+"SEARCH_PLACEHOLDER" = "Pesquisar";
+
+// MARK: Themes
+
+"SYSTEM_THEME" = "Padrão do Sistema";
+"LIGHT_THEME" = "Claro";
+"DARK_THEME" = "Escuro";
+
+// MARK: Service error messages
+
+"BAD_URL" = "Entrada inválida";
+"SERVER_ERROR" = "Erro no servidor";
+"NOT_FOUND" = "não foi encontrada na nossa base de dados";
+"UNAUTHORIZED" = "Não autorizado";
+"BAD_REQUEST" = "Algo deu errado";
+"DATA_ERROR" = "Erro nos dados";

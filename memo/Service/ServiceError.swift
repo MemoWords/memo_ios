@@ -19,17 +19,17 @@ enum ServiceError: Error {
     var description: String {
         switch self {
         case .badURL:
-            return "Entrada inválida"
+            return Strings.BAD_URL
         case .serverError:
-            return "Erro no servidor"
+            return Strings.SERVER_ERROR
         case .notFound(let word):
-            return "\"\(word)\" não foi encontrada na nossa base de dados!"
+            return "\"\(word)\" \(Strings.NOT_FOUND)!"
         case .unauthorized:
-            return "Não autorizado"
+            return Strings.UNAUTHORIZED
         case .badRequest:
-            return "Algo deu errado"
+            return Strings.BAD_REQUEST
         case .dataError:
-            return "Erro nos dados"
+            return Strings.DATA_ERROR
         }
     }
 }

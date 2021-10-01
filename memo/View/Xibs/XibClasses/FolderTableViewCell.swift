@@ -30,7 +30,7 @@ class FolderTableViewCell: UITableViewCell {
 
     func configure(collection: Collection) {
         titleLabel.text = collection.name
-        bodyLabel.text = String("\(collection.cards!.count) Palavras")
+        bodyLabel.text = String("\(collection.cards!.count) \(Strings.WORDS)")
     }
     
 }

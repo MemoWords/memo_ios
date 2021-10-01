@@ -18,7 +18,7 @@ class ReviewView: UIView {
     // Labels
     lazy var labelStudy: UILabel = {
         let label = UILabel()
-        label.text = "Estudar: 0"
+        label.text = "\(Strings.STUDY.uppercased()): 0"
         label.font = .memoMedium(ofSize: .normal)
         label.textColor = .memoGray
         return label
@@ -27,7 +27,7 @@ class ReviewView: UIView {
     // Buttons
     lazy var wrongButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("NÃO SEI", for: .normal)
+        button.setTitle(Strings.DONT_KNOW_BUTTON_TITLE.uppercased(), for: .normal)
         button.titleLabel?.font = .memoMedium(ofSize: .normal)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoRed
@@ -37,7 +37,7 @@ class ReviewView: UIView {
     
     lazy var hardButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("DIFÍCIL", for: .normal)
+        button.setTitle(Strings.HARD_BUTTON_TITLE.uppercased(), for: .normal)
         button.titleLabel?.font = .memoMedium(ofSize: .normal)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoBlue
@@ -47,7 +47,7 @@ class ReviewView: UIView {
     
     lazy var easyButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("FÁCIL", for: .normal)
+        button.setTitle(Strings.EASY_BUTTON_TITLE.uppercased(), for: .normal)
         button.titleLabel?.font = .memoMedium(ofSize: .normal)
         button.setTitleColor(.memoWhite, for: .normal)
         button.backgroundColor = .memoGreen
@@ -140,14 +140,14 @@ class ReviewView: UIView {
     }
 
     func showMessage() {
-        labelStudy.text = String("ESTUDAR: 0")
+        labelStudy.text = String("\(Strings.STUDY.uppercased()): 0")
         cardView.showMessage()
     }
 
     func setTitles(with title: String, and numOfCards: Int) {
         cardView.back.titleLabel.text = title
         cardView.front.titleLabel.text = title
-        labelStudy.text = String("ESTUDAR: \(numOfCards)")
+        labelStudy.text = String("\(Strings.STUDY.uppercased()): \(numOfCards)")
     }
 
     func loadImage(with url: String) {

@@ -40,6 +40,8 @@
 		DE7D994C25D365FB0053679C /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D994B25D365FB0053679C /* WordView.swift */; };
 		DE7D997225D391E10053679C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7D997125D391E10053679C /* Assets.xcassets */; };
 		DE8779542630A62400C6B68E /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8779532630A62400C6B68E /* CGFloat.swift */; };
+		DE8A0D1227079DC4003751F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE8A0D1127079DC4003751F0 /* Localizable.strings */; };
+		DE8A0D1427079DFC003751F0 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A0D1327079DFC003751F0 /* Strings.swift */; };
 		DE8E827F25477F3B0067899B /* SFProTextBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827A25477F3B0067899B /* SFProTextBold.otf */; };
 		DE8E828025477F3B0067899B /* SFProTextMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827B25477F3B0067899B /* SFProTextMediumItalic.otf */; };
 		DE8E828125477F3B0067899B /* SFProTextSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE8E827C25477F3B0067899B /* SFProTextSemibold.otf */; };
@@ -151,6 +153,8 @@
 		DE7D994B25D365FB0053679C /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		DE7D997125D391E10053679C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE8779532630A62400C6B68E /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		DE8A0D1127079DC4003751F0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DE8A0D1327079DFC003751F0 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		DE8E827A25477F3B0067899B /* SFProTextBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextBold.otf; sourceTree = "<group>"; };
 		DE8E827B25477F3B0067899B /* SFProTextMediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextMediumItalic.otf; sourceTree = "<group>"; };
 		DE8E827C25477F3B0067899B /* SFProTextSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFProTextSemibold.otf; sourceTree = "<group>"; };
@@ -386,6 +390,8 @@
 			isa = PBXGroup;
 			children = (
 				DE7D997125D391E10053679C /* Assets.xcassets */,
+				DE8A0D1127079DC4003751F0 /* Localizable.strings */,
+				DE8A0D1327079DFC003751F0 /* Strings.swift */,
 				DEF04A6D24EAC9F1003457F2 /* Fonts */,
 			);
 			path = Assets;
@@ -639,6 +645,7 @@
 				DE7D997225D391E10053679C /* Assets.xcassets in Resources */,
 				DEBBE29B25FE9E760083CF38 /* NotificationTableViewCell.xib in Resources */,
 				DE8E828225477F3B0067899B /* SFProTextRegular.otf in Resources */,
+				DE8A0D1227079DC4003751F0 /* Localizable.strings in Resources */,
 				DE8E828325477F3B0067899B /* SFProTextMedium.otf in Resources */,
 				DE8E828025477F3B0067899B /* SFProTextMediumItalic.otf in Resources */,
 				DE8E828125477F3B0067899B /* SFProTextSemibold.otf in Resources */,
@@ -813,6 +820,7 @@
 				DEBBE29A25FE9E760083CF38 /* NotificationTableViewCell.swift in Sources */,
 				DE5598A4261CA60000AB3665 /* CardFrontView.swift in Sources */,
 				DEBBE2B225FEAED40083CF38 /* ThemesView.swift in Sources */,
+				DE8A0D1427079DFC003751F0 /* Strings.swift in Sources */,
 				DE8E82C12548645D0067899B /* SearchView.swift in Sources */,
 				DE8E82D9254994490067899B /* AddWordView.swift in Sources */,
 				DE44291425476B6600A8657C /* CardBackView.swift in Sources */,

@@ -47,7 +47,7 @@ class AddWordViewController: UIViewController {
     // MARK: - FUNCTIONS
     
     private func configNavBar() {
-        navigationItem.title = "Salvar \"\(wordToSave!)\""
+        navigationItem.title = "\(Strings.SAVE) \"\(wordToSave!)\""
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -66,7 +66,7 @@ extension AddWordViewController: AddWordViewHandleEvents {
             cardRepository.create(collectionName: name, content: wordToSave!)
             navigationController?.popToRootViewController(animated: true)
             if let parentView = parent?.view {
-                AlertHelper.showSuccessToast(view: parentView, message: "Salvo!")
+                AlertHelper.showSuccessToast(view: parentView, message: Strings.TOAST_SAVED)
             }
         }
     }
@@ -95,7 +95,7 @@ extension AddWordViewController: UITableViewDelegate, UITableViewDataSource {
         )
         navigationController?.popToRootViewController(animated: true)
         if let parentView = parent?.view {
-            AlertHelper.showSuccessToast(view: parentView, message: "Salvo!")
+            AlertHelper.showSuccessToast(view: parentView, message: Strings.TOAST_SAVED)
         }
     }
 }
