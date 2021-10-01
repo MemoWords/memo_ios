@@ -8,22 +8,22 @@
 import Foundation
 // Protocol to call the function save on search screen
 // from add screen.
-protocol SaveWordDelegate: class {
+protocol SaveWordDelegate: AnyObject {
     func save(collection: Collection?, collectionName: String?, word: String)
 }
 
 // Protocol to update the collections screen.
-protocol CollectionPresenterDelegate: class {
+protocol CollectionPresenterDelegate: AnyObject {
     func reloadData(value: Bool)
 }
 
 // IndicatorView protocol
-protocol Loadingprotocol: class {
+protocol Loadingprotocol: AnyObject {
     func setLoading(_ loading: Bool)
 }
 
 // MARK: - Views Events Handler Protocols
-protocol ReviewViewHandleEvents: class {
+protocol ReviewViewHandleEvents: AnyObject {
     func wrongButtonTapped()
     func hardButtonTapped()
     func easyButtonTapped()
@@ -31,16 +31,16 @@ protocol ReviewViewHandleEvents: class {
     func endAction()
 }
 
-protocol CollectionsViewHandleEvents: class {
+protocol CollectionsViewHandleEvents: AnyObject {
     func addFolder()
 }
 
-protocol SearchViewHandleEvents: class {
+protocol SearchViewHandleEvents: AnyObject {
     func searchButtonTapped(_ word: String)
     func saveButtonTapped()
 }
 
-protocol AddWordViewHandleEvents: class {
+protocol AddWordViewHandleEvents: AnyObject {
     func dismissKeyboard()
     func addButtonTapped()
 }
