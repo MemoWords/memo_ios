@@ -16,11 +16,11 @@ enum TabBarItems {
     var title: String {
         switch self {
         case .collections:
-            return "Coleções"
+            return Strings.COLLECTIONS_TITLE
         case .search:
-            return "Pesquisar"
+            return Strings.SEARCH_TITLE
         case .settings:
-            return "Configurações"
+            return Strings.SETTINGS_TITLE
         }
     }
 }

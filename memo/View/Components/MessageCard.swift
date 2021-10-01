@@ -29,7 +29,7 @@ class MessageCard: UIView {
     // Labels
     lazy var messageLabel: UILabel = {
         let label = UILabel()
-        label.text = "palavras para hoje"
+        label.text = Strings.WORDS_FOR_TODAY.lowercased()
         label.font = .memoBold(ofSize: .mediumLarge)
         label.textColor = .memoWhite
         return label

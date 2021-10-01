@@ -43,7 +43,7 @@ class StudyCollectionViewCell: UICollectionViewCell {
         }
 
         titleLabel.text = collection.name
-        bodyLabel.text = String("\(study) para estudar")
+        bodyLabel.text = String("\(study) \(Strings.TO_STUDY.lowercased())")
     }
 
 }

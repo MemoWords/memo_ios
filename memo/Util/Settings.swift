@@ -15,7 +15,11 @@ class Settings {
 
     private init () {
         userDefaults = UserDefaults.standard
-        themeNames = ["Padrão do Sistema", "Claro", "Escuro"]
+        themeNames = [
+            Strings.SYSTEM_THEME,
+            Strings.LIGHT_THEME,
+            Strings.DARK_THEME
+        ]
     }
 
     var theme: UIUserInterfaceStyle {
