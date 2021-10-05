@@ -38,7 +38,8 @@ class SearchViewController: UIViewController {
         searchView.card.tableView.delegate   = self
         searchView.searchTextField.delegate  = self
         
-        searchView.card.tableView.register(UINib.init(nibName: "DefinitionTableViewCell", bundle: nil), forCellReuseIdentifier: "DefinitionCell")
+        searchView.card.tableView.register(UINib.init(nibName: DefinitionTableViewCell.nibName, bundle: nil),
+                                           forCellReuseIdentifier: DefinitionTableViewCell.identifier)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -168,7 +169,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Cell with data.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DefinitionCell", for: indexPath) as! DefinitionTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DefinitionTableViewCell.identifier, for: indexPath) as! DefinitionTableViewCell
         
         cell.configure(definition: definitions[indexPath.row])
         

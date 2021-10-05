@@ -65,12 +65,12 @@ class SettingsViewController: UIViewController {
         settingsView.tableView.dataSource = self
 
         settingsView.tableView.register(
-            UINib(nibName: NotificationTableViewCell.xibName, bundle: nil),
+            UINib(nibName: NotificationTableViewCell.nibName, bundle: nil),
             forCellReuseIdentifier: NotificationTableViewCell.identifier
         )
 
         settingsView.tableView.register(
-            UINib(nibName: ThemeTableViewCell.xibName, bundle: nil),
+            UINib(nibName: ThemeTableViewCell.nibName, bundle: nil),
             forCellReuseIdentifier: ThemeTableViewCell.identifier
         )
     }

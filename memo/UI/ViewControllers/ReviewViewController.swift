@@ -32,8 +32,8 @@ class ReviewViewController: UIViewController {
         reviewView.cardView.back.tableView.delegate  = self
 
         reviewView.cardView.back.tableView.register(
-            UINib.init(nibName: "DefinitionTableViewCell", bundle: nil),
-            forCellReuseIdentifier: "DefinitionCell"
+            UINib.init(nibName: DefinitionTableViewCell.nibName, bundle: nil),
+            forCellReuseIdentifier: DefinitionTableViewCell.identifier
         )
         
         if let cards = collection?.cards {
@@ -177,7 +177,7 @@ extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
     }
     // Add the cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DefinitionCell", for: indexPath) as! DefinitionTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DefinitionTableViewCell.identifier, for: indexPath) as! DefinitionTableViewCell
         
         cell.configure(definition: definitions[indexPath.row])
         

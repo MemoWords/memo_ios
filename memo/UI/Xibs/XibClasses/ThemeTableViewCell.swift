@@ -10,7 +10,7 @@ import UIKit
 
 class ThemeTableViewCell: UITableViewCell {
 
-    static let xibName = "ThemeTableViewCell"
+    static let nibName = "ThemeTableViewCell"
     static let identifier = "ThemeCell"
 
     @IBOutlet weak var themeLabel: UILabel!

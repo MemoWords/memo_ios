@@ -14,6 +14,9 @@ class DefinitionTableViewCell: UITableViewCell {
     @IBOutlet weak var labelType: UILabel!
     @IBOutlet weak var labelDefinition: UILabel!
     @IBOutlet weak var labelExample: UILabel!
+
+    static let identifier = "DefinitionCell"
+    static let nibName = "DefinitionTableViewCell"
     
     // Runs when the view is loaded.
     override func awakeFromNib() {

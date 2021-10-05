@@ -10,7 +10,7 @@ import UIKit
 
 class NotificationTableViewCell: UITableViewCell {
 
-    static let xibName = "NotificationTableViewCell"
+    static let nibName = "NotificationTableViewCell"
     static let identifier = "NotificationCell"
     let settings = Settings.shared
 

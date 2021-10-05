@@ -10,11 +10,14 @@ import UIKit
 
 class FolderTableViewCell: UITableViewCell {
 
-  @IBOutlet weak var mainFrame: UIView!
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var bodyLabel: UILabel!
+    @IBOutlet weak var mainFrame: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bodyLabel: UILabel!
 
-  override func awakeFromNib() {
+    static let identifier = "FolderCell"
+    static let nibName = "FolderTableViewCell"
+
+    override func awakeFromNib() {
         super.awakeFromNib()
         mainFrame.layer.cornerRadius = 18
         mainFrame.layer.shadowColor = UIColor.black.cgColor

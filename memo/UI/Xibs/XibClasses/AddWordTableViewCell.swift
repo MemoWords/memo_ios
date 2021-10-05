@@ -13,6 +13,9 @@ class AddWordTableViewCell: UITableViewCell {
     // Intens on screen.
     @IBOutlet weak var card: UIView!
     @IBOutlet weak var labelTitle: UILabel!
+
+    static let identifier = "AddWordCell"
+    static let nibName = "AddWordTableViewCell"
     
     // Runs when the view is loaded.
     override func awakeFromNib() {
