@@ -14,6 +14,9 @@ class WordTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 
+    static let identifier = "WordCell"
+    static let nibName = "WordTableViewCell"
+
     override func awakeFromNib() {
         super.awakeFromNib()
         mainFrame.layer.cornerRadius = 18

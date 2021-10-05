@@ -39,7 +39,10 @@ class AddWordViewController: UIViewController {
         addWordView.tableView.delegate     = self
         addWordView.nameTextField.delegate = self
 //
-        addWordView.tableView.register(UINib.init(nibName: "AddWordTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionNameCell")
+        addWordView.tableView.register(
+            UINib.init(nibName: AddWordTableViewCell.nibName, bundle: nil),
+            forCellReuseIdentifier: AddWordTableViewCell.identifier
+        )
         collections = collectionRepository.fetchAll()
         
     }
@@ -80,7 +83,7 @@ extension AddWordViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionNameCell", for: indexPath) as! AddWordTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AddWordTableViewCell.identifier, for: indexPath) as! AddWordTableViewCell
         cell.selectionStyle = .none
         cell.configure(name: collections[indexPath.row].name!)
         

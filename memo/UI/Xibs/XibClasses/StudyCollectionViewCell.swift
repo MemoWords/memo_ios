@@ -16,6 +16,9 @@ class StudyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
 
+    static let identifier = "StudyCell"
+    static let nibName = "StudyCollectionViewCell"
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Style.

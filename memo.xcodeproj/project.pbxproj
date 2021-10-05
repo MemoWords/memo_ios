@@ -330,7 +330,7 @@
 				DEF04A7A24EAFABD003457F2 /* Repository */,
 				DE77DB0824E7065D00095D73 /* Model */,
 				DE4E3A5B25D6B35D005093B0 /* Presenter */,
-				DE77DB0624E7064600095D73 /* View */,
+				DE77DB0624E7064600095D73 /* UI */,
 				DE77DAE424E6FE5000095D73 /* Info.plist */,
 				DE617B34253F668C009FEE40 /* memo.xcdatamodeld */,
 			);
@@ -346,7 +346,7 @@
 			path = memoUITests;
 			sourceTree = "<group>";
 		};
-		DE77DB0624E7064600095D73 /* View */ = {
+		DE77DB0624E7064600095D73 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				DEF04A6524EAB6C3003457F2 /* Xibs */,
@@ -354,7 +354,7 @@
 				DE4AA51F262BBB55008227B9 /* Views */,
 				DE77DB0724E7065400095D73 /* ViewControllers */,
 			);
-			path = View;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		DE77DB0724E7065400095D73 /* ViewControllers */ = {

@@ -34,11 +34,10 @@ class WordListViewController: UIViewController {
 
         wordView.tableView.dataSource = self
         wordView.tableView.delegate   = self
-        wordView.tableView.register(UINib.init(
-            nibName: "WordTableViewCell",
-            bundle: nil
-        ),
-        forCellReuseIdentifier: "WordCell")
+        wordView.tableView.register(
+            UINib.init(nibName: WordTableViewCell.nibName, bundle: nil),
+            forCellReuseIdentifier: WordTableViewCell.identifier
+        )
     }
 
     func configureNavBar() {
@@ -54,7 +53,7 @@ extension WordListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WordCell", for: indexPath) as! WordTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: WordTableViewCell.identifier, for: indexPath) as! WordTableViewCell
         if let cards = presenter.collection.cards {
             cell.configure(card: (cards.allObjects as! [Card])[indexPath.row])
         }

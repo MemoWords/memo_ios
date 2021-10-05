@@ -37,13 +37,13 @@ class CollectionsViewController: UIViewController {
         collectionsView.collectionView.delegate   = self
 
         collectionsView.collectionView.register(
-            UINib.init(nibName: "StudyCollectionViewCell", bundle: nil),
-            forCellWithReuseIdentifier: "StudyCell"
+            UINib.init(nibName: StudyCollectionViewCell.nibName, bundle: nil),
+            forCellWithReuseIdentifier: StudyCollectionViewCell.identifier
         )
 
         collectionsView.tableView.register(
-            UINib.init(nibName: "FolderTableViewCell", bundle: nil),
-            forCellReuseIdentifier: "FolderCell"
+            UINib.init(nibName: FolderTableViewCell.nibName, bundle: nil),
+            forCellReuseIdentifier: FolderTableViewCell.identifier
         )
     }
     
@@ -145,7 +145,7 @@ extension CollectionsViewController: UICollectionViewDelegate, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StudyCell", for: indexPath) as! StudyCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudyCollectionViewCell.identifier, for: indexPath) as! StudyCollectionViewCell
 
         cell.configure(collection: presenter.collectionsToStudy[indexPath.row])
 
@@ -172,7 +172,7 @@ extension CollectionsViewController: UITableViewDelegate, UITableViewDataSource 
     // Add the cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: "FolderCell",
+            withIdentifier: FolderTableViewCell.identifier,
             for: indexPath
         ) as! FolderTableViewCell
         
