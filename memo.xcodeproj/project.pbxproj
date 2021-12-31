@@ -10,6 +10,7 @@
 		15812045C326C23E345921DD /* Pods_memoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EEBA60473CE4DCD2585AEF /* Pods_memoTests.framework */; };
 		92C59443D5FA015A965D98AE /* Pods_memo_memoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6148FCCBAE7E3C1A76B730A /* Pods_memo_memoUITests.framework */; };
 		A0D08A94BB5D27A55BDAB679 /* Pods_memo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9879A24529828D8673024C79 /* Pods_memo.framework */; };
+		DE1948C3277E958B0027AFC1 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1948C2277E958B0027AFC1 /* UIImage.swift */; };
 		DE4428D12546FBC200A8657C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4428D02546FBC200A8657C /* TabBarController.swift */; };
 		DE4428D62547017100A8657C /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4428D52547017100A8657C /* CollectionsView.swift */; };
 		DE4428F22547238200A8657C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4428F12547238200A8657C /* SettingsViewController.swift */; };
@@ -119,6 +120,7 @@
 		9879A24529828D8673024C79 /* Pods_memo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_memo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E29D5D1FCC75D4DF71D5878 /* Pods-memo-memoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memo-memoUITests.debug.xcconfig"; path = "Target Support Files/Pods-memo-memoUITests/Pods-memo-memoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6148FCCBAE7E3C1A76B730A /* Pods_memo_memoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_memo_memoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1948C2277E958B0027AFC1 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		DE4428D02546FBC200A8657C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DE4428D52547017100A8657C /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		DE4428F12547238200A8657C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -389,10 +391,10 @@
 		DE8779582630AA0100C6B68E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				DEF04A6D24EAC9F1003457F2 /* Fonts */,
 				DE7D997125D391E10053679C /* Assets.xcassets */,
 				DE8A0D1127079DC4003751F0 /* Localizable.strings */,
 				DE8A0D1327079DFC003751F0 /* Strings.swift */,
-				DEF04A6D24EAC9F1003457F2 /* Fonts */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -477,6 +479,7 @@
 				DE8E82CA2548A9050067899B /* UITextField.swift */,
 				DEEC9DE226000E67005259C0 /* UIImageView.swift */,
 				DE8779532630A62400C6B68E /* CGFloat.swift */,
+				DE1948C2277E958B0027AFC1 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				DE7D991725D2B97A0053679C /* StudyCollectionViewCell.swift in Sources */,
 				DE617B8125406210009FEE40 /* Card+CoreDataClass.swift in Sources */,
 				DE4428D62547017100A8657C /* CollectionsView.swift in Sources */,
+				DE1948C3277E958B0027AFC1 /* UIImage.swift in Sources */,
 				DE7D991E25D2C3840053679C /* FolderTableViewCell.swift in Sources */,
 				DE77DAD724E6FE4D00095D73 /* AppDelegate.swift in Sources */,
 				DEC5BA3F26224AF30082D846 /* UIButton.swift in Sources */,

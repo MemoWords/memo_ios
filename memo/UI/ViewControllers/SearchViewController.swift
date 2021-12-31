@@ -68,12 +68,12 @@ class SearchViewController: UIViewController {
             NSAttributedString.Key.font: UIFont.memoSemibold(ofSize: .mediumLarge),
             NSAttributedString.Key.foregroundColor: UIColor.memoText
         ]
-        let image = UIImage(named: "back_button")
+
         let backButton = UIBarButtonItem()
         backButton.title = ""
         // Set the back button.
-        navigationController?.navigationBar.backIndicatorImage = image
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = image
+        navigationController?.navigationBar.backIndicatorImage = .BACK_BUTTON
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = .BACK_BUTTON
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
 
         // Make the navigation bar background clear
