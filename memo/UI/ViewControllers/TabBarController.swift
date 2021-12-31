@@ -44,11 +44,17 @@ class TabBarController: UITabBarController {
     }
     
     private func getControllers() -> [UINavigationController] {
-        return [
-            collectionsNavController!,
-            searchNavController!,
-            settingsNavController!
-        ]
+        if let collecNC = collectionsNavController,
+           let searchNC = searchNavController,
+           let settingsNC = settingsNavController {
+            return [
+                collecNC,
+                searchNC,
+                settingsNC
+            ]
+        } else {
+            return []
+        }
     }
     
     private func configTabBar() {
