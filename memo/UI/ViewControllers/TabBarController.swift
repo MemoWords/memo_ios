@@ -39,7 +39,7 @@ class TabBarController: UITabBarController {
         searchNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 0)
         // Settings
         settingsNavController?.tabBarItem.image = .SETTINGS_UNSELECTED
-        settingsNavController?.tabBarItem.selectedImage = .SEARCH_SELECTED
+        settingsNavController?.tabBarItem.selectedImage = .SETTINGS_SELECTED
         settingsNavController?.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 0)
     }
     
